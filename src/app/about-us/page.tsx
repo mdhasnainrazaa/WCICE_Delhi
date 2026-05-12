@@ -115,6 +115,7 @@ const universities = [
     city: "Jalalabad",
     image: "/images/Jalal-Abad-International-University-hero.png",
     highlight: "NMC & WHO Recognized",
+    slug: "jalal-abad-international-university",
   },
   {
     abbr: "JASU",
@@ -122,6 +123,7 @@ const universities = [
     city: "Jalalabad",
     image: "/images/Jalal-Abad-banner.png",
     highlight: "Government University",
+    slug: "jalal-abad-state-university",
   },
   {
     abbr: "OSU",
@@ -129,6 +131,7 @@ const universities = [
     city: "Osh",
     image: "/images/Osh-State-University.png",
     highlight: "Established 1992",
+    slug: "osh-state-university",
   },
   {
     abbr: "CAIMU",
@@ -136,6 +139,7 @@ const universities = [
     city: "Osh",
     image: "/images/Central-Asian-Medical-University.png",
     highlight: "ECFMG Listed",
+    slug: "central-asian-international-medical-university",
   },
   {
     abbr: "OIMU",
@@ -143,6 +147,7 @@ const universities = [
     city: "Osh",
     image: "/images/osh-international-medical-university.png",
     highlight: "Best Campus Facilities",
+    slug: "osh-international-medical-university",
   },
 ];
 
@@ -328,14 +333,6 @@ export default function AboutPage() {
                     Apply Now <ArrowRight size={16} />
                   </button>
                   <div className="flex bg-white/10 backdrop-blur-sm border border-white/25 rounded-xl overflow-hidden">
-                    <a
-                      href="/Brouchers/WCIEC DELHI.pdf"
-                      target="_blank"
-                      className="px-6 py-4 text-white font-bold text-sm flex items-center gap-2 hover:bg-white/10 transition-all border-r border-white/20"
-                      aria-label="View WCIEC brochure"
-                    >
-                      <Eye size={16} /> View
-                    </a>
                     <a
                       href="/Brouchers/WCIEC DELHI.pdf"
                       download
@@ -630,7 +627,7 @@ export default function AboutPage() {
                     </div>
                     <span className="inline-block text-[10px] font-bold text-[#1a4db8] bg-[#1a4db8]/8 px-2 py-0.5 rounded-full mb-4">{uni.highlight}</span>
                     <a
-                      href={`/universities/${uni.abbr.toLowerCase()}`}
+                      href={`/universities/${uni.slug}`}
                       className="block w-full py-2 rounded-lg border border-[#1a4db8]/20 text-[#1a4db8] font-bold text-xs text-center hover:bg-[#1a4db8] hover:text-white transition-all"
                       aria-label={`View details about ${uni.name}`}
                     >
@@ -704,12 +701,7 @@ export default function AboutPage() {
                   Every WCIEC campus has its own teaching hospital — providing students with hands-on clinical exposure from their very first year. Students learn from real patients, gaining practical skills on par with top medical universities worldwide.
                 </p>
               </div>
-              <a
-                href="/hospitals"
-                className="inline-flex items-center gap-2 bg-[#1a4db8] hover:bg-[#1440a0] text-white font-bold px-7 py-3 rounded-xl transition-all text-sm whitespace-nowrap"
-              >
-                Explore Hospitals <ArrowRight size={16} />
-              </a>
+
             </div>
           </div>
         </section>
@@ -759,12 +751,6 @@ export default function AboutPage() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="/fmge-coaching"
-                    className="inline-flex items-center gap-2 bg-[#0B1F33] hover:bg-[#1a4db8] text-white font-bold px-8 py-4 rounded-xl transition-all mt-8 text-sm"
-                  >
-                    FMGE Coaching Details <ArrowRight size={16} />
-                  </a>
                 </div>
                 <div className="grid grid-cols-2 gap-5">
                   {[

@@ -11,9 +11,15 @@ import {
 } from "lucide-react";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 
+const WhatsappIcon = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+);
+
 export default function ContactUsPage() {
   return (
-    <main className="bg-[#F8FAFC] min-h-screen font-inter selection:bg-[#2563EB] selection:text-white pb-20">
+    <main className="bg-[#F8FAFC] min-h-screen font-inter selection:bg-[#2563EB] selection:text-white pb-20 overflow-x-hidden w-full">
       
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-white">
@@ -35,12 +41,12 @@ export default function ContactUsPage() {
             </ol>
           </nav>
 
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 bg-[#0EA5E9]/10 text-[#0EA5E9] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#0EA5E9]/20">
                 <Sparkles size={16} /> 24/7 Expert Counseling
               </div>
-              <h1 className="text-5xl md:text-[64px] font-bold text-[#0F172A] leading-[1.1] mb-6 tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-[64px] font-bold text-[#0F172A] leading-[1.1] mb-6 tracking-tight">
                 Let’s Start Your <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">MBBS Journey Abroad</span>
               </h1>
@@ -48,12 +54,12 @@ export default function ContactUsPage() {
                 Connect with our expert medical education counselors to get guaranteed admission, visa assistance, and complete end-to-end support for your medical studies overseas.
               </p>
 
-              <div className="flex flex-wrap gap-4 mb-12">
-                <a href="tel:+918826418950" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#2563EB]/20 flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-12">
+                <a href="tel:+918826418950" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#2563EB]/20 flex items-center justify-center gap-2">
                   <Phone size={20} /> Call Now
                 </a>
-                <a href="https://wa.me/918826418950" target="_blank" rel="noreferrer" className="bg-white hover:bg-[#F8FAFC] text-[#25D366] border border-[#E2E8F0] px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-sm flex items-center gap-2">
-                  <MessageCircle size={20} /> WhatsApp Counseling
+                <a href="https://wa.me/918826418950" target="_blank" rel="noreferrer" className="bg-white hover:bg-[#F8FAFC] text-[#25D366] border border-[#E2E8F0] px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-sm flex items-center justify-center gap-2">
+                  <WhatsappIcon size={20} /> WhatsApp
                 </a>
               </div>
 
@@ -79,9 +85,9 @@ export default function ContactUsPage() {
                 
                 <div className="space-y-8">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#2563EB]/10 rounded-2xl flex items-center justify-center shrink-0">
+                    <a href="tel:+918826418950" className="w-12 h-12 bg-[#2563EB]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#2563EB]/20 transition-colors">
                       <Phone size={24} className="text-[#2563EB]" />
-                    </div>
+                    </a>
                     <div>
                       <div className="text-sm font-bold text-[#64748B] mb-1">Phone Number</div>
                       <a href="tel:+918826418950" className="text-lg font-bold text-[#0F172A] hover:text-[#2563EB] transition-colors">+91 88264 18950</a>
@@ -89,9 +95,19 @@ export default function ContactUsPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0">
-                      <Mail size={24} className="text-[#06B6D4]" />
+                    <a href="https://wa.me/918826418950" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-[#25D366]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#25D366]/20 transition-colors">
+                      <WhatsappIcon size={24} className="text-[#25D366]" />
+                    </a>
+                    <div>
+                      <div className="text-sm font-bold text-[#64748B] mb-1">WhatsApp</div>
+                      <a href="https://wa.me/918826418950" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-[#0F172A] hover:text-[#25D366] transition-colors">+91 88264 18950</a>
                     </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <a href="mailto:info@wciec.org" className="w-12 h-12 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#06B6D4]/20 transition-colors">
+                      <Mail size={24} className="text-[#06B6D4]" />
+                    </a>
                     <div>
                       <div className="text-sm font-bold text-[#64748B] mb-1">Email Address</div>
                       <a href="mailto:info@wciec.org" className="text-lg font-bold text-[#0F172A] hover:text-[#06B6D4] transition-colors">info@wciec.org</a>
@@ -99,15 +115,15 @@ export default function ContactUsPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center shrink-0">
+                    <a href="https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-[#0EA5E9]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#0EA5E9]/20 transition-colors">
                       <MapPin size={24} className="text-[#0EA5E9]" />
-                    </div>
+                    </a>
                     <div>
                       <div className="text-sm font-bold text-[#64748B] mb-1">Office Address</div>
-                      <div className="text-base font-semibold text-[#0F172A] leading-relaxed">
-                        Sector 62, Noida,<br />
-                        Delhi NCR, India
-                      </div>
+                      <a href="https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-[#0F172A] leading-relaxed hover:text-[#0EA5E9] transition-colors block">
+                        WCIEC – Shakarpur, New Delhi<br />
+                        Near Laxmi Nagar Metro Station, behind Karim Hotel
+                      </a>
                     </div>
                   </div>
 
@@ -133,12 +149,14 @@ export default function ContactUsPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: "Call Us", desc: "Speak directly with experts", icon: Phone, color: "text-[#2563EB]", bg: "bg-[#2563EB]/10", border: "hover:border-[#2563EB]/30", link: "tel:+918826418950", linkText: "Call Now" },
-              { title: "WhatsApp", desc: "Chat for quick queries", icon: MessageCircle, color: "text-[#25D366]", bg: "bg-[#25D366]/10", border: "hover:border-[#25D366]/30", link: "https://wa.me/918826418950", linkText: "Message" },
+              { title: "WhatsApp", desc: "Chat for quick queries", icon: WhatsappIcon, color: "text-[#25D366]", bg: "bg-[#25D366]/10", border: "hover:border-[#25D366]/30", link: "https://wa.me/918826418950", linkText: "Message" },
               { title: "Email Us", desc: "For detailed information", icon: Mail, color: "text-[#06B6D4]", bg: "bg-[#06B6D4]/10", border: "hover:border-[#06B6D4]/30", link: "mailto:info@wciec.org", linkText: "Send Email" },
-              { title: "Visit Office", desc: "Face-to-face counseling", icon: MapPin, color: "text-[#8B5CF6]", bg: "bg-[#8B5CF6]/10", border: "hover:border-[#8B5CF6]/30", link: "#map", linkText: "Get Directions" }
+              { title: "Visit Office", desc: "Face-to-face counseling", icon: MapPin, color: "text-[#8B5CF6]", bg: "bg-[#8B5CF6]/10", border: "hover:border-[#8B5CF6]/30", link: "https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D", linkText: "Get Directions" }
             ].map((card, i) => (
               <motion.a 
                 href={card.link}
+                target={card.link.startsWith("http") ? "_blank" : undefined}
+                rel={card.link.startsWith("http") ? "noopener noreferrer" : undefined}
                 key={i} 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -170,34 +188,47 @@ export default function ContactUsPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Form */}
-            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[32px] p-8 md:p-12 shadow-sm">
+            <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[32px] p-6 md:p-12 shadow-sm">
               <GlobalApplyForm buttonText="Book Free Counseling" />
             </div>
 
             {/* Map and Info */}
             <div className="space-y-8">
-              <div className="bg-white border border-[#E2E8F0] rounded-[32px] overflow-hidden shadow-sm aspect-[4/3] md:aspect-auto md:h-[360px] relative group">
-                {/* Embedded Map Replacement Image for UI Demo */}
-                <Image src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200" alt="Map Location" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-[#0F172A]/10" />
-                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg">
-                  <h4 className="font-bold text-[#0F172A] text-lg mb-1">Noida Office</h4>
-                  <p className="text-[#64748B] text-sm">Sector 62, Noida, Delhi NCR, India</p>
-                  <a href="#" className="inline-flex items-center gap-2 text-[#2563EB] font-bold text-sm mt-3">
-                    Get Directions <ArrowRight size={16} />
-                  </a>
+              <a 
+                href="https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white border border-[#E2E8F0] rounded-[32px] overflow-hidden shadow-sm aspect-[4/3] md:aspect-auto md:h-[360px] relative group block"
+              >
+                <iframe
+                  src="https://maps.google.com/maps?q=28.6306151,77.2776023&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0 pointer-events-none"
+                />
+                <div className="absolute inset-0 bg-[#0F172A]/10 group-hover:bg-[#0F172A]/20 transition-colors" />
+                
+                {/* Optional overlay text/icon that shows on hover to indicate it's clickable */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="bg-white/90 backdrop-blur text-[#0F172A] font-bold px-6 py-3 rounded-full shadow-xl flex items-center gap-2">
+                    Open in Google Maps <ArrowRight size={18} />
+                  </span>
                 </div>
-              </div>
+              </a>
 
-              <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden flex items-center justify-between">
+              <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] rounded-[32px] p-6 sm:p-8 md:p-10 text-white relative overflow-hidden flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-[#0EA5E9]/20 rounded-full blur-3xl" />
                 <div className="relative z-10">
                   <h4 className="text-xl font-bold mb-2">Need Immediate Help?</h4>
                   <p className="text-white/70 text-sm max-w-xs">Drop your number and our expert counselor will call you within 5 minutes.</p>
                 </div>
-                <button className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg shrink-0 relative z-10 hidden sm:block">
+                <a href="tel:+918826418950" className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg shrink-0 w-full sm:w-auto text-center relative z-10">
                   Request Callback
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -220,7 +251,7 @@ export default function ContactUsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white border border-[#E2E8F0] p-8 rounded-[24px] text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
+                className="bg-white border border-[#E2E8F0] p-6 sm:p-8 rounded-[24px] text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all"
               >
                 <div className="w-14 h-14 bg-[#2563EB]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <stat.icon size={28} className="text-[#2563EB]" />
@@ -286,18 +317,18 @@ export default function ContactUsPage() {
       {/* 6️⃣ FINAL CTA SECTION */}
       <section className="py-24 bg-[#F8FAFC]">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="bg-gradient-to-r from-[#2563EB] to-[#06B6D4] rounded-[40px] p-12 lg:p-16 text-center lg:text-left text-white relative overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="bg-gradient-to-r from-[#2563EB] to-[#06B6D4] rounded-[32px] md:rounded-[40px] p-8 md:p-12 lg:p-16 text-center lg:text-left text-white relative overflow-hidden shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Still Confused About MBBS Abroad?</h2>
               <p className="text-white/90 text-lg mb-10 leading-relaxed">
                 Don't make a decision alone. Talk to our senior educational counselors, get a free profile evaluation, and find the perfect medical university matching your budget and NEET score.
               </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                <a href="#map" className="bg-white text-[#2563EB] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 shadow-xl transition-all">
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4">
+                <a href="#map" className="bg-white text-[#2563EB] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 shadow-xl transition-all text-center">
                   Schedule Free Counseling
                 </a>
-                <a href="tel:+918826418950" className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 backdrop-blur-md transition-all flex items-center gap-2">
+                <a href="tel:+918826418950" className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2">
                   <Phone size={20} /> Call Now
                 </a>
               </div>
