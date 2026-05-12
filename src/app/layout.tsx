@@ -23,6 +23,8 @@ export const metadata: Metadata = {
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ApplyModalProvider } from "@/context/ApplyModalContext";
+import { GlobalApplyModal } from "@/components/modals/GlobalApplyModal";
 
 export default function RootLayout({
   children,
@@ -35,13 +37,16 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-inter">
-        <OrganizationSchema />
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <FloatingCTAs />
+        <ApplyModalProvider>
+          <OrganizationSchema />
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <FloatingCTAs />
+          <GlobalApplyModal />
+        </ApplyModalProvider>
       </body>
     </html>
   );

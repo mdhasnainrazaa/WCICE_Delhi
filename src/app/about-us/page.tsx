@@ -41,6 +41,7 @@ import {
   ZoomOut,
   Printer,
 } from "lucide-react";
+import { useApplyModal } from "@/context/ApplyModalContext";
 
 // ─── SEO Meta (inject via Head in a layout or _app) ─────────────────────────
 export function AboutPageSEO() {
@@ -249,6 +250,7 @@ function SectionHeading({ eyebrow, title, center = false }: { eyebrow: string; t
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function AboutPage() {
+  const { openModal } = useApplyModal();
   return (
     <>
       <AboutPageSEO />
@@ -318,13 +320,13 @@ export default function AboutPage() {
                   For over 15 years, WCIEC has guided aspiring Indian medical students toward globally recognized MBBS degrees — with transparency, expertise, and end-to-end support.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a
-                    href="/apply"
+                  <button
+                    onClick={openModal}
                     className="inline-flex items-center gap-2 bg-[#1a4db8] hover:bg-[#1440a0] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-[#1a4db8]/30 text-sm"
                     aria-label="Apply for MBBS abroad with WCIEC"
                   >
                     Apply Now <ArrowRight size={16} />
-                  </a>
+                  </button>
                   <div className="flex bg-white/10 backdrop-blur-sm border border-white/25 rounded-xl overflow-hidden">
                     <a
                       href="/Brouchers/WCIEC DELHI.pdf"
@@ -936,13 +938,13 @@ export default function AboutPage() {
               Join 5000+ successful WCIEC alumni. NMC &amp; WHO recognized universities. End-to-end support from admission to FMGE clearing.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="/apply"
+              <button
+                onClick={openModal}
                 className="inline-flex items-center gap-2 bg-[#1a4db8] hover:bg-[#1440a0] text-white font-bold px-10 py-4 rounded-xl transition-all shadow-lg shadow-[#1a4db8]/30 text-sm"
                 aria-label="Apply now for MBBS abroad with WCIEC"
               >
                 Apply Now <ArrowRight size={16} />
-              </a>
+              </button>
               <a
                 href="tel:+918376965627"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/20 font-bold px-10 py-4 rounded-xl transition-all text-sm"

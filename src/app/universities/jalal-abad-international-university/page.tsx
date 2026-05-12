@@ -206,81 +206,15 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 
 // ─── MODAL COMPONENT ─────────────────────────────────────────────────────────
 
-const ApplyModal = ({ isOpen, onClose, universityName }: { isOpen: boolean; onClose: () => void; universityName: string }) => {
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="absolute inset-0 bg-[#0B1F33]/80 backdrop-blur-sm"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative bg-white rounded-[2.5rem] w-full max-w-lg overflow-hidden shadow-2xl"
-          >
-            <div className="bg-[#1a4db8] p-8 text-white relative">
-              <button 
-                onClick={onClose}
-                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-              >
-                <Minus className="rotate-45" />
-              </button>
-              <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60 mb-2">Admission 2026</div>
-              <h3 className="text-2xl font-black">Apply for {universityName}</h3>
-            </div>
-            
-            <form className="p-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-1">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Full Name</label>
-                <input type="text" placeholder="Enter your full name" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 focus:ring-2 focus:ring-[#1a4db8] outline-none transition-all font-bold text-[#0B1F33]" />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Phone Number</label>
-                  <input type="tel" placeholder="+91" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 focus:ring-2 focus:ring-[#1a4db8] outline-none transition-all font-bold text-[#0B1F33]" />
-                </div>
-                <div className="space-y-1">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Email Address</label>
-                  <input type="email" placeholder="example@gmail.com" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 focus:ring-2 focus:ring-[#1a4db8] outline-none transition-all font-bold text-[#0B1F33]" />
-                </div>
-              </div>
-              <div className="space-y-1">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Current City</label>
-                <input type="text" placeholder="Where are you from?" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-4 focus:ring-2 focus:ring-[#1a4db8] outline-none transition-all font-bold text-[#0B1F33]" />
-              </div>
-              
-              <div className="pt-4">
-                <button className="w-full bg-[#e2a613] text-white py-5 rounded-2xl font-black text-sm uppercase tracking-widest shadow-xl shadow-[#e2a613]/20 hover:scale-[1.02] transition-all">
-                  Submit Application
-                </button>
-                <p className="text-center text-[10px] text-gray-400 mt-4 font-bold">By clicking submit, you agree to our privacy policy and terms.</p>
-              </div>
-            </form>
-          </motion.div>
-        </div>
-      )}
-    </AnimatePresence>
-  );
-};
+import { useApplyModal } from "@/context/ApplyModalContext";
 
 // ─── PAGE COMPONENT ──────────────────────────────────────────────────────────
 
 export default function UniversityDetailPage() {
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+  const { openModal } = useApplyModal();
 
   return (
     <main className="bg-white min-h-screen">
-      <ApplyModal 
-        isOpen={isApplyModalOpen} 
-        onClose={() => setIsApplyModalOpen(false)} 
-        universityName="JAIU Kyrgyzstan"
-      />
 
       {/* ── HERO SECTION ── */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#0B1F33]">
@@ -333,7 +267,7 @@ export default function UniversityDetailPage() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={() => setIsApplyModalOpen(true)}
+                  onClick={openModal}
                   className="bg-[#e2a613] hover:bg-[#c99411] text-white px-8 py-4 md:py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-xl shadow-[#e2a613]/20 flex items-center justify-center gap-3 w-full sm:w-auto"
                 >
                   Apply Now <ArrowRight size={18} />
@@ -669,7 +603,7 @@ export default function UniversityDetailPage() {
                   <h3 className="text-3xl font-black mb-6 leading-tight">Need Expert <br /> Guidance?</h3>
                   <p className="text-white/60 text-sm font-medium mb-10">Our experts can check your eligibility and guide you through the process in 5 minutes.</p>
                   <button 
-                    onClick={() => setIsApplyModalOpen(true)}
+                    onClick={openModal}
                     className="w-full bg-white text-[#0B1F33] py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#e2a613] hover:text-white transition-all shadow-xl"
                   >
                     Check Eligibility Now
@@ -705,7 +639,7 @@ export default function UniversityDetailPage() {
                 We reward academic excellence. Merit-based scholarships are available for high-achieving students to help make their medical education more affordable and rewarding.
               </p>
               <button 
-                onClick={() => setIsApplyModalOpen(true)}
+                onClick={openModal}
                 className="text-[#e2a613] font-black uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all"
               >
                 Learn About Eligibility <ArrowRight size={16} />
@@ -784,7 +718,7 @@ export default function UniversityDetailPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
              <button 
-                onClick={() => setIsApplyModalOpen(true)}
+                onClick={openModal}
                 className="bg-[#e2a613] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest shadow-2xl shadow-[#e2a613]/30 hover:scale-105 transition-transform"
              >
                Apply Now
@@ -803,7 +737,7 @@ export default function UniversityDetailPage() {
       <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:hidden">
          <div className="bg-white/80 backdrop-blur-xl border border-white/20 rounded-2xl p-4 flex gap-3 shadow-2xl">
             <button 
-              onClick={() => setIsApplyModalOpen(true)}
+              onClick={openModal}
               className="flex-1 bg-[#1a4db8] text-white font-black text-xs uppercase tracking-widest py-4 rounded-xl"
             >
               Apply Now

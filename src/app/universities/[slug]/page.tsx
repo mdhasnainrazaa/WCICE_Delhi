@@ -19,6 +19,7 @@ import {
   FileText,
   ChevronRight
 } from "lucide-react";
+import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 
 interface Props {
   params: { slug: string };
@@ -148,11 +149,9 @@ export default function UniversityPage({ params }: Props) {
             <GlassCard className="sticky top-28 bg-white border-primary/10">
               <h3 className="text-2xl mb-2">Apply Now</h3>
               <p className="text-gray-500 text-sm mb-6">Secure your seat for 2026 batch today.</p>
-              <form className="space-y-4">
-                <input className="w-full p-3 rounded-xl border border-gray-200" placeholder="Full Name" />
-                <input className="w-full p-3 rounded-xl border border-gray-200" placeholder="Phone Number" />
-                <button className="btn-primary w-full">Submit Interest</button>
-              </form>
+              <div className="pt-2">
+                <GlobalApplyForm buttonText="Submit Application" />
+              </div>
               <div className="mt-6 pt-6 border-t border-gray-100 text-center">
                 <p className="text-xs text-gray-400 mb-2 uppercase font-bold tracking-widest">Or Instant Support</p>
                 <button className="flex items-center justify-center gap-2 w-full text-accent font-bold hover:gap-3 transition-all">

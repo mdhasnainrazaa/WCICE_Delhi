@@ -63,9 +63,6 @@ export function UniversityGrid() {
               Explore our hand-picked partner universities across the globe. We only partner with NMC/WHO recognized institutions.
             </p>
           </div>
-          <Link href="/universities" className="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
-            View All Universities <ArrowRight size={20} />
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -115,9 +112,9 @@ export function UniversityGrid() {
                     </div>
                     <Link 
                       href={`/universities/${uni.slug}`}
-                      className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all"
+                      className="px-4 py-2 bg-primary/10 rounded-full flex items-center justify-center text-primary text-sm font-bold group-hover:bg-primary group-hover:text-white transition-all whitespace-nowrap"
                     >
-                      <ArrowRight size={18} />
+                      View Details
                     </Link>
                   </div>
                 </div>

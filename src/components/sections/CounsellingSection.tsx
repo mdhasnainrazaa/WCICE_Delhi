@@ -22,8 +22,10 @@ import {
   FileText,
   Utensils,
   Headset,
-  BookOpen
+  BookOpen,
+  Building2
 } from "lucide-react";
+import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -37,7 +39,7 @@ const stats = [
 const smallFeatures = [
   { label: "Free Expert Counselling", icon: MessageCircle },
   { label: "Detailed Fee Structure", icon: FileText },
-  { label: "University & Hostel Information", icon: BookOpen },
+  { label: "University & Hostel Information", icon: Building2 },
   { label: "End-to-End Admission Support", icon: Headset },
 ];
 
@@ -77,40 +79,6 @@ const trustBadges = [
 ];
 
 export function CounsellingSection() {
-  const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    neetStatus: "",
-    university: "",
-    email: "",
-    city: ""
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validation
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(formData.phone)) {
-      alert("Please enter a valid 10-digit phone number.");
-      return;
-    }
-
-    setLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    const message = `Hi WCIEC, I want free MBBS counselling. My name is ${formData.name}, phone ${formData.phone}, NEET status ${formData.neetStatus}, preferred university ${formData.university}, City: ${formData.city}.`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/918826418950?text=${encodedMessage}`, "_blank");
-    setLoading(false);
-  };
-
   return (
     <section className="relative py-6 overflow-hidden" id="counselling">
       {/* Background with University Image and Overlay */}
@@ -135,12 +103,28 @@ export function CounsellingSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1F33] leading-[1.1] mb-4 font-poppins">
-                Your Dream of Becoming a Doctor <span className="text-[#00B4D8]">Starts Here!</span>
+                Your Dream of Becoming Doctor <span className="text-[#00B4D8]">Starts Here!</span>
               </h2>
 
-              <p className="text-gray-600 font-medium leading-relaxed max-w-lg text-sm">
+              <p className="text-gray-600 font-medium leading-relaxed max-w-lg text-sm mb-8">
                 WCIEC Organization helps students secure admission in top international medical universities with transparency, expert support, and complete guidance.
               </p>
+
+              {/* Added Features Card based on Image Reference */}
+              <div className="bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 max-w-xl">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                  {smallFeatures.map((feature, idx) => (
+                    <div key={idx} className={`flex flex-col items-center text-center px-1 ${idx > 1 ? 'pt-4 md:pt-0' : ''}`}>
+                      <div className="w-10 h-10 rounded-full bg-[#00B4D8]/10 flex items-center justify-center text-[#00B4D8] mb-3">
+                        <feature.icon size={18} strokeWidth={2.5} />
+                      </div>
+                      <span className="text-[11px] font-bold text-navy leading-snug">
+                        {feature.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
 
@@ -169,123 +153,9 @@ export function CounsellingSection() {
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <div className="grid grid-cols-1 gap-3">
-                    <div className="relative">
-                      <input 
-                        type="text" 
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Full Name"
-                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-medical/20 focus:border-medical transition-all text-xs text-navy"
-                      />
-                      <User className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
-                    </div>
-                    
-                    <div className="flex items-center border border-gray-200 rounded-lg focus-within:ring-2 focus-within:ring-medical/20 focus-within:border-medical transition-all">
-                      <div className="flex items-center gap-1 px-3 border-r border-gray-100 bg-gray-50/50 rounded-l-lg py-2 cursor-pointer">
-                        <span className="text-xs">🇮🇳</span>
-                        <span className="text-navy font-bold text-[10px]">+91</span>
-                      </div>
-                      <div className="relative flex-1">
-                        <input 
-                          type="tel" 
-                          name="phone"
-                          required
-                          maxLength={10}
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          placeholder="Phone Number"
-                          className="w-full bg-transparent px-4 py-2 focus:outline-none text-xs text-navy"
-                        />
-                        <Phone className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="relative">
-                      <select 
-                        name="neetStatus"
-                        required
-                        value={formData.neetStatus}
-                        onChange={handleInputChange}
-                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-medical/20 focus:border-medical transition-all text-xs text-navy appearance-none"
-                      >
-                        <option value="">NEET Status</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                        <option value="Appearing">Appearing</option>
-                      </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 pointer-events-none" size={14} />
-                    </div>
-                    <div className="relative">
-                      <select 
-                        name="university"
-                        required
-                        value={formData.university}
-                        onChange={handleInputChange}
-                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-medical/20 focus:border-medical transition-all text-xs text-navy appearance-none"
-                      >
-                        <option value="">Preferred Univ.</option>
-                        <option value="Osh State University">Osh State</option>
-                        <option value="Jalal-Abad State University">JASU</option>
-                        <option value="Jalal-Abad International University">JAIU</option>
-                        <option value="Osh International Medical University">Osh Int.</option>
-                        <option value="Central Asian International Medical University">CAIMU</option>
-                      </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 pointer-events-none" size={14} />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-3">
-                    <div className="relative">
-                      <input 
-                        type="email" 
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Email Address"
-                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-medical/20 focus:border-medical transition-all text-xs text-navy"
-                      />
-                      <Mail className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
-                    </div>
-                    <div className="relative">
-                      <input 
-                        type="text" 
-                        name="city"
-                        required
-                        value={formData.city}
-                        onChange={handleInputChange}
-                        placeholder="City"
-                        className="w-full bg-white border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-medical/20 focus:border-medical transition-all text-xs text-navy"
-                      />
-                      <MapPin className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300" size={14} />
-                    </div>
-                  </div>
-
-                  <button 
-                    type="submit"
-                    disabled={loading}
-                    className={cn(
-                      "w-full bg-gradient-to-r from-[#0047FF] to-[#00D1FF] text-white font-bold py-2.5 rounded-lg text-sm transition-all shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2 group",
-                      loading ? "opacity-70 cursor-not-allowed" : "hover:scale-[1.01] active:scale-95"
-                    )}
-                  >
-                    {loading ? "Processing..." : (
-                      <>
-                        <Send size={16} className="-rotate-12 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> Get Free Counselling
-                      </>
-                    )}
-                  </button>
-                  
-                  <div className="flex items-center justify-center gap-2 text-[8px] text-gray-400 font-bold uppercase tracking-wider">
-                    <Lock size={10} /> Privacy Guaranteed
-                  </div>
-                </form>
+                <div className="pt-2">
+                  <GlobalApplyForm buttonText="Get Free Counselling" />
+                </div>
 
                 {/* WhatsApp Mini Section */}
                 <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">

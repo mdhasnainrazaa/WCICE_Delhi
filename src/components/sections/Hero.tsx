@@ -16,8 +16,7 @@ import {
   Clock,
   ReceiptText,
   FileCheck,
-  Utensils,
-  Eye
+  Utensils
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -37,8 +36,11 @@ const trustBadges = [
   { icon: ShieldCheck, label: "Visa & Hostel Support" },
 ];
 
+import { useApplyModal } from "@/context/ApplyModalContext";
+
 export function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+  const { openModal } = useApplyModal();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -159,31 +161,15 @@ export function Hero() {
 
             {/* CTA Buttons - Aligned in a single line */}
             <div className="flex flex-row flex-wrap lg:flex-nowrap items-center gap-4 pt-6">
-              <button className="bg-[#00B4D8] hover:bg-[#0096b4] text-white px-6 py-4 rounded-lg font-bold text-base md:text-lg flex items-center gap-2 transition-all shadow-lg shadow-[#00B4D8]/20 whitespace-nowrap">
-                Apply Now <ArrowRight size={18} />
+              <button onClick={openModal} className="bg-[#00B4D8] hover:bg-[#0096b4] text-white px-5 py-3 rounded-lg font-bold text-sm md:text-base flex items-center gap-2 transition-all shadow-lg shadow-[#00B4D8]/20 whitespace-nowrap">
+                Apply Now <ArrowRight size={16} />
               </button>
-              <div className="flex bg-white/10 backdrop-blur-md border border-white/30 rounded-lg overflow-hidden group/brochure">
-                <a 
-                  href="/Brouchers/WCIEC DELHI.pdf"
-                  target="_blank"
-                  className="px-4 py-4 text-white font-bold text-sm md:text-base flex items-center gap-2 hover:bg-white/10 transition-all border-r border-white/20"
-                >
-                  <Eye size={16} /> View
-                </a>
-                <a 
-                  href="/Brouchers/WCIEC DELHI.pdf"
-                  download
-                  className="px-4 py-4 text-white font-bold text-sm md:text-base flex items-center gap-2 hover:bg-white/10 transition-all"
-                >
-                  <Download size={16} /> Download Brochure
-                </a>
-              </div>
               <a 
-                href="https://wa.me/918826418950" 
-                target="_blank"
-                className="bg-[#22C55E] hover:bg-[#1eb054] text-white px-6 py-4 rounded-lg font-bold text-base md:text-lg flex items-center gap-2 transition-all shadow-lg shadow-green-500/20 whitespace-nowrap"
+                href="/Brouchers/WCIEC DELHI.pdf"
+                download
+                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-5 py-3 rounded-lg font-bold text-sm md:text-base flex items-center gap-2 transition-all whitespace-nowrap"
               >
-                <MessageCircle size={18} /> WhatsApp Counsellor
+                <Download size={16} /> Download Brochure
               </a>
             </div>
 
