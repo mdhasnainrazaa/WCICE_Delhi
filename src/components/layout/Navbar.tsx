@@ -21,8 +21,9 @@ const navLinks = [
       { name: "Osh International Medical University", href: "/universities/osh-international-medical-university" },
     ]
   },
-  { name: "Admission", href: "/#process" },
-  { name: "Blog", href: "/blog" },
+  { name: "Admission", href: "/admission" },
+  // { name: "Blog", href: "/blog" },
+  { name: "Privacy Policy", href: "/legal" },
   { name: "Contact Us", href: "/contact-us" },
 ];
 
@@ -151,7 +152,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white mt-4 rounded-2xl shadow-2xl overflow-hidden"
+            className="md:hidden bg-white mt-4 rounded-2xl shadow-2xl overflow-y-auto max-h-[80vh]"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (

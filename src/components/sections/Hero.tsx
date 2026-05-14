@@ -76,7 +76,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen lg:min-h-[850px] flex items-center pt-12 lg:pt-20 pb-16 overflow-hidden">
+    <section className="relative min-h-[85vh] lg:min-h-[750px] flex items-center pt-8 lg:pt-16 pb-12 overflow-hidden">
 
       {/* Background Layer: Solid Navy to prevent white flash */}
       <div className="absolute inset-0 bg-[#0B1F33] -z-30" />
@@ -108,7 +108,7 @@ export function Hero() {
 
 
 
-      <div className="max-w-7xl mx-auto px-4 w-full relative z-10 py-20 lg:py-32">
+      <div className="max-w-7xl mx-auto px-4 w-full relative z-10 py-16 lg:py-24">
         {/* Content Section - Left Aligned to match image layout */}
         <div className="max-w-3xl">
           <motion.div
@@ -192,24 +192,7 @@ export function Hero() {
         ))}
       </div>
 
-      {/* Sticky Bottom CTAs for Mobile Conversion */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden grid grid-cols-3 border-t border-gray-100 shadow-2xl">
-        <a href="tel:+918826418950" className="bg-white text-navy flex flex-col items-center justify-center py-3 gap-1 border-r border-gray-50">
-          <Phone size={20} />
-          <span className="text-[10px] font-bold uppercase">Call</span>
-        </a>
-        <a href="https://wa.me/918826418950" className="bg-[#22C55E] text-white flex flex-col items-center justify-center py-3 gap-1">
-          <MessageCircle size={20} />
-          <span className="text-[10px] font-bold uppercase">WhatsApp</span>
-        </a>
-        <button 
-          onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
-          className="bg-[#00B4D8] text-white flex flex-col items-center justify-center py-3 gap-1"
-        >
-          <GraduationCap size={20} />
-          <span className="text-[10px] font-bold uppercase">Apply</span>
-        </button>
-      </div>
+
     </section>
   );
 }

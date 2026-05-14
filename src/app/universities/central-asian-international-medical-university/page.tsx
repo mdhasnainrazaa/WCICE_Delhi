@@ -12,6 +12,7 @@ import {
   BookMarked, Calendar, CheckSquare, Target, Mail, Activity, Eye,
   Landmark, BookOpenCheck, Stethoscope as StethoscopeIcon
 } from "lucide-react";
+import { PromDown } from "@/components/ui/PromDown";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 
 // ─── COMPONENTS ─────────────────────────────────────────────────────────────
@@ -368,34 +369,35 @@ export default function CAIMUDetailPage() {
       {/* 13️⃣ FAQ SECTION */}
       <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6">
-          <SectionHeading subtitle="Got Questions?" title="Frequently Asked Questions" center />
-          <div className="space-y-4 mt-12" itemScope itemType="https://schema.org/FAQPage">
-            {[
-              { q: "Where is Central Asian International Medical University located?", a: "CAIMU is located in Jalal-Abad, Kyrgyzstan." },
-              { q: "When was CAIMU established?", a: "CAIMU was established in 2016." },
-              { q: "Does CAIMU offer MBBS for international students?", a: "Yes, CAIMU offers MD/MBBS education for local and international students." },
-              { q: "Is hostel facility available at CAIMU?", a: "Yes, CAIMU provides safe hostel and mess facilities for students." },
-              { q: "Does CAIMU provide FMGE/NExT coaching?", a: "Yes, CAIMU provides coaching support for Indian students preparing for FMGE/NExT." },
-              { q: "What is the duration of MBBS at CAIMU?", a: "The MD/MBBS program duration is 5 years." }
-            ].map((item, i) => {
-              const [isOpen, setIsOpen] = useState(false);
-              return (
-                <div key={i} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-sm" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                  <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left">
-                    <span className="text-lg font-bold text-[#0F172A]" itemProp="name">{item.q}</span>
-                    <ChevronDown size={24} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
-                  </button>
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                        <div className="px-6 pb-6 text-[#64748B]" itemProp="text">{item.a}</div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
+          <PromDown title="Frequently Asked Questions" subtitle="Got Questions?" defaultOpen={false}>
+            <div className="space-y-4 mt-6" itemScope itemType="https://schema.org/FAQPage">
+              {[
+                { q: "Where is Central Asian International Medical University located?", a: "CAIMU is located in Jalal-Abad, Kyrgyzstan." },
+                { q: "When was CAIMU established?", a: "CAIMU was established in 2016." },
+                { q: "Does CAIMU offer MBBS for international students?", a: "Yes, CAIMU offers MD/MBBS education for local and international students." },
+                { q: "Is hostel facility available at CAIMU?", a: "Yes, CAIMU provides safe hostel and mess facilities for students." },
+                { q: "Does CAIMU provide FMGE/NExT coaching?", a: "Yes, CAIMU provides coaching support for Indian students preparing for FMGE/NExT." },
+                { q: "What is the duration of MBBS at CAIMU?", a: "The MD/MBBS program duration is 5 years." }
+              ].map((item, i) => {
+                const [isOpen, setIsOpen] = useState(false);
+                return (
+                  <div key={i} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-sm" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left">
+                      <span className="text-lg font-bold text-[#0F172A]" itemProp="name">{item.q}</span>
+                      <ChevronDown size={24} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                          <div className="px-6 pb-6 text-[#64748B]" itemProp="text">{item.a}</div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          </PromDown>
         </div>
       </section>
 
@@ -413,15 +415,15 @@ export default function CAIMUDetailPage() {
                 <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transition-all">
                   Apply Now
                 </button>
-                <a href="tel:+917075001500" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-md transition-all flex items-center gap-2">
+                <a href="tel:+918826418950" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-md transition-all flex items-center gap-2">
                   <Phone size={20} /> Talk to Counselor
                 </a>
               </div>
               <div className="space-y-4">
                 <h4 className="font-bold text-[#FACC15] uppercase tracking-wider text-sm">Contact Us</h4>
-                <div className="flex items-center gap-3 text-white/80"><Phone size={20} className="text-[#F97316]" /> +91 7075001500, +91 6305570580</div>
-                <div className="flex items-center gap-3 text-white/80"><Mail size={20} className="text-[#F97316]" /> info@mbbsadmissioncenter.com</div>
-                <div className="flex items-center gap-3 text-white/80"><Globe2 size={20} className="text-[#F97316]" /> mbbsadmissioncenter.com/contact-us</div>
+                <div className="flex items-center gap-3 text-white/80"><Phone size={20} className="text-[#F97316]" /> +91 85868 73357, +91 99116 35435</div>
+                <div className="flex items-center gap-3 text-white/80"><Mail size={20} className="text-[#F97316]" /> info@wciec.org</div>
+                <div className="flex items-center gap-3 text-white/80"><Globe2 size={20} className="text-[#F97316]" /> wciecorganization.com/contact-us</div>
               </div>
             </div>
 
@@ -435,7 +437,7 @@ export default function CAIMUDetailPage() {
       </section>
 
       {/* FLOATING ACTION BUTTONS */}
-      <a href="https://wa.me/917075001500" target="_blank" rel="noreferrer" className="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
+      <a href="https://wa.me/918826418950" target="_blank" rel="noreferrer" className="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
         <MessageCircle size={28} />
       </a>
 
@@ -444,7 +446,7 @@ export default function CAIMUDetailPage() {
         <button onClick={openModal} className="flex-1 bg-[#F97316] text-white font-bold py-3 rounded-xl shadow-lg">
           Apply Now
         </button>
-        <a href="tel:+917075001500" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#F97316]">
+        <a href="tel:+918586873357" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#F97316]">
           <Phone size={20} />
         </a>
       </div>

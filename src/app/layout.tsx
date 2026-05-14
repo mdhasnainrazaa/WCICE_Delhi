@@ -16,9 +16,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "WCIEC Organization | Trusted Global MBBS Admission Partner",
-  description: "Secure your international MBBS degree with 15+ years of excellence. Transparent fee structure, ethical counselling, and 5000+ successful students.",
-  keywords: "MBBS Abroad, MBBS in Kyrgyzstan, Study MBBS Abroad, MBBS Admission 2026, Osh State University MBBS Fees",
+  title: "Study Abroad & MBBS Abroad Consultant in India | WCIEC Organization",
+  description: "WCIEC is the best study abroad consultant in India for Indian students. Secure your international MBBS degree with 15+ years of excellence. Transparent fees & ethical counselling.",
+  keywords: "study abroad consultant in India, study abroad consultants for Indian students, overseas education consultant, foreign education consultant, education consultant for abroad studies, best study abroad consultant in India, study abroad counselling India, international education consultant India, MBBS abroad consultant in India, MBBS abroad consultants for Indian students, MBBS abroad admission consultant, MBBS abroad counselling, MBBS abroad admission guidance",
 };
 
 import { Navbar } from "@/components/layout/Navbar";

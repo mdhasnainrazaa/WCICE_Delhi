@@ -31,6 +31,7 @@ import {
   Plus,
   Minus
 } from "lucide-react";
+import { PromDown } from "@/components/ui/PromDown";
 
 // ─── COMPONENTS ─────────────────────────────────────────────────────────────
 
@@ -460,43 +461,37 @@ export default function UniversityDetailPage() {
       </section>
 
       {/* ── FEE STRUCTURE ── */}
-      <section className="py-16 bg-[#0B1F33] text-white relative overflow-hidden">
-        {/* Abstract background glow for better visibility of white text */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1a4db8]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-        
+      <section className="py-16 bg-[#0B1F33] text-white relative overflow-hidden" id="fee-structure">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-10">
-             <span className="inline-block text-[10px] font-black uppercase tracking-[0.2em] text-[#e2a613] bg-white/5 px-3 py-1 rounded-full mb-3">Investment in Future</span>
-             <h2 className="text-3xl md:text-5xl font-black mb-4">Fee Structure 2026</h2>
-             <p className="text-white/50 text-sm max-w-xl mx-auto font-medium">Complete breakdown of tuition, mess, and hostel fees for the 6-year MBBS program.</p>
-          </div>
+          <PromDown title="Fee Structure 2026" subtitle="Investment in Future" defaultOpen={false} className="bg-white/5 border-white/10 text-white shadow-none">
+            <div className="text-center mb-8">
+              <p className="text-white/50 text-sm font-medium">Complete breakdown of tuition, mess, and hostel fees for the 6-year MBBS program.</p>
+            </div>
 
-          <FeeTable />
+            <FeeTable />
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { label: "Total Program (USD)", val: "$33,350", color: "#60a5fa" },
-              { label: "Total Program (INR)", val: "₹30.01 Lacs", color: "#94a3b8" },
-              { label: "One-time Payment", val: "₹24.50 Lacs", color: "#10b981", highlight: true },
-              { label: "Conversion Rate", val: "1 USD = ₹90", color: "#94a3b8" },
-            ].map((item, i) => (
-              <div key={i} className={`bg-white/5 border rounded-2xl p-5 text-center transition-all ${item.highlight ? 'border-[#10b981] bg-[#10b981]/10 scale-105 shadow-lg shadow-[#10b981]/20' : 'border-white/10'}`}>
-                <div className="text-[9px] font-black uppercase tracking-[0.2em] text-white/40 mb-1">{item.label}</div>
-                <div className="text-2xl font-black" style={{ color: item.color }}>{item.val}</div>
-                {item.highlight && <div className="text-[8px] font-black uppercase text-[#10b981] mt-2 tracking-widest">Special Discounted Package</div>}
-              </div>
-            ))}
-          </div>
+            <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-3">
+              {[
+                { label: "Total (USD)", val: "$33,350", color: "#60a5fa" },
+                { label: "Total (INR)", val: "₹30.01 Lacs", color: "#94a3b8" },
+                { label: "One-time", val: "₹24.50 Lacs", color: "#10b981", highlight: true },
+                { label: "1 USD =", val: "₹90", color: "#94a3b8" },
+              ].map((item, i) => (
+                <div key={i} className={`bg-white/5 border rounded-xl p-4 text-center transition-all ${item.highlight ? 'border-[#10b981] bg-[#10b981]/10' : 'border-white/10'}`}>
+                  <div className="text-[8px] font-black uppercase tracking-[0.2em] text-white/40 mb-1">{item.label}</div>
+                  <div className="text-lg font-black" style={{ color: item.color }}>{item.val}</div>
+                </div>
+              ))}
+            </div>
 
-          <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-3xl">
-             <h4 className="text-[10px] font-black uppercase tracking-widest text-[#e2a613] mb-3">Quick Notes:</h4>
-             <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2 text-[11px] text-white/50 font-bold">
-               <li className="flex items-center gap-2 text-[#10b981]"><CheckCircle2 size={12} /> One-time Payment Package: ₹24,50,000 only</li>
-               <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#e2a613]" /> Mess & Hostel optional from 3rd year</li>
-               <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#e2a613]" /> Registration & Admission fee in 1st year</li>
-               <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#e2a613]" /> Fees may vary with exchange rate</li>
-             </ul>
-          </div>
+            <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <h4 className="text-[9px] font-black uppercase tracking-widest text-[#e2a613] mb-3 text-center">Quick Notes</h4>
+              <ul className="grid md:grid-cols-2 gap-y-2 text-[10px] text-white/50 font-bold">
+                <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#10b981]" /> One-time Payment: ₹24.50 Lacs</li>
+                <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#e2a613]" /> Fees vary with exchange rate</li>
+              </ul>
+            </div>
+          </PromDown>
         </div>
       </section>
 
@@ -528,89 +523,49 @@ export default function UniversityDetailPage() {
       </section>
 
       {/* ── ADMISSION PROCESS ── */}
-      <section className="py-24 bg-[#f8f9fc]">
+      <section className="py-24 bg-[#f8f9fc]" id="admission">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionHeading eyebrow="Enroll Today" title="Admission Process & Eligibility" center />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {[
-              { step: "01", title: "Apply Online", desc: "Fill the admission application form on our website.", icon: MessageCircle },
-              { step: "02", title: "Submit Documents", desc: "Upload academic certificates, passport, and NEET scorecard.", icon: CheckCircle2 },
-              { step: "03", title: "Admission Letter", desc: "Receive official offer letter from the university.", icon: GraduationCap },
-              { step: "04", title: "Visa Processing", desc: "We handle your visa and documentation work professionally.", icon: Globe2 },
-              { step: "05", title: "Fee Payment", desc: "Confirm your seat by paying the admission fee.", icon: Trophy },
-              { step: "06", title: "Travel to Kyrgyzstan", desc: "Fly with our group and start your medical journey.", icon: Bus },
-            ].map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group relative overflow-hidden"
-              >
-                <div className="absolute -top-4 -right-4 text-8xl font-black text-gray-50 group-hover:text-[#1a4db8]/5 transition-colors leading-none">
-                  {s.step}
-                </div>
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-[#1a4db8]/10 text-[#1a4db8] flex items-center justify-center mb-6 group-hover:bg-[#1a4db8] group-hover:text-white transition-colors">
-                    <s.icon size={28} />
+          <PromDown title="Admission Process & Eligibility" subtitle="Enroll Today" defaultOpen={false}>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+              {[
+                { title: "Apply Online", icon: MessageCircle },
+                { title: "Submit Docs", icon: CheckCircle2 },
+                { title: "Offer Letter", icon: GraduationCap },
+                { title: "Visa Process", icon: Globe2 },
+                { title: "Fee Payment", icon: Trophy },
+                { title: "Travel", icon: Bus },
+              ].map((s, i) => (
+                <div key={i} className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm text-center group">
+                  <div className="w-10 h-10 rounded-xl bg-[#1a4db8]/10 text-[#1a4db8] flex items-center justify-center mx-auto mb-3 group-hover:bg-[#1a4db8] group-hover:text-white transition-colors">
+                    <s.icon size={20} />
                   </div>
-                  <h4 className="text-xl font-black text-[#0B1F33] mb-3">{s.title}</h4>
-                  <p className="text-gray-500 text-sm font-medium leading-relaxed">{s.desc}</p>
+                  <h4 className="text-[10px] font-black text-[#0B1F33]">{s.title}</h4>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-            <div className="lg:col-span-8 bg-white rounded-[3rem] p-10 md:p-16 border border-gray-100 shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-8">
-                 <ShieldCheck size={120} className="text-gray-50" />
-              </div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-black text-[#0B1F33] mb-10 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#e2a613]/10 flex items-center justify-center text-[#e2a613]">
-                    <CheckCircle2 size={24} />
-                  </div>
-                  Eligibility Criteria
-                </h3>
-                <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                  {[
-                    "Completion of 10+2 (Higher Secondary) schooling.",
-                    "Physics, Chemistry, and Biology as core subjects.",
-                    "Minimum 50% aggregate marks in PCB (40% for Reserved).",
-                    "NEET-UG qualification is mandatory for Indian applicants.",
-                    "Valid Indian Passport with at least 6 months validity.",
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-4 items-start text-gray-600 font-bold text-sm leading-relaxed">
-                      <div className="w-5 h-5 rounded-full bg-[#1a4db8] flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 size={12} className="text-white" />
-                      </div>
-                      {item}
+            <div className="mt-8 bg-white rounded-3xl p-8 border border-gray-100 shadow-xl">
+              <h3 className="text-lg font-black text-[#0B1F33] mb-6 text-center">Eligibility Criteria</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  "10+2 with 50% PCB marks.",
+                  "NEET-UG qualification mandatory.",
+                  "Valid Indian Passport.",
+                  "Min 17 years by Dec 31st.",
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3 items-center text-gray-600 font-bold text-xs">
+                    <div className="w-4 h-4 rounded-full bg-[#1a4db8] flex items-center justify-center shrink-0">
+                      <CheckCircle2 size={10} className="text-white" />
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 bg-[#0B1F33] rounded-[3rem] p-10 md:p-12 text-white flex flex-col justify-center relative overflow-hidden group">
-               <div className="absolute inset-0 bg-[#1a4db8] opacity-0 group-hover:opacity-10 transition-opacity" />
-               <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl bg-[#e2a613] flex items-center justify-center text-white mb-8 shadow-lg shadow-[#e2a613]/20">
-                    <Heart size={32} className="animate-pulse" />
+                    {item}
                   </div>
-                  <h4 className="text-sm font-black uppercase tracking-[0.2em] text-[#e2a613] mb-4">Confused?</h4>
-                  <h3 className="text-3xl font-black mb-6 leading-tight">Need Expert <br /> Guidance?</h3>
-                  <p className="text-white/60 text-sm font-medium mb-10">Our experts can check your eligibility and guide you through the process in 5 minutes.</p>
-                  <button 
-                    onClick={openModal}
-                    className="w-full bg-white text-[#0B1F33] py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#e2a613] hover:text-white transition-all shadow-xl"
-                  >
-                    Check Eligibility Now
-                  </button>
-               </div>
+                ))}
+              </div>
+              <button onClick={openModal} className="w-full mt-8 bg-[#0B1F33] text-white py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#e2a613] transition-all">
+                Check Detailed Eligibility
+              </button>
             </div>
-          </div>
+          </PromDown>
         </div>
       </section>
 
@@ -690,19 +645,23 @@ export default function UniversityDetailPage() {
       {/* ── FAQ SECTION ── */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
-          <SectionHeading eyebrow="Common Questions" title="Frequently Asked Questions" center />
-          <div className="mt-12 space-y-4">
-            {[
-              { q: "Is Jalal-Abad International University good for MBBS?", a: "Yes, it offers affordable MBBS education, English-medium teaching, hospital practice, and FMGE preparation support." },
-              { q: "What is the total MBBS fee at JAIU?", a: "The total estimated fee is $33,350, which is approximately ₹30,01,500 at 1 USD = ₹90 exchange rate." },
-              { q: "What is the duration of MBBS at JAIU?", a: "The duration is 5 + 1 years (5 years of academic study + 1 year of clinical internship)." },
-              { q: "Is NEET required for admission?", a: "Yes, qualifying NEET-UG is mandatory for all Indian students seeking to study MBBS abroad and practice in India." },
-              { q: "Is Indian food available?", a: "Yes, the university provides mess facilities that serve authentic Indian and South Asian food prepared by regional chefs." },
-              { q: "Does JAIU provide hostel facilities?", a: "Yes, separate, secure, and fully-furnished hostels are available for boys and girls on or near the campus." },
-            ].map((faq, i) => (
-              <FAQItem key={i} question={faq.q} answer={faq.a} />
-            ))}
-          </div>
+          <PromDown title="Frequently Asked Questions" subtitle="Common Questions" defaultOpen={false}>
+            <div className="mt-8 space-y-3">
+              {[
+                { q: "Is Jalal-Abad International University good for MBBS?", a: "Yes, it offers affordable MBBS education, English-medium teaching, hospital practice, and FMGE preparation support." },
+                { q: "What is the total MBBS fee at JAIU?", a: "The total estimated fee is $33,350, which is approximately ₹30,01,500 at 1 USD = ₹90 exchange rate." },
+                { q: "What is the duration of MBBS at JAIU?", a: "The duration is 5 + 1 years (5 years of academic study + 1 year of clinical internship)." },
+                { q: "Is NEET required for admission?", a: "Yes, qualifying NEET-UG is mandatory for all Indian students seeking to study MBBS abroad and practice in India." },
+                { q: "Is Indian food available?", a: "Yes, the university provides mess facilities that serve authentic Indian and South Asian food prepared by regional chefs." },
+                { q: "Does JAIU provide hostel facilities?", a: "Yes, separate, secure, and fully-furnished hostels are available for boys and girls on or near the campus." },
+              ].map((faq, i) => (
+                <div key={i} className="bg-white border border-gray-100 p-4 rounded-xl shadow-sm">
+                  <h4 className="text-sm font-black text-[#1a4db8] mb-2">{faq.q}</h4>
+                  <p className="text-xs text-gray-600 font-bold">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </PromDown>
         </div>
       </section>
 
@@ -742,7 +701,7 @@ export default function UniversityDetailPage() {
             >
               Apply Now
             </button>
-            <a href="tel:+918826418950" className="w-14 h-14 bg-[#e2a613] rounded-xl flex items-center justify-center text-white shadow-lg">
+            <a href="tel:+918586873357" className="w-14 h-14 bg-[#e2a613] rounded-xl flex items-center justify-center text-white shadow-lg">
                <Phone size={24} />
             </a>
          </div>

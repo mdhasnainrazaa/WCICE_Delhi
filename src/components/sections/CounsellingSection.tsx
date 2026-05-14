@@ -112,7 +112,7 @@ export function CounsellingSection() {
 
               {/* Added Features Card based on Image Reference */}
               <div className="bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 max-w-xl">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
                   {smallFeatures.map((feature, idx) => (
                     <div key={idx} className={`flex flex-col items-center text-center px-1 ${idx > 1 ? 'pt-4 md:pt-0' : ''}`}>
                       <div className="w-10 h-10 rounded-full bg-[#00B4D8]/10 flex items-center justify-center text-[#00B4D8] mb-3">
@@ -184,7 +184,7 @@ export function CounsellingSection() {
       <div className="bg-[#0B1F33] py-4 relative z-10">
         <div className="max-w-7xl mx-auto px-4">
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {bottomStripFeatures.map((item, i) => (
               <div key={i} className="flex items-center gap-3 group">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-medical border border-white/10 group-hover:bg-medical group-hover:text-white transition-all">

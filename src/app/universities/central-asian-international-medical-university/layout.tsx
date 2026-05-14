@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Central Asian International Medical University | MBBS in Kyrgyzstan',
-  description: 'Study MBBS at Central Asian International Medical University, Kyrgyzstan. Explore CAIMU admission details, facilities, hostel, scholarship, student life, FMGE/NExT coaching, and MBBS program.',
-  keywords: 'central asian international medical university, CAIMU Kyrgyzstan, MBBS in Kyrgyzstan, MBBS abroad, medical university in Kyrgyzstan, CAIMU admission, MBBS for Indian students',
+  title: 'Central Asian International Medical University | MBBS in Kyrgyzstan 2026',
+  description: 'Study MBBS at Central Asian International Medical University, Kyrgyzstan. Affordable fees, no donation, NMC/WHO recognized medical education for Indian students.',
+  keywords: 'central asian international medical university, CAIMU Kyrgyzstan, MBBS in Kyrgyzstan, MBBS abroad for Indian students, MBBS abroad fees, MBBS abroad admission process, affordable MBBS abroad, low cost MBBS abroad, Kyrgyzstan medical universities',
   openGraph: {
     title: 'Central Asian International Medical University | MBBS in Kyrgyzstan',
     description: 'Study MBBS at CAIMU, Kyrgyzstan with modern medical education, clinical exposure, affordable fees, and international student support.',

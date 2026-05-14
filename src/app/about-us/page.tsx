@@ -47,14 +47,14 @@ import { useApplyModal } from "@/context/ApplyModalContext";
 export function AboutPageSEO() {
   return (
     <Head>
-      <title>About WCIEC | Trusted MBBS Abroad Consultancy – Kyrgyzstan</title>
+      <title>About WCIEC | Best Study Abroad & MBBS Consultant in India</title>
       <meta
         name="description"
-        content="WCIEC Organization – 15+ years guiding Indian students to NMC & WHO recognized MBBS universities in Kyrgyzstan. 5000+ successful students, 5 owned medical universities, FMGE/NExT coaching."
+        content="Learn more about WCIEC Organization, the best study abroad consultant in India for Indian students. 15+ years of excellence in MBBS abroad admission guidance and student support."
       />
       <meta
         name="keywords"
-        content="MBBS abroad, MBBS in Kyrgyzstan, WCIEC organization, NMC recognized universities Kyrgyzstan, FMGE coaching, medical education consultancy India"
+        content="about WCIEC, study abroad consultant in India, overseas education consultant, best study abroad consultant, MBBS abroad admission guidance, foreign education consultant India"
       />
       <meta property="og:title" content="About WCIEC | Trusted MBBS Abroad Consultancy" />
       <meta
@@ -457,7 +457,7 @@ export default function AboutPage() {
                 <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-white/10 mb-6">
                   <Image
                     src="/images/director image.png"
-                    alt="Dr. Firoz Khan – Founder & Director, WCIEC Organization"
+                    alt="Dr. Firoz Khan (MD Physician) – Founder & Director, WCIEC Organization"
                     fill
                     className="object-cover object-top"
                   />
@@ -468,7 +468,7 @@ export default function AboutPage() {
                   style={{ fontFamily: "'Sora', sans-serif" }}
                   itemProp="founder"
                 >
-                  Dr. Firoz Khan
+                  Dr. Firoz Khan <br /> <span className="text-lg opacity-80 font-bold">(MD Physician)</span>
                 </h3>
                 <p className="text-[#e2a613] font-bold text-sm mb-6">Founder &amp; Director</p>
                 <div className="flex gap-3">

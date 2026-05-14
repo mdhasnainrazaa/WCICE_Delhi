@@ -9,7 +9,7 @@ export function FloatingCTAs() {
     <div className="fixed bottom-6 right-6 z-[60] flex flex-col gap-4">
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/yournumber"
+        href="https://wa.me/918826418950"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         whileHover={{ scale: 1.1 }}
@@ -24,18 +24,7 @@ export function FloatingCTAs() {
         </span>
       </motion.a>
 
-      {/* Call Button - Mobile Only */}
-      <motion.a
-        href="tel:+911234567890"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 md:hidden"
-      >
-        <Phone size={24} />
-      </motion.a>
+
     </div>
   );
 }

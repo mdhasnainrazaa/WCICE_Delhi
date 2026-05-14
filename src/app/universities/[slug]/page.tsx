@@ -47,7 +47,7 @@ export default function UniversityPage({ params }: Props) {
         <section className="relative py-20 bg-navy text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-8">
+            <div className="flex flex-col md:flex-row justify-between md:items-end gap-8">
               <div>
                 <div className="flex items-center gap-2 text-medical font-bold mb-4">
                   <MapPin size={18} />
@@ -88,8 +88,8 @@ export default function UniversityPage({ params }: Props) {
               <h2 className="text-3xl mb-6 flex items-center gap-3">
                 <DollarSign className="text-medical" /> Fee Structure
               </h2>
-              <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-xl">
-                <table className="w-full text-left">
+              <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-xl">
+                <table className="w-full text-left min-w-[500px]">
                   <thead className="bg-navy text-white">
                     <tr>
                       <th className="p-4">Year</th>

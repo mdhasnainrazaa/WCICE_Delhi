@@ -12,6 +12,7 @@ import {
   BookMarked, Calendar, CheckSquare, ArrowUpRight, PlayCircle, Video,
   Star, Brain, Activity, TestTube, Network, Map, Target
 } from "lucide-react";
+import { PromDown } from "@/components/ui/PromDown";
 
 // ─── REUSABLE COMPONENTS ──────────────────────────────────────────────────
 
@@ -430,111 +431,113 @@ export default function OSUDetailPage() {
       {/* 16 ── ADMISSION PROCESS */}
       <section className="py-24 bg-[#F8FAFC]" id="admission">
         <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Timeline" title="Admission Process 2026" center />
-          <div className="flex flex-col md:flex-row justify-between relative mt-16 max-w-5xl mx-auto">
-             <div className="hidden md:block absolute top-10 left-10 right-10 h-0.5 bg-gradient-to-r from-[#2563EB]/20 via-[#2563EB] to-[#2563EB]/20" />
-             {[
-               { step: "1", title: "Apply Online", desc: "Submit basic details" },
-               { step: "2", title: "Documents", desc: "10th, 12th & NEET" },
-               { step: "3", title: "Admission Letter", desc: "Official university offer" },
-               { step: "4", title: "Visa Processing", desc: "Embassy clearance" },
-               { step: "5", title: "Fly to Kyrgyzstan", desc: "Start MBBS journey" },
-             ].map((item, i) => (
-               <div key={i} className="relative z-10 flex flex-col items-center text-center mb-8 md:mb-0 w-40">
-                 <div className="w-20 h-20 bg-white border-4 border-[#F8FAFC] shadow-xl rounded-full flex items-center justify-center text-2xl font-black text-[#2563EB] mb-4">
-                   {item.step}
-                 </div>
-                 <h4 className="font-bold text-[#0F172A] text-sm mb-1">{item.title}</h4>
-                 <p className="text-xs text-[#64748B]">{item.desc}</p>
-               </div>
-             ))}
-          </div>
+          <PromDown title="Admission Process 2026" subtitle="Timeline" defaultOpen={true}>
+            <div className="flex flex-col md:flex-row justify-between relative mt-8 max-w-5xl mx-auto">
+              <div className="hidden md:block absolute top-10 left-10 right-10 h-0.5 bg-gradient-to-r from-[#2563EB]/20 via-[#2563EB] to-[#2563EB]/20" />
+              {[
+                { step: "1", title: "Apply Online", desc: "Submit basic details" },
+                { step: "2", title: "Documents", desc: "10th, 12th & NEET" },
+                { step: "3", title: "Admission Letter", desc: "Official university offer" },
+                { step: "4", title: "Visa Processing", desc: "Embassy clearance" },
+                { step: "5", title: "Fly to Kyrgyzstan", desc: "Start MBBS journey" },
+              ].map((item, i) => (
+                <div key={i} className="relative z-10 flex flex-col items-center text-center mb-8 md:mb-0 w-full md:w-40">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-[#F8FAFC] shadow-xl rounded-full flex items-center justify-center text-xl md:text-2xl font-black text-[#2563EB] mb-4">
+                    {item.step}
+                  </div>
+                  <h4 className="font-bold text-[#0F172A] text-sm mb-1">{item.title}</h4>
+                  <p className="text-xs text-[#64748B]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </PromDown>
         </div>
       </section>
 
       {/* 17 ── FEE STRUCTURE SECTION */}
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-            <SectionHeading subtitle="Affordable Education" title="MBBS Fee Structure 2026" />
-            <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm">
-              <button onClick={() => setCurrency('INR')} className={`px-8 py-3 rounded-xl font-bold text-sm transition-all ${currency === 'INR' ? "bg-[#2563EB] text-white shadow-md" : "text-[#64748B]"}`}>INR (₹)</button>
-              <button onClick={() => setCurrency('USD')} className={`px-8 py-3 rounded-xl font-bold text-sm transition-all ${currency === 'USD' ? "bg-[#2563EB] text-white shadow-md" : "text-[#64748B]"}`}>USD ($)</button>
-            </div>
-          </div>
-
-          <div className="overflow-x-auto rounded-[32px] border border-[#E2E8F0] shadow-xl bg-white mb-12">
-            <table className="w-full text-left border-collapse min-w-[800px]">
-              <thead>
-                <tr className="bg-[#F8FAFC] text-[#0F172A]">
-                  <th className="p-6 text-xs font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Year</th>
-                  <th className="p-6 text-xs font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Tuition Fee</th>
-                  <th className="p-6 text-xs font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Hostel Fee</th>
-                  <th className="p-6 text-xs font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Medical/Visa</th>
-                  <th className="p-6 text-xs font-bold uppercase tracking-widest bg-[#2563EB]/5 border-b border-[#E2E8F0] text-[#2563EB]">Total ({currency})</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { year: "1st Year", tuition: currency === 'INR' ? "₹3,60,000" : "$4,000", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹90,000" : "$1,000", total: currency === 'INR' ? "₹5,04,000" : "$5,600" },
-                  { year: "2nd to 5th Year (Per Year)", tuition: currency === 'INR' ? "₹3,60,000" : "$4,000", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,32,000" : "$4,800" },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors">
-                    <td className="p-6 text-sm font-bold text-[#0F172A] whitespace-nowrap">{row.year}</td>
-                    <td className="p-6 text-sm font-medium text-[#64748B]">{row.tuition}</td>
-                    <td className="p-6 text-sm font-medium text-[#64748B]">{row.hostel}</td>
-                    <td className="p-6 text-sm font-medium text-[#64748B]">{row.visa}</td>
-                    <td className={`p-6 text-lg font-bold bg-[#2563EB]/5 ${i === 0 ? 'text-[#14B8A6]' : 'text-[#2563EB]'}`}>{row.total}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="bg-gradient-to-r from-[#0F172A] to-[#2563EB] rounded-[32px] p-12 text-center shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-            <div className="relative z-10">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-wide">Complete 5-Year MBBS Package</h3>
-              <div className="text-5xl md:text-7xl font-black text-white mb-6">
-                {currency === 'INR' ? "₹22.32 Lakhs" : "$24,800"}*
+          <PromDown title="MBBS Fee Structure 2026" subtitle="Affordable Education" defaultOpen={false}>
+            <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+              <p className="text-[#64748B] text-sm">Detailed fee structure for Indian students. All fees are subject to change based on university regulations.</p>
+              <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm shrink-0">
+                <button onClick={() => setCurrency('INR')} className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'INR' ? "bg-[#2563EB] text-white shadow-md" : "text-[#64748B]"}`}>INR (₹)</button>
+                <button onClick={() => setCurrency('USD')} className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'USD' ? "bg-[#2563EB] text-white shadow-md" : "text-[#64748B]"}`}>USD ($)</button>
               </div>
-              <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-8">Calculated at approx 1 USD = ₹90 | *Terms Apply</p>
-              <button onClick={openModal} className="bg-[#14B8A6] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover:bg-[#0D9488] transition-all">
-                Apply Now
-              </button>
             </div>
-          </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] bg-white mb-8">
+              <table className="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr className="bg-[#F8FAFC] text-[#0F172A]">
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Year</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Tuition Fee</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Hostel Fee</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Medical/Visa</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest bg-[#2563EB]/5 border-b border-[#E2E8F0] text-[#2563EB]">Total ({currency})</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { year: "1st Year", tuition: currency === 'INR' ? "₹3,60,000" : "$4,000", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹90,000" : "$1,000", total: currency === 'INR' ? "₹5,04,000" : "$5,600" },
+                    { year: "2nd to 5th Year", tuition: currency === 'INR' ? "₹3,60,000" : "$4,000", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,32,000" : "$4,800" },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors">
+                      <td className="p-4 text-xs font-bold text-[#0F172A]">{row.year}</td>
+                      <td className="p-4 text-xs font-medium text-[#64748B]">{row.tuition}</td>
+                      <td className="p-4 text-xs font-medium text-[#64748B]">{row.hostel}</td>
+                      <td className="p-4 text-xs font-medium text-[#64748B]">{row.visa}</td>
+                      <td className={`p-4 text-sm font-bold bg-[#2563EB]/5 ${i === 0 ? 'text-[#14B8A6]' : 'text-[#2563EB]'}`}>{row.total}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#2563EB] rounded-2xl p-8 text-center text-white relative overflow-hidden">
+               <div className="relative z-10">
+                <h4 className="text-lg font-bold mb-2">5-Year MBBS Package</h4>
+                <div className="text-4xl font-black mb-4">
+                  {currency === 'INR' ? "₹22.32 Lakhs" : "$24,800"}*
+                </div>
+                <button onClick={openModal} className="bg-[#14B8A6] text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg hover:bg-[#0D9488] transition-all">
+                  Apply Now
+                </button>
+              </div>
+            </div>
+          </PromDown>
         </div>
       </section>
 
       {/* 18 ── FAQ SECTION */}
       <section className="py-24 bg-[#F8FAFC]">
         <div className="max-w-3xl mx-auto px-6">
-          <SectionHeading subtitle="Questions?" title="Frequently Asked Questions" center />
-          <div className="space-y-4 mt-12" itemScope itemType="https://schema.org/FAQPage">
-            {[
-              { q: "Is Osh State University NMC approved?", a: "Yes, it is recognized by the National Medical Commission (NMC), WHO, and WDOMS." },
-              { q: "What is the medium of instruction?", a: "The entire 5-year MD/MBBS program is taught in 100% English for international students." },
-              { q: "Is Indian food available?", a: "Yes, dedicated Indian mess facilities are available on campus providing nutritious veg and non-veg food." }
-            ].map((item, i) => {
-              const [isOpen, setIsOpen] = useState(false);
-              return (
-                <div key={i} className="bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-sm" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                  <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left">
-                    <span className="text-lg font-bold text-[#0F172A]" itemProp="name">{item.q}</span>
-                    <ChevronDown size={24} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
-                  </button>
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                        <div className="px-6 pb-6 text-[#64748B]" itemProp="text">{item.a}</div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
+          <PromDown title="Frequently Asked Questions" subtitle="Questions?" defaultOpen={false}>
+            <div className="space-y-4 mt-4" itemScope itemType="https://schema.org/FAQPage">
+              {[
+                { q: "Is Osh State University NMC approved?", a: "Yes, it is recognized by the National Medical Commission (NMC), WHO, and WDOMS." },
+                { q: "What is the medium of instruction?", a: "The entire 5-year MD/MBBS program is taught in 100% English for international students." },
+                { q: "Is Indian food available?", a: "Yes, dedicated Indian mess facilities are available on campus providing nutritious veg and non-veg food." }
+              ].map((item, i) => {
+                const [isOpen, setIsOpen] = useState(false);
+                return (
+                  <div key={i} className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-4 text-left">
+                      <span className="text-sm font-bold text-[#0F172A]" itemProp="name">{item.q}</span>
+                      <ChevronDown size={18} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                          <div className="px-4 pb-4 text-xs text-[#64748B]" itemProp="text">{item.a}</div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          </PromDown>
         </div>
       </section>
 
@@ -550,7 +553,7 @@ export default function OSUDetailPage() {
                 <button onClick={openModal} className="bg-[#14B8A6] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#0D9488] shadow-lg transition-all">
                   Apply Now
                 </button>
-                <a href="tel:+918826418950" className="bg-white text-[#2563EB] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 shadow-lg transition-all flex items-center gap-2">
+                <a href="tel:+918586873357" className="bg-white text-[#2563EB] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 shadow-lg transition-all flex items-center gap-2">
                   <Phone size={20} /> Talk to Counselor
                 </a>
               </div>
@@ -569,7 +572,7 @@ export default function OSUDetailPage() {
         <button onClick={openModal} className="flex-1 bg-[#2563EB] text-white font-bold py-3 rounded-xl shadow-lg">
           Apply Now
         </button>
-        <a href="tel:+918826418950" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#2563EB]">
+        <a href="tel:+918586873357" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#2563EB]">
           <Phone size={20} />
         </a>
       </div>

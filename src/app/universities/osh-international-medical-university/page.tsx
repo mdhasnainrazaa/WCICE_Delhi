@@ -12,6 +12,7 @@ import {
   BookMarked, Calendar, CheckSquare, ArrowUpRight, PlayCircle, Video, Star, CheckCircle
 } from "lucide-react";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
+import { PromDown } from "@/components/ui/PromDown";
 
 // ─── REUSABLE COMPONENTS ──────────────────────────────────────────────────
 
@@ -623,175 +624,157 @@ export default function OIMUDetailPage() {
       {/* 15.5 ── DETAILED FEE STRUCTURE TABLE */}
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-            <SectionHeading subtitle="Invest in Your Future" title="MBBS Fee Structure 2026" />
-            <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm">
-              <button 
-                onClick={() => setCurrency('INR')}
-                className={`px-8 py-3 rounded-xl font-bold text-sm transition-all ${currency === 'INR' ? "bg-[#0057B8] text-white shadow-md" : "text-[#64748B] hover:text-[#0F172A]"}`}
-              >
-                INR (₹)
-              </button>
-              <button 
-                onClick={() => setCurrency('USD')}
-                className={`px-8 py-3 rounded-xl font-bold text-sm transition-all ${currency === 'USD' ? "bg-[#0057B8] text-white shadow-md" : "text-[#64748B] hover:text-[#0F172A]"}`}
-              >
-                USD ($)
-              </button>
-            </div>
-          </div>
-
-          <div className="overflow-x-auto rounded-[32px] border border-[#E2E8F0] shadow-xl bg-white mb-12">
-            <table className="w-full text-left border-collapse min-w-[800px]">
-              <thead>
-                <tr className="bg-[#F8FAFC] text-[#0F172A]">
-                  <th className="p-6 text-[11px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Academic Year</th>
-                  <th className="p-6 text-[11px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Tuition Fee</th>
-                  <th className="p-6 text-[11px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Hostel Fee</th>
-                  <th className="p-6 text-[11px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Visa & Medical</th>
-                  <th className="p-6 text-[11px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Miscellaneous</th>
-                  <th className="p-6 text-[11px] font-bold uppercase tracking-widest bg-[#0057B8]/5 border-b border-[#E2E8F0] text-[#0057B8]">Total ({currency})</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { 
-                    year: "1st Year", 
-                    tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", 
-                    hostel: currency === 'INR' ? "₹54,000" : "$600", 
-                    visa: currency === 'INR' ? "₹90,000" : "$1,000", 
-                    misc: currency === 'INR' ? "₹81,000" : "$900", 
-                    total: currency === 'INR' ? "₹5,40,000" : "$6,000" 
-                  },
-                  { 
-                    year: "2nd Year", 
-                    tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", 
-                    hostel: currency === 'INR' ? "₹54,000" : "$600", 
-                    visa: currency === 'INR' ? "₹18,000" : "$200", 
-                    misc: currency === 'INR' ? "₹18,000" : "$200", 
-                    total: currency === 'INR' ? "₹4,05,000" : "$4,500" 
-                  },
-                  { 
-                    year: "3rd Year", 
-                    tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", 
-                    hostel: currency === 'INR' ? "₹54,000" : "$600", 
-                    visa: currency === 'INR' ? "₹18,000" : "$200", 
-                    misc: currency === 'INR' ? "₹18,000" : "$200", 
-                    total: currency === 'INR' ? "₹4,05,000" : "$4,500" 
-                  },
-                  { 
-                    year: "4th Year", 
-                    tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", 
-                    hostel: currency === 'INR' ? "₹54,000" : "$600", 
-                    visa: currency === 'INR' ? "₹18,000" : "$200", 
-                    misc: currency === 'INR' ? "₹18,000" : "$200", 
-                    total: currency === 'INR' ? "₹4,05,000" : "$4,500" 
-                  },
-                  { 
-                    year: "5th Year", 
-                    tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", 
-                    hostel: currency === 'INR' ? "₹54,000" : "$600", 
-                    visa: currency === 'INR' ? "₹18,000" : "$200", 
-                    misc: currency === 'INR' ? "₹18,000" : "$200", 
-                    total: currency === 'INR' ? "₹4,05,000" : "$4,500" 
-                  },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors">
-                    <td className="p-6 text-sm font-bold text-[#0F172A] whitespace-nowrap uppercase tracking-wider">{row.year}</td>
-                    <td className="p-6 text-sm font-semibold text-[#64748B]">{row.tuition}</td>
-                    <td className="p-6 text-sm font-semibold text-[#64748B]">{row.hostel}</td>
-                    <td className="p-6 text-sm font-semibold text-[#64748B]">{row.visa}</td>
-                    <td className="p-6 text-sm font-semibold text-[#64748B]">{row.misc}</td>
-                    <td className={`p-6 text-lg font-bold bg-[#0057B8]/5 ${i === 0 ? 'text-[#0EA5E9]' : 'text-[#0057B8]'}`}>{row.total}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Grand Total Banner */}
-          <div className="bg-gradient-to-r from-[#0F172A] to-[#1E293B] rounded-[32px] p-10 md:p-14 text-center shadow-2xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#0EA5E9]/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#0057B8]/20 rounded-full blur-3xl" />
-            
-            <div className="relative z-10">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 tracking-wide">Complete 5-Year MBBS Program Total</h3>
-              <div className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 mb-6">
-                {currency === 'INR' ? "₹21.60 Lakhs" : "$24,000"}*
+          <PromDown title="MBBS Fee Structure 2026" subtitle="Invest in Your Future" defaultOpen={false}>
+            <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+              <p className="text-[#64748B] text-sm leading-relaxed">Experience world-class medical education at an affordable cost. Our fee structure is transparent with no hidden charges.</p>
+              <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm shrink-0">
+                <button 
+                  onClick={() => setCurrency('INR')}
+                  className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'INR' ? "bg-[#0057B8] text-white shadow-md" : "text-[#64748B] hover:text-[#0F172A]"}`}
+                >
+                  INR (₹)
+                </button>
+                <button 
+                  onClick={() => setCurrency('USD')}
+                  className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'USD' ? "bg-[#0057B8] text-white shadow-md" : "text-[#64748B] hover:text-[#0F172A]"}`}
+                >
+                  USD ($)
+                </button>
               </div>
-              <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-10">Calculated at approx 1 USD = ₹90 | *Terms & Conditions Apply</p>
-              <button 
-                onClick={openModal}
-                className="bg-[#F59E0B] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover:bg-[#D97706] transition-all flex items-center justify-center gap-2 mx-auto"
-              >
-                Apply for Admission <ArrowRight size={20} />
-              </button>
             </div>
-          </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] shadow-sm bg-white mb-8">
+              <table className="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr className="bg-[#F8FAFC] text-[#0F172A]">
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Academic Year</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Tuition Fee</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Hostel Fee</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Visa & Medical</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest bg-[#0057B8]/5 border-b border-[#E2E8F0] text-[#0057B8]">Total ({currency})</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { year: "1st Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹90,000" : "$1,000", total: currency === 'INR' ? "₹5,40,000" : "$6,000" },
+                    { year: "2nd Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
+                    { year: "3rd Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
+                    { year: "4th Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
+                    { year: "5th Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors text-xs">
+                      <td className="p-4 font-bold text-[#0F172A] whitespace-nowrap uppercase tracking-wider">{row.year}</td>
+                      <td className="p-4 font-semibold text-[#64748B]">{row.tuition}</td>
+                      <td className="p-4 font-semibold text-[#64748B]">{row.hostel}</td>
+                      <td className="p-4 font-semibold text-[#64748B]">{row.visa}</td>
+                      <td className={`p-4 font-bold bg-[#0057B8]/5 ${i === 0 ? 'text-[#0EA5E9]' : 'text-[#0057B8]'}`}>{row.total}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-gradient-to-r from-[#0F172A] to-[#1E293B] rounded-2xl p-8 text-center shadow-lg relative overflow-hidden text-white">
+              <div className="relative z-10">
+                <h4 className="text-lg font-bold mb-2">Complete 5-Year Program Total</h4>
+                <div className="text-4xl font-black mb-4">
+                  {currency === 'INR' ? "₹21.60 Lakhs" : "$24,000"}*
+                </div>
+                <button 
+                  onClick={openModal}
+                  className="bg-[#F59E0B] text-white px-8 py-3 rounded-xl font-bold text-sm shadow-md hover:bg-[#D97706] transition-all flex items-center justify-center gap-2 mx-auto"
+                >
+                  Apply for Admission <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+          </PromDown>
         </div>
       </section>
 
       {/* 16 & 17 ── ADMISSION PROCESS & DOCUMENTS */}
       <section className="py-24 bg-[#F8FAFC]" id="admission">
         <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Step by Step" title="Admission Process & Documents" center />
-          
-          <div className="grid md:grid-cols-6 gap-4 mb-20">
-            {[
-              { step: "1", title: "Apply Online", icon: FileText },
-              { step: "2", title: "Document Verif.", icon: CheckSquare },
-              { step: "3", title: "Admission Letter", icon: Award },
-              { step: "4", title: "Visa Processing", icon: ShieldCheck },
-              { step: "5", title: "Travel to KG", icon: Plane },
-              { step: "6", title: "Start MBBS", icon: Stethoscope },
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-[#E2E8F0] text-center flex flex-col items-center relative z-10">
-                <div className="w-8 h-8 bg-[#0057B8] text-white rounded-full flex items-center justify-center font-bold text-sm mb-4 absolute -top-4 shadow-md">{item.step}</div>
-                <item.icon size={28} className="text-[#0EA5E9] mb-3 mt-2" />
-                <h4 className="font-bold text-[#0F172A] text-sm">{item.title}</h4>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-[#E2E8F0]">
-            <h3 className="text-2xl font-bold text-[#0F172A] mb-8 border-b border-[#E2E8F0] pb-4 flex items-center gap-3">
-              <FileText className="text-[#0EA5E9]" /> Required Documents for Admission
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <PromDown title="Admission Process & Documents" subtitle="Step by Step" defaultOpen={true}>
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-12">
               {[
-                "10th Marksheet & Certificate",
-                "12th Marksheet & Certificate",
-                "NEET-UG Scorecard",
-                "Original Passport (min 1-year validity)",
-                "Medical Fitness Certificate",
-                "10 Passport size photographs",
-                "Birth Certificate",
-                "Bank Statement (Sponsor)"
-              ].map((doc, i) => (
-                <div key={i} className="flex gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#0EA5E9]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 size={14} className="text-[#0EA5E9]" />
-                  </div>
-                  <span className="text-[#0F172A] font-medium">{doc}</span>
+                { step: "1", title: "Apply Online", icon: FileText },
+                { step: "2", title: "Document Verif.", icon: CheckSquare },
+                { step: "3", title: "Admission Letter", icon: Award },
+                { step: "4", title: "Visa Processing", icon: ShieldCheck },
+                { step: "5", title: "Travel to KG", icon: Plane },
+                { step: "6", title: "Start MBBS", icon: Stethoscope },
+              ].map((item, i) => (
+                <div key={i} className="bg-white p-4 rounded-xl shadow-sm border border-[#E2E8F0] text-center flex flex-col items-center relative z-10">
+                  <div className="w-6 h-6 bg-[#0057B8] text-white rounded-full flex items-center justify-center font-bold text-[10px] mb-2 absolute -top-3 shadow-md">{item.step}</div>
+                  <item.icon size={24} className="text-[#0EA5E9] mb-2 mt-1" />
+                  <h4 className="font-bold text-[#0F172A] text-[10px]">{item.title}</h4>
                 </div>
               ))}
             </div>
-          </div>
+
+            <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-[#E2E8F0]">
+              <h3 className="text-xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+                <FileText className="text-[#0EA5E9]" /> Required Documents
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  "10th Marksheet & Certificate",
+                  "12th Marksheet & Certificate",
+                  "NEET-UG Scorecard",
+                  "Original Passport (min 1-year validity)",
+                  "Medical Fitness Certificate",
+                  "10 Passport size photographs",
+                  "Birth Certificate",
+                  "Bank Statement (Sponsor)"
+                ].map((doc, i) => (
+                  <div key={i} className="flex gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-[#0EA5E9]/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle2 size={12} className="text-[#0EA5E9]" />
+                    </div>
+                    <span className="text-[#0F172A] font-medium">{doc}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </PromDown>
         </div>
       </section>
 
       {/* 18 ── FAQ SECTION */}
       <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6">
-          <SectionHeading subtitle="Common Queries" title="Frequently Asked Questions" center />
-          <FAQAccordion items={[
-            { q: "Is NEET required for MBBS in Kyrgyzstan?", a: "Yes, qualifying the NEET-UG exam is mandatory for Indian students who wish to study MBBS abroad and later practice in India." },
-            { q: "Is Osh International Medical University good for Indian students?", a: "Absolutely. OIMU has a large community of Indian students, English-medium curriculum, dedicated Indian food, and integrated FMGE coaching, making it highly suitable." },
-            { q: "Is hostel accommodation available?", a: "Yes, the university provides secure, fully furnished hostels for international students with separate blocks for boys and girls." },
-            { q: "What is the medium of instruction?", a: "The entire 5-year MBBS course is taught entirely in English by experienced international and local professors." },
-            { q: "Is Osh City safe for international students?", a: "Yes, Osh is very safe. The local community is welcoming, and the university campus has 24/7 security and CCTV surveillance." }
-          ]} />
+          <PromDown title="Frequently Asked Questions" subtitle="Common Queries" defaultOpen={false}>
+            <div className="space-y-4 mt-6" itemScope itemType="https://schema.org/FAQPage">
+              {[
+                { q: "Is NEET required for MBBS in Kyrgyzstan?", a: "Yes, qualifying the NEET-UG exam is mandatory for Indian students who wish to study MBBS abroad and later practice in India." },
+                { q: "Is Osh International Medical University good for Indian students?", a: "Absolutely. OIMU has a large community of Indian students, English-medium curriculum, dedicated Indian food, and integrated FMGE coaching, making it highly suitable." },
+                { q: "Is hostel accommodation available?", a: "Yes, the university provides secure, fully furnished hostels for international students with separate blocks for boys and girls." },
+                { q: "What is the medium of instruction?", a: "The entire 5-year MBBS course is taught entirely in English by experienced international and local professors." },
+                { q: "Is Osh City safe for international students?", a: "Yes, Osh is very safe. The local community is welcoming, and the university campus has 24/7 security and CCTV surveillance." }
+              ].map((item, i) => {
+                const [isOpen, setIsOpen] = useState(false);
+                return (
+                  <div key={i} className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden transition-all hover:shadow-md" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-4 text-left">
+                      <span className={`text-sm font-medium transition-colors ${isOpen ? "text-[#0057B8]" : "text-[#0F172A]"}`} itemProp="name">{item.q}</span>
+                      <ChevronDown size={20} className={`text-[#64748B] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                          <div className="px-4 pb-4 text-xs text-[#64748B] leading-relaxed" itemProp="text">
+                            <div className="w-full h-px bg-[#E2E8F0] mb-4" />
+                            {item.a}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+          </PromDown>
         </div>
       </section>
 
@@ -832,7 +815,7 @@ export default function OIMUDetailPage() {
         <button onClick={openModal} className="flex-1 bg-[#0057B8] text-white font-bold py-3 rounded-xl shadow-lg">
           Apply Now
         </button>
-        <a href="tel:+918826418950" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#0057B8]">
+        <a href="tel:+918586873357" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#0057B8]">
           <Phone size={20} />
         </a>
       </div>

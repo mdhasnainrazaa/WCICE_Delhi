@@ -7,28 +7,28 @@ import { Quote, ShieldCheck, ReceiptText, Users, Clock } from "lucide-react";
 
 export function FounderSection() {
   return (
-    <section className="py-20 bg-[#f8f9fc] overflow-hidden">
+    <section className="py-6 bg-[#f8f9fc] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="bg-white rounded-[3rem] overflow-hidden shadow-xl border border-gray-100 grid lg:grid-cols-12 items-stretch">
           {/* Left Side: Dark Profile Card */}
-          <div className="lg:col-span-5 bg-[#0B1F33] p-12 flex flex-col items-center justify-center text-center relative overflow-hidden">
+          <div className="lg:col-span-5 bg-[#0B1F33] p-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/10 mb-8 z-10"
+              className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/10 mb-6 z-10"
             >
               <Image
                 src="/images/director image.png"
-                alt="Dr. Firoz Khan - Founder & Director of WCIEC"
+                alt="Dr. Firoz Khan (MD Physician) - Founder & Director of WCIEC"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-[center_15%]"
               />
             </motion.div>
             
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-black text-white mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Dr. Firoz Khan</h3>
-              <p className="text-[#e2a613] font-bold text-sm uppercase tracking-widest">Founder & Director, WCIEC</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Dr. Firoz Khan <br /> <span className="text-lg opacity-80 font-bold">(MD Physician)</span></h3>
+              <p className="text-[#e2a613] font-bold text-[10px] uppercase tracking-widest">Founder & Director, WCIEC</p>
             </div>
 
             {/* Decorative elements */}
@@ -38,7 +38,7 @@ export function FounderSection() {
           </div>
 
           {/* Right Side: Message Content */}
-          <div className="lg:col-span-7 p-10 md:p-16 flex flex-col justify-center">
+          <div className="lg:col-span-7 p-8 md:p-12 flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -48,12 +48,12 @@ export function FounderSection() {
                 Leadership Message
               </div>
               
-              <h2 className="text-3xl md:text-4xl font-black text-[#0B1F33] mb-8 leading-tight" style={{ fontFamily: "'Sora', sans-serif" }}>
+              <h2 className="text-3xl md:text-4xl font-black text-[#0B1F33] mb-6 leading-tight" style={{ fontFamily: "'Sora', sans-serif" }}>
                 A Vision for Global <br />
                 <span className="text-gradient">Medical Excellence</span>
               </h2>
               
-              <div className="relative mb-10 border-l-4 border-[#1a4db8]/20 pl-6">
+              <div className="relative mb-6 border-l-4 border-[#1a4db8]/20 pl-6">
                 <p className="text-lg md:text-xl text-[#0B1F33]/80 italic leading-relaxed font-medium">
                   "WCIEC has spent over 15 years helping students secure internationally recognized MBBS degrees with transparency, integrity, and expert guidance. Our mission is to bridge the gap between Indian medical aspirants and quality global education."
                 </p>
@@ -75,7 +75,7 @@ export function FounderSection() {
                 ))}
               </div>
 
-              <div className="mt-12 flex items-center gap-4">
+              <div className="mt-8 flex items-center gap-4">
                 <div className="w-12 h-[2px] bg-[#e2a613]" />
                 <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#0B1F33]/40">15+ Years of Excellence</span>
               </div>

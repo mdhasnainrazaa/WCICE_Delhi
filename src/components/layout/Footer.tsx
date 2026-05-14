@@ -51,9 +51,9 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy pt-20 pb-10 text-white overflow-hidden">
+    <footer className="bg-navy pt-12 pb-8 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-4 gap-12 mb-10">
           {/* Brand Info */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6">
@@ -87,21 +87,34 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 font-poppins">Quick Links</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              {["Home", "About WCIEC", "Our Universities", "Admission Process", "Blog", "Contact Us"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="hover:text-medical transition-colors">{link}</Link>
+              {[
+                { name: "Home", href: "/" },
+                { name: "About WCIEC", href: "/about-us" },
+                { name: "University", href: "/#universities" },
+                { name: "Admission", href: "/admission" },
+                { name: "Privacy Policy", href: "/legal" },
+                { name: "Contact Us", href: "/contact-us" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-medical transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Popular Countries */}
+          {/* Top Universities */}
           <div>
-            <h4 className="text-lg font-bold mb-6 font-poppins">MBBS Abroad</h4>
+            <h4 className="text-lg font-bold mb-6 font-poppins">Our Universities</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              {["MBBS in Kyrgyzstan", "MBBS in Russia", "MBBS in Uzbekistan", "MBBS in Kazakhstan", "MBBS in Georgia", "MBBS in Philippines"].map((country) => (
-                <li key={country}>
-                  <Link href="#" className="hover:text-medical transition-colors">{country}</Link>
+              {[
+                { name: "Jalal-Abad International University", href: "/universities/jalal-abad-international-university" },
+                { name: "Jalal-Abad State University", href: "/universities/jalal-abad-state-university" },
+                { name: "Osh State University International Medical Faculty", href: "/universities/osh-state-university" },
+                { name: "Central Asian International Medical University", href: "/universities/central-asian-international-medical-university" },
+                { name: "Osh International Medical University", href: "/universities/osh-international-medical-university" }
+              ].map((uni) => (
+                <li key={uni.name}>
+                  <Link href={uni.href} className="hover:text-medical transition-colors leading-relaxed block">{uni.name}</Link>
                 </li>
               ))}
             </ul>
@@ -116,8 +129,12 @@ export function Footer() {
                   <Phone size={18} />
                 </div>
                 <div>
-                  <div className="text-white font-semibold">Phone</div>
-                  <a href="tel:+918826418950" className="hover:text-medical">+91 88264 18950</a>
+                  <div className="text-white font-semibold mb-1">Contact Details</div>
+                  <div className="flex flex-col gap-1 mt-1">
+                    <a href="tel:+918586873357" className="hover:text-medical transition-colors">+91 85868 73357</a>
+                    <a href="tel:+919911635435" className="hover:text-medical transition-colors">+91 99116 35435</a>
+                    <a href="tel:+919811385441" className="hover:text-medical transition-colors">+91 98113 85441</a>
+                  </div>
                 </div>
               </li>
               <li className="flex gap-4">
@@ -134,24 +151,29 @@ export function Footer() {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <div className="text-white font-semibold">Location</div>
-                  <span>123, Education Hub, New Delhi, India</span>
+                  <div className="text-white font-semibold">Office Address</div>
+                  <a 
+                    href="https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="leading-relaxed hover:text-medical transition-colors block"
+                  >
+                    WCIEC – Shakarpur, New Delhi<br />
+                    Near Laxmi Nagar Metro Station, behind Karim Hotel
+                  </a>
                 </div>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-gray-500 text-xs">
-            © 2026 WCIEC Organization. All rights reserved. 
-            <span className="mx-2">|</span>
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span className="mx-2">|</span>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-          </div>
-          <div className="text-gray-500 text-[10px] uppercase tracking-widest font-black">
-            Made with ❤️ for Medical Aspirants
+        <div className="border-t border-white/5 pt-8 text-center">
+          <div className="text-gray-500 text-xs flex flex-wrap justify-center items-center gap-2">
+            <span>© 2026 WCIEC Organization. All rights reserved.</span>
+            <span className="text-white/10 hidden sm:inline">|</span>
+            <Link href="/legal" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="text-white/10 hidden sm:inline">|</span>
+            <Link href="/legal" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

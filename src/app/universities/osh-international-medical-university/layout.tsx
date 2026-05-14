@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Study MBBS at Osh International Medical University | MBBS in Kyrgyzstan',
-  description: 'Apply for MBBS at Osh International Medical University, Kyrgyzstan. Get affordable MBBS education, FMGE coaching, hostel facilities, and clinical exposure for Indian students.',
-  keywords: 'Osh International Medical University, MBBS in Kyrgyzstan, Study MBBS in Kyrgyzstan, Osh International Medical University fees, MBBS abroad, Medical university in Kyrgyzstan, FMGE coaching in Kyrgyzstan, Best MBBS university in Kyrgyzstan, MBBS admission in Kyrgyzstan, Kyrgyzstan medical university',
+  title: 'Study MBBS at Osh International Medical University | Fees, Admission 2026 | WCIEC',
+  description: 'Apply for MBBS at Osh International Medical University, Kyrgyzstan. Get affordable MBBS education, FMGE coaching, and clinical exposure. Best MBBS abroad consultancy for Indian students.',
+  keywords: 'Osh International Medical University, MBBS in Kyrgyzstan, Study MBBS in Kyrgyzstan, Osh International Medical University fees, MBBS abroad for Indian students, MBBS abroad fees, MBBS abroad admission process, affordable MBBS abroad, low cost MBBS abroad',
   openGraph: {
     title: 'Study MBBS at Osh International Medical University | MBBS in Kyrgyzstan',
     description: 'Apply for MBBS at Osh International Medical University, Kyrgyzstan. Get affordable MBBS education, FMGE coaching, hostel facilities, and clinical exposure for Indian students.',
