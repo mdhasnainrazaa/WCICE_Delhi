@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Study MBBS at Osh State University | Fees, Admission 2026 | WCIEC',
-  description: 'Apply for MBBS at Osh State University, Kyrgyzstan. NMC recognized, English medium, affordable fees, Indian mess, and FMGE focused coaching. No donation, best MBBS consultancy.',
-  keywords: 'Osh State University, MBBS in Kyrgyzstan, Study Medicine in Kyrgyzstan, FMGE Preparation Focused Universities, Hostel & Indian Food Facilities Kyrgyzstan, Low-Cost MBBS Abroad Kyrgyzstan',
+  title: 'MBBS in Osh State University | Admission 2026 | Study in Kyrgyzstan',
+  description: 'Apply for MBBS at Osh State University, Kyrgyzstan. Top-ranked government university, NMC approved, English medium, and Indian hostel/mess. Direct admission for 2026 open!',
+  keywords: 'MBBS in Osh State University, Osh State University Admission 2026, NMC Approved Osh State University, Study MBBS at Osh State University, Affordable MBBS Osh State University, Direct Admission Osh State University, FMGE Focused MBBS Program, Hostel & Indian Mess Osh State University',
   openGraph: {
     title: 'Study MBBS at Osh State University | Admissions Open 2026',
-    description: 'NMC approved, WHO recognized MBBS degree at Osh State University. Indian food, secure hostels, and top-tier FMGE support.',
+    description: 'NMC approved government medical university in Kyrgyzstan. Top-ranked for Indian students, secure hostels, and expert FMGE coaching.',
     url: 'https://wciec.org/universities/osh-state-university',
     siteName: 'WCIEC Medical Platform',
     images: [

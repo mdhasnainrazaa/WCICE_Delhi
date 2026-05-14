@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Jalal-Abad International University MBBS Fees 2026 | MBBS in Kyrgyzstan",
-  description: "Explore Jalal-Abad International University Kyrgyzstan for MBBS. Check fees, admission process, hostel, and eligibility. Best study abroad consultant for Indian students.",
-  keywords: "Jalal-Abad International University, JAIU MBBS, MBBS in Kyrgyzstan, MBBS abroad for Indian students, MBBS abroad fees, MBBS abroad admission process, affordable MBBS abroad, low cost MBBS abroad, study MBBS abroad",
+  title: 'Jalal-Abad International University MBBS Admission 2026 | Direct Admission',
+  description: 'Apply for MBBS at Jalal-Abad International University (JAIU), Kyrgyzstan. NMC approved, affordable fees, English medium, and Indian hostel/mess. Direct admission for 2026 open!',
+  keywords: 'MBBS in Jalal-Abad International University, JAIU Admission 2026, NMC Approved JAIU, Affordable MBBS JAIU, Direct Admission JAIU, MBBS Abroad Kyrgyzstan JAIU, JAIU for Indian Students, FMGE Focused Medical University, Hostel & Indian Mess JAIU',
   openGraph: {
-    title: "Jalal-Abad International University MBBS Fees 2026",
-    description: "Study MBBS in Kyrgyzstan with affordable fees and English-medium education at JAIU.",
+    title: 'Jalal-Abad International University MBBS Admission 2026',
+    description: 'Study MBBS at JAIU, Kyrgyzstan with affordable fees and English-medium education. Indian food and secure hostels available.',
     url: 'https://wciec.org/universities/jalal-abad-international-university',
     siteName: 'WCIEC Organization',
     images: [

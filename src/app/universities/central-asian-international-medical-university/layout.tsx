@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Central Asian International Medical University | MBBS in Kyrgyzstan 2026',
-  description: 'Study MBBS at Central Asian International Medical University, Kyrgyzstan. Affordable fees, no donation, NMC/WHO recognized medical education for Indian students.',
-  keywords: 'central asian international medical university, CAIMU Kyrgyzstan, MBBS in Kyrgyzstan, MBBS abroad for Indian students, MBBS abroad fees, MBBS abroad admission process, affordable MBBS abroad, low cost MBBS abroad, Kyrgyzstan medical universities',
+  title: 'MBBS in Central Asian International Medical University | Admission 2026',
+  description: 'Study MBBS at Central Asian International Medical University (CAIMU), Kyrgyzstan. NMC approved, affordable fees, modern infrastructure, and Indian mess. Direct admission for 2026 open!',
+  keywords: 'MBBS in Central Asian International Medical University, CAIMU Kyrgyzstan Admission, NMC Approved CAIMU, Affordable MBBS CAIMU, Direct MBBS Admission CAIMU, FMGE Oriented Medical University, Hostel & Indian Mess CAIMU',
   openGraph: {
-    title: 'Central Asian International Medical University | MBBS in Kyrgyzstan',
-    description: 'Study MBBS at CAIMU, Kyrgyzstan with modern medical education, clinical exposure, affordable fees, and international student support.',
+    title: 'Study MBBS at Central Asian International Medical University | CAIMU',
+    description: 'Modern medical education in Kyrgyzstan. NMC approved, affordable fees, clinical exposure, and 100% assistance for Indian students.',
     url: 'https://wciec.org/universities/central-asian-international-medical-university',
     siteName: 'WCIEC Medical Platform',
     images: [
