@@ -7,9 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 interface GlobalApplyFormProps {
   onSuccess?: () => void;
   buttonText?: string;
+  compact?: boolean;
 }
 
-export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }: GlobalApplyFormProps) {
+export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", compact = false }: GlobalApplyFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -123,7 +124,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className={compact ? "space-y-2.5" : "space-y-4"}>
       {error && (
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
@@ -144,7 +145,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your name"
-            className="w-full px-4 py-3 text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
+            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
             required
           />
         </div>
@@ -158,7 +159,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
               value={formData.phone}
               onChange={handleChange}
               placeholder="10-digit mobile"
-              className="w-full pl-12 pr-4 py-3 text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
+              className={`w-full pl-12 pr-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
               required
               maxLength={10}
             />
@@ -175,7 +176,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className="w-full px-4 py-3 text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
+            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
             required
           />
         </div>
@@ -187,7 +188,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
             value={formData.city}
             onChange={handleChange}
             placeholder="Your City"
-            className="w-full px-4 py-3 text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
+            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
             required
           />
         </div>
@@ -200,7 +201,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
             name="neetStatus"
             value={formData.neetStatus}
             onChange={handleChange}
-            className="w-full px-4 py-3 text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer"
+            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer`}
             required
           >
             <option value="" disabled>Select Status</option>
@@ -227,7 +228,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
                 placeholder="Expected/Actual Marks (Max 700)"
                 max={700}
                 min={0}
-                className="w-full px-4 py-3 text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
+                className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
                 required
               />
             </motion.div>
@@ -241,7 +242,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
           name="university"
           value={formData.university}
           onChange={handleChange}
-          className="w-full px-4 py-3 text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer"
+          className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer`}
           required
         >
           <option value="" disabled>Choose Institution</option>
@@ -254,11 +255,11 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
         </select>
       </div>
 
-      <div className="pt-4">
+      <div className={compact ? "pt-2" : "pt-4"}>
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[#0B1F33] hover:bg-[#1a4db8] text-white font-black py-4 rounded-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-70 text-sm uppercase tracking-widest shadow-xl shadow-navy/10 group"
+          className={`w-full bg-[#0B1F33] hover:bg-[#1a4db8] text-white font-black ${compact ? 'py-3.5' : 'py-4'} rounded-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-70 text-sm uppercase tracking-widest shadow-xl shadow-navy/10 group`}
         >
           {isSubmitting ? (
             <>
@@ -272,7 +273,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application" }
             </>
           )}
         </button>
-        <p className="text-[10px] text-gray-400 text-center mt-4 font-bold uppercase tracking-widest">
+        <p className={`text-[10px] text-gray-400 text-center ${compact ? 'mt-3' : 'mt-4'} font-bold uppercase tracking-widest`}>
           🔒 Secure & Confidential Application
         </p>
       </div>

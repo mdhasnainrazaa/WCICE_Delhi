@@ -588,55 +588,6 @@ export default function OIMUDetailPage() {
         </div>
       </section>
 
-      {/* 15 ── WHY CHOOSE OIMU (DARK SECTION) */}
-      <section className="py-24 bg-[#0F172A] text-white">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <SectionHeading subtitle="The OIMU Advantage" title="Why Choose Osh International Medical University?" light />
-              <div className="space-y-4 mt-8">
-                {[
-                  "Affordable MBBS tuition fees",
-                  "Dedicated FMGE/NExT support",
-                  "Extensive clinical exposure in top hospitals",
-                  "Modern infrastructure and smart labs",
-                  "Secure hostel with Indian food",
-                  "Scholarship opportunities for bright minds"
-                ].map((point, i) => (
-                  <div key={i} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                    <CheckCircle2 className="text-[#0EA5E9]" />
-                    <span className="text-lg font-medium">{point}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Fee Snapshot */}
-            <div className="bg-gradient-to-br from-[#0057B8] to-[#0EA5E9] p-10 rounded-[32px] shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-2xl" />
-               <h3 className="text-2xl font-bold mb-8 relative z-10">MBBS Fee Overview</h3>
-               <div className="space-y-6 relative z-10">
-                 <div className="flex justify-between items-center border-b border-white/20 pb-4">
-                   <span className="font-medium text-white/80">Tuition Fee (Per Year)</span>
-                   <span className="text-xl font-bold">$3,500</span>
-                 </div>
-                 <div className="flex justify-between items-center border-b border-white/20 pb-4">
-                   <span className="font-medium text-white/80">Hostel Fee (Per Year)</span>
-                   <span className="text-xl font-bold">$600</span>
-                 </div>
-                 <div className="pt-4">
-                   <span className="block text-sm text-white/80 mb-1">Total Package (Approx)</span>
-                   <span className="text-5xl font-black">₹18-20 Lakhs</span>
-                 </div>
-               </div>
-               <button onClick={openModal} className="mt-8 w-full bg-white text-[#0057B8] py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-shadow">
-                 Get Detailed Fee Structure
-               </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 15.5 ── DETAILED FEE STRUCTURE TABLE */}
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
@@ -666,23 +617,23 @@ export default function OIMUDetailPage() {
                     <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Academic Year</th>
                     <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Tuition Fee</th>
                     <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Hostel Fee</th>
-                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Visa & Medical</th>
+                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Mess Fees</th>
                     <th className="p-4 text-[10px] font-bold uppercase tracking-widest bg-[#0057B8]/5 border-b border-[#E2E8F0] text-[#0057B8]">Total ({currency})</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { year: "1st Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹90,000" : "$1,000", total: currency === 'INR' ? "₹5,40,000" : "$6,000" },
-                    { year: "2nd Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
-                    { year: "3rd Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
-                    { year: "4th Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
-                    { year: "5th Year", tuition: currency === 'INR' ? "₹3,15,000" : "$3,500", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,05,000" : "$4,500" },
+                    { year: "1st Year", tuition: currency === 'INR' ? "₹5,95,000" : "$7,000", hostel: "Included", mess: "Included", total: currency === 'INR' ? "₹5,95,000" : "$7,000" },
+                    { year: "2nd Year", tuition: currency === 'INR' ? "₹2,97,500" : "$3,500", hostel: currency === 'INR' ? "₹51,000" : "$600", mess: currency === 'INR' ? "₹85,000" : "$1,000", total: currency === 'INR' ? "₹4,33,500" : "$5,100" },
+                    { year: "3rd Year", tuition: currency === 'INR' ? "₹2,97,500" : "$3,500", hostel: currency === 'INR' ? "₹51,000" : "$600", mess: currency === 'INR' ? "₹85,000" : "$1,000", total: currency === 'INR' ? "₹4,33,500" : "$5,100" },
+                    { year: "4th Year", tuition: currency === 'INR' ? "₹2,97,500" : "$3,500", hostel: currency === 'INR' ? "₹51,000" : "$600", mess: currency === 'INR' ? "₹85,000" : "$1,000", total: currency === 'INR' ? "₹4,33,500" : "$5,100" },
+                    { year: "5th Year", tuition: currency === 'INR' ? "₹2,97,500" : "$3,500", hostel: currency === 'INR' ? "₹51,000" : "$600", mess: currency === 'INR' ? "₹85,000" : "$1,000", total: currency === 'INR' ? "₹4,33,500" : "$5,100" },
                   ].map((row, i) => (
                     <tr key={i} className="border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors text-xs">
                       <td className="p-4 font-bold text-[#0F172A] whitespace-nowrap uppercase tracking-wider">{row.year}</td>
                       <td className="p-4 font-semibold text-[#64748B]">{row.tuition}</td>
                       <td className="p-4 font-semibold text-[#64748B]">{row.hostel}</td>
-                      <td className="p-4 font-semibold text-[#64748B]">{row.visa}</td>
+                      <td className="p-4 font-semibold text-[#64748B]">{row.mess}</td>
                       <td className={`p-4 font-bold bg-[#0057B8]/5 ${i === 0 ? 'text-[#0EA5E9]' : 'text-[#0057B8]'}`}>{row.total}</td>
                     </tr>
                   ))}
@@ -694,7 +645,7 @@ export default function OIMUDetailPage() {
               <div className="relative z-10">
                 <h4 className="text-lg font-bold mb-2">Complete 5-Year Program Total</h4>
                 <div className="text-4xl font-black mb-4">
-                  {currency === 'INR' ? "₹21.60 Lakhs" : "$24,000"}*
+                  {currency === 'INR' ? "₹23.29 Lakhs" : "$27,400"}*
                 </div>
                 <button 
                   onClick={openModal}
@@ -820,11 +771,6 @@ export default function OIMUDetailPage() {
           </div>
         </div>
       </section>
-
-      {/* FLOATING ACTION BUTTONS */}
-      <a href="https://wa.me/918826418950" target="_blank" rel="noreferrer" className="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
-        <MessageCircle size={28} />
-      </a>
 
       {/* MOBILE STICKY CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] p-4 z-50 flex gap-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">

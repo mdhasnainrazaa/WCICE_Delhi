@@ -12,7 +12,7 @@ const navLinks = [
   { name: "About WCIEC", href: "/about-us" },
   { 
     name: "University", 
-    href: "#",
+    href: "/universities",
     dropdown: [
       { name: "Jalal-Abad International University", href: "/universities/jalal-abad-international-university" },
       { name: "Jalal-Abad State University", href: "/universities/jalal-abad-state-university" },

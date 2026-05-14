@@ -64,6 +64,7 @@ import { useApplyModal } from "@/context/ApplyModalContext";
 
 export default function CAIMUDetailPage() {
   const { openModal } = useApplyModal();
+  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   return (
     <main className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#F97316] selection:text-white">
@@ -381,6 +382,98 @@ export default function CAIMUDetailPage() {
           </div>
         </div>
       </section>
+ 
+      {/* ─── FEE STRUCTURE SECTION ─── */}
+      <section className="py-24 bg-white" id="fee-structure">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <PromDown title="MBBS Fee Structure 2026" subtitle="Affordable Education" defaultOpen={true}>
+            <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+              <p className="text-[#64748B] text-sm max-w-xl">
+                Comprehensive fee breakdown for international students at CAIMU. All values are in USD unless specified otherwise.
+              </p>
+              <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm shrink-0">
+                <button onClick={() => setCurrency('INR')} className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'INR' ? "bg-[#F97316] text-white shadow-md" : "text-[#64748B]"}`}>INR (₹)</button>
+                <button onClick={() => setCurrency('USD')} className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'USD' ? "bg-[#F97316] text-white shadow-md" : "text-[#64748B]"}`}>USD ($)</button>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              {/* 1st Year Package */}
+              <div className="bg-[#0F172A] rounded-[32px] p-8 text-white relative overflow-hidden shadow-xl">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#F97316]/10 rounded-full blur-3xl -mr-20 -mt-20" />
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+                  <div>
+                    <h4 className="text-xl font-bold mb-2 flex items-center gap-2 text-[#FACC15]">
+                      <Sparkles size={24} /> First Year Package
+                    </h4>
+                    <p className="text-white/60 text-sm">Inclusive of Tuition, Hostel, Mess, and Registration</p>
+                  </div>
+                  <div className="text-4xl md:text-5xl font-black text-white">
+                    {currency === 'INR' ? "₹5,78,000" : "$6,800"}
+                  </div>
+                </div>
+              </div>
+
+              {/* 2nd - 5th Year Detailed Fees */}
+              <div className="overflow-x-auto rounded-[32px] border border-[#E2E8F0] bg-white shadow-sm">
+                <table className="w-full text-left border-collapse min-w-[800px]">
+                  <thead>
+                    <tr className="bg-[#F8FAFC] text-[#0F172A]">
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Year</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Tuition</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Mess</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Hostel</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Visa</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Medical</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Misc.</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest bg-[#F97316]/5 border-b border-[#E2E8F0] text-[#F97316]">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm">
+                    {["2nd Year", "3rd Year", "4th Year", "5th Year"].map((year, i) => (
+                      <tr key={i} className="border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors">
+                        <td className="p-6 font-bold text-[#0F172A]">{year}</td>
+                        <td className="p-6 font-medium text-[#64748B]">{currency === 'INR' ? "₹2,72,000" : "$3,200"}</td>
+                        <td className="p-6 font-medium text-[#64748B]">{currency === 'INR' ? "₹1,02,000" : "$1,200"}</td>
+                        <td className="p-6 font-medium text-[#64748B]">{currency === 'INR' ? "₹51,000" : "$600"}</td>
+                        <td className="p-6 font-medium text-[#64748B]">{currency === 'INR' ? "₹21,250" : "$250"}</td>
+                        <td className="p-6 font-medium text-[#64748B]">{currency === 'INR' ? "₹8,500" : "$100"}</td>
+                        <td className="p-6 font-medium text-[#64748B]">{currency === 'INR' ? "₹12,750" : "$150"}</td>
+                        <td className="p-6 font-bold bg-[#F97316]/5 text-[#F97316]">
+                          {currency === 'INR' ? "₹4,67,500" : "$5,500"}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Notes & Grand Total */}
+              <div className="grid md:grid-cols-2 gap-8 items-start">
+                <div className="bg-[#FFF7ED] border border-[#FFEDD5] p-6 rounded-3xl">
+                  <h5 className="font-bold text-[#9A3412] mb-3 flex items-center gap-2">
+                    <CheckCircle2 size={20} /> Important Notes
+                  </h5>
+                  <ul className="space-y-2 text-[#C2410C] text-sm font-medium">
+                    <li>• 1st to 3rd Year Hostel & Mess is COMPULSORY.</li>
+                    <li>• Fees are subject to change per university regulations.</li>
+                    <li>• Food charges include standard Indian Mess facilities.</li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-br from-[#F97316] to-[#FACC15] p-8 rounded-[32px] text-white shadow-xl">
+                  <div className="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Grand Total Package (5 Years)</div>
+                  <div className="text-4xl font-black mb-4">
+                    {currency === 'INR' ? "₹24.48 Lakhs" : "$28,800"}*
+                  </div>
+                  <button onClick={openModal} className="w-full bg-white text-[#F97316] font-bold py-4 rounded-2xl hover:bg-gray-50 transition-all shadow-lg">
+                    Apply for Admission 2026
+                  </button>
+                </div>
+              </div>
+            </div>
+          </PromDown>
+        </div>
+      </section>
 
       {/* 13️⃣ FAQ SECTION */}
       <section className="py-24 bg-white">
@@ -427,14 +520,6 @@ export default function CAIMUDetailPage() {
               <p className="text-white/80 text-lg mb-10 leading-relaxed">
                 Get complete admission guidance, documentation support, and expert counseling for MBBS admission in Kyrgyzstan.
               </p>
-              <div className="flex flex-wrap gap-4 mb-12">
-                <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transition-all">
-                  Apply Now
-                </button>
-                <a href="tel:+918826418950" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-md transition-all flex items-center gap-2">
-                  <Phone size={20} /> Talk to Counselor
-                </a>
-              </div>
               <div className="space-y-4">
                 <h4 className="font-bold text-[#FACC15] uppercase tracking-wider text-sm">Contact Us</h4>
                 <div className="flex items-center gap-3 text-white/80"><Phone size={20} className="text-[#F97316]" /> +91 85868 73357, +91 99116 35435</div>
@@ -451,11 +536,6 @@ export default function CAIMUDetailPage() {
           </div>
         </div>
       </section>
-
-      {/* FLOATING ACTION BUTTONS */}
-      <a href="https://wa.me/918826418950" target="_blank" rel="noreferrer" className="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
-        <MessageCircle size={28} />
-      </a>
 
       {/* MOBILE STICKY CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] p-4 z-50 flex gap-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">

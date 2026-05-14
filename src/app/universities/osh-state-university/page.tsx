@@ -476,52 +476,120 @@ export default function OSUDetailPage() {
       {/* 17 ── FEE STRUCTURE SECTION */}
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
-          <PromDown title="MBBS Fee Structure 2026" subtitle="Affordable Education" defaultOpen={false}>
-            <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-              <p className="text-[#64748B] text-sm">Detailed fee structure for Indian students. All fees are subject to change based on university regulations.</p>
+          <PromDown title="MBBS Fee Structure 2026" subtitle="Affordable Education" defaultOpen={true}>
+            <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+              <p className="text-[#64748B] text-sm max-w-xl">Comprehensive fee breakdown for Indian students. All values are in USD unless specified otherwise.</p>
               <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm shrink-0">
                 <button onClick={() => setCurrency('INR')} className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'INR' ? "bg-[#2563EB] text-white shadow-md" : "text-[#64748B]"}`}>INR (₹)</button>
                 <button onClick={() => setCurrency('USD')} className={`px-6 py-2.5 rounded-xl font-bold text-xs transition-all ${currency === 'USD' ? "bg-[#2563EB] text-white shadow-md" : "text-[#64748B]"}`}>USD ($)</button>
               </div>
             </div>
 
-            <div className="overflow-x-auto rounded-2xl border border-[#E2E8F0] bg-white mb-8">
-              <table className="w-full text-left border-collapse min-w-[600px]">
-                <thead>
-                  <tr className="bg-[#F8FAFC] text-[#0F172A]">
-                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Year</th>
-                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Tuition Fee</th>
-                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Hostel Fee</th>
-                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Medical/Visa</th>
-                    <th className="p-4 text-[10px] font-bold uppercase tracking-widest bg-[#2563EB]/5 border-b border-[#E2E8F0] text-[#2563EB]">Total ({currency})</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { year: "1st Year", tuition: currency === 'INR' ? "₹3,60,000" : "$4,000", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹90,000" : "$1,000", total: currency === 'INR' ? "₹5,04,000" : "$5,600" },
-                    { year: "2nd to 5th Year", tuition: currency === 'INR' ? "₹3,60,000" : "$4,000", hostel: currency === 'INR' ? "₹54,000" : "$600", visa: currency === 'INR' ? "₹18,000" : "$200", total: currency === 'INR' ? "₹4,32,000" : "$4,800" },
-                  ].map((row, i) => (
-                    <tr key={i} className="border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors">
-                      <td className="p-4 text-xs font-bold text-[#0F172A]">{row.year}</td>
-                      <td className="p-4 text-xs font-medium text-[#64748B]">{row.tuition}</td>
-                      <td className="p-4 text-xs font-medium text-[#64748B]">{row.hostel}</td>
-                      <td className="p-4 text-xs font-medium text-[#64748B]">{row.visa}</td>
-                      <td className={`p-4 text-sm font-bold bg-[#2563EB]/5 ${i === 0 ? 'text-[#14B8A6]' : 'text-[#2563EB]'}`}>{row.total}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              {/* Tuition Fees */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-[#0F172A] flex items-center gap-2">
+                  <GraduationCap size={20} className="text-[#2563EB]" /> Fees Structure 2026
+                </h4>
+                <div className="overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-[#F8FAFC] text-[#0F172A]">
+                        <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Period</th>
+                        <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Fee Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-sm">
+                      <tr className="border-b border-[#E2E8F0]">
+                        <td className="p-4 font-semibold text-[#0F172A]">1st Year</td>
+                        <td className="p-4 font-bold text-[#2563EB]">{currency === 'INR' ? "₹5,86,415" : "$6,899"}</td>
+                      </tr>
+                      <tr className="border-b border-[#E2E8F0]">
+                        <td className="p-4 font-semibold text-[#0F172A]">2nd - 5th Year</td>
+                        <td className="p-4 font-bold text-[#2563EB]">{currency === 'INR' ? "₹3,82,500" : "$4,500"} <span className="text-[10px] text-[#64748B] font-medium">/Year</span></td>
+                      </tr>
+                      <tr className="border-b border-[#E2E8F0]">
+                        <td className="p-4 font-semibold text-[#0F172A]">Internship</td>
+                        <td className="p-4 font-medium text-[#64748B]">According to Gov. Norms</td>
+                      </tr>
+                      <tr className="bg-[#F8FAFC]">
+                        <td className="p-4 font-black text-[#0F172A]">Grand Total (Tuition)</td>
+                        <td className="p-4 font-black text-[#14B8A6] text-lg">{currency === 'INR' ? "₹21,16,415" : "$24,899"}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Accommodation & Food */}
+              <div className="space-y-4">
+                <h4 className="text-lg font-bold text-[#0F172A] flex items-center gap-2">
+                  <Coffee size={20} className="text-[#F59E0B]" /> Accommodation & Food
+                </h4>
+                <div className="overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-[#F8FAFC] text-[#0F172A]">
+                        <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Service</th>
+                        <th className="p-4 text-[10px] font-bold uppercase tracking-widest border-b border-[#E2E8F0]">Fee Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-sm">
+                      <tr>
+                        <td className="p-4 font-semibold text-[#0F172A]">Hostel & Mess (Per Year)</td>
+                        <td className="p-4 font-bold text-[#F59E0B]">{currency === 'INR' ? "₹1,36,000" : "$1,600"}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <div className="p-4 bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] mt-4">
+                   <h5 className="font-bold text-[#0F172A] mb-2 flex items-center gap-2">
+                     <ShieldCheck size={16} className="text-[#14B8A6]" /> One Time Charges
+                   </h5>
+                   <div className="space-y-2">
+                      {[
+                        { label: "Admission Letter", val: "$200" },
+                        { label: "Documentation", val: "$300" },
+                        { label: "Invitation & Visa", val: "$500" },
+                        { label: "Air Ticket", val: "$400" },
+                        { label: "Airport Pickup & Misc.", val: "$200" }
+                      ].map((item, i) => (
+                        <div key={i} className="flex justify-between text-xs py-1 border-b border-gray-100 last:border-0">
+                          <span className="text-[#64748B] font-medium">{item.label}</span>
+                          <span className="text-[#0F172A] font-bold">{currency === 'INR' ? `₹${parseInt(item.val.replace('$','')) * 85}` : item.item === 'Air Ticket' ? item.val : item.val}</span>
+                        </div>
+                      ))}
+                      <div className="flex justify-between text-sm pt-2 font-black text-[#14B8A6]">
+                        <span>Grand Total (One Time)</span>
+                        <span>{currency === 'INR' ? "₹1,36,000" : "$1,600"}</span>
+                      </div>
+                   </div>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-gradient-to-r from-[#0F172A] to-[#2563EB] rounded-2xl p-8 text-center text-white relative overflow-hidden">
-               <div className="relative z-10">
-                <h4 className="text-lg font-bold mb-2">5-Year MBBS Package</h4>
-                <div className="text-4xl font-black mb-4">
-                  {currency === 'INR' ? "₹22.32 Lakhs" : "$24,800"}*
+            <div className="bg-[#0F172A] rounded-3xl p-8 text-white relative overflow-hidden shadow-2xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#2563EB]/20 rounded-full blur-3xl -mr-20 -mt-20" />
+              <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                <div>
+                  <h4 className="text-xl font-bold mb-4 flex items-center gap-2">
+                    <Sparkles size={24} className="text-[#F59E0B]" /> Additional Fees
+                  </h4>
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl inline-block">
+                    <div className="text-sm text-white/60 font-bold uppercase tracking-widest mb-1">Consultancy Fees</div>
+                    <div className="text-3xl font-black text-[#14B8A6]">₹1,50,000/- <span className="text-sm font-medium text-white/40 italic">INR</span></div>
+                  </div>
                 </div>
-                <button onClick={openModal} className="bg-[#14B8A6] text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg hover:bg-[#0D9488] transition-all">
-                  Apply Now
-                </button>
+                <div className="text-center md:text-right">
+                  <div className="text-sm text-white/60 font-bold uppercase tracking-widest mb-2">Total Estimated Package (5 Years)</div>
+                  <div className="text-4xl md:text-5xl font-black mb-6 text-white">
+                    {currency === 'INR' ? "₹29.32 Lakhs" : "$34,499"}*
+                  </div>
+                  <button onClick={openModal} className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#2563EB]/20">
+                    Apply Now
+                  </button>
+                </div>
               </div>
             </div>
           </PromDown>
@@ -572,19 +640,11 @@ export default function OSUDetailPage() {
                 <button onClick={openModal} className="bg-[#14B8A6] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#0D9488] shadow-lg transition-all">
                   Apply Now
                 </button>
-                <a href="tel:+918586873357" className="bg-white text-[#2563EB] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 shadow-lg transition-all flex items-center gap-2">
-                  <Phone size={20} /> Talk to Counselor
-                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* FLOATING ACTION BUTTONS */}
-      <a href="https://wa.me/918826418950" target="_blank" rel="noreferrer" className="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
-        <MessageCircle size={28} />
-      </a>
 
       {/* MOBILE STICKY CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] p-4 z-50 flex gap-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
