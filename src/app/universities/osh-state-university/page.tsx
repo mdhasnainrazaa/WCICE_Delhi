@@ -229,22 +229,41 @@ export default function OSUDetailPage() {
         </div>
       </section>
 
-      {/* 5️⃣ CAMPUS & INFRASTRUCTURE */}
-      <section className="py-24 bg-white">
+      {/* 5️⃣ GALLERY SECTION */}
+      <section className="py-24 bg-white" id="gallery">
         <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Infrastructure" title="World-Class Campus Facilities" center />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+          <SectionHeading subtitle="Visual Tour" title="University Gallery" center />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              { title: "Smart Classrooms", img: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", col: "lg:col-span-2", row: "row-span-2", h: "h-[400px]" },
-              { title: "Simulation Centers", img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", col: "lg:col-span-2", h: "h-[190px]" },
-              { title: "Digital Library", img: "https://images.unsplash.com/photo-1507733108139-47000e48962a?q=80&w=800", col: "col-span-1", h: "h-[190px]" },
-              { title: "Sports Areas", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800", col: "col-span-1", h: "h-[190px]" }
-            ].map((item, i) => (
-              <div key={i} className={`relative rounded-[24px] overflow-hidden group ${item.col} ${item.row || ''} ${item.h}`}>
-                <Image src={item.img} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-[#0F172A]/20 to-transparent" />
-                <h3 className="absolute bottom-6 left-6 text-xl font-bold text-white">{item.title}</h3>
-              </div>
+              { src: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800", label: "Campus View" },
+              { src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800", label: "Main Building" },
+              { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800", label: "Medical Faculty" },
+              { src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800", label: "Research Center" },
+              { src: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", label: "Smart Classroom" },
+              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", label: "Advanced Laboratory" },
+              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", label: "Student Hostel" },
+              { src: "https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800", label: "Student Life" },
+              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", label: "Culture & Events" },
+              { src: "/images/Osh-State-University.png", label: "Medical Faculty" },
+            ].map((img, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.02 }}
+                className={`relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group aspect-square ${
+                  i === 0 || i === 3 ? "md:col-span-2 md:aspect-video" : ""
+                }`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.label}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <span className="text-white font-black text-xs md:text-sm uppercase tracking-widest">{img.label}</span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>

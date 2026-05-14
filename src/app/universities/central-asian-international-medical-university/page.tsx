@@ -343,24 +343,40 @@ export default function CAIMUDetailPage() {
       </section>
 
       {/* 12️⃣ GALLERY SECTION */}
-      <section className="py-24 bg-[#F8FAFC]" id="gallery">
+      <section className="py-24 bg-white" id="gallery">
         <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Visual Tour" title="CAIMU Gallery" center />
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 mt-16">
+          <SectionHeading subtitle="Visual Tour" title="University Gallery" center />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              { src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800", alt: "Campus" },
-              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", alt: "Labs" },
-              { src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800", alt: "Students" },
-              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", alt: "Hostel" },
-              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", alt: "Events" },
-              { src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800", alt: "Clinical Training" }
+              { src: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800", label: "Campus View" },
+              { src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800", label: "Main Building" },
+              { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800", label: "Medical Faculty" },
+              { src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800", label: "Research Center" },
+              { src: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", label: "Smart Classroom" },
+              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", label: "Advanced Laboratory" },
+              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", label: "Student Hostel" },
+              { src: "https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800", label: "Student Life" },
+              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", label: "Culture & Events" },
+              { src: "/images/Central-Asian-Medical-University.png", label: "University Entrance" },
             ].map((img, i) => (
-              <div key={i} className="relative rounded-2xl overflow-hidden group cursor-pointer aspect-square">
-                <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">{img.alt}</span>
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.02 }}
+                className={`relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group aspect-square ${
+                  i === 0 || i === 3 ? "md:col-span-2 md:aspect-video" : ""
+                }`}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.label}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <span className="text-white font-black text-xs md:text-sm uppercase tracking-widest">{img.label}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

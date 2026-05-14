@@ -59,7 +59,7 @@ export function GlobalApplyModal() {
 
             {/* Body */}
             <div className="p-5">
-              <GlobalApplyForm onSuccess={closeModal} />
+              <GlobalApplyForm />
             </div>
           </motion.div>
         </>

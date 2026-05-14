@@ -32,6 +32,7 @@ import {
   Minus
 } from "lucide-react";
 import { PromDown } from "@/components/ui/PromDown";
+import { useApplyModal } from "@/context/ApplyModalContext";
 
 // ─── COMPONENTS ─────────────────────────────────────────────────────────────
 
@@ -63,6 +64,30 @@ const SectionHeading = ({ eyebrow, title, center = false }: { eyebrow: string; t
     </h2>
   </div>
 );
+
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className={`mb-4 transition-all duration-300 rounded-[24px] overflow-hidden ${isOpen ? 'bg-[#1a4db8]/5 border-[#1a4db8]/10' : 'bg-white border-transparent shadow-sm hover:shadow-md'} border`}>
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 md:p-8 text-left group">
+        <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-[#1a4db8]' : 'text-[#0B1F33]'} group-hover:text-[#1a4db8]`}>{question}</span>
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#1a4db8] text-white rotate-180' : 'bg-gray-50 text-gray-400'}`}>
+          <ChevronDown size={20} />
+        </div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+            <div className="px-6 md:px-8 pb-8">
+              <div className="w-full h-px bg-gray-100 mb-6" />
+              <p className="text-gray-600 leading-relaxed font-medium">{answer}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const FeeTable = () => {
   const [mounted, setMounted] = useState(false);
@@ -172,42 +197,6 @@ const FeeTable = () => {
     </div>
   );
 };
-
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className={`mb-4 transition-all duration-300 rounded-[2rem] overflow-hidden ${isOpen ? 'bg-[#1a4db8]/5 border-[#1a4db8]/10' : 'bg-white border-transparent shadow-sm hover:shadow-md'} border`}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 md:p-8 text-left transition-colors group"
-      >
-        <span className={`text-lg font-black transition-colors ${isOpen ? 'text-[#1a4db8]' : 'text-[#0B1F33]'} group-hover:text-[#1a4db8]`}>{question}</span>
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#1a4db8] text-white rotate-180' : 'bg-gray-50 text-gray-400'}`}>
-          <ChevronDown size={20} />
-        </div>
-      </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden"
-          >
-            <div className="px-6 md:px-8 pb-8">
-              <div className="w-full h-px bg-gray-100 mb-6" />
-              <p className="text-gray-600 leading-relaxed font-medium">{answer}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
-// ─── MODAL COMPONENT ─────────────────────────────────────────────────────────
-
-import { useApplyModal } from "@/context/ApplyModalContext";
 
 // ─── PAGE COMPONENT ──────────────────────────────────────────────────────────
 
@@ -397,23 +386,6 @@ export default function UniversityDetailPage() {
                   The university boasts modern classrooms, advanced laboratories, and a focus on <strong className="text-[#1a4db8]">simulation-based training</strong>. It has become a preferred destination for Indian students due to its affordable fee structure, multicultural environment, and dedicated hospital practice.
                 </p>
               </div>
-              <div className="mt-10 flex items-center gap-6">
-                <div className="flex -space-x-3">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-gray-200 overflow-hidden relative">
-                      <Image 
-                        src={`https://i.pravatar.cc/100?img=${i+10}`} 
-                        alt="Student" 
-                        fill 
-                        sizes="48px"
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className="text-sm font-black text-[#0B1F33] uppercase tracking-widest">
-                  1200+ Indian Students Currently Studying
-                </div>
-              </div>
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
                <Image
@@ -423,11 +395,6 @@ export default function UniversityDetailPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                   <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-[#1a4db8] shadow-2xl cursor-pointer hover:scale-110 transition-transform">
-                      <ArrowRight size={32} />
-                   </div>
-                </div>
             </div>
           </div>
         </div>
@@ -463,7 +430,14 @@ export default function UniversityDetailPage() {
       {/* ── FEE STRUCTURE ── */}
       <section className="py-16 bg-[#0B1F33] text-white relative overflow-hidden" id="fee-structure">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <PromDown title="Fee Structure 2026" subtitle="Investment in Future" defaultOpen={false} className="bg-white/5 border-white/10 text-white shadow-none">
+          <PromDown 
+            title="Fee Structure 2026" 
+            subtitle="Investment in Future" 
+            defaultOpen={false} 
+            className="bg-white/5 border-white/10 shadow-none"
+            titleClassName="text-white"
+            subtitleClassName="text-[#2563EB]"
+          >
             <div className="text-center mb-8">
               <p className="text-white/50 text-sm font-medium">Complete breakdown of tuition, mess, and hostel fees for the 6-year MBBS program.</p>
             </div>
@@ -646,7 +620,7 @@ export default function UniversityDetailPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4">
           <PromDown title="Frequently Asked Questions" subtitle="Common Questions" defaultOpen={false}>
-            <div className="mt-8 space-y-3">
+            <div className="mt-8">
               {[
                 { q: "Is Jalal-Abad International University good for MBBS?", a: "Yes, it offers affordable MBBS education, English-medium teaching, hospital practice, and FMGE preparation support." },
                 { q: "What is the total MBBS fee at JAIU?", a: "The total estimated fee is $33,350, which is approximately ₹30,01,500 at 1 USD = ₹90 exchange rate." },
@@ -655,10 +629,7 @@ export default function UniversityDetailPage() {
                 { q: "Is Indian food available?", a: "Yes, the university provides mess facilities that serve authentic Indian and South Asian food prepared by regional chefs." },
                 { q: "Does JAIU provide hostel facilities?", a: "Yes, separate, secure, and fully-furnished hostels are available for boys and girls on or near the campus." },
               ].map((faq, i) => (
-                <div key={i} className="bg-white border border-gray-100 p-4 rounded-xl shadow-sm">
-                  <h4 className="text-sm font-black text-[#1a4db8] mb-2">{faq.q}</h4>
-                  <p className="text-xs text-gray-600 font-bold">{faq.a}</p>
-                </div>
+                <FAQItem key={i} question={faq.q} answer={faq.a} />
               ))}
             </div>
           </PromDown>
@@ -682,12 +653,6 @@ export default function UniversityDetailPage() {
              >
                Apply Now
              </button>
-             <Link 
-               href="https://wa.me/918826418950" 
-               className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest flex items-center gap-3 hover:bg-white/20 transition-all"
-             >
-               <MessageCircle size={20} className="text-[#22C55E]" /> Talk to Counselor
-             </Link>
           </div>
         </div>
       </section>

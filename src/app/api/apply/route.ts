@@ -3,46 +3,49 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    
-    // Validate request body
-    const requiredFields = ['name', 'phone', 'email', 'city', 'neetStatus', 'university', 'pageUrl'];
+    console.log('Incoming Lead:', body.name);
+
+    const requiredFields = ['name', 'phone', 'email', 'city', 'neetStatus', 'university'];
     for (const field of requiredFields) {
       if (!body[field]) {
+        console.error('Validation Failed: Missing', field);
         return NextResponse.json({ error: `Missing required field: ${field}` }, { status: 400 });
       }
     }
 
     const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
 
-    // If a Google Apps Script URL is provided, send data there
     if (GOOGLE_SCRIPT_URL) {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          ...body
-        }),
-      });
+      console.log('Attempting Google Sheet Sync...');
+      try {
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+            ...body
+          }),
+        });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit to Google Sheets');
+        if (!response.ok) {
+          const text = await response.text();
+          console.error('Google Response Error:', text);
+          return NextResponse.json({ error: `Google Sheets Error: ${response.statusText}` }, { status: 502 });
+        }
+        
+        console.log('✅ Lead synced to Google Sheets successfully');
+      } catch (fetchError: any) {
+        console.error('Fetch Connection Error:', fetchError.message);
+        return NextResponse.json({ error: 'Connection to Google Sheets failed' }, { status: 503 });
       }
     } else {
-      // Simulate submission if no URL is configured
-      console.log('Form submission received (No GOOGLE_SCRIPT_URL configured):', body);
-      // Wait a moment to simulate network request
-      await new Promise(resolve => setTimeout(resolve, 800));
+      console.warn('⚠️ No GOOGLE_SCRIPT_URL - Lead logged to console only');
+      console.log('Lead Data:', body);
     }
 
-    return NextResponse.json({ success: true, message: 'Application submitted successfully' });
-  } catch (error) {
-    console.error('Apply API Error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: true });
+  } catch (err: any) {
+    console.error('Critical API Error:', err.message);
+    return NextResponse.json({ error: err.message || 'Server error' }, { status: 500 });
   }
 }
