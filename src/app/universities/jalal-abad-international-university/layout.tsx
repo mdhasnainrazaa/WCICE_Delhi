@@ -7,7 +7,21 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jalal-Abad International University MBBS Fees 2026",
     description: "Study MBBS in Kyrgyzstan with affordable fees and English-medium education at JAIU.",
-    images: ["/images/Jalal-Abad-International-University-hero.png"],
+    url: 'https://wciec.org/universities/jalal-abad-international-university',
+    siteName: 'WCIEC Organization',
+    images: [
+      {
+        url: "/images/Jalal-Abad-International-University-hero.png",
+        width: 1200,
+        height: 630,
+        alt: 'Jalal-Abad International University Campus',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://wciec.org/universities/jalal-abad-international-university',
   },
 };
 
@@ -16,5 +30,30 @@ export default function UniversityLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollegeOrUniversity",
+            "name": "Jalal-Abad International University (JAIU)",
+            "url": "https://wciec.org/universities/jalal-abad-international-university",
+            "description": "Jalal-Abad International University is a prominent institution in Kyrgyzstan offering world-class medical education with modern facilities.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Jalal-Abad",
+              "addressCountry": "Kyrgyzstan"
+            },
+            "sameAs": [
+              "https://www.facebook.com/wciec",
+              "https://www.instagram.com/wciec"
+            ]
+          })
+        }}
+      />
+      {children}
+    </>
+  );
 }

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'WCIEC Medical Platform',
     images: [
       {
-        url: '/images/caimu-banner.jpg',
+        url: '/images/Central-Asian-Medical-University.png',
         width: 1200,
         height: 630,
         alt: 'CAIMU Campus',

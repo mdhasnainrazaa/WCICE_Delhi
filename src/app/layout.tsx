@@ -16,9 +16,57 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Study Abroad & MBBS Abroad Consultant in India | WCIEC Organization",
-  description: "WCIEC is the best study abroad consultant in India for Indian students. Secure your international MBBS degree with 15+ years of excellence. Transparent fees & ethical counselling.",
-  keywords: "study abroad consultant in India, study abroad consultants for Indian students, overseas education consultant, foreign education consultant, education consultant for abroad studies, best study abroad consultant in India, study abroad counselling India, international education consultant India, MBBS abroad consultant in India, MBBS abroad consultants for Indian students, MBBS abroad admission consultant, MBBS abroad counselling, MBBS abroad admission guidance",
+  metadataBase: new URL('https://wciec.org'),
+  title: {
+    default: "MBBS in Kyrgyzstan for Indian Students 2026 | Study Medicine Abroad",
+    template: "%s | WCIEC Organization"
+  },
+  description: "WCIEC offers direct MBBS admission in Kyrgyzstan for Indian students. Affordable medical education, NMC recognized universities, Indian food & hostel. Admission 2026 open now!",
+  keywords: "MBBS in Kyrgyzstan for Indian Students, Study Medicine in Kyrgyzstan, Affordable Medical Education in Kyrgyzstan, Direct MBBS Admission in Kyrgyzstan, Best Medical Universities in Kyrgyzstan, NMC Recognized Medical Colleges in Kyrgyzstan, Low-Cost MBBS Abroad in Kyrgyzstan, MBBS Admission 2026 Kyrgyzstan, NEET Qualified Students MBBS Kyrgyzstan",
+  authors: [{ name: "WCIEC Organization" }],
+  creator: "WCIEC Organization",
+  publisher: "WCIEC Organization",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://wciec.org",
+    siteName: "WCIEC Organization",
+    title: "MBBS in Kyrgyzstan for Indian Students | Admissions Open 2026",
+    description: "Direct MBBS admission in top-ranked, NMC-recognized medical universities in Kyrgyzstan. Low fees, Indian mess, and expert FMGE coaching.",
+    images: [
+      {
+        url: "/logos/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "WCIEC Organization - MBBS in Kyrgyzstan",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Study MBBS in Kyrgyzstan | Direct Admission 2026",
+    description: "Trusted MBBS consultancy for Kyrgyzstan. Secure your medical seat today with WCIEC.",
+    images: ["/logos/logo.png"],
+  },
+  alternates: {
+    canonical: "https://wciec.org",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 import { Navbar } from "@/components/layout/Navbar";

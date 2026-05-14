@@ -7,7 +7,21 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Study MBBS at Jalal-Abad State University | WCIEC Medical Platform',
     description: 'Globally recognized MBBS degree at Jalal-Abad State University. English medium, affordable fees, and FMGE support.',
-    images: ['/images/Jalal-Abad-banner.png'],
+    url: 'https://wciec.org/universities/jalal-abad-state-university',
+    siteName: 'WCIEC Organization',
+    images: [
+      {
+        url: '/images/Jalal-Abad-banner.png',
+        width: 1200,
+        height: 630,
+        alt: 'Jalal-Abad State University Campus',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://wciec.org/universities/jalal-abad-state-university',
   },
 };
 
@@ -16,5 +30,30 @@ export default function JASULayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollegeOrUniversity",
+            "name": "Jalal-Abad State University (JASU)",
+            "url": "https://wciec.org/universities/jalal-abad-state-university",
+            "description": "Jalal-Abad State University is a premier medical university in Kyrgyzstan providing high-quality medical education in English for international students.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Jalal-Abad",
+              "addressCountry": "Kyrgyzstan"
+            },
+            "sameAs": [
+              "https://www.facebook.com/wciec",
+              "https://www.instagram.com/wciec"
+            ]
+          })
+        }}
+      />
+      {children}
+    </>
+  );
 }

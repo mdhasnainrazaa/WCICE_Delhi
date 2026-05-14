@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'WCIEC Medical Platform',
     images: [
       {
-        url: '/images/osh-international-medical-university-banner.jpg', // Placeholder
+        url: '/images/osh-international-medical-university.png',
         width: 1200,
         height: 630,
         alt: 'Osh International Medical University Campus',
