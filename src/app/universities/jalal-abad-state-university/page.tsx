@@ -34,7 +34,8 @@ import {
   Briefcase,
   Search,
   Zap,
-  Target
+  Target,
+  PlayCircle
 } from "lucide-react";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 import { PromDown } from "@/components/ui/PromDown";
@@ -117,101 +118,66 @@ export default function JASUDetailPage() {
   return (
     <main className="bg-[#F8FAFC] min-h-screen font-inter">
 
-      {/* ── 1. HERO SECTION ── */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#0F172A]">
-        {/* Animated Particles & Gradients */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2563EB]/20 rounded-full blur-[120px] animate-pulse" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#7C3AED]/10 rounded-full blur-[120px] animate-pulse" />
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "48px 48px" }} />
+      {/* 1️⃣ HERO SECTION */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
+        <div className="absolute inset-0">
+          <Image src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1920" alt="Jalal-Abad State University" fill className="object-cover opacity-20" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
+          {/* Orange Glow */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F97316]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         </div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full py-20">
+        
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
           <Breadcrumbs />
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] mb-8">
-                <Zap size={14} className="text-[#06B6D4]" />
-                Top-Ranked Government University
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
+              <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
+                <Globe2 size={16} /> MBBS in Kyrgyzstan
               </div>
-              <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8">
-                Study MBBS at <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#7C3AED]">Jalal-Abad</span> <br />
-                State University
+              <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
+                Jalal-Abad State <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University</span>
               </h1>
-              <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-medium">
-                Globally Recognized MBBS Program in Kyrgyzstan for Indian & International Students. Start your medical journey with a 30-year legacy.
+              <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
+                Study MBBS at Jalal-Abad State University, a top-ranked government university in Kyrgyzstan. Start your medical journey with a 30-year legacy of excellence.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-                {[
-                  "NMC & WHO Approved",
-                  "English Medium MBBS",
-                  "Affordable Fees",
-                  "FMGE/NExT Support",
-                  "Indian Hostel & Mess",
-                  "1 Year Internship Included",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-white/80 font-bold text-sm">
-                    <div className="w-5 h-5 rounded-full bg-[#2563EB]/20 flex items-center justify-center">
-                      <CheckCircle2 size={12} className="text-[#2563EB]" />
+              <div className="flex flex-wrap gap-4 mb-16">
+                <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#F97316]/30 flex items-center gap-2">
+                  Apply Now <ArrowRight size={20} />
+                </button>
+                <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2">
+                  Download Brochure <Download size={20} />
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Right Side Quick Form or Stats */}
+            <div className="lg:col-span-4 relative hidden lg:block">
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-8 shadow-2xl relative overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#FACC15]/20 rounded-full blur-3xl" />
+                <h3 className="text-xl font-bold text-white mb-6">Quick Overview</h3>
+                <div className="space-y-6">
+                  {[
+                    { label: "Established", value: "1993", icon: Building2 },
+                    { label: "Location", value: "Jalal-Abad, KG", icon: MapPin },
+                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
+                    { label: "Duration", value: "5 Years", icon: Clock },
+                    { label: "FMGE Coaching", value: "Available", icon: Target },
+                  ].map((stat, i) => (
+                    <div key={i} className="flex items-center gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                      <div className="w-10 h-10 bg-[#F97316]/20 rounded-xl flex items-center justify-center shrink-0">
+                        <stat.icon size={20} className="text-[#FACC15]" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-semibold text-white/60 uppercase tracking-wider">{stat.label}</div>
+                        <div className="font-bold text-white">{stat.value}</div>
+                      </div>
                     </div>
-                    {item}
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-6">
-                <button 
-                  onClick={openModal}
-                  className="bg-[#2563EB] hover:bg-[#1d4ed8] text-white px-10 py-5 rounded-[20px] font-black text-sm uppercase tracking-widest transition-all shadow-xl shadow-blue-500/20 flex items-center gap-3"
-                >
-                  Apply Now <ArrowRight size={18} />
-                </button>
-                <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-[20px] font-black text-sm uppercase tracking-widest transition-all flex items-center gap-3">
-                  Download Brochure <Download size={18} />
-                </button>
-              </div>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4 pt-12">
-                  <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden shadow-2xl">
-                    <Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800" alt="Students" fill className="object-cover" sizes="300px" />
-                  </div>
-                  <div className="relative aspect-square rounded-[24px] overflow-hidden shadow-2xl">
-                    <Image src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800" alt="Lab" fill className="object-cover" sizes="300px" />
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="relative aspect-square rounded-[24px] overflow-hidden shadow-2xl">
-                    <Image src="/images/Jalal-Abad-banner.png" alt="University" fill className="object-cover" sizes="300px" />
-                  </div>
-                  <div className="relative aspect-[3/4] rounded-[24px] overflow-hidden shadow-2xl">
-                    <Image src="https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800" alt="Hostel" fill className="object-cover" sizes="300px" />
-                  </div>
+                  ))}
                 </div>
               </div>
-
-              {/* Floating Cards */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }} 
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-10 -right-10 bg-white/95 backdrop-blur-xl p-6 rounded-[24px] shadow-2xl border border-white/20 hidden md:block"
-              >
-                <div className="text-3xl font-black text-[#2563EB]">450+</div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-gray-400">FMGE Achievers</div>
-              </motion.div>
-              <motion.div 
-                animate={{ y: [0, 10, 0] }} 
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-10 -left-10 bg-[#7C3AED] p-6 rounded-[24px] shadow-2xl border border-white/10 hidden md:block"
-              >
-                <div className="text-2xl font-black text-white">₹34.69L</div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-white/60">Total Fees</div>
-              </motion.div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -287,7 +253,6 @@ export default function JASUDetailPage() {
               { title: "Affordable MBBS", desc: "Low tuition fees and affordable living costs for students.", icon: Trophy, color: "indigo" },
               { title: "English Medium", desc: "Complete course taught in English for international ease.", icon: BookOpen, color: "purple" },
               { title: "Clinical Exposure", desc: "High patient flow in affiliated government hospitals.", icon: Stethoscope, color: "rose" },
-              { title: "Infrastructure", desc: "Modern labs, smart classrooms, and simulation centers.", icon: Building2, color: "cyan" },
               { title: "Indian Food", desc: "Dedicated Indian mess with regional cuisines available.", icon: Coffee, color: "amber" },
               { title: "FMGE Coaching", desc: "Special classes by Indian experts for licensing exams.", icon: GraduationCap, color: "emerald" },
               { title: "Safe Environment", desc: "24/7 campus security and supportive student community.", icon: ShieldCheck, color: "blue" },
@@ -356,7 +321,8 @@ export default function JASUDetailPage() {
           <PromDown 
             title="Affordable MBBS Fee Structure" 
             subtitle="Pricing" 
-            defaultOpen={false} 
+            defaultOpen={true} 
+            staticOnMobile={true}
             className="bg-white/5 border-white/10 shadow-none"
             titleClassName="text-white"
             subtitleClassName="text-[#2563EB]"
@@ -454,87 +420,30 @@ export default function JASUDetailPage() {
                 </div>
               </div>
             </div>
-            <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-               <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-xl mt-12">
-                  <Image src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800" alt="Clinical" fill className="object-cover" sizes="300px" />
-               </div>
-               <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-xl">
-                  <Image src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800" alt="Hospital" fill className="object-cover" sizes="300px" />
+            <div className="order-1 lg:order-2 relative aspect-[4/5] lg:aspect-square rounded-[32px] overflow-hidden shadow-2xl border-8 border-gray-50/50">
+               <video 
+                 src="/images/jasu-gallery/jalabasState.mp4" 
+                 className="w-full h-full object-cover"
+                 autoPlay 
+                 muted 
+                 loop 
+                 playsInline
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+               <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white flex items-center gap-3">
+                 <div className="w-10 h-10 bg-[#2563EB] rounded-full flex items-center justify-center animate-pulse">
+                   <PlayCircle size={20} />
+                 </div>
+                 <div>
+                   <div className="text-xs font-black uppercase tracking-widest">Campus Tour</div>
+                   <div className="text-[10px] font-bold opacity-80 text-white/90">Clinical Exposure at JASU</div>
+                 </div>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 8. CAMPUS FACILITIES ── */}
-      <section className="py-24 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading eyebrow="Infrastructure" title="Campus Facilities" center />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Smart Classrooms", img: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800" },
-              { title: "Simulation Labs", img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800" },
-              { title: "Digital Library", img: "https://images.unsplash.com/photo-1507733108139-47000e48962a?q=80&w=800" },
-              { title: "Student Hostel", img: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800" },
-              { title: "Indian Mess", img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800" },
-              { title: "Sports Complex", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800" },
-              { title: "WiFi Campus", img: "https://images.unsplash.com/photo-1526733169359-ab8171d49abb?q=80&w=800" },
-              { title: "Research Labs", img: "https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=800" },
-            ].map((f, i) => (
-              <motion.div 
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="relative aspect-square rounded-[24px] overflow-hidden group shadow-lg"
-              >
-                <Image src={f.img} alt={f.title} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="300px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent flex items-end p-6">
-                  <span className="text-white font-black text-xs uppercase tracking-widest">{f.title}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. GALLERY SECTION ── */}
-      <section className="py-24 bg-white" id="gallery">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading eyebrow="Visual Tour" title="University Gallery" center />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { src: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800", label: "Campus View" },
-              { src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800", label: "Main Building" },
-              { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800", label: "Medical Faculty" },
-              { src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800", label: "Research Center" },
-              { src: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", label: "Smart Classroom" },
-              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", label: "Advanced Laboratory" },
-              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", label: "Student Hostel" },
-              { src: "https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800", label: "Student Life" },
-              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", label: "Culture & Events" },
-              { src: "/images/Jalal-Abad-banner.png", label: "Clinical Training" },
-            ].map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.02 }}
-                className={`relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group aspect-square ${
-                  i === 0 || i === 3 ? "md:col-span-2 md:aspect-video" : ""
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.label}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <span className="text-white font-black text-xs md:text-sm uppercase tracking-widest">{img.label}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── 10. FMGE ACHIEVEMENTS ── */}
       <section className="py-24 bg-[#0F172A] text-white overflow-hidden relative">
@@ -691,20 +600,6 @@ export default function JASUDetailPage() {
         </div>
       </section>
 
-      {/* ── 16. STICKY BOTTOM CTA ── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:hidden">
-         <div className="bg-white/90 backdrop-blur-xl border border-white/20 rounded-3xl p-4 flex gap-3 shadow-2xl">
-            <button 
-              onClick={openModal}
-              className="flex-1 bg-[#2563EB] text-white font-black text-xs uppercase tracking-widest py-4 rounded-2xl shadow-lg"
-            >
-              Apply Now
-            </button>
-            <a href="tel:+918586873357" className="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-               <Phone size={24} />
-            </a>
-         </div>
-      </div>
     </main>
   );
 }

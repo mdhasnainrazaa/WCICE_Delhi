@@ -29,7 +29,9 @@ import {
   Sparkles,
   ArrowRight,
   Plus,
-  Minus
+  Minus,
+  Target,
+  PlayCircle
 } from "lucide-react";
 import { PromDown } from "@/components/ui/PromDown";
 import { useApplyModal } from "@/context/ApplyModalContext";
@@ -206,94 +208,66 @@ export default function UniversityDetailPage() {
   return (
     <main className="bg-white min-h-screen">
 
-      {/* ── HERO SECTION ── */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#0B1F33]">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#1a4db8]/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#0B1F33] to-transparent" />
-          <div className="absolute inset-0 opacity-[0.05]"
-               style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+      {/* 1️⃣ HERO SECTION */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
+        <div className="absolute inset-0">
+          <Image src="/images/Jalal-Abad-International-University-hero.png" alt="Jalal-Abad International University" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
+          {/* Orange Glow */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F97316]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         </div>
-
-        <div className="max-w-7xl mx-auto px-4 relative z-10 w-full py-20">
+        
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
           <Breadcrumbs />
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-                <Sparkles size={14} className="text-[#e2a613]" />
-                Top Choice for Indian Students
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
+              <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
+                <Globe2 size={16} /> MBBS in Kyrgyzstan
               </div>
-              <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] mb-6" style={{ fontFamily: "'Sora', sans-serif" }}>
-                Jalal-Abad <br />
-                <span className="text-[#e2a613]">International</span> <br />
-                University
+              <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
+                Jalal-Abad International <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University</span>
               </h1>
-              <p className="text-white/70 text-base md:text-xl leading-relaxed mb-10 max-w-xl font-medium">
-                Study MBBS in Kyrgyzstan with affordable fees, English-medium education, modern infrastructure, and dedicated FMGE/NExT preparation.
+              <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
+                Study MBBS at Jalal-Abad International University, Kyrgyzstan. Experience quality medical education, clinical exposure, affordable fees, and international student support.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-12">
-                {[
-                  { label: "Program", val: "MBBS / MD", icon: GraduationCap },
-                  { label: "Duration", val: "5 + 1 Years", icon: Clock },
-                  { label: "Total Fees", val: "$33,350", icon: Trophy },
-                  { label: "Country", val: "Kyrgyz Republic", icon: Globe2 },
-                  { label: "Medium", val: "English", icon: BookOpen },
-                  { label: "Approx INR", val: "₹30.01 Lacs", icon: Star },
-                ].map((item, i) => (
-                  <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-3 md:p-4">
-                    <div className="flex items-center gap-1.5 text-[#e2a613] mb-1">
-                      <item.icon size={12} className="shrink-0" />
-                      <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest whitespace-nowrap">{item.label}</span>
-                    </div>
-                    <div className="text-white font-black text-xs md:text-sm">{item.val}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={openModal}
-                  className="bg-[#e2a613] hover:bg-[#c99411] text-white px-8 py-4 md:py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all shadow-xl shadow-[#e2a613]/20 flex items-center justify-center gap-3 w-full sm:w-auto"
-                >
-                  Apply Now <ArrowRight size={18} />
+              <div className="flex flex-wrap gap-4 mb-16">
+                <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#F97316]/30 flex items-center gap-2">
+                  Apply Now <ArrowRight size={20} />
                 </button>
-                <a 
-                  href="/Brouchers/jaiu.pdf" 
-                  target="_blank"
-                  className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 md:py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-3 w-full sm:w-auto"
-                >
-                  Brochure <Download size={18} />
-                </a>
+                <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2">
+                  Download Brochure <Download size={20} />
+                </button>
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white/5">
-                <Image
-                  src="/images/Jalal-Abad-International-University-hero.png"
-                  alt="Jalal-Abad International University Campus"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/60 to-transparent" />
+            {/* Right Side Quick Form or Stats */}
+            <div className="lg:col-span-4 relative hidden lg:block">
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-8 shadow-2xl relative overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#FACC15]/20 rounded-full blur-3xl" />
+                <h3 className="text-xl font-bold text-white mb-6">Quick Overview</h3>
+                <div className="space-y-6">
+                  {[
+                    { label: "Established", value: "Jalal-Abad, KG", icon: Building2 },
+                    { label: "Location", value: "Kyrgyz Republic", icon: MapPin },
+                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
+                    { label: "Duration", value: "5 + 1 Years", icon: Clock },
+                    { label: "FMGE Coaching", value: "Available", icon: Target },
+                  ].map((stat, i) => (
+                    <div key={i} className="flex items-center gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                      <div className="w-10 h-10 bg-[#F97316]/20 rounded-xl flex items-center justify-center shrink-0">
+                        <stat.icon size={20} className="text-[#FACC15]" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-semibold text-white/60 uppercase tracking-wider">{stat.label}</div>
+                        <div className="font-bold text-white">{stat.value}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 hidden md:block">
-                <div className="text-4xl font-black text-[#1a4db8] leading-none mb-1">5000+</div>
-                <div className="text-[10px] font-black uppercase tracking-widest text-gray-400">Successful Alumni</div>
-              </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -375,7 +349,7 @@ export default function UniversityDetailPage() {
       {/* ── ABOUT UNIVERSITY ── */}
       <section className="py-24 bg-[#f8f9fc]">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-white rounded-[3rem] p-8 md:p-20 shadow-xl border border-gray-100 grid lg:grid-cols-2 gap-16 items-center">
+          <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-gray-100 grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeading eyebrow="Academic Excellence" title="About Jalal-Abad International University" />
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
@@ -387,14 +361,25 @@ export default function UniversityDetailPage() {
                 </p>
               </div>
             </div>
-            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
-               <Image
-                  src="/images/Jalal-Abad-banner.png"
-                  alt="Campus Life"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
+            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl group border-4 border-gray-50">
+               <video 
+                 src="/images/jaiu-gallery/jalabasInternational.mp4" 
+                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                 autoPlay 
+                 muted 
+                 loop 
+                 playsInline
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+               <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white flex items-center gap-3">
+                 <div className="w-10 h-10 bg-[#e2a613] rounded-full flex items-center justify-center animate-pulse">
+                   <PlayCircle size={20} />
+                 </div>
+                 <div>
+                   <div className="text-xs font-black uppercase tracking-widest">Campus Showcase</div>
+                   <div className="text-[10px] font-bold opacity-80 text-white/90">Experience JAIU Life</div>
+                 </div>
+               </div>
             </div>
           </div>
         </div>
@@ -433,7 +418,8 @@ export default function UniversityDetailPage() {
           <PromDown 
             title="Fee Structure 2026" 
             subtitle="Investment in Future" 
-            defaultOpen={false} 
+            defaultOpen={true} 
+            staticOnMobile={true}
             className="bg-white/5 border-white/10 shadow-none"
             titleClassName="text-white"
             subtitleClassName="text-[#2563EB]"
@@ -578,43 +564,6 @@ export default function UniversityDetailPage() {
         </div>
       </section>
 
-      {/* ── GALLERY ── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionHeading eyebrow="Campus Highlights" title="University Gallery" center />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-            {[
-              { src: "/images/Jalal-Abad-International-University-hero.png", label: "Main Campus" },
-              { src: "/images/Jalal-Abad-banner.png", label: "Medical Block" },
-              { src: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", label: "Smart Classroom" },
-              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", label: "Advanced Laboratory" },
-              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", label: "Student Hostel" },
-              { src: "https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800", label: "Student Life" },
-              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", label: "Culture & Events" },
-              { src: "/images/Jalal-Abad-banner.png", label: "Clinical Training" },
-            ].map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.02 }}
-                className={`relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group aspect-square ${
-                  i === 0 || i === 3 ? "md:col-span-2 md:aspect-video" : ""
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.label}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <span className="text-white font-black text-xs md:text-sm uppercase tracking-widest">{img.label}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── FAQ SECTION ── */}
       <section className="py-24 bg-gray-50">
@@ -657,20 +606,6 @@ export default function UniversityDetailPage() {
         </div>
       </section>
 
-      {/* ── STICKY MOBILE CTA ── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:hidden">
-         <div className="bg-white/80 backdrop-blur-xl border border-white/20 rounded-2xl p-4 flex gap-3 shadow-2xl">
-            <button 
-              onClick={openModal}
-              className="flex-1 bg-[#1a4db8] text-white font-black text-xs uppercase tracking-widest py-4 rounded-xl"
-            >
-              Apply Now
-            </button>
-            <a href="tel:+918586873357" className="w-14 h-14 bg-[#e2a613] rounded-xl flex items-center justify-center text-white shadow-lg">
-               <Phone size={24} />
-            </a>
-         </div>
-      </div>
     </main>
   );
 }

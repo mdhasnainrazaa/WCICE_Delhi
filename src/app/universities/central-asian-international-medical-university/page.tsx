@@ -58,6 +58,25 @@ const SectionHeading = ({ title, subtitle, center = false, light = false }: { ti
   </div>
 );
 
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-sm" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left">
+        <span className="text-lg font-bold text-[#0F172A]" itemProp="name">{question}</span>
+        <ChevronDown size={24} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+            <div className="px-6 pb-6 text-[#64748B]" itemProp="text">{answer}</div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 import { useApplyModal } from "@/context/ApplyModalContext";
 
 // ─── PAGE COMPONENT ───────────────────────────────────────────────────────
@@ -343,50 +362,16 @@ export default function CAIMUDetailPage() {
         </div>
       </section>
 
-      {/* 12️⃣ GALLERY SECTION */}
-      <section className="py-24 bg-white" id="gallery">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Visual Tour" title="University Gallery" center />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { src: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800", label: "Campus View" },
-              { src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800", label: "Main Building" },
-              { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800", label: "Medical Faculty" },
-              { src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800", label: "Research Center" },
-              { src: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", label: "Smart Classroom" },
-              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", label: "Advanced Laboratory" },
-              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", label: "Student Hostel" },
-              { src: "https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800", label: "Student Life" },
-              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", label: "Culture & Events" },
-              { src: "/images/Central-Asian-Medical-University.png", label: "University Entrance" },
-            ].map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.02 }}
-                className={`relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group aspect-square ${
-                  i === 0 || i === 3 ? "md:col-span-2 md:aspect-video" : ""
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.label}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <span className="text-white font-black text-xs md:text-sm uppercase tracking-widest">{img.label}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
  
       {/* ─── FEE STRUCTURE SECTION ─── */}
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
-          <PromDown title="MBBS Fee Structure 2026" subtitle="Affordable Education" defaultOpen={true}>
+          <PromDown 
+            title="MBBS Fee Structure 2026" 
+            subtitle="Affordable Education" 
+            defaultOpen={true}
+            staticOnMobile={true}
+          >
             <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
               <p className="text-[#64748B] text-sm max-w-xl">
                 Comprehensive fee breakdown for international students at CAIMU. All values are in USD unless specified otherwise.
@@ -487,24 +472,9 @@ export default function CAIMUDetailPage() {
                 { q: "Is hostel facility available at CAIMU?", a: "Yes, CAIMU provides safe hostel and mess facilities for students." },
                 { q: "Does CAIMU provide FMGE/NExT coaching?", a: "Yes, CAIMU provides coaching support for Indian students preparing for FMGE/NExT." },
                 { q: "What is the duration of MBBS at CAIMU?", a: "The MD/MBBS program duration is 5 years." }
-              ].map((item, i) => {
-                const [isOpen, setIsOpen] = useState(false);
-                return (
-                  <div key={i} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-sm" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                    <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left">
-                      <span className="text-lg font-bold text-[#0F172A]" itemProp="name">{item.q}</span>
-                      <ChevronDown size={24} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                          <div className="px-6 pb-6 text-[#64748B]" itemProp="text">{item.a}</div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
+              ].map((item, i) => (
+                <FAQItem key={i} question={item.q} answer={item.a} />
+              ))}
             </div>
           </PromDown>
         </div>
@@ -537,15 +507,6 @@ export default function CAIMUDetailPage() {
         </div>
       </section>
 
-      {/* MOBILE STICKY CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] p-4 z-50 flex gap-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-        <button onClick={openModal} className="flex-1 bg-[#F97316] text-white font-bold py-3 rounded-xl shadow-lg">
-          Apply Now
-        </button>
-        <a href="tel:+918586873357" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#F97316]">
-          <Phone size={20} />
-        </a>
-      </div>
     </main>
   );
 }

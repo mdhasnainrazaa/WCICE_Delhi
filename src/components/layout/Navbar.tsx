@@ -79,6 +79,7 @@ export function Navbar() {
                   "font-medium transition-colors hover:text-medical flex items-center gap-1 py-4",
                   isScrolled ? "text-navy" : "text-navy"
                 )}
+                onClick={() => setActiveDropdown(null)}
               >
                 {link.name}
                 {link.dropdown && <ChevronDown size={14} className={cn("transition-transform", activeDropdown === link.name && "rotate-180")} />}
@@ -101,6 +102,7 @@ export function Navbar() {
                             key={item.href}
                             href={item.href}
                             className="group/item flex items-center gap-3 p-2.5 rounded-xl transition-all hover:bg-[#1a4db8] relative overflow-hidden"
+                            onClick={() => setActiveDropdown(null)}
                           >
                             <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center group-hover/item:bg-white/20 transition-colors shrink-0">
                               <GraduationCap size={16} className="text-[#1a4db8] group-hover/item:text-white transition-colors" />
@@ -160,7 +162,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     className="text-navy font-semibold text-lg"
-                    onClick={() => !link.dropdown && setIsMobileMenuOpen(false)}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
@@ -182,9 +184,14 @@ export function Navbar() {
               ))}
               <hr className="border-gray-100" />
 
-              <button className="btn-primary w-full flex items-center justify-center gap-2">
-                <PhoneCall size={18} />
-                Book Counselling
+              <button 
+                onClick={() => {
+                  openModal();
+                  setIsMobileMenuOpen(false);
+                }} 
+                className="btn-primary w-full flex items-center justify-center gap-2"
+              >
+                Apply Now <ArrowRight size={18} />
               </button>
             </div>
           </motion.div>

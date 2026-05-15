@@ -9,7 +9,7 @@ import {
   Download, Phone, MessageCircle, ChevronDown, Trophy, ShieldCheck, 
   Coffee, Bus, Stethoscope, Building2, Sparkles, ArrowRight, 
   Microscope, Library, Plane, FileText, HeartPulse, Award, Users, 
-  BookMarked, Calendar, CheckSquare, ArrowUpRight, PlayCircle, Video, Star, CheckCircle
+  BookMarked, Calendar, CheckSquare, ArrowUpRight, PlayCircle, Video, Star, CheckCircle, Target
 } from "lucide-react";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 import { PromDown } from "@/components/ui/PromDown";
@@ -59,30 +59,34 @@ const SectionHeading = ({ title, subtitle, center = false, light = false }: { ti
 
 import { useApplyModal } from "@/context/ApplyModalContext";
 
+const FAQItem = ({ question, answer, primaryColor = "#0057B8" }: { question: string; answer: string; primaryColor?: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden transition-all hover:shadow-md" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left">
+        <span className={`text-lg font-medium transition-colors ${isOpen ? "text-[#0057B8]" : "text-[#0F172A]"}`} itemProp="name">{question}</span>
+        <ChevronDown size={24} className={`text-[#64748B] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+            <div className="px-6 pb-6 text-[#64748B] leading-relaxed" itemProp="text">
+              <div className="w-full h-px bg-[#E2E8F0] mb-6" />
+              {answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 const FAQAccordion = ({ items }: { items: { q: string; a: string }[] }) => {
   return (
     <div className="space-y-4" itemScope itemType="https://schema.org/FAQPage">
-      {items.map((item, i) => {
-        const [isOpen, setIsOpen] = useState(false);
-        return (
-          <div key={i} className="bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden transition-all hover:shadow-md" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-            <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-6 text-left">
-              <span className={`text-lg font-medium transition-colors ${isOpen ? "text-[#0057B8]" : "text-[#0F172A]"}`} itemProp="name">{item.q}</span>
-              <ChevronDown size={24} className={`text-[#64748B] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
-            </button>
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                  <div className="px-6 pb-6 text-[#64748B] leading-relaxed" itemProp="text">
-                    <div className="w-full h-px bg-[#E2E8F0] mb-6" />
-                    {item.a}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        );
-      })}
+      {items.map((item, i) => (
+        <FAQItem key={i} question={item.q} answer={item.a} />
+      ))}
     </div>
   );
 };
@@ -97,92 +101,66 @@ export default function OIMUDetailPage() {
   return (
     <main className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#0EA5E9] selection:text-white">
 
-      {/* 2️⃣ HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-[#0EA5E9]/10 to-[#0057B8]/5 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#F59E0B]/5 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
+      {/* 1️⃣ HERO SECTION */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
+        <div className="absolute inset-0">
+          <Image src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200" alt="Osh International Medical University" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
+          {/* Orange Glow */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F97316]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+        </div>
         
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
           <Breadcrumbs />
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <div className="inline-flex items-center gap-2 bg-[#0057B8]/10 text-[#0057B8] px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-[#0057B8]/20 backdrop-blur-sm">
-                <Trophy size={16} /> Top Medical University in Kyrgyzstan
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
+              <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
+                <Globe2 size={16} /> MBBS in Kyrgyzstan
               </div>
-              <h1 className="text-5xl lg:text-[64px] font-bold text-[#0F172A] leading-[1.1] mb-6">
-                Study MBBS at <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#0EA5E9]">Osh International Medical University</span>
+              <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
+                Osh International <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">Medical University</span>
               </h1>
-              <p className="text-lg text-[#64748B] mb-8 leading-relaxed max-w-lg">
+              <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
                 Your gateway to a global medical career. Apply for MBBS at Osh International Medical University, Kyrgyzstan. Get affordable education, FMGE coaching, hostel facilities, and world-class clinical exposure.
               </p>
 
-              <div className="grid grid-cols-2 gap-y-4 gap-x-6 mb-10">
-                {[
-                  "FMGE/NExT Coaching", "Modern Clinical Training",
-                  "Hostel & Indian Mess", "International Faculty"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-[#0F172A] font-medium">
-                    <CheckCircle2 size={20} className="text-[#0EA5E9]" /> {item}
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-4 mb-12">
-                <button onClick={openModal} className="bg-[#0057B8] hover:bg-[#004494] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg shadow-[#0057B8]/30 flex items-center gap-2">
+              <div className="flex flex-wrap gap-4 mb-16">
+                <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#F97316]/30 flex items-center gap-2">
                   Apply Now <ArrowRight size={20} />
                 </button>
-                <button className="bg-white hover:bg-gray-50 text-[#0057B8] border-2 border-[#0057B8] px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center gap-2">
+                <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2">
                   Download Brochure <Download size={20} />
                 </button>
               </div>
-
-              <div className="flex items-center gap-8 pt-6 border-t border-[#E2E8F0]">
-                <div>
-                  <div className="text-3xl font-bold text-[#0F172A]">5000+</div>
-                  <div className="text-sm text-[#64748B]">Students Enrolled</div>
-                </div>
-                <div className="w-px h-12 bg-[#E2E8F0]" />
-                <div>
-                  <div className="text-3xl font-bold text-[#0F172A]">95%</div>
-                  <div className="text-sm text-[#64748B]">Satisfaction Rate</div>
-                </div>
-                <div className="w-px h-12 bg-[#E2E8F0]" />
-                <div>
-                  <div className="text-3xl font-bold text-[#0F172A]">Global</div>
-                  <div className="text-sm text-[#64748B]">International Campus</div>
-                </div>
-              </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative">
-              <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl">
-                <Image src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200" alt="Osh International Medical University Campus" fill className="object-cover" priority sizes="(max-width: 768px) 100vw, 50vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 to-transparent" />
+            {/* Right Side Quick Form or Stats */}
+            <div className="lg:col-span-4 relative hidden lg:block">
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-8 shadow-2xl relative overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#FACC15]/20 rounded-full blur-3xl" />
+                <h3 className="text-xl font-bold text-white mb-6">Quick Overview</h3>
+                <div className="space-y-6">
+                  {[
+                    { label: "Established", value: "Modern Campus", icon: Building2 },
+                    { label: "Location", value: "Osh, KG", icon: MapPin },
+                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
+                    { label: "Duration", value: "5 Years", icon: Clock },
+                    { label: "FMGE Coaching", value: "Available", icon: Target },
+                  ].map((stat, i) => (
+                    <div key={i} className="flex items-center gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                      <div className="w-10 h-10 bg-[#F97316]/20 rounded-xl flex items-center justify-center shrink-0">
+                        <stat.icon size={20} className="text-[#FACC15]" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-semibold text-white/60 uppercase tracking-wider">{stat.label}</div>
+                        <div className="font-bold text-white">{stat.value}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              
-              {/* Floating Cards */}
-              <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 -left-10 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white/50 hidden md:flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#F59E0B]/10 rounded-full flex items-center justify-center">
-                  <Award size={24} className="text-[#F59E0B]" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-[#0F172A]">FMGE Support</div>
-                  <div className="text-xs text-[#64748B]">High Passing Rate</div>
-                </div>
-              </motion.div>
-
-              <motion.div animate={{ y: [0, 15, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute bottom-20 -right-10 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white/50 hidden md:flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#0EA5E9]/10 rounded-full flex items-center justify-center">
-                  <HeartPulse size={24} className="text-[#0EA5E9]" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-[#0F172A]">Clinical Exposure</div>
-                  <div className="text-xs text-[#64748B]">1000+ Bed Hospitals</div>
-                </div>
-              </motion.div>
-            </motion.div>
-
+            </div>
           </div>
         </div>
       </section>
@@ -212,33 +190,42 @@ export default function OIMUDetailPage() {
       </section>
 
       {/* 4️⃣ ABOUT UNIVERSITY SECTION */}
-      <section className="py-24 bg-[#F8FAFC]">
+      <section className="py-12 bg-[#F8FAFC]">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4 mt-8">
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg"><Image src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800" alt="Students" fill className="object-cover" sizes="400px" /></div>
-                  <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg"><Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800" alt="Medical Lab" fill className="object-cover" sizes="400px" /></div>
-                </div>
-                <div className="space-y-4">
-                  <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg"><Image src="https://images.unsplash.com/photo-1519452285866-224422e6b127?q=80&w=800" alt="Campus" fill className="object-cover" sizes="400px" /></div>
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lg"><Image src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800" alt="Clinical" fill className="object-cover" sizes="400px" /></div>
-                </div>
+          <div className="bg-white rounded-[3rem] p-8 md:p-10 shadow-xl border border-gray-100 grid lg:grid-cols-2 gap-12 items-center overflow-hidden">
+            <div className="relative h-full">
+              <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl group border-8 border-gray-50/50">
+                 <video 
+                   src="/images/oimu-gallery/oshaInternational.mp4" 
+                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   autoPlay 
+                   muted 
+                   loop 
+                   playsInline
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                 <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white flex items-center gap-3">
+                   <div className="w-10 h-10 bg-[#0EA5E9] rounded-full flex items-center justify-center animate-pulse">
+                     <PlayCircle size={20} />
+                   </div>
+                   <div>
+                     <div className="text-xs font-black uppercase tracking-widest">Campus Tour</div>
+                     <div className="text-[10px] font-bold opacity-80 text-white/90">Life at OIMU Kyrgyzstan</div>
+                   </div>
+                 </div>
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-[#0057B8]/5 to-[#0EA5E9]/5 rounded-full blur-3xl -z-10" />
             </div>
             
-            <div>
+            <div className="py-4">
               <SectionHeading subtitle="About University" title="About Osh International Medical University" />
-              <div className="space-y-6 text-[#64748B] text-lg leading-relaxed">
+              <div className="space-y-4 text-[#64748B] text-base leading-relaxed">
                 <p>
-                  Osh International Medical University (OIMU) is one of the fastest-growing and highly respected medical institutions in Kyrgyzstan. Designed to meet international standards, OIMU offers a world-class environment for students pursuing MBBS abroad.
+                  Osh International Medical University (OIMU) is one of the fastest-growing and highly respected medical institutions in Kyrgyzstan, offering a world-class environment for students pursuing MBBS abroad.
                 </p>
                 <p>
-                  With a commitment to academic excellence, the university provides a comprehensive curriculum that blends theoretical knowledge with extensive clinical practice in affiliated government and private hospitals.
+                  The university provides a comprehensive curriculum that blends theoretical knowledge with extensive clinical practice in affiliated government and private hospitals.
                 </p>
-                <ul className="space-y-4 mt-8">
+                <ul className="space-y-3 mt-6">
                   {[
                     "Approved by WHO, NMC (MCI), FAIMER, and ECFMG.",
                     "Highly qualified international and local medical faculty.",
@@ -246,8 +233,8 @@ export default function OIMUDetailPage() {
                     "Safe, secure, and culturally diverse campus life."
                   ].map((list, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 size={24} className="text-[#0EA5E9] shrink-0 mt-0.5" />
-                      <span className="font-medium text-[#0F172A]">{list}</span>
+                      <CheckCircle2 size={20} className="text-[#0EA5E9] shrink-0 mt-0.5" />
+                      <span className="font-semibold text-[#0F172A] text-sm">{list}</span>
                     </li>
                   ))}
                 </ul>
@@ -282,44 +269,6 @@ export default function OIMUDetailPage() {
         </div>
       </section>
 
-      {/* 6️⃣ RECTOR & DEAN MESSAGE */}
-      <section className="py-24 bg-[#0F172A] text-white">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Leadership" title="Messages from the Management" light center />
-          <div className="grid md:grid-cols-2 gap-10 mt-16">
-            <div className="bg-white/5 border border-white/10 p-10 rounded-3xl backdrop-blur-sm relative">
-               <div className="absolute top-10 right-10 opacity-10"><MessageCircle size={80} /></div>
-               <div className="flex items-center gap-6 mb-8">
-                 <div className="w-20 h-20 bg-gray-300 rounded-full overflow-hidden relative">
-                   <Image src="https://i.pravatar.cc/150?img=11" alt="Rector" fill className="object-cover" sizes="80px"/>
-                 </div>
-                 <div>
-                   <h3 className="text-2xl font-bold">Dr. Almazbekov N.</h3>
-                   <div className="text-[#0EA5E9] font-medium">Rector, OIMU</div>
-                 </div>
-               </div>
-               <p className="text-white/80 leading-relaxed italic text-lg">
-                 "Our goal is to nurture compassionate, skilled, and globally competent medical professionals. OIMU provides an ecosystem where innovation meets traditional medical ethics."
-               </p>
-            </div>
-            <div className="bg-white/5 border border-white/10 p-10 rounded-3xl backdrop-blur-sm relative">
-               <div className="absolute top-10 right-10 opacity-10"><MessageCircle size={80} /></div>
-               <div className="flex items-center gap-6 mb-8">
-                 <div className="w-20 h-20 bg-gray-300 rounded-full overflow-hidden relative">
-                   <Image src="https://i.pravatar.cc/150?img=32" alt="Dean" fill className="object-cover" sizes="80px"/>
-                 </div>
-                 <div>
-                   <h3 className="text-2xl font-bold">Dr. Sharma V.</h3>
-                   <div className="text-[#0EA5E9] font-medium">Dean of International Students</div>
-                 </div>
-               </div>
-               <p className="text-white/80 leading-relaxed italic text-lg">
-                 "We welcome international students to experience top-tier medical education. We ensure a home away from home with dedicated support, Indian food, and FMGE coaching."
-               </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 7️⃣ MBBS PROGRAM STRUCTURE */}
       <section className="py-24 bg-white">
@@ -387,9 +336,25 @@ export default function OIMUDetailPage() {
                 ))}
               </ul>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden"><Image src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800" alt="Lab" fill className="object-cover" sizes="300px"/></div>
-               <div className="relative aspect-[3/4] rounded-3xl overflow-hidden mt-12"><Image src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800" alt="Lecture" fill className="object-cover" sizes="300px"/></div>
+            <div className="relative aspect-video lg:aspect-square rounded-[32px] overflow-hidden shadow-2xl group border-8 border-white">
+               <video 
+                 src="/images/oimu-gallery/oIu.mp4" 
+                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                 autoPlay 
+                 muted 
+                 loop 
+                 playsInline
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+               <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white flex items-center gap-3">
+                 <div className="w-10 h-10 bg-[#0057B8] rounded-full flex items-center justify-center animate-pulse">
+                   <PlayCircle size={20} />
+                 </div>
+                 <div>
+                   <div className="text-xs font-black uppercase tracking-widest">Interactive Learning</div>
+                   <div className="text-[10px] font-bold opacity-80 text-white/90">Experience Smart Classrooms at OIMU</div>
+                 </div>
+               </div>
             </div>
           </div>
         </div>
@@ -540,58 +505,16 @@ export default function OIMUDetailPage() {
         </div>
       </section>
 
-      {/* 13 & 14 ── GALLERY SECTION */}
-      <section className="py-24 bg-white" id="gallery">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Visual Tour" title="University Gallery" center />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { src: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800", label: "Campus View" },
-              { src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800", label: "Main Building" },
-              { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800", label: "Medical Faculty" },
-              { src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800", label: "Research Center" },
-              { src: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", label: "Smart Classroom" },
-              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", label: "Advanced Laboratory" },
-              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", label: "Student Hostel" },
-              { src: "https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800", label: "Student Life" },
-              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", label: "Culture & Events" },
-              { src: "/images/osh-international-medical-university.png", label: "Main Entrance" },
-            ].map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.02 }}
-                className={`relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group aspect-square ${
-                  i === 0 || i === 3 ? "md:col-span-2 md:aspect-video" : ""
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.label}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <span className="text-white font-black text-xs md:text-sm uppercase tracking-widest">{img.label}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="mt-16 bg-[#0057B8]/5 rounded-3xl p-8 md:p-12 border border-[#0057B8]/10 text-center max-w-3xl mx-auto">
-            <MapPin size={40} className="text-[#0057B8] mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-[#0F172A] mb-4">Life in Osh, Kyrgyzstan</h3>
-            <p className="text-[#64748B] leading-relaxed">
-              Osh is the second-largest city in Kyrgyzstan, often referred to as the "capital of the south". It is a vibrant, student-friendly city with affordable living costs, shopping malls, parks, and a welcoming local community, making it highly safe and pleasant for international students.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* 15.5 ── DETAILED FEE STRUCTURE TABLE */}
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
-          <PromDown title="MBBS Fee Structure 2026" subtitle="Invest in Your Future" defaultOpen={false}>
+          <PromDown 
+            title="MBBS Fee Structure 2026" 
+            subtitle="Invest in Your Future" 
+            defaultOpen={true}
+            staticOnMobile={true}
+          >
             <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
               <p className="text-[#64748B] text-sm leading-relaxed">Experience world-class medical education at an affordable cost. Our fee structure is transparent with no hidden charges.</p>
               <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm shrink-0">
@@ -719,27 +642,9 @@ export default function OIMUDetailPage() {
                 { q: "Is hostel accommodation available?", a: "Yes, the university provides secure, fully furnished hostels for international students with separate blocks for boys and girls." },
                 { q: "What is the medium of instruction?", a: "The entire 5-year MBBS course is taught entirely in English by experienced international and local professors." },
                 { q: "Is Osh City safe for international students?", a: "Yes, Osh is very safe. The local community is welcoming, and the university campus has 24/7 security and CCTV surveillance." }
-              ].map((item, i) => {
-                const [isOpen, setIsOpen] = useState(false);
-                return (
-                  <div key={i} className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden transition-all hover:shadow-md" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                    <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-4 text-left">
-                      <span className={`text-sm font-medium transition-colors ${isOpen ? "text-[#0057B8]" : "text-[#0F172A]"}`} itemProp="name">{item.q}</span>
-                      <ChevronDown size={20} className={`text-[#64748B] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                          <div className="px-4 pb-4 text-xs text-[#64748B] leading-relaxed" itemProp="text">
-                            <div className="w-full h-px bg-[#E2E8F0] mb-4" />
-                            {item.a}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
+              ].map((item, i) => (
+                <FAQItem key={i} question={item.q} answer={item.a} />
+              ))}
             </div>
           </PromDown>
         </div>
@@ -772,15 +677,6 @@ export default function OIMUDetailPage() {
         </div>
       </section>
 
-      {/* MOBILE STICKY CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] p-4 z-50 flex gap-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-        <button onClick={openModal} className="flex-1 bg-[#0057B8] text-white font-bold py-3 rounded-xl shadow-lg">
-          Apply Now
-        </button>
-        <a href="tel:+918586873357" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#0057B8]">
-          <Phone size={20} />
-        </a>
-      </div>
     </main>
   );
 }

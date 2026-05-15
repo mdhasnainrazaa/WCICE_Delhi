@@ -80,7 +80,7 @@ const trustBadges = [
 
 export function CounsellingSection() {
   return (
-    <section className="relative py-6 overflow-hidden" id="counselling">
+    <section className="relative py-4 overflow-hidden" id="counselling">
       {/* Background with University Image and Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -92,7 +92,7 @@ export function CounsellingSection() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/95 via-blue-50/90 to-white/95" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10 mb-6">
+      <div className="max-w-7xl mx-auto px-4 relative z-10 mb-3">
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Side: Content matching the new image */}
@@ -136,9 +136,9 @@ export function CounsellingSection() {
               viewport={{ once: true }}
               className="bg-white rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-50 overflow-hidden max-w-md mx-auto lg:ml-auto"
             >
-              <div className="p-5 md:p-6">
+              <div className="p-4 md:p-5">
                 {/* Header */}
-                <div className="flex items-center justify-between gap-3 mb-5">
+                <div className="flex items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-[#00B4D8]/5 flex items-center justify-center text-[#00B4D8] border border-[#00B4D8]/10">
                       <GraduationCap size={18} />
@@ -153,50 +153,14 @@ export function CounsellingSection() {
                   </div>
                 </div>
 
-                <div className="pt-2">
-                  <GlobalApplyForm buttonText="Get Free Counselling" />
+                <div className="pt-0">
+                  <GlobalApplyForm buttonText="Get Free Counselling" compact={true} />
                 </div>
 
-                {/* WhatsApp Mini Section */}
-                <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-[#22C55E] flex items-center justify-center text-white">
-                      <MessageCircle size={18} />
-                    </div>
-                    <div className="text-[9px] font-bold text-navy uppercase tracking-wide">Instant WhatsApp Help</div>
-                  </div>
-                  <a 
-                    href="https://wa.me/918826418950" 
-                    target="_blank"
-                    className="bg-[#22C55E]/10 hover:bg-[#22C55E]/20 text-[#22C55E] px-3 py-1.5 rounded-md font-bold text-[9px] flex items-center gap-1.5 transition-all"
-                  >
-                    Chat Now
-                  </a>
-                </div>
               </div>
             </motion.div>
           </div>
 
-        </div>
-      </div>
-
-      {/* Dark Bottom Strip */}
-      <div className="bg-[#0B1F33] py-4 relative z-10">
-        <div className="max-w-7xl mx-auto px-4">
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {bottomStripFeatures.map((item, i) => (
-              <div key={i} className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-medical border border-white/10 group-hover:bg-medical group-hover:text-white transition-all">
-                  <item.icon size={20} />
-                </div>
-                <span className="text-[10px] md:text-xs font-bold text-white/90 leading-tight uppercase tracking-wide">
-                  {item.label}
-                </span>
-                {i < 4 && <div className="hidden lg:block h-8 w-[1px] bg-white/10 ml-auto" />}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

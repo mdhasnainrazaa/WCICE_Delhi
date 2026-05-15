@@ -57,6 +57,25 @@ const SectionHeading = ({ title, subtitle, center = false, light = false }: { ti
   </div>
 );
 
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className={`bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-4 text-left">
+        <span className="text-sm font-bold text-[#0F172A]" itemProp="name">{question}</span>
+        <ChevronDown size={18} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+            <div className="px-4 pb-4 text-xs text-[#64748B]" itemProp="text">{answer}</div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 import { useApplyModal } from "@/context/ApplyModalContext";
 // ─── PAGE COMPONENT ───────────────────────────────────────────────────────
 
@@ -70,34 +89,29 @@ export default function OSUDetailPage() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920" alt="Osh State University" fill className="object-cover opacity-30" priority />
+          <Image src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920" alt="Osh State University" fill className="object-cover opacity-20" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
+          {/* Orange Glow */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F97316]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         </div>
         
         <div className="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
           <Breadcrumbs />
           <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-7">
-              <div className="flex flex-wrap gap-3 mb-6">
-                {["WHO Approved", "NMC Recognized", "WDOMS Listed", "English Medium"].map((badge, i) => (
-                  <span key={i} className="inline-flex items-center gap-1.5 bg-white/10 text-white px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md border border-white/20">
-                    <CheckCircle2 size={14} className="text-[#14B8A6]" /> {badge}
-                  </span>
-                ))}
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
+              <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
+                <Globe2 size={16} /> MBBS in Kyrgyzstan
               </div>
-              <h1 className="text-5xl md:text-[60px] font-bold text-white leading-[1.1] mb-4">
-                Osh State University
+              <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
+                Osh State <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University</span>
               </h1>
-              <h2 className="text-2xl md:text-3xl font-medium text-[#14B8A6] mb-6">
-                International Medical Faculty
-              </h2>
-              <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-xl">
-                Study MBBS in Kyrgyzstan's most prestigious and highly ranked medical university. Join thousands of international students experiencing world-class clinical training and affordable education.
+              <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
+                Study MBBS at Osh State University, Kyrgyzstan's most prestigious and highly ranked medical university. Join thousands of international students experiencing world-class clinical training and affordable education.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
-                <button onClick={openModal} className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#2563EB]/30 flex items-center gap-2">
+                <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#F97316]/30 flex items-center gap-2">
                   Apply Now <ArrowRight size={20} />
                 </button>
                 <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2">
@@ -106,25 +120,30 @@ export default function OSUDetailPage() {
               </div>
             </motion.div>
 
-            <div className="lg:col-span-5 relative hidden md:block">
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: "41,000+", label: "Students", icon: Users },
-                  { value: "2,970+", label: "Teachers", icon: GraduationCap },
-                  { value: "29", label: "Faculties", icon: BookOpen },
-                  { value: "37", label: "Campuses", icon: Building2 },
-                ].map((stat, i) => (
-                  <motion.div 
-                    initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: i * 0.1 }}
-                    key={i} className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-3xl hover:bg-white/15 transition-all"
-                  >
-                    <div className="w-12 h-12 bg-[#14B8A6]/20 rounded-2xl flex items-center justify-center mb-4">
-                      <stat.icon size={24} className="text-[#14B8A6]" />
+            {/* Right Side Quick Form or Stats */}
+            <div className="lg:col-span-4 relative hidden lg:block">
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-8 shadow-2xl relative overflow-hidden">
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#FACC15]/20 rounded-full blur-3xl" />
+                <h3 className="text-xl font-bold text-white mb-6">Quick Overview</h3>
+                <div className="space-y-6">
+                  {[
+                    { label: "Established", value: "1939", icon: Building2 },
+                    { label: "Location", value: "Osh, KG", icon: MapPin },
+                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
+                    { label: "Duration", value: "5 Years", icon: Clock },
+                    { label: "FMGE Coaching", value: "Available", icon: Target },
+                  ].map((stat, i) => (
+                    <div key={i} className="flex items-center gap-4 border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                      <div className="w-10 h-10 bg-[#F97316]/20 rounded-xl flex items-center justify-center shrink-0">
+                        <stat.icon size={20} className="text-[#FACC15]" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-semibold text-white/60 uppercase tracking-wider">{stat.label}</div>
+                        <div className="font-bold text-white">{stat.value}</div>
+                      </div>
                     </div>
-                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm font-medium text-white/60">{stat.label}</div>
-                  </motion.div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -155,7 +174,7 @@ export default function OSUDetailPage() {
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl">
-              <Image src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=1200" alt="University Building" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/osu-gallery/oshaState.webp" alt="Osh State University Campus" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/50 to-transparent" />
             </div>
           </div>
@@ -229,45 +248,6 @@ export default function OSUDetailPage() {
         </div>
       </section>
 
-      {/* 5️⃣ GALLERY SECTION */}
-      <section className="py-24 bg-white" id="gallery">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <SectionHeading subtitle="Visual Tour" title="University Gallery" center />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { src: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800", label: "Campus View" },
-              { src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800", label: "Main Building" },
-              { src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800", label: "Medical Faculty" },
-              { src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800", label: "Research Center" },
-              { src: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800", label: "Smart Classroom" },
-              { src: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800", label: "Advanced Laboratory" },
-              { src: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800", label: "Student Hostel" },
-              { src: "https://images.unsplash.com/photo-1523050853063-bd8012fec042?q=80&w=800", label: "Student Life" },
-              { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800", label: "Culture & Events" },
-              { src: "/images/Osh-State-University.png", label: "Medical Faculty" },
-            ].map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.02 }}
-                className={`relative rounded-2xl md:rounded-[2rem] overflow-hidden shadow-lg group aspect-square ${
-                  i === 0 || i === 3 ? "md:col-span-2 md:aspect-video" : ""
-                }`}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.label}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <span className="text-white font-black text-xs md:text-sm uppercase tracking-widest">{img.label}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* 6️⃣ AFFILIATED HOSPITALS */}
       <section className="py-24 bg-[#F8FAFC]">
@@ -407,10 +387,10 @@ export default function OSUDetailPage() {
                 ))}
               </div>
             </div>
-            <div className="relative aspect-video rounded-[32px] border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden">
-               <Network size={120} className="text-[#2563EB]/30 absolute" />
-               <Map size={180} className="text-[#14B8A6]/20" />
-               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] to-transparent opacity-50" />
+            <div className="relative aspect-video rounded-[32px] border border-white/20 overflow-hidden group">
+               <Image src="/images/osu-gallery/oshaState.webp" alt="Research & International Relations" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent opacity-60" />
+               <div className="absolute inset-0 border-[8px] border-white/5 rounded-[32px] pointer-events-none" />
             </div>
           </div>
         </div>
@@ -476,7 +456,12 @@ export default function OSUDetailPage() {
       {/* 17 ── FEE STRUCTURE SECTION */}
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
-          <PromDown title="MBBS Fee Structure 2026" subtitle="Affordable Education" defaultOpen={true}>
+          <PromDown 
+            title="MBBS Fee Structure 2026" 
+            subtitle="Affordable Education" 
+            defaultOpen={true}
+            staticOnMobile={true}
+          >
             <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
               <p className="text-[#64748B] text-sm max-w-xl">Comprehensive fee breakdown for Indian students. All values are in USD unless specified otherwise.</p>
               <div className="flex bg-[#F8FAFC] p-1.5 rounded-2xl border border-[#E2E8F0] shadow-sm shrink-0">
@@ -557,7 +542,7 @@ export default function OSUDetailPage() {
                       ].map((item, i) => (
                         <div key={i} className="flex justify-between text-xs py-1 border-b border-gray-100 last:border-0">
                           <span className="text-[#64748B] font-medium">{item.label}</span>
-                          <span className="text-[#0F172A] font-bold">{currency === 'INR' ? `₹${parseInt(item.val.replace('$','')) * 85}` : item.item === 'Air Ticket' ? item.val : item.val}</span>
+                          <span className="text-[#0F172A] font-bold">{currency === 'INR' ? `₹${parseInt(item.val.replace('$','')) * 85}` : item.val}</span>
                         </div>
                       ))}
                       <div className="flex justify-between text-sm pt-2 font-black text-[#14B8A6]">
@@ -605,24 +590,9 @@ export default function OSUDetailPage() {
                 { q: "Is Osh State University NMC approved?", a: "Yes, it is recognized by the National Medical Commission (NMC), WHO, and WDOMS." },
                 { q: "What is the medium of instruction?", a: "The entire 5-year MD/MBBS program is taught in 100% English for international students." },
                 { q: "Is Indian food available?", a: "Yes, dedicated Indian mess facilities are available on campus providing nutritious veg and non-veg food." }
-              ].map((item, i) => {
-                const [isOpen, setIsOpen] = useState(false);
-                return (
-                  <div key={i} className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-                    <button onClick={() => setIsOpen(!isOpen)} className="w-full flex items-center justify-between p-4 text-left">
-                      <span className="text-sm font-bold text-[#0F172A]" itemProp="name">{item.q}</span>
-                      <ChevronDown size={18} className={`text-[#64748B] transition-transform ${isOpen ? "rotate-180" : ""}`} />
-                    </button>
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                          <div className="px-4 pb-4 text-xs text-[#64748B]" itemProp="text">{item.a}</div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
+              ].map((item, i) => (
+                <FAQItem key={i} question={item.q} answer={item.a} />
+              ))}
             </div>
           </PromDown>
         </div>
@@ -646,15 +616,6 @@ export default function OSUDetailPage() {
         </div>
       </section>
 
-      {/* MOBILE STICKY CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E2E8F0] p-4 z-50 flex gap-3 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
-        <button onClick={openModal} className="flex-1 bg-[#2563EB] text-white font-bold py-3 rounded-xl shadow-lg">
-          Apply Now
-        </button>
-        <a href="tel:+918586873357" className="w-12 h-12 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl flex items-center justify-center text-[#2563EB]">
-          <Phone size={20} />
-        </a>
-      </div>
     </main>
   );
 }
