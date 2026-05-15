@@ -114,9 +114,13 @@ export default function OSUDetailPage() {
                 <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#F97316]/30 flex items-center gap-2">
                   Apply Now <ArrowRight size={20} />
                 </button>
-                <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2">
+                <a 
+                  href="/Brouchers/osh%20imf.pdf" 
+                  download 
+                  className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2"
+                >
                   Download Brochure <Download size={20} />
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -211,15 +215,25 @@ export default function OSUDetailPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4 translate-y-8">
-                  <div className="aspect-[3/4] rounded-[24px] overflow-hidden relative"><Image src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800" alt="Students" fill className="object-cover" /></div>
-                  <div className="aspect-square rounded-[24px] overflow-hidden relative"><Image src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800" alt="Lab" fill className="object-cover" /></div>
-                </div>
-                <div className="space-y-4">
-                  <div className="aspect-square rounded-[24px] overflow-hidden relative"><Image src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800" alt="Class" fill className="object-cover" /></div>
-                  <div className="aspect-[3/4] rounded-[24px] overflow-hidden relative"><Image src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800" alt="Hospital" fill className="object-cover" /></div>
-                </div>
+              <div className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl group border-8 border-white/10 backdrop-blur-sm">
+                 <video 
+                   src="/images/osu-gallery/oshStateUniversity.mp4" 
+                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   autoPlay 
+                   muted 
+                   loop 
+                   playsInline
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                 <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 text-white flex items-center gap-4">
+                   <div className="w-12 h-12 bg-[#F97316] rounded-full flex items-center justify-center animate-pulse shadow-lg shadow-[#F97316]/30">
+                     <PlayCircle size={24} />
+                   </div>
+                   <div>
+                     <div className="text-xs font-black uppercase tracking-[0.2em] text-[#FACC15] mb-1">Campus Life</div>
+                     <div className="text-sm font-bold opacity-90">International Medical Faculty Tour</div>
+                   </div>
+                 </div>
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#2563EB]/20 rounded-full blur-[100px] -z-10" />
             </div>
@@ -388,7 +402,7 @@ export default function OSUDetailPage() {
               </div>
             </div>
             <div className="relative aspect-video rounded-[32px] border border-white/20 overflow-hidden group">
-               <Image src="/images/osu-gallery/oshaState.webp" alt="Research & International Relations" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <Image src="/images/osu-gallery/oshRealtion.png" alt="Research & International Relations" fill className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-110" />
                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent opacity-60" />
                <div className="absolute inset-0 border-[8px] border-white/5 rounded-[32px] pointer-events-none" />
             </div>

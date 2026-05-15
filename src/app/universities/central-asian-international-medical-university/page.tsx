@@ -10,7 +10,7 @@ import {
   Coffee, Bus, Building2, Sparkles, ArrowRight, 
   Microscope, Library, Plane, FileText, HeartPulse, Award, Users, 
   BookMarked, Calendar, CheckSquare, Target, Mail, Activity, Eye,
-  Landmark, BookOpenCheck, Stethoscope as StethoscopeIcon
+  Landmark, BookOpenCheck, Stethoscope as StethoscopeIcon, PlayCircle
 } from "lucide-react";
 import { PromDown } from "@/components/ui/PromDown";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
@@ -91,7 +91,7 @@ export default function CAIMUDetailPage() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1920" alt="CAIMU Campus" fill className="object-cover opacity-20" priority />
+          <Image src="/images/Central-Asian-Medical-University.png" alt="CAIMU Campus" fill className="object-cover opacity-20" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
           {/* Orange Glow */}
@@ -187,7 +187,7 @@ export default function CAIMUDetailPage() {
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl group">
-              <Image src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200" alt="CAIMU Students" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/images/Central-Asian-Medical-University.png" alt="CAIMU Campus" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>
@@ -307,24 +307,38 @@ export default function CAIMUDetailPage() {
       </section>
 
       {/* 8️⃣ STUDENT LIFE & 13️⃣ HOSTEL SECTION */}
-      <section className="py-24 bg-[#F8FAFC]" id="student-life">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 columns-2 gap-4 space-y-4">
-              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-lg"><Image src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800" alt="Events" fill className="object-cover" /></div>
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg"><Image src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800" alt="Hostel" fill className="object-cover" /></div>
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg"><Image src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800" alt="Festivals" fill className="object-cover" /></div>
+      <section className="py-16 bg-[#F8FAFC]" id="student-life">
+        <div className="max-w-[1100px] mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="order-2 lg:order-1 flex justify-center">
+              <div className="relative aspect-[3/4] w-full max-w-[340px] rounded-[2rem] overflow-hidden shadow-2xl group border-4 border-white">
+                <video 
+                  src="/images/caimu-gallery/CAIS.mp4" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  autoPlay 
+                  muted 
+                  loop 
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 text-white flex items-center gap-2">
+                  <div className="w-8 h-8 bg-[#F97316] rounded-full flex items-center justify-center animate-pulse">
+                    <PlayCircle size={16} />
+                  </div>
+                  <div className="text-[10px] font-black uppercase tracking-widest">Campus Life</div>
+                </div>
+              </div>
             </div>
             <div className="order-1 lg:order-2">
               <SectionHeading subtitle="Experience" title="Student Life in Kyrgyzstan" />
-              <p className="text-[#64748B] text-lg leading-relaxed mb-8">
-                Students at CAIMU experience a comfortable and active student life in Kyrgyzstan. The university provides fully furnished hostels, native Indian mess facilities, cultural events, outdoor activities, academic programs, and a highly safe international student environment.
+              <p className="text-[#64748B] text-base leading-relaxed mb-6 -mt-6">
+                Students at CAIMU experience a comfortable and active student life in Kyrgyzstan. The university provides fully furnished hostels, native Indian mess facilities, cultural events, and a highly safe international student environment.
               </p>
-              <ul className="space-y-4">
-                {["Secure Hostel & Indian Mess", "Cultural Events & Freshers Party", "Sports & Outdoor Activities", "Safe & Friendly Living Environment"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="text-[#F97316] shrink-0" />
-                    <span className="font-semibold text-[#0F172A]">{item}</span>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {["Secure Hostel & Indian Mess", "Cultural Events", "Sports & Activities", "Safe Environment"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 bg-white/50 p-2 rounded-xl border border-white/20">
+                    <CheckCircle2 className="text-[#F97316] shrink-0" size={18} />
+                    <span className="font-semibold text-[#0F172A] text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
