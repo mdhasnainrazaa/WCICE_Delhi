@@ -146,9 +146,13 @@ export default function JASUDetailPage() {
                 <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#F97316]/30 flex items-center gap-2">
                   Apply Now <ArrowRight size={20} />
                 </button>
-                <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2">
+                <a 
+                  href="/Brouchers/jasu.pdf" 
+                  download 
+                  className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2"
+                >
                   Download Brochure <Download size={20} />
-                </button>
+                </a>
               </div>
             </motion.div>
 
