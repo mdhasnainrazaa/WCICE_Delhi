@@ -278,8 +278,8 @@ export default function ContactUsPage() {
                   <h4 className="text-xl font-bold mb-2">Need Immediate Help?</h4>
                   <p className="text-white/70 text-sm max-w-xs">Drop your number and our expert counselor will call you within 5 minutes.</p>
                 </div>
-                <a href="tel:+918586873357" className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg shrink-0 w-full sm:w-auto text-center relative z-10">
-                  Request Callback
+                <a href="tel:+918586873357" className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg shrink-0 w-full sm:w-auto text-center relative z-10 flex items-center justify-center gap-2">
+                  <Phone size={18} /> Request Callback
                 </a>
               </div>
             </div>

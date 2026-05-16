@@ -51,7 +51,11 @@ const features = [
   }
 ];
 
+import { useApplyModal } from "@/context/ApplyModalContext";
+
 export function WhyChooseUs() {
+  const { openModal } = useApplyModal();
+  
   return (
     <section className="py-24 bg-background-soft relative overflow-hidden">
       {/* Background decoration */}
@@ -122,7 +126,10 @@ export function WhyChooseUs() {
                 From airport pickup to hostel allocation and local SIM card, we ensure a smooth transition to your new country. Our dedicated support team stays with you throughout your journey.
               </p>
             </div>
-            <button className="bg-medical hover:bg-medical/90 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all shadow-xl shadow-medical/20 whitespace-nowrap">
+            <button 
+              onClick={openModal}
+              className="bg-medical hover:bg-medical/90 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all shadow-xl shadow-medical/20 whitespace-nowrap"
+            >
               Enquire Today
             </button>
           </div>

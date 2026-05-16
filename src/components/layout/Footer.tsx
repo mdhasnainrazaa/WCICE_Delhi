@@ -46,18 +46,18 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-10">
           {/* Brand Info */}
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="relative w-12 h-12">
+            <Link href="/" className="flex items-center gap-4 mb-6 group">
+              <div className="relative w-14 h-14 bg-white rounded-2xl p-2 shadow-xl flex items-center justify-center transition-transform group-hover:scale-105">
                 <Image 
                   src="/logos/logo.png" 
                   alt="WCIEC Logo" 
                   fill
-                  className="object-contain"
+                  className="object-contain p-1"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-xl leading-tight font-poppins text-white">WCIEC</span>
-                <span className="text-[10px] uppercase tracking-widest text-medical font-bold">Organization</span>
+                <span className="font-bold text-2xl leading-tight font-poppins text-white tracking-tight">WCIEC</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-medical font-bold">Organization</span>
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -168,8 +168,7 @@ export function Footer() {
             <span>© 2026 WCIEC Organization. All rights reserved.</span>
             <span className="text-white/10 hidden sm:inline">|</span>
             <Link href="/legal" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <span className="text-white/10 hidden sm:inline">|</span>
-            <Link href="/legal" className="hover:text-white transition-colors">Terms of Service</Link>
+
           </div>
         </div>
       </div>

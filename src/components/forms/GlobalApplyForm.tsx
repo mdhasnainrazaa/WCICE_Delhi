@@ -273,9 +273,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
             </>
           )}
         </button>
-        <p className={`text-[10px] text-gray-400 text-center ${compact ? 'mt-3' : 'mt-4'} font-bold uppercase tracking-widest`}>
-          🔒 Secure & Confidential Application
-        </p>
+
       </div>
     </form>
   );
