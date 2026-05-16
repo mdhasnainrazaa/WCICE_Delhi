@@ -273,6 +273,7 @@ export default function AboutPage() {
               src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2070&auto=format&fit=crop"
               alt="Medical university campus"
               fill
+              sizes="100vw"
               priority
               className="object-cover opacity-25"
             />
@@ -430,6 +431,7 @@ export default function AboutPage() {
                       src="/images/awardedImage.png"
                       alt="WCIEC Awarded by the President of Kyrgyzstan"
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1F33]/30 to-transparent" />
@@ -459,6 +461,7 @@ export default function AboutPage() {
                     src="/images/director image.png"
                     alt="Dr. Firoz Khan (MD Physician) – Founder & Director, WCIEC Organization"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover object-top"
                   />
                 </div>
@@ -614,6 +617,7 @@ export default function AboutPage() {
                       src={uni.image}
                       alt={`${uni.name} – MBBS in Kyrgyzstan`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       itemProp="image"
                     />
@@ -801,6 +805,7 @@ export default function AboutPage() {
                   src="/images/awardedImage.png"
                   alt="Official Award Ceremony with the President of Kyrgyzstan"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-[#0B1F33]/20 to-transparent" />
