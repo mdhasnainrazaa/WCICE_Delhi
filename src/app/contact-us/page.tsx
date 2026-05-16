@@ -272,16 +272,7 @@ export default function ContactUsPage() {
                 </div>
               </a>
 
-              <div className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] rounded-[32px] p-6 sm:p-8 md:p-10 text-white relative overflow-hidden flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-[#0EA5E9]/20 rounded-full blur-3xl" />
-                <div className="relative z-10">
-                  <h4 className="text-xl font-bold mb-2">Need Immediate Help?</h4>
-                  <p className="text-white/70 text-sm max-w-xs">Drop your number and our expert counselor will call you within 5 minutes.</p>
-                </div>
-                <a href="tel:+918586873357" className="bg-[#0EA5E9] hover:bg-[#0284C7] text-white px-6 py-3.5 rounded-xl font-bold transition-all shadow-lg shrink-0 w-full sm:w-auto text-center relative z-10 flex items-center justify-center gap-2">
-                  <Phone size={18} /> Request Callback
-                </a>
-              </div>
+
             </div>
           </div>
         </div>
