@@ -511,7 +511,7 @@ export default function CAIMUDetailPage() {
               <div className="space-y-4">
                 <h4 className="font-bold text-[#FACC15] uppercase tracking-wider text-sm">Contact Us</h4>
                 <div className="flex items-center gap-3 text-white/80"><Phone size={20} className="text-[#F97316]" /> +91 85868 73357, +91 99116 35435</div>
-                <div className="flex items-center gap-3 text-white/80"><Mail size={20} className="text-[#F97316]" /> info@wciec.org</div>
+                <div className="flex items-center gap-3 text-white/80"><Mail size={20} className="text-[#F97316]" /> wciecdelhi2025@gmail.com</div>
                 <div className="flex items-center gap-3 text-white/80"><Globe2 size={20} className="text-[#F97316]" /> wciecorganization.com/contact-us</div>
               </div>
             </div>

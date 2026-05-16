@@ -138,12 +138,12 @@ export default function ContactUsPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <a href="mailto:info@wciec.org" className="w-12 h-12 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#06B6D4]/20 transition-colors">
+                    <a href="mailto:wciecdelhi2025@gmail.com" className="w-12 h-12 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#06B6D4]/20 transition-colors">
                       <Mail size={24} className="text-[#06B6D4]" />
                     </a>
                     <div>
                       <div className="text-sm font-bold text-[#64748B] mb-1">Email Address</div>
-                      <a href="mailto:info@wciec.org" className="text-lg font-bold text-[#0F172A] hover:text-[#06B6D4] transition-colors">info@wciec.org</a>
+                      <a href="mailto:wciecdelhi2025@gmail.com" className="text-lg font-bold text-[#0F172A] hover:text-[#06B6D4] transition-colors">wciecdelhi2025@gmail.com</a>
                     </div>
                   </div>
 
@@ -202,7 +202,7 @@ export default function ContactUsPage() {
             {[
               { title: "Call Us", desc: "Speak directly with experts", icon: Phone, color: "text-[#2563EB]", bg: "bg-[#2563EB]/10", border: "hover:border-[#2563EB]/30", link: "tel:+918586873357", linkText: "Call Now" },
               { title: "WhatsApp", desc: "Chat for quick queries", icon: WhatsappIcon, color: "text-[#25D366]", bg: "bg-[#25D366]/10", border: "hover:border-[#25D366]/30", link: "https://wa.me/918826418950", linkText: "Message" },
-              { title: "Email Us", desc: "For detailed information", icon: Mail, color: "text-[#06B6D4]", bg: "bg-[#06B6D4]/10", border: "hover:border-[#06B6D4]/30", link: "mailto:info@wciec.org", linkText: "Send Email" },
+              { title: "Email Us", desc: "For detailed information", icon: Mail, color: "text-[#06B6D4]", bg: "bg-[#06B6D4]/10", border: "hover:border-[#06B6D4]/30", link: "mailto:wciecdelhi2025@gmail.com", linkText: "Send Email" },
               { title: "Visit Office", desc: "Face-to-face counseling", icon: MapPin, color: "text-[#8B5CF6]", bg: "bg-[#8B5CF6]/10", border: "hover:border-[#8B5CF6]/30", link: "https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D", linkText: "Get Directions" }
             ].map((card, i) => (
               <motion.a

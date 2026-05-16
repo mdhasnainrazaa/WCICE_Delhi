@@ -446,7 +446,7 @@ export default function LegalPage() {
                     },
                     {
                       q: "Can I request to delete my data?",
-                      a: "Absolutely. You can email us at info@wciec.org at any time to request the deletion or correction of your personal information from our records."
+                      a: "Absolutely. You can email us at wciecdelhi2025@gmail.com at any time to request the deletion or correction of your personal information from our records."
                     },
                     {
                       q: "What happens if I don't proceed with admission?",
@@ -468,10 +468,10 @@ export default function LegalPage() {
                   <p className="text-white/80 max-w-sm">Our legal and compliance team is here to help you understand your rights and responsibilities.</p>
                   <div className="flex flex-col gap-4">
                     <a 
-                      href="mailto:info@wciec.org"
+                      href="mailto:wciecdelhi2025@gmail.com"
                       className="flex items-center gap-3 justify-center md:justify-start hover:text-white transition-colors"
                     >
-                      <Mail size={18} /> info@wciec.org
+                      <Mail size={18} /> wciecdelhi2025@gmail.com
                     </a>
                     <a 
                       href="https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D"

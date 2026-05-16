@@ -139,7 +139,7 @@ export function Footer() {
                 </div>
                 <div>
                   <div className="text-white font-semibold">Email</div>
-                  <a href="mailto:info@wciec.org" className="hover:text-medical">info@wciec.org</a>
+                  <a href="mailto:wciecdelhi2025@gmail.com" className="hover:text-medical">wciecdelhi2025@gmail.com</a>
                 </div>
               </li>
               <li className="flex gap-4">
