@@ -458,7 +458,7 @@ export default function AboutPage() {
               <div className="lg:col-span-4 bg-[#0B1F33] p-12 flex flex-col items-center justify-center text-center relative">
                 <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-white/10 mb-6">
                   <Image
-                    src="/images/director image.png"
+                    src="/images/director-image.png"
                     alt="Dr. Firoz Khan (MD Physician) – Founder & Director, WCIEC Organization"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -330,7 +330,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#2563EB]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/director image.png" alt="Dr. Firoz Khan" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/director-image.png" alt="Dr. Firoz Khan" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Dr. Firoz Khan</h3>
@@ -348,7 +348,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#8B5CF6]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/sweta image .png" alt="Shweta Arora - Management Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/sweta-image.png" alt="Shweta Arora - Management Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Shweta Arora</h3>
@@ -456,7 +456,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#EF4444]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/dr ZM.png" alt="Dr Z. M. SOUDAGAR - Head of Karnataka Team" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/dr-zm.png" alt="Dr Z. M. SOUDAGAR - Head of Karnataka Team" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Dr Z. M. SOUDAGAR</h3>
@@ -492,7 +492,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#EA580C]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                   <Image src="/images/Jamil.png" alt="Jamil Anjum - Marketing Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                   <Image src="/images/jamil.png" alt="Jamil Anjum - Marketing Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Jamil Anjum</h3>

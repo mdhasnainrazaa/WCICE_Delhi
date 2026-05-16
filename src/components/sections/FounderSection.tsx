@@ -19,7 +19,7 @@ export function FounderSection() {
               className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white/10 mb-6 z-10"
             >
               <Image
-                src="/images/director image.png"
+                src="/images/director-image.png"
                 alt="Dr. Firoz Khan (MD Physician) - Founder & Director of WCIEC"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

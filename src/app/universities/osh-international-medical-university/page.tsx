@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import OIMUClient from "./OIMUClient";
+import { UniversitySchema } from "@/components/seo/UniversitySchema";
 
 export const metadata: Metadata = {
   title: "Osh International Medical University MBBS Fees 2026 | Admission",
@@ -16,5 +17,21 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  return <OIMUClient />;
+  return (
+    <>
+      <UniversitySchema 
+        name="Osh International Medical University (OIMU)"
+        description="A modern medical university in Osh, Kyrgyzstan, focused on providing international students with high-quality medical education and FMGE preparation."
+        url="https://wciec.org/universities/osh-international-medical-university"
+        image="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200"
+        city="Osh"
+        faqs={[
+          { q: "What is the duration of MBBS at OIMU?", a: "The MBBS (MD) program at Osh International Medical University has a duration of 5 years." },
+          { q: "Is Indian food available at OIMU?", a: "Yes, OIMU provides dedicated Indian mess facilities serving nutritious veg and non-veg meals to Indian students." },
+          { q: "Does OIMU provide FMGE coaching?", a: "Yes, the university provides specialized coaching for FMGE and NExT exams to help Indian students qualify for practice in India." }
+        ]}
+      />
+      <OIMUClient />
+    </>
+  );
 }

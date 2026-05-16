@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import JAIUClient from "./JAIUClient";
+import { UniversitySchema } from "@/components/seo/UniversitySchema";
 
 export const metadata: Metadata = {
   title: "Jalal-Abad International University MBBS Admission 2026 | Fees",
@@ -16,5 +17,21 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  return <JAIUClient />;
+  return (
+    <>
+      <UniversitySchema 
+        name="Jalal-Abad International University (JAIU)"
+        description="A premier international medical university in Jalal-Abad, offering globally recognized MBBS degrees with a focus on modern clinical practice."
+        url="https://wciec.org/universities/jalal-abad-international-university"
+        image="/images/Jalal-Abad-International-University-hero.png"
+        city="Jalal-Abad"
+        faqs={[
+          { q: "What is the total fee for JAIU?", a: "The total fee for the 5-year MBBS program at JAIU is approximately $33,350, including tuition, hostel, and other fees." },
+          { q: "Is the curriculum in English?", a: "Yes, Jalal-Abad International University follows a 100% English medium curriculum for all 5 years of the MBBS program." },
+          { q: "Are there Indian students at JAIU?", a: "Yes, JAIU is a popular choice for Indian students, with dedicated Indian mess facilities and a vibrant student community." }
+        ]}
+      />
+      <JAIUClient />
+    </>
+  );
 }

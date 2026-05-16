@@ -25,6 +25,12 @@ interface Props {
   params: { slug: string };
 }
 
+export async function generateStaticParams() {
+  return universities.map((uni) => ({
+    slug: uni.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const uni = universities.find(u => u.slug === params.slug);
   if (!uni) return { title: "University Not Found" };

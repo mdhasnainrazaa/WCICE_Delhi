@@ -59,26 +59,34 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
     setIsSubmitting(true);
 
     try {
-      // In production, you would use your NEXT_PUBLIC_GOOGLE_SCRIPT_URL or the internal API
-      // Here we use the internal API which acts as a secure proxy
-      const response = await fetch("/api/apply", {
+      // Direct submission to Google Script for static export support
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+      
+      const response = await fetch(scriptUrl || "/api/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
+        mode: scriptUrl ? 'no-cors' : 'cors' // Use no-cors for direct script access
       });
 
-      const result = await response.json();
-
-      if (response.ok) {
+      // When using no-cors, we can't check response.ok, so we assume success if no error is thrown
+      if (scriptUrl) {
         setIsSuccess(true);
         setFormData({
           name: "", phone: "", email: "", city: "", neetStatus: "", neetMarks: "", university: ""
         });
         if (onSuccess) onSuccess();
-        
-        // Auto-reset success message after 10 seconds
+        setTimeout(() => setIsSuccess(false), 10000);
+      } else if (response.ok) {
+        const result = await response.json();
+        setIsSuccess(true);
+        setFormData({
+          name: "", phone: "", email: "", city: "", neetStatus: "", neetMarks: "", university: ""
+        });
+        if (onSuccess) onSuccess();
         setTimeout(() => setIsSuccess(false), 10000);
       } else {
+        const result = await response.json();
         throw new Error(result.error || "Submission failed");
       }
     } catch (err: any) {

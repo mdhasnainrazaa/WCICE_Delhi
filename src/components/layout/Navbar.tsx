@@ -59,6 +59,7 @@ export function Navbar() {
               src="/logos/logo.png" 
               alt="WCIEC Logo" 
               fill
+              priority
               className="object-contain"
             />
           </div>
