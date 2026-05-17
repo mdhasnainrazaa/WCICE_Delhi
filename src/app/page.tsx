@@ -5,6 +5,7 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { CounsellingSection } from "@/components/sections/CounsellingSection";
+import { GallerySection } from "@/components/sections/GallerySection";
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
       <ProcessTimeline />
       <FounderSection />
       <CounsellingSection />
+      <GallerySection />
     </>
   );
 }
+
