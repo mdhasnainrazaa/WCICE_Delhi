@@ -495,7 +495,7 @@ export default function Admission2026Page() {
 
         {/* 11. Final CTA Section (High Conversion Block) */}
         <section className="bg-navy py-16 md:py-24 text-white text-center relative overflow-hidden" id="counselling">
-          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
+          <div className="absolute inset-0 bg-[url(/pattern.png)] opacity-5"></div>
           <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins leading-tight">Start Your Medical Journey Today</h2>
             <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">

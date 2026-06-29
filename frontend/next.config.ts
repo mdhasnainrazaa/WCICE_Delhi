@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",
   trailingSlash: true,
+  turbopack: {
+    root: process.cwd(),
+  },
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },

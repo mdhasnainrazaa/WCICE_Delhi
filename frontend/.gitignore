@@ -19,6 +19,7 @@
 
 # production
 /build
+/Deployment_Data/dev/
 
 # misc
 .DS_Store

@@ -1,0 +1,152 @@
+# ----------------------------------------------------------------------
+# WCIEC PRODUCTION DEPLOYMENT HTACCESS - OPTIMIZED FOR NEXT.JS STATIC EXPORTS
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Redirect HTTP to HTTPS and WWW to Non-WWW (Canonical Domain: https://wciecdelhi.com)
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^(.*)$ https://wciecdelhi.com/$1 [L,R=301]
+
+  # 2. Retire legacy PHP URLs and consolidate SEO signals to App Router pages
+  RewriteRule ^index\.php$ / [L,R=301]
+  RewriteRule ^about\.php$ /about-us/ [L,R=301]
+  RewriteRule ^contact\.php$ /contact-us/ [L,R=301]
+  RewriteRule ^admission\.php$ /admission/ [L,R=301]
+  RewriteRule ^admission-process\.php$ /admission/ [L,R=301]
+  RewriteRule ^mbbs-admission-abroad\.php$ /mbbs-abroad/ [L,R=301]
+  RewriteRule ^neet-mbbs-abroad\.php$ /mbbs-admission-through-neet/ [L,R=301]
+  RewriteRule ^mbbs-admission-india\.php$ /mbbs-admission-2026/ [L,R=301]
+  RewriteRule ^medical-scholarship\.php$ /mbbs-abroad-scholarships/ [L,R=301]
+  RewriteRule ^kyrgyzstan-universities\.php$ /mbbs-in-kyrgyzstan/ [L,R=301]
+  RewriteRule ^kazakhstan-universities\.php$ /mbbs-in-kazakhstan/ [L,R=301]
+  RewriteRule ^russia-universities\.php$ /mbbs-in-russia/ [L,R=301]
+  RewriteRule ^uzbekistan-universities\.php$ /mbbs-in-uzbekistan/ [L,R=301]
+  RewriteRule ^georgia-universities\.php$ /mbbs-in-georgia/ [L,R=301]
+  RewriteRule ^bangladesh-universities\.php$ /mbbs-in-bangladesh/ [L,R=301]
+  RewriteRule ^nepal-universities\.php$ /mbbs-in-nepal/ [L,R=301]
+  RewriteRule ^china-universities\.php$ /mbbs-in-china/ [L,R=301]
+  RewriteRule ^egypt-universities\.php$ /mbbs-in-egypt/ [L,R=301]
+
+  # 3. Enforce trailing slash on pages (except files/assets) to match trailingSlash: true
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteCond %{REQUEST_URI} !(.*)\.[a-zA-Z0-9]{2,4}$
+  RewriteRule ^(.*)$ https://wciecdelhi.com/$1/ [L,R=301]
+
+  # 4. Bypass rules for actual files and directories (serves static assets instantly)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 5. Handle trailing slashes explicitly (maps /about-us/ to /about-us/index.html)
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
+
+  # 6. Direct map for any Next.js build-related txt or manifest files starting with double underscores
+  RewriteRule ^__next(.*) __next$1 [L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# SECURITY HEADERS & HSTS
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Strict-Transport-Security (HSTS) - 2 years max age, includes subdomains & preload
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+  # Clickjacking Protection
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # MIME Sniffing Protection
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Feature & Permissions Policy
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # Content Security Policy (CSP)
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; media-src 'self' blob:; connect-src 'self' https:; frame-src 'self' https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self';"
+
+  # Cross-Origin Opener Policy (COOP)
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Custom Header for Verification
+  Header set X-Powered-By "NextJS-Static-WCIEC"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# CUSTOM ERROR PAGES
+# ----------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# ----------------------------------------------------------------------
+# MIME TYPES SUPPORT
+# ----------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType text/html .html
+  AddType text/css .css
+  AddType application/javascript .js
+  AddType application/json .json
+  AddType video/mp4 .mp4
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+  AddType text/plain .txt
+</IfModule>
+
+# ----------------------------------------------------------------------
+# GZIP / DEFLATE COMPRESSION (Improves Lighthouse Performance)
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and SVG
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/ecmascript
+  AddOutputFilterByType DEFLATE application/rss+xml application/xml application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# BROWSER CACHING via Expires & Cache-Control (310 Uncached files fix)
+# ----------------------------------------------------------------------
+# Option A: Cache-Control Headers via mod_headers
+<IfModule mod_headers.c>
+  # Cache static files for 1 year (immutable)
+  <FilesMatch "\.(css|js|woff|woff2|ttf|otf|png|jpg|jpeg|gif|webp|svg|mp4)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # Do not cache dynamic files
+  <FilesMatch "\.(html|xml|json|txt)$">
+    Header set Cache-Control "max-age=0, must-revalidate, public"
+  </FilesMatch>
+</IfModule>
+
+# Option B: Expires Headers via mod_expires (Fallback)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # CSS, JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+
+  # Images, Videos, Fonts
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType font/truetype "access plus 1 year"
+  ExpiresByType font/opentype "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+</IfModule>
+
+# Disable directory listing for security
+Options -Indexes

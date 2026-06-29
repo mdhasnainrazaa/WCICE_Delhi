@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source not "../../Deployment_Data";
+@source not "../../out";
 
 @theme {
   --color-primary: #0F4C81;

@@ -400,7 +400,7 @@ export default function NMCGuidelinesPage() {
 
         {/* 12. Final CTA Section (Trust-Based Conversion Block) */}
         <section className="bg-slate-900 py-16 md:py-24 text-white text-center relative overflow-hidden" id="counselling">
-          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
+          <div className="absolute inset-0 bg-[url(/pattern.png)] opacity-5"></div>
           <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins leading-tight">Need Help Choosing an NMC-Compliant University?</h2>
             <p className="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed">
