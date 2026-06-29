@@ -2,8 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { universities } from "@/data/universities";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+
 import { GlassCard } from "@/components/ui/GlassCard";
 import { 
   MapPin, 
@@ -46,9 +45,7 @@ export default function UniversityPage({ params }: Props) {
   if (!uni) notFound();
 
   return (
-    <>
-      <Navbar />
-      <main className="pt-24 pb-20">
+    <main className="pt-24 pb-20">
         {/* Hero Section */}
         <section className="relative py-20 bg-navy text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
@@ -211,7 +208,5 @@ export default function UniversityPage({ params }: Props) {
           </div>
         </section>
       </main>
-      <Footer />
-    </>
   );
 }

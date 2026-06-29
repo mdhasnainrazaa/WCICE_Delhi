@@ -146,10 +146,11 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Full Name *</label>
+          <label htmlFor="apply-form-name" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Full Name *</label>
           <input 
             type="text" 
             name="name"
+            id="apply-form-name"
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your name"
@@ -158,12 +159,13 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
           />
         </div>
         <div className="space-y-1.5">
-          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Phone Number *</label>
+          <label htmlFor="apply-form-phone" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Phone Number *</label>
           <div className="relative flex items-center">
             <span className="absolute left-4 text-sm text-gray-400 font-bold">+91</span>
             <input 
               type="tel" 
               name="phone"
+              id="apply-form-phone"
               value={formData.phone}
               onChange={handleChange}
               placeholder="10-digit mobile"
@@ -177,10 +179,11 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Email Address *</label>
+          <label htmlFor="apply-form-email" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Email Address *</label>
           <input 
             type="email" 
             name="email"
+            id="apply-form-email"
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
@@ -189,10 +192,11 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
           />
         </div>
         <div className="space-y-1.5">
-          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">City *</label>
+          <label htmlFor="apply-form-city" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">City *</label>
           <input 
             type="text" 
             name="city"
+            id="apply-form-city"
             value={formData.city}
             onChange={handleChange}
             placeholder="Your City"
@@ -204,9 +208,10 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">NEET Status *</label>
+          <label htmlFor="apply-form-neetStatus" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">NEET Status *</label>
           <select
             name="neetStatus"
+            id="apply-form-neetStatus"
             value={formData.neetStatus}
             onChange={handleChange}
             className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer`}
@@ -227,10 +232,11 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
               exit={{ opacity: 0, x: 20 }}
               className="space-y-1.5"
             >
-              <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">NEET Marks *</label>
+              <label htmlFor="apply-form-neetMarks" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">NEET Marks *</label>
               <input 
                 type="number" 
                 name="neetMarks"
+                id="apply-form-neetMarks"
                 value={formData.neetMarks}
                 onChange={handleChange}
                 placeholder="Expected/Actual Marks (Max 700)"
@@ -245,9 +251,10 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
       </div>
 
       <div className="space-y-1.5">
-        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Preferred University *</label>
+        <label htmlFor="apply-form-university" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Preferred University *</label>
         <select
           name="university"
+          id="apply-form-university"
           value={formData.university}
           onChange={handleChange}
           className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer`}

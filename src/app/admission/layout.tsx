@@ -1,27 +1,27 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Direct MBBS Admission in Kyrgyzstan 2026 | Indian Students Guide',
-  description: 'Complete guide for Indian students to get direct MBBS admission in Kyrgyzstan without donation. Check eligibility, required documents, and step-by-step application process for 2026.',
-  keywords: 'Direct MBBS Admission in Kyrgyzstan, MBBS Admission 2026 Kyrgyzstan, Indian Students Guide for MBBS in Kyrgyzstan, MBBS Admission Without Donation, Apply Online for Kyrgyzstan Medical Admission, Hassle-Free MBBS Admission Process',
+  title: 'MBBS Admission in Kyrgyzstan 2026 | WCIEC',
+  description: 'Learn the step-by-step MBBS admission process in Kyrgyzstan for Indian students. Eligibility criteria, required documents, fee guidance, and visa support.',
+  keywords: 'MBBS admission Kyrgyzstan 2026, study MBBS abroad eligibility, documents for MBBS abroad, medical admission visa support',
   openGraph: {
-    title: 'Direct MBBS Admission in Kyrgyzstan 2026 | Step-by-Step Guide',
-    description: 'Secure your MBBS seat in Kyrgyzstan today. Direct admission, no donation, 100% assistance for Indian students.',
-    url: 'https://wciec.org/admission',
-    siteName: 'WCIEC Organization',
+    title: 'MBBS Admission in Kyrgyzstan 2026 | WCIEC',
+    description: 'Learn the step-by-step MBBS admission process in Kyrgyzstan for Indian students. Eligibility criteria, required documents, fee guidance, and visa support.',
+    url: 'https://wciecdelhi.com/admission/',
+    siteName: 'WCIEC Delhi',
     images: [
       {
-        url: '/logos/logo.png',
+        url: '/logos/wciec-logo.webp',
         width: 1200,
         height: 630,
-        alt: 'MBBS Admission in Kyrgyzstan 2026',
+        alt: 'MBBS Admission in Kyrgyzstan 2026 - WCIEC',
       },
     ],
     locale: 'en_IN',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://wciec.org/admission',
+    canonical: 'https://wciecdelhi.com/admission/',
   },
 };
 
@@ -30,5 +30,28 @@ export default function AdmissionLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://wciecdelhi.com/admission/#webpage",
+            "url": "https://wciecdelhi.com/admission/",
+            "name": "MBBS Admission in Kyrgyzstan 2026 | WCIEC",
+            "description": "Learn the step-by-step MBBS admission process in Kyrgyzstan for Indian students.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://wciecdelhi.com/#website",
+              "name": "WCIEC Delhi",
+              "url": "https://wciecdelhi.com/"
+            }
+          })
+        }}
+      />
+      {children}
+    </>
+  );
 }

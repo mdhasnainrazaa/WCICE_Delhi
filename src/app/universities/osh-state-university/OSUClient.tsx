@@ -98,13 +98,13 @@ export default function OSUClient() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
-                <Globe2 size={16} /> MBBS in Kyrgyzstan
+                <Globe2 size={16} /> MD / MBBS in Kyrgyzstan (MD Physician equivalent to MBBS)
               </div>
               <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
                 Osh State <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University</span>
               </h1>
               <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
-                Study MBBS at Osh State University, Kyrgyzstan's most prestigious and highly ranked medical university. Join thousands of international students experiencing world-class clinical training and affordable education.
+                Study MD / MBBS (MD Physician equivalent to MBBS) at Osh State University, Kyrgyzstan's most prestigious and highly ranked medical university. Join thousands of international students experiencing world-class clinical training and affordable education.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
@@ -112,7 +112,7 @@ export default function OSUClient() {
                   Apply Now <ArrowRight size={20} />
                 </button>
                 <a 
-                  href="/Brouchers/osh%20imf.pdf" 
+                  href="/Brouchers/osh-state-university-brochure.pdf" 
                   download 
                   className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2"
                 >
@@ -130,7 +130,6 @@ export default function OSUClient() {
                   {[
                     { label: "Established", value: "1939", icon: Building2 },
                     { label: "Location", value: "Osh, KG", icon: MapPin },
-                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
                     { label: "Duration", value: "5 Years", icon: Clock },
                     { label: "FMGE Coaching", value: "Available", icon: Target },
                   ].map((stat, i) => (

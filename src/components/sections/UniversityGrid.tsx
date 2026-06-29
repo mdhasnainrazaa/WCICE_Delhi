@@ -12,7 +12,7 @@ const universities = [
     name: "Osh State University",
     location: "Kyrgyzstan",
     fees: "$3,500/Year",
-    image: "/images/Osh-State-University.png",
+    image: "/images/optimized/osh-state-university.webp",
     slug: "osh-state-university",
     tags: ["Top Ranked", "NMC Approved"]
   },
@@ -20,7 +20,7 @@ const universities = [
     name: "Jalal-Abad State University",
     location: "Kyrgyzstan",
     fees: "$3,200/Year",
-    image: "/images/Jalal-Abad-banner.png",
+    image: "/images/optimized/jalal-abad-banner.webp",
     slug: "jalal-abad-state-university",
     tags: ["Affordable", "Best Hostel"]
   },
@@ -28,7 +28,7 @@ const universities = [
     name: "Jalal-Abad International University",
     location: "Kyrgyzstan",
     fees: "$3,300/Year",
-    image: "/images/Jalal-Abad-International-University-hero.png",
+    image: "/images/optimized/jalal-abad-international-university-hero.webp",
     slug: "jalal-abad-international-university",
     tags: ["Modern Campus", "International"]
   },
@@ -36,7 +36,7 @@ const universities = [
     name: "Central Asian International Medical University",
     location: "Kyrgyzstan",
     fees: "$3,400/Year",
-    image: "/images/Central-Asian-Medical-University.png",
+    image: "/images/optimized/central-asian-medical-university.webp",
     slug: "central-asian-international-medical-university",
     tags: ["Excellent Faculty"]
   },
@@ -44,7 +44,7 @@ const universities = [
     name: "Osh International Medical University",
     location: "Kyrgyzstan",
     fees: "$3,600/Year",
-    image: "/images/osh-international-medical-university.png",
+    image: "/images/optimized/osh-international-medical-university.webp",
     slug: "osh-international-medical-university",
     tags: ["Global Standards"]
   }
@@ -111,7 +111,8 @@ export function UniversityGrid() {
                       </span>
                     </div>
                     <Link 
-                      href={`/universities/${uni.slug}`}
+                      href={`/universities/${uni.slug}/`}
+                      aria-label={`View details for ${uni.name}`}
                       className="px-4 py-2 bg-primary/10 rounded-full flex items-center justify-center text-primary text-sm font-bold group-hover:bg-primary group-hover:text-white transition-all whitespace-nowrap"
                     >
                       View Details

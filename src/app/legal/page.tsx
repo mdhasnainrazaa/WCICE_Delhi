@@ -446,7 +446,7 @@ export default function LegalPage() {
                     },
                     {
                       q: "Can I request to delete my data?",
-                      a: "Absolutely. You can email us at wciecdelhi2025@gmail.com at any time to request the deletion or correction of your personal information from our records."
+                      a: "Absolutely. You can email us at wciec3182@gmail.com at any time to request the deletion or correction of your personal information from our records."
                     },
                     {
                       q: "What happens if I don't proceed with admission?",
@@ -468,10 +468,10 @@ export default function LegalPage() {
                   <p className="text-white/80 max-w-sm">Our legal and compliance team is here to help you understand your rights and responsibilities.</p>
                   <div className="flex flex-col gap-4">
                     <a 
-                      href="mailto:wciecdelhi2025@gmail.com"
+                      href="mailto:wciec3182@gmail.com"
                       className="flex items-center gap-3 justify-center md:justify-start hover:text-white transition-colors"
                     >
-                      <Mail size={18} /> wciecdelhi2025@gmail.com
+                      <Mail size={18} /> wciec3182@gmail.com
                     </a>
                     <a 
                       href="https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D"
@@ -485,7 +485,7 @@ export default function LegalPage() {
                 </div>
                 <div className="relative z-10 flex flex-col gap-4 w-full md:w-auto">
                   <a 
-                    href="https://wa.me/918826418950" 
+                    href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad." 
                     className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-white/20 transition-all"
                   >
                     <WhatsappIcon size={20} /> WhatsApp Support
@@ -498,11 +498,6 @@ export default function LegalPage() {
         </div>
       </section>
 
-      {/* SEO META HELPER (Invisible) */}
-      <div className="hidden">
-        <h1>Privacy Policy for MBBS Abroad Consultancy - WCIEC</h1>
-        <p>Student Data Protection, Education Consultancy Terms, and Refund Policies for Study Abroad.</p>
-      </div>
     </main>
   );
 }

@@ -88,7 +88,7 @@ export default function CAIMUClient() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="/images/Central-Asian-Medical-University.png" alt="CAIMU Campus" fill className="object-cover opacity-20" priority />
+          <Image src="/images/optimized/central-asian-medical-university.webp" alt="CAIMU Campus" fill className="object-cover opacity-20" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
           {/* Orange Glow */}
@@ -100,13 +100,13 @@ export default function CAIMUClient() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
-                <Globe2 size={16} /> MBBS in Kyrgyzstan
+                <Globe2 size={16} /> MD / MBBS in Kyrgyzstan (MD Physician equivalent to MBBS)
               </div>
               <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
                 Central Asian International <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">Medical University</span>
               </h1>
               <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
-                Study MBBS at CAIMU, Kyrgyzstan with modern medical education, clinical exposure, affordable fees, and international student support.
+                Study MD / MBBS (MD Physician equivalent to MBBS) at CAIMU, Kyrgyzstan with modern medical education, clinical exposure, affordable fees, and international student support.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
@@ -114,7 +114,7 @@ export default function CAIMUClient() {
                   Apply Now <ArrowRight size={20} />
                 </button>
                 <a 
-                  href="/Brouchers/caimu.pdf" 
+                  href="/Brouchers/caimu-mbbs-brochure.pdf" 
                   download 
                   className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2"
                 >
@@ -132,7 +132,6 @@ export default function CAIMUClient() {
                   {[
                     { label: "Established", value: "2016", icon: Building2 },
                     { label: "Location", value: "Jalal-Abad, KG", icon: MapPin },
-                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
                     { label: "Duration", value: "5 Years", icon: Clock },
                     { label: "FMGE Coaching", value: "Available", icon: Target },
                   ].map((stat, i) => (
@@ -188,7 +187,7 @@ export default function CAIMUClient() {
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl group">
-              <Image src="/images/Central-Asian-Medical-University.png" alt="CAIMU Campus" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/images/optimized/central-asian-medical-university.webp" alt="CAIMU Campus" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>
@@ -382,7 +381,7 @@ export default function CAIMUClient() {
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
           <PromDown 
-            title="MBBS Fee Structure 2026" 
+            title="Central Asian International Medical University - Affordable MBBS Fee Structure" 
             subtitle="Affordable Education" 
             defaultOpen={true}
             staticOnMobile={true}
@@ -449,26 +448,43 @@ export default function CAIMUClient() {
               </div>
 
               {/* Notes & Grand Total */}
-              <div className="grid md:grid-cols-2 gap-8 items-start">
-                <div className="bg-[#FFF7ED] border border-[#FFEDD5] p-6 rounded-3xl">
-                  <h5 className="font-bold text-[#9A3412] mb-3 flex items-center gap-2">
-                    <CheckCircle2 size={20} /> Important Notes
-                  </h5>
-                  <ul className="space-y-2 text-[#C2410C] text-sm font-medium">
-                    <li>• 1st to 3rd Year Hostel & Mess is COMPULSORY.</li>
-                    <li>• Fees are subject to change per university regulations.</li>
-                    <li>• Food charges include standard Indian Mess facilities.</li>
-                  </ul>
+              <div className={`grid gap-8 items-stretch ${currency === 'INR' ? 'lg:grid-cols-3 md:grid-cols-2' : 'md:grid-cols-2'}`}>
+                <div className="bg-[#FFF7ED] border border-[#FFEDD5] p-6 rounded-3xl flex flex-col justify-between">
+                  <div>
+                    <h5 className="font-bold text-[#9A3412] mb-3 flex items-center gap-2">
+                      <CheckCircle2 size={20} className="text-[#9A3412]" /> Important Notes
+                    </h5>
+                    <ul className="space-y-2 text-[#C2410C] text-sm font-medium">
+                      <li>• 1st to 3rd Year Hostel & Mess is COMPULSORY.</li>
+                      <li>• Fees are subject to change per university regulations.</li>
+                      <li>• Food charges include standard Indian Mess facilities.</li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="bg-gradient-to-br from-[#F97316] to-[#FACC15] p-8 rounded-[32px] text-white shadow-xl">
-                  <div className="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Grand Total Package (5 Years)</div>
-                  <div className="text-4xl font-black mb-4">
-                    {currency === 'INR' ? "₹24.48 Lakhs" : "$28,800"}*
+
+                <div className="bg-gradient-to-br from-[#F97316] to-[#FACC15] p-8 rounded-[32px] text-white shadow-xl flex flex-col justify-between">
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Grand Total Package (5 Years)</div>
+                    <div className="text-4xl font-black mb-6">
+                      {currency === 'INR' ? "₹24.48 Lakhs" : "$28,800"}*
+                    </div>
                   </div>
                   <button onClick={openModal} className="w-full bg-white text-[#F97316] font-bold py-4 rounded-2xl hover:bg-gray-50 transition-all shadow-lg">
                     Apply for Admission 2026
                   </button>
                 </div>
+
+                {currency === 'INR' && (
+                  <div className="bg-gradient-to-br from-[#E11D48] to-[#F43F5E] p-8 rounded-[32px] text-white shadow-xl flex flex-col justify-between">
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest opacity-80 mb-2">Alternative Option</div>
+                      <div className="text-4xl font-black mb-6">₹23.50 Lakhs</div>
+                    </div>
+                    <div className="text-white/85 font-black uppercase tracking-widest text-xs py-4 border border-white/25 rounded-2xl bg-white/10 backdrop-blur-sm w-full text-center">
+                      One Time Payment
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </PromDown>
@@ -508,7 +524,7 @@ export default function CAIMUClient() {
               <div className="space-y-4">
                 <h4 className="font-bold text-[#FACC15] uppercase tracking-wider text-sm">Contact Us</h4>
                 <div className="flex items-center gap-3 text-white/80"><Phone size={20} className="text-[#F97316]" /> +91 85868 73357, +91 99116 35435</div>
-                <div className="flex items-center gap-3 text-white/80"><Mail size={20} className="text-[#F97316]" /> wciecdelhi2025@gmail.com</div>
+                <div className="flex items-center gap-3 text-white/80"><Mail size={20} className="text-[#F97316]" /> wciec3182@gmail.com</div>
                 <div className="flex items-center gap-3 text-white/80"><Globe2 size={20} className="text-[#F97316]" /> wciecorganization.com/contact-us</div>
               </div>
             </div>

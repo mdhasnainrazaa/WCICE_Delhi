@@ -43,51 +43,7 @@ import {
 } from "lucide-react";
 import { useApplyModal } from "@/context/ApplyModalContext";
 
-// ─── SEO Meta (inject via Head in a layout or _app) ─────────────────────────
-export function AboutPageSEO() {
-  return (
-    <Head>
-      <title>About WCIEC | Best Study Abroad & MBBS Consultant in India</title>
-      <meta
-        name="description"
-        content="Learn more about WCIEC Organization, the best study abroad consultant in India for Indian students. 15+ years of excellence in MBBS abroad admission guidance and student support."
-      />
-      <meta
-        name="keywords"
-        content="about WCIEC, study abroad consultant in India, overseas education consultant, best study abroad consultant, MBBS abroad admission guidance, foreign education consultant India"
-      />
-      <meta property="og:title" content="About WCIEC | Trusted MBBS Abroad Consultancy" />
-      <meta
-        property="og:description"
-        content="15+ years of excellence guiding aspiring doctors to top medical universities in Kyrgyzstan. NMC & WHO recognized. 5000+ successful alumni."
-      />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://wciecorganization.com/about" />
-      <link rel="canonical" href="https://wciecorganization.com/about" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "EducationalOrganization",
-            name: "WCIEC Organization Private Limited",
-            url: "https://wciecorganization.com",
-            description:
-              "WCIEC Organization guides aspiring medical students to NMC & WHO recognized MBBS universities in Kyrgyzstan.",
-            foundingDate: "2010",
-            address: { "@type": "PostalAddress", addressCountry: "IN" },
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+91-8376965627",
-              contactType: "Admissions",
-            },
-            sameAs: ["https://wciecorganization.com"],
-          }),
-        }}
-      />
-    </Head>
-  );
-}
+// SEO and structured data is managed in layout.tsx
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -113,7 +69,7 @@ const universities = [
     abbr: "JAIU",
     name: "Jalal-Abad International University",
     city: "Jalalabad",
-    image: "/images/Jalal-Abad-International-University-hero.png",
+    image: "/images/optimized/jalal-abad-international-university-hero.webp",
     highlight: "NMC & WHO Recognized",
     slug: "jalal-abad-international-university",
   },
@@ -121,7 +77,7 @@ const universities = [
     abbr: "JASU",
     name: "Jalal-Abad State University",
     city: "Jalalabad",
-    image: "/images/Jalal-Abad-banner.png",
+    image: "/images/optimized/jalal-abad-banner.webp",
     highlight: "Government University",
     slug: "jalal-abad-state-university",
   },
@@ -129,7 +85,7 @@ const universities = [
     abbr: "OSU",
     name: "Osh State University Medical Faculty",
     city: "Osh",
-    image: "/images/Osh-State-University.png",
+    image: "/images/optimized/osh-state-university.webp",
     highlight: "Established 1992",
     slug: "osh-state-university",
   },
@@ -137,7 +93,7 @@ const universities = [
     abbr: "CAIMU",
     name: "Central Asian International Medical University",
     city: "Osh",
-    image: "/images/Central-Asian-Medical-University.png",
+    image: "/images/optimized/central-asian-medical-university.webp",
     highlight: "ECFMG Listed",
     slug: "central-asian-international-medical-university",
   },
@@ -145,7 +101,7 @@ const universities = [
     abbr: "OIMU",
     name: "Osh International Medical University",
     city: "Osh",
-    image: "/images/osh-international-medical-university.png",
+    image: "/images/optimized/osh-international-medical-university.webp",
     highlight: "Best Campus Facilities",
     slug: "osh-international-medical-university",
   },
@@ -258,9 +214,8 @@ export default function AboutPage() {
   const { openModal } = useApplyModal();
   return (
     <>
-      <AboutPageSEO />
       <main className="bg-white overflow-x-hidden" itemScope itemType="https://schema.org/EducationalOrganization">
-        <meta itemProp="name" content="WCIEC Organization Private Limited" />
+        <meta itemProp="name" content="WCIEC Delhi" />
 
         {/* ── HERO ── */}
         <section
@@ -270,7 +225,7 @@ export default function AboutPage() {
           {/* BG image */}
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2070&auto=format&fit=crop"
+              src="/images/optimized/jalal-abad-banner.webp"
               alt="Medical university campus"
               fill
               sizes="100vw"
@@ -335,7 +290,7 @@ export default function AboutPage() {
                   </button>
                   <div className="flex bg-white/10 backdrop-blur-sm border border-white/25 rounded-xl overflow-hidden">
                     <a
-                      href="/Brouchers/WCIEC DELHI.pdf"
+                      href="/Brouchers/wciec-delhi-brochure.pdf"
                       download
                       className="px-6 py-4 text-white font-bold text-sm flex items-center gap-2 hover:bg-white/10 transition-all"
                       aria-label="Download WCIEC brochure"
@@ -631,7 +586,7 @@ export default function AboutPage() {
                     </div>
                     <span className="inline-block text-[10px] font-bold text-[#1a4db8] bg-[#1a4db8]/8 px-2 py-0.5 rounded-full mb-4">{uni.highlight}</span>
                     <a
-                      href={`/universities/${uni.slug}`}
+                      href={`/universities/${uni.slug}/`}
                       className="block w-full py-2 rounded-lg border border-[#1a4db8]/20 text-[#1a4db8] font-bold text-xs text-center hover:bg-[#1a4db8] hover:text-white transition-all"
                       aria-label={`View details about ${uni.name}`}
                     >
@@ -838,7 +793,7 @@ export default function AboutPage() {
                 {/* Main Content Area - Embedded PDF */}
                 <div className="absolute inset-0 pt-12 flex items-center justify-center bg-gray-900">
                   <iframe
-                    src="/Brouchers/WCIEC DELHI.pdf#toolbar=0"
+                    src="/Brouchers/wciec-delhi-brochure.pdf#toolbar=0"
                     className="w-full h-full border-none"
                     title="WCIEC Information Brochure"
                   />
@@ -866,8 +821,8 @@ export default function AboutPage() {
                   </div>
                   <div className="w-px h-4 bg-white/20" />
                   <div className="flex gap-4">
-                    <a href="/Brouchers/WCIEC DELHI.pdf" target="_blank" className="hover:text-white transition-colors" title="View Fullscreen"><Eye size={18} /></a>
-                    <a href="/Brouchers/WCIEC DELHI.pdf" download className="hover:text-white transition-colors" title="Download PDF"><Download size={18} /></a>
+                    <a href="/Brouchers/wciec-delhi-brochure.pdf" target="_blank" className="hover:text-white transition-colors" title="View Fullscreen"><Eye size={18} /></a>
+                    <a href="/Brouchers/wciec-delhi-brochure.pdf" download className="hover:text-white transition-colors" title="Download PDF"><Download size={18} /></a>
                     <button className="hover:text-white transition-colors"><Printer size={18} /></button>
                   </div>
                 </div>
@@ -883,14 +838,14 @@ export default function AboutPage() {
                 </div>
                 <div className="flex gap-4">
                   <a
-                    href="/Brouchers/WCIEC DELHI.pdf"
+                    href="/Brouchers/wciec-delhi-brochure.pdf"
                     target="_blank"
                     className="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3 rounded-xl transition-all text-sm border border-white/10"
                   >
                     Open Viewer
                   </a>
                   <a
-                    href="/Brouchers/WCIEC DELHI.pdf"
+                    href="/Brouchers/wciec-delhi-brochure.pdf"
                     download
                     className="bg-[#1a4db8] hover:bg-[#1440a0] text-white font-bold px-8 py-3 rounded-xl transition-all shadow-lg shadow-[#1a4db8]/20 text-sm"
                   >
@@ -936,13 +891,6 @@ export default function AboutPage() {
               >
                 Apply Now <ArrowRight size={16} />
               </button>
-              <a
-                href="tel:+918376965627"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/20 font-bold px-10 py-4 rounded-xl transition-all text-sm"
-                aria-label="Call WCIEC admissions"
-              >
-                <Phone size={15} /> +91 8376965627
-              </a>
             </div>
           </div>
         </section>

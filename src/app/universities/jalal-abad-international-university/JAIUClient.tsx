@@ -4,20 +4,20 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  CheckCircle2, 
-  MapPin, 
-  Clock, 
-  BookOpen, 
-  Globe2, 
-  GraduationCap, 
-  Download, 
-  ChevronDown, 
-  Star, 
-  Trophy, 
-  ShieldCheck, 
-  Stethoscope, 
-  Building2, 
+import {
+  CheckCircle2,
+  MapPin,
+  Clock,
+  BookOpen,
+  Globe2,
+  GraduationCap,
+  Download,
+  ChevronDown,
+  Star,
+  Trophy,
+  ShieldCheck,
+  Stethoscope,
+  Building2,
   Sparkles,
   ArrowRight,
   Target,
@@ -88,7 +88,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 
 const FeeTable = () => {
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -204,33 +204,33 @@ export default function JAIUClient() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="/images/Jalal-Abad-International-University-hero.png" alt="Jalal-Abad International University" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image src="/images/optimized/jalal-abad-international-university-hero.webp" alt="Jalal-Abad International University" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
           {/* Orange Glow */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F97316]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
         </div>
-        
+
         <div className="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
           <Breadcrumbs />
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
-                <Globe2 size={16} /> MBBS in Kyrgyzstan
+                <Globe2 size={16} /> MD / MBBS in Kyrgyzstan (MD Physician equivalent to MBBS)
               </div>
               <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
                 Jalal-Abad International <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University</span>
               </h1>
               <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
-                Study MBBS at Jalal-Abad International University, Kyrgyzstan. Experience quality medical education, clinical exposure, affordable fees, and international student support.
+                Study MD / MBBS (MD Physician equivalent to MBBS) at Jalal-Abad International University, Kyrgyzstan. Experience quality medical education, clinical exposure, affordable fees, and international student support.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
                 <button onClick={openModal} className="bg-[#F97316] hover:bg-[#EA580C] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#F97316]/30 flex items-center gap-2">
                   Apply Now <ArrowRight size={20} />
                 </button>
-                <a 
-                  href="/Brouchers/jaiu%20brochure.pdf" 
+                <a
+                  href="/Brouchers/jalal-abad-international-university-brochure.pdf"
                   download
                   className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2"
                 >
@@ -248,7 +248,6 @@ export default function JAIUClient() {
                   {[
                     { label: "Established", value: "Jalal-Abad, KG", icon: Building2 },
                     { label: "Location", value: "Kyrgyz Republic", icon: MapPin },
-                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
                     { label: "Duration", value: "5 + 1 Years", icon: Clock },
                     { label: "FMGE Coaching", value: "Available", icon: Target },
                   ].map((stat, i) => (
@@ -285,58 +284,55 @@ export default function JAIUClient() {
               { label: "FMGE Prep", icon: GraduationCap, val: "In-house Coaching", color: "purple" },
               { label: "Scholarships", val: "Merit-based Available", icon: Trophy, color: "amber" },
             ].map((item, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className="group relative bg-white border border-gray-100 rounded-[2.5rem] p-8 hover:border-transparent transition-all duration-500"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-[2.5rem] ${
-                  item.color === 'blue' ? 'from-blue-600 to-blue-400' :
+                <div className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-[2.5rem] ${item.color === 'blue' ? 'from-blue-600 to-blue-400' :
                   item.color === 'emerald' ? 'from-emerald-600 to-emerald-400' :
-                  item.color === 'rose' ? 'from-rose-600 to-rose-400' :
-                  item.color === 'indigo' ? 'from-indigo-600 to-indigo-400' :
-                  item.color === 'orange' ? 'from-orange-600 to-orange-400' :
-                  item.color === 'teal' ? 'from-teal-600 to-teal-400' :
-                  item.color === 'purple' ? 'from-purple-600 to-purple-400' :
-                  'from-amber-600 to-amber-400'
-                }`} />
-                
+                    item.color === 'rose' ? 'from-rose-600 to-rose-400' :
+                      item.color === 'indigo' ? 'from-indigo-600 to-indigo-400' :
+                        item.color === 'orange' ? 'from-orange-600 to-orange-400' :
+                          item.color === 'teal' ? 'from-teal-600 to-teal-400' :
+                            item.color === 'purple' ? 'from-purple-600 to-purple-400' :
+                              'from-amber-600 to-amber-400'
+                  }`} />
+
                 <div className="relative z-10">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 ${
-                    item.color === 'blue' ? 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white' :
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 ${item.color === 'blue' ? 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white' :
                     item.color === 'emerald' ? 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white' :
-                    item.color === 'rose' ? 'bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white' :
-                    item.color === 'indigo' ? 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white' :
-                    item.color === 'orange' ? 'bg-orange-50 text-orange-600 group-hover:bg-orange-600 group-hover:text-white' :
-                    item.color === 'teal' ? 'bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white' :
-                    item.color === 'purple' ? 'bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white' :
-                    'bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white'
-                  }`}>
+                      item.color === 'rose' ? 'bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white' :
+                        item.color === 'indigo' ? 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white' :
+                          item.color === 'orange' ? 'bg-orange-50 text-orange-600 group-hover:bg-orange-600 group-hover:text-white' :
+                            item.color === 'teal' ? 'bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white' :
+                              item.color === 'purple' ? 'bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white' :
+                                'bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white'
+                    }`}>
                     <item.icon size={28} />
                   </div>
-                  
+
                   <div className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2 group-hover:text-gray-500 transition-colors">
                     {item.label}
                   </div>
-                  
+
                   <div className="text-[#0B1F33] font-black text-xl leading-[1.2] group-hover:translate-x-1 transition-transform duration-300">
                     {item.val}
                   </div>
                 </div>
 
-                <div className={`absolute bottom-6 left-8 right-8 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 ${
-                  item.color === 'blue' ? 'bg-blue-600/20' :
+                <div className={`absolute bottom-6 left-8 right-8 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0 ${item.color === 'blue' ? 'bg-blue-600/20' :
                   item.color === 'emerald' ? 'bg-emerald-600/20' :
-                  item.color === 'rose' ? 'bg-rose-600/20' :
-                  item.color === 'indigo' ? 'bg-indigo-600/20' :
-                  item.color === 'orange' ? 'bg-orange-600/20' :
-                  item.color === 'teal' ? 'bg-teal-600/20' :
-                  item.color === 'purple' ? 'bg-purple-600/20' :
-                  'bg-amber-600/20'
-                }`} />
+                    item.color === 'rose' ? 'bg-rose-600/20' :
+                      item.color === 'indigo' ? 'bg-indigo-600/20' :
+                        item.color === 'orange' ? 'bg-orange-600/20' :
+                          item.color === 'teal' ? 'bg-teal-600/20' :
+                            item.color === 'purple' ? 'bg-purple-600/20' :
+                              'bg-amber-600/20'
+                  }`} />
               </motion.div>
             ))}
           </div>
@@ -359,24 +355,24 @@ export default function JAIUClient() {
               </div>
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl group border-4 border-gray-50">
-               <video 
-                 src="/images/jaiu-gallery/jalabasInternational.mp4" 
-                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                 autoPlay 
-                 muted 
-                 loop 
-                 playsInline
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-               <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white flex items-center gap-3">
-                 <div className="w-10 h-10 bg-[#e2a613] rounded-full flex items-center justify-center animate-pulse">
-                   <PlayCircle size={20} />
-                 </div>
-                 <div>
-                   <div className="text-xs font-black uppercase tracking-widest">Campus Showcase</div>
-                   <div className="text-[10px] font-bold opacity-80 text-white/90">Experience JAIU Life</div>
-                 </div>
-               </div>
+              <video
+                src="/images/jaiu-gallery/jalalabad-international.mp4"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white flex items-center gap-3">
+                <div className="w-10 h-10 bg-[#e2a613] rounded-full flex items-center justify-center animate-pulse">
+                  <PlayCircle size={20} />
+                </div>
+                <div>
+                  <div className="text-xs font-black uppercase tracking-widest">Campus Showcase</div>
+                  <div className="text-[10px] font-bold opacity-80 text-white/90">Experience JAIU Life</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -412,10 +408,10 @@ export default function JAIUClient() {
       {/* ── FEE STRUCTURE ── */}
       <section className="py-16 bg-[#0B1F33] text-white relative overflow-hidden" id="fee-structure">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <PromDown 
-            title="Fee Structure 2026" 
-            subtitle="Investment in Future" 
-            defaultOpen={true} 
+          <PromDown
+            title="Jalal-Abad International University - Fee Structure 2026"
+            subtitle="Investment in Future"
+            defaultOpen={true}
             staticOnMobile={true}
             className="bg-white/5 border-white/10 shadow-none"
             titleClassName="text-white"
@@ -431,7 +427,7 @@ export default function JAIUClient() {
               {[
                 { label: "Total (USD)", val: "$33,350", color: "#60a5fa" },
                 { label: "Total (INR)", val: "₹30.01 Lacs", color: "#94a3b8" },
-                { label: "One-time", val: "₹24.50 Lacs", color: "#10b981", highlight: true },
+                { label: "One-time", val: "₹23.50 Lakhs", color: "#10b981", highlight: true },
                 { label: "1 USD =", val: "₹90", color: "#94a3b8" },
               ].map((item, i) => (
                 <div key={i} className={`bg-white/5 border rounded-xl p-4 text-center transition-all ${item.highlight ? 'border-[#10b981] bg-[#10b981]/10' : 'border-white/10'}`}>
@@ -444,7 +440,7 @@ export default function JAIUClient() {
             <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-2xl">
               <h4 className="text-[9px] font-black uppercase tracking-widest text-[#e2a613] mb-3 text-center">Quick Notes</h4>
               <ul className="grid md:grid-cols-2 gap-y-2 text-[10px] text-white/50 font-bold">
-                <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#10b981]" /> One-time Payment: ₹24.50 Lacs</li>
+                <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#10b981]" /> One-time Payment: ₹23.50 Lakhs</li>
                 <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-[#e2a613]" /> Fees vary with exchange rate</li>
               </ul>
             </div>
@@ -550,7 +546,7 @@ export default function JAIUClient() {
               <p className="text-gray-600 leading-relaxed font-medium mb-8">
                 We reward academic excellence. Merit-based scholarships are available for high-achieving students to help make their medical education more affordable and rewarding.
               </p>
-              <button 
+              <button
                 onClick={openModal}
                 className="text-[#e2a613] font-black uppercase tracking-widest text-xs flex items-center gap-2 hover:gap-4 transition-all"
               >
@@ -585,7 +581,7 @@ export default function JAIUClient() {
       {/* ── FINAL CTA ── */}
       <section className="py-24 bg-[#0B1F33] relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1a4db8]/20 rounded-full blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1a4db8]/20 rounded-full blur-[120px]" />
         </div>
         <div className="max-w-5xl mx-auto px-4 relative z-10 text-center text-white">
           <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">Start Your MBBS Journey at <br /> Jalal-Abad International University</h2>
@@ -593,12 +589,12 @@ export default function JAIUClient() {
             Get complete admission guidance, fee details, document support, and counseling assistance for your medical career.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-             <button 
-                onClick={openModal}
-                className="bg-[#e2a613] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest shadow-2xl shadow-[#e2a613]/30 hover:scale-105 transition-transform"
-             >
-               Apply Now
-             </button>
+            <button
+              onClick={openModal}
+              className="bg-[#e2a613] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest shadow-2xl shadow-[#e2a613]/30 hover:scale-105 transition-transform"
+            >
+              Apply Now
+            </button>
           </div>
         </div>
       </section>

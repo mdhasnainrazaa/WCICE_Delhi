@@ -3,16 +3,17 @@ import JAIUClient from "./JAIUClient";
 import { UniversitySchema } from "@/components/seo/UniversitySchema";
 
 export const metadata: Metadata = {
-  title: "Jalal-Abad International University MBBS Admission 2026 | Fees",
+  title: "JAIU MBBS Fees & Admission 2026 | WCIEC",
   description: "Direct admission to Jalal-Abad International University (JAIU), Kyrgyzstan. Affordable MBBS fees ($33,350 total), English medium, and Indian mess facilities. Apply for 2026.",
   keywords: "Jalal-Abad International University MBBS, JAIU Kyrgyzstan fees, MBBS abroad for Indian students, Medical colleges in Jalal-Abad, study medicine in Kyrgyzstan",
   openGraph: {
-    title: "Jalal-Abad International University | MBBS in Kyrgyzstan 2026",
+    title: "JAIU MBBS Fees & Admission 2026 | WCIEC",
     description: "Your gateway to a global medical career. Explore JAIU's world-class facilities and expert faculty.",
-    images: ["/images/Jalal-Abad-International-University-hero.png"],
+    images: ["/images/optimized/jalal-abad-international-university-hero.webp"],
+    url: "https://wciecdelhi.com/universities/jalal-abad-international-university/",
   },
   alternates: {
-    canonical: "https://wciec.org/universities/jalal-abad-international-university",
+    canonical: "https://wciecdelhi.com/universities/jalal-abad-international-university/",
   }
 };
 
@@ -22,8 +23,8 @@ export default function page() {
       <UniversitySchema 
         name="Jalal-Abad International University (JAIU)"
         description="A premier international medical university in Jalal-Abad, offering globally recognized MBBS degrees with a focus on modern clinical practice."
-        url="https://wciec.org/universities/jalal-abad-international-university"
-        image="/images/Jalal-Abad-International-University-hero.png"
+        url="https://wciecdelhi.com/universities/jalal-abad-international-university/"
+        image="/images/optimized/jalal-abad-international-university-hero.webp"
         city="Jalal-Abad"
         faqs={[
           { q: "What is the total fee for JAIU?", a: "The total fee for the 5-year MBBS program at JAIU is approximately $33,350, including tuition, hostel, and other fees." },

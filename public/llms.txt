@@ -1,0 +1,80 @@
+# WCIEC Delhi - Study MBBS in Kyrgyzstan
+
+WCIEC Delhi (West Coast Information & Education Consultant) is a premier educational consultancy specializing in direct MBBS/MD admission in Kyrgyzstan for Indian students. We provide comprehensive guidance, counseling, document processing, visa handling, and on-ground student support in Kyrgyzstan.
+
+## Canonical Domain
+All pages strictly enforce HTTPS, non-www, and trailing slashes.
+- Canonical Host: `https://wciecdelhi.com`
+
+---
+
+## Core Offerings
+- **Program**: Doctor of Medicine (MD Physician), equivalent to MBBS in India.
+- **Duration**: 5 Years / 6 Years (including internship depending on the university).
+- **Medium of Instruction**: 100% English Medium for international students.
+- **Recognitions**: National Medical Commission (NMC/MCI), World Health Organization (WHO), FAIMER, ECFMG, WDOMS.
+- **Facilities**: Separate boys and girls hostels, 24/7 security, Wi-Fi, and authentic Indian food cooked by Indian chefs.
+- **Support**: In-campus FMGE/NExT licensing exam coaching by Indian doctors and educators.
+
+---
+
+## Website Structure & Key Pages
+
+### Core Pages
+- **Homepage (`https://wciecdelhi.com/`)**: Overview of MBBS in Kyrgyzstan, eligibility criteria, student benefits, and a quick consultation request form.
+- **About Us (`https://wciecdelhi.com/about-us/`)**: WCIEC Delhi's history, core educational values, direct counselors, and information brochure.
+- **Admission Process (`https://wciecdelhi.com/admission/`)**: Step-by-step guidance covering online application, document evaluation, university offer letters, visa processing, and departure check-lists.
+- **Contact Us (`https://wciecdelhi.com/contact-us/`)**: Official Delhi office location, telephone numbers, emails, and direct callback registration form.
+- **Legal (`https://wciecdelhi.com/legal/`)**: Standard terms of service, counseling agreement, privacy guidelines, and legal disclosures.
+- **Universities (`https://wciecdelhi.com/universities/`)**: Comprehensive comparative directory of NMC-recognized medical universities in Kyrgyzstan.
+- **MBBS Abroad (`https://wciecdelhi.com/mbbs-abroad/`)**: Pillar guide for Indian students comparing MBBS abroad countries, admission, fees, eligibility, and visa support.
+- **MBBS in Kyrgyzstan (`https://wciecdelhi.com/mbbs-in-kyrgyzstan/`)**: Primary country guide for affordable MBBS admission in Kyrgyzstan.
+- **MBBS Abroad Consultants in Delhi (`https://wciecdelhi.com/mbbs-abroad-consultants-in-delhi/`)**: Local-service page for Delhi-based counselling and admissions.
+- **Kyrgyzstan Medical Universities (`https://wciecdelhi.com/kyrgyzstan-medical-universities/`)**: Comparative university guide for Kyrgyzstan.
+- **Blog (`https://wciecdelhi.com/blog/`)**: Education updates and MBBS abroad decision guides.
+- **Search (`https://wciecdelhi.com/search/`)**: Internal search for WCIEC MBBS abroad guides, country pages, fees, NEET, NMC, visa, and hostel topics.
+
+### Country Pages
+- **MBBS in Russia (`https://wciecdelhi.com/mbbs-in-russia/`)**: Russia fees, eligibility, admission process, visa, hostel, and NMC checklist.
+- **MBBS in Kazakhstan (`https://wciecdelhi.com/mbbs-in-kazakhstan/`)**: Kazakhstan fees, eligibility, universities, visa, and student-life guidance.
+- **MBBS in Uzbekistan (`https://wciecdelhi.com/mbbs-in-uzbekistan/`)**: Uzbekistan MBBS admission, fees, NEET, NMC, and student support.
+- **MBBS in Georgia (`https://wciecdelhi.com/mbbs-in-georgia/`)**: Georgia MBBS guide for Indian students comparing European-style options.
+- **MBBS in Bangladesh (`https://wciecdelhi.com/mbbs-in-bangladesh/`)**: Bangladesh MBBS eligibility, fee planning, proximity, and admission support.
+- **MBBS in Nepal (`https://wciecdelhi.com/mbbs-in-nepal/`)**: Nepal MBBS eligibility, entrance considerations, fees, and college comparison.
+- **MBBS in Egypt (`https://wciecdelhi.com/mbbs-in-egypt/`)**: Egypt MBBS admission, eligibility, fees, visa, and NMC verification.
+- **MBBS in China (`https://wciecdelhi.com/mbbs-in-china/`)**: China MBBS admission checks, English-medium verification, fees, and NEET guidance.
+
+### Decision Guides
+- **MBBS Admission 2026 (`https://wciecdelhi.com/mbbs-admission-2026/`)**: Admission timeline, eligibility, documents, NEET, and country shortlisting.
+- **MBBS Fees Abroad (`https://wciecdelhi.com/mbbs-fees-abroad/`)**: Country-wise fee comparison, total-cost planning, and hidden-cost warnings.
+- **MBBS Without Donation (`https://wciecdelhi.com/mbbs-without-donation/`)**: No-donation admission guidance and payment safety checks.
+- **MBBS Admission Through NEET (`https://wciecdelhi.com/mbbs-admission-through-neet/`)**: NEET-qualified student pathway for MBBS abroad.
+- **NMC Guidelines for MBBS Abroad (`https://wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/`)**: NMC compliance checklist for foreign medical graduates.
+- **FMGE/NExT Guide (`https://wciecdelhi.com/fmge-next-guide/`)**: Indian licensing exam pathway and university-selection signals.
+- **MBBS Abroad Visa Process (`https://wciecdelhi.com/mbbs-abroad-visa-process/`)**: Visa documents, timeline, and pre-departure support.
+- **MBBS Abroad Hostel Facilities (`https://wciecdelhi.com/mbbs-abroad-hostel-facilities/`)**: Hostel, Indian food, safety, Wi-Fi, and parent support.
+- **MBBS Abroad Student Life (`https://wciecdelhi.com/mbbs-abroad-student-life/`)**: Student life, climate, safety, food, classes, and adaptation.
+- **MBBS Abroad Scholarships (`https://wciecdelhi.com/mbbs-abroad-scholarships/`)**: Merit aid, discounts, scholarship documents, and verification.
+- **MBBS Abroad Eligibility (`https://wciecdelhi.com/mbbs-abroad-eligibility/`)**: NEET, PCB marks, age, passport, and country-specific requirements.
+
+### Medical Universities Details
+- **Osh State University (`https://wciecdelhi.com/universities/osh-state-university/`)**: Established 1939. One of Kyrgyzstan's oldest and top-ranked government medical universities. Fully English-medium, massive clinical exposure, and comprehensive Indian hostel facilities.
+- **Osh International Medical University (`https://wciecdelhi.com/universities/osh-international-medical-university/`)**: State-of-the-art infrastructure in Osh city. Popular for its advanced simulation laboratories, clinical rotations, and robust FMGE passing rates.
+- **Jalal-Abad State University (`https://wciecdelhi.com/universities/jalal-abad-state-university/`)**: Established 1993. Renowned government institution with a 30-year legacy of medical training. Emphasizes clinical practice and student exchange programs.
+- **Jalal-Abad International University (`https://wciecdelhi.com/universities/jalal-abad-international-university/`)**: Modern private medical university in Jalal-Abad. Features affordable packages, simulation-based training, and merit scholarships.
+- **Central Asian International Medical University (`https://wciecdelhi.com/universities/central-asian-international-medical-university/`)**: Modern campus founded in 2016. Recognized for low tuition packages, advanced laboratory equipment, and strong student exchange programs.
+
+---
+
+## Admissions Information (2026 Session)
+
+### Eligibility Criteria
+- **Academic**: 10+2 with a minimum of 50% aggregate marks in Physics, Chemistry, and Biology (PCB).
+- **Entrance**: NEET-UG qualified scorecard (mandatory for Indian students to practice back in India).
+- **Age**: Minimum 17 years of age by December 31st of the admission year.
+- **Documents**: Valid passport (minimum 6 months validity), 10th & 12th marksheets, NEET scorecard, medical certificates, and passport photos.
+
+### Contact Information
+- **Delhi Office**: WCIEC Delhi Office
+- **Phone**: +91 85868 73357, +91 99116 35435
+- **Email**: wciec3182@gmail.com

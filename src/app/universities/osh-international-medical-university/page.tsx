@@ -3,16 +3,17 @@ import OIMUClient from "./OIMUClient";
 import { UniversitySchema } from "@/components/seo/UniversitySchema";
 
 export const metadata: Metadata = {
-  title: "Osh International Medical University MBBS Fees 2026 | Admission",
+  title: "OIMU MBBS Fees & Admission 2026 | WCIEC",
   description: "Study MBBS at Osh International Medical University (OIMU), Kyrgyzstan. English medium MD program, FMGE coaching, and Indian mess. Total 5-year package details for 2026.",
   keywords: "Osh International Medical University, OIMU Kyrgyzstan, MBBS in Osh, OIMU fees for Indian students, Medical studies Kyrgyzstan 2026",
   openGraph: {
-    title: "Osh International Medical University | Global MBBS Career",
+    title: "OIMU MBBS Fees & Admission 2026 | WCIEC",
     description: "Join one of Kyrgyzstan's most modern medical universities. Affordable fees, high-quality clinical training, and student support.",
-    images: ["https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200"],
+    images: ["/images/optimized/osh-international-medical-university.webp"],
+    url: "https://wciecdelhi.com/universities/osh-international-medical-university/",
   },
   alternates: {
-    canonical: "https://wciec.org/universities/osh-international-medical-university",
+    canonical: "https://wciecdelhi.com/universities/osh-international-medical-university/",
   }
 };
 
@@ -22,8 +23,8 @@ export default function page() {
       <UniversitySchema 
         name="Osh International Medical University (OIMU)"
         description="A modern medical university in Osh, Kyrgyzstan, focused on providing international students with high-quality medical education and FMGE preparation."
-        url="https://wciec.org/universities/osh-international-medical-university"
-        image="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200"
+        url="https://wciecdelhi.com/universities/osh-international-medical-university/"
+        image="/images/optimized/osh-international-medical-university.webp"
         city="Osh"
         faqs={[
           { q: "What is the duration of MBBS at OIMU?", a: "The MBBS (MD) program at Osh International Medical University has a duration of 5 years." },

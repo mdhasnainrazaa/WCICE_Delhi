@@ -3,16 +3,17 @@ import JASUClient from "./JASUClient";
 import { UniversitySchema } from "@/components/seo/UniversitySchema";
 
 export const metadata: Metadata = {
-  title: "Jalal-Abad State University MBBS Fees 2026 | Direct Admission",
+  title: "JASU MBBS Fees & Admission 2026 | WCIEC",
   description: "Study MBBS at Jalal-Abad State University (JASU), Kyrgyzstan. Low tuition fees (₹34.69 Lakhs), NMC recognized, English medium. Apply for 2026-27 session through WCIEC.",
   keywords: "Jalal-Abad State University MBBS Fees, JASU Kyrgyzstan Admission 2026, MBBS in Kyrgyzstan Jalal-Abad, NMC Recognized Medical Universities Kyrgyzstan, Study MBBS at JASU",
   openGraph: {
-    title: "Jalal-Abad State University | Direct MBBS Admission 2026",
+    title: "JASU MBBS Fees & Admission 2026 | WCIEC",
     description: "Official admission partner for JASU Kyrgyzstan. Get detailed fee structure, eligibility and 100% visa support.",
-    images: ["/images/Jalal-Abad-banner.png"],
+    images: ["/images/optimized/jalal-abad-banner.webp"],
+    url: "https://wciecdelhi.com/universities/jalal-abad-state-university/",
   },
   alternates: {
-    canonical: "https://wciec.org/universities/jalal-abad-state-university",
+    canonical: "https://wciecdelhi.com/universities/jalal-abad-state-university/",
   }
 };
 
@@ -22,8 +23,8 @@ export default function page() {
       <UniversitySchema 
         name="Jalal-Abad State University (JASU)"
         description="A premier government medical university in Jalal-Abad, Kyrgyzstan, offering high-quality medical education since 1993."
-        url="https://wciec.org/universities/jalal-abad-state-university"
-        image="/images/Jalal-Abad-banner.png"
+        url="https://wciecdelhi.com/universities/jalal-abad-state-university/"
+        image="/images/optimized/jalal-abad-banner.webp"
         city="Jalal-Abad"
         established="1993"
         faqs={[

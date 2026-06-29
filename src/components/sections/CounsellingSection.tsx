@@ -84,7 +84,7 @@ export function CounsellingSection() {
       {/* Background with University Image and Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/Osh-State-University.png"
+          src="/images/optimized/osh-state-university.webp"
           alt="University Background"
           fill
           className="object-cover opacity-10 grayscale-[50%]"
@@ -102,16 +102,16 @@ export function CounsellingSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1F33] leading-[1.1] mb-4 font-poppins">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1F33] leading-[1.1] mb-4 font-poppins text-center lg:text-left">
                 Your Dream of Becoming Doctor <span className="text-[#00B4D8]">Starts Here!</span>
               </h2>
-
-              <p className="text-gray-600 font-medium leading-relaxed max-w-lg text-sm mb-8">
+ 
+              <p className="text-gray-600 font-medium leading-relaxed max-w-lg text-sm mb-8 text-center lg:text-left mx-auto lg:mx-0">
                 WCIEC Organization helps students secure admission in top international medical universities with transparency, expert support, and complete guidance.
               </p>
-
+ 
               {/* Added Features Card based on Image Reference */}
-              <div className="bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 max-w-xl">
+              <div className="bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 max-w-xl mx-auto lg:mx-0">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
                   {smallFeatures.map((feature, idx) => (
                     <div key={idx} className={`flex flex-col items-center text-center px-1 ${idx > 1 ? 'pt-4 md:pt-0' : ''}`}>

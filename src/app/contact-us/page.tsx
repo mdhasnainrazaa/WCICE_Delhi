@@ -59,9 +59,9 @@ export default function ContactUsPage() {
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#2563EB]/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
         </div>
 
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-[1200px] mx-auto relative z-10 w-full overflow-hidden">
           {/* Breadcrumbs */}
-          <nav className="flex mb-8 text-sm font-medium text-[#64748B]" aria-label="Breadcrumb">
+          <nav className="flex mb-8 text-sm font-medium text-[#64748B] px-4 sm:px-6" aria-label="Breadcrumb">
             <ol className="flex items-center space-x-2">
               <li><Link href="/" className="hover:text-[#2563EB] transition-colors">Home</Link></li>
               <li className="flex items-center space-x-2">
@@ -71,44 +71,52 @@ export default function ContactUsPage() {
             </ol>
           </nav>
 
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-7">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-7 w-full max-w-full px-4 sm:px-6 overflow-hidden">
               <div className="inline-flex items-center gap-2 bg-[#0EA5E9]/10 text-[#0EA5E9] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#0EA5E9]/20">
                 <Sparkles size={16} /> 24/7 Expert Counseling
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-[64px] font-bold text-[#0F172A] leading-[1.1] mb-6 tracking-tight">
-                Let’s Start Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">MBBS Journey Abroad</span>
+              <h1 className="text-3xl sm:text-5xl md:text-[64px] font-bold text-[#0F172A] leading-[1.15] sm:leading-[1.1] mb-6 tracking-tight">
+                Let’s Start Your <span className="text-[#2563EB]">MBBS</span> <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#06B6D4]">Journey Abroad</span>
               </h1>
-              <p className="text-lg text-[#64748B] mb-10 leading-relaxed max-w-xl">
+              <p className="text-base sm:text-lg text-[#64748B] mb-10 leading-relaxed max-w-xl">
                 Connect with our expert medical education counselors to get guaranteed admission, visa assistance, and complete end-to-end support for your medical studies overseas.
               </p>
 
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-12">
-                <a href="tel:+918586873357" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-[#2563EB]/20 flex items-center justify-center gap-2">
-                  <Phone size={20} /> Call Now
+              <div className="flex flex-col sm:flex-row gap-4 mb-12 w-full max-w-md">
+                <a
+                  href="tel:+918586873357"
+                  className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-xl shadow-[#2563EB]/20 flex items-center justify-center gap-2"
+                >
+                  <Phone size={18} /> Call Now
                 </a>
-                <a href="https://wa.me/918826418950" target="_blank" rel="noreferrer" className="bg-white hover:bg-[#F8FAFC] text-[#25D366] border border-[#E2E8F0] px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-sm flex items-center justify-center gap-2">
-                  <WhatsappIcon size={20} /> WhatsApp
+                <a
+                  href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto bg-white hover:bg-[#F8FAFC] text-[#25D366] border border-[#E2E8F0] px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-sm flex items-center justify-center gap-2"
+                >
+                  <WhatsappIcon size={18} /> WhatsApp
                 </a>
               </div>
 
-              <div className="flex flex-wrap gap-6 items-center">
+              <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-4 sm:gap-6 items-start sm:items-center">
                 {[
                   { val: "5000+", label: "Students Guided" },
                   { val: "50+", label: "Universities" },
                   { val: "100%", label: "Visa Support" }
                 ].map((stat, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <CheckCircle2 size={20} className="text-[#0EA5E9]" />
-                    <span className="font-bold text-[#0F172A]">{stat.val}</span>
-                    <span className="text-sm font-medium text-[#64748B]">{stat.label}</span>
+                  <div key={i} className="flex items-center gap-2 shrink-0">
+                    <CheckCircle2 size={18} className="text-[#0EA5E9] shrink-0" />
+                    <span className="font-bold text-[#0F172A] text-sm sm:text-base">{stat.val}</span>
+                    <span className="text-xs sm:text-sm font-medium text-[#64748B]">{stat.label}</span>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="lg:col-span-5">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="lg:col-span-5 w-full px-4 sm:px-6">
               <div className="bg-white/60 backdrop-blur-2xl border border-white p-8 rounded-[32px] shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] relative">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0EA5E9]/20 to-transparent rounded-full blur-2xl -z-10" />
                 <h3 className="text-2xl font-bold text-[#0F172A] mb-8">Head Office</h3>
@@ -129,22 +137,22 @@ export default function ContactUsPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <a href="https://wa.me/918826418950" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-[#25D366]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#25D366]/20 transition-colors">
+                    <a href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad." target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-[#25D366]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#25D366]/20 transition-colors">
                       <WhatsappIcon size={24} className="text-[#25D366]" />
                     </a>
                     <div>
                       <div className="text-sm font-bold text-[#64748B] mb-1">WhatsApp</div>
-                      <a href="https://wa.me/918826418950" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-[#0F172A] hover:text-[#25D366] transition-colors">+91 88264 18950</a>
+                      <a href="https://wa.me/918586873357" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-[#0F172A] hover:text-[#25D366] transition-colors">+91 85868 73357</a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <a href="mailto:wciecdelhi2025@gmail.com" className="w-12 h-12 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#06B6D4]/20 transition-colors">
+                    <a href="mailto:wciec3182@gmail.com" className="w-12 h-12 bg-[#06B6D4]/10 rounded-2xl flex items-center justify-center shrink-0 hover:bg-[#06B6D4]/20 transition-colors">
                       <Mail size={24} className="text-[#06B6D4]" />
                     </a>
                     <div>
                       <div className="text-sm font-bold text-[#64748B] mb-1">Email Address</div>
-                      <a href="mailto:wciecdelhi2025@gmail.com" className="text-lg font-bold text-[#0F172A] hover:text-[#06B6D4] transition-colors">wciecdelhi2025@gmail.com</a>
+                      <a href="mailto:wciec3182@gmail.com" className="text-lg font-bold text-[#0F172A] hover:text-[#06B6D4] transition-colors">wciec3182@gmail.com</a>
                     </div>
                   </div>
 
@@ -202,8 +210,8 @@ export default function ContactUsPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: "Call Us", desc: "Speak directly with experts", icon: Phone, color: "text-[#2563EB]", bg: "bg-[#2563EB]/10", border: "hover:border-[#2563EB]/30", link: "tel:+918586873357", linkText: "Call Now" },
-              { title: "WhatsApp", desc: "Chat for quick queries", icon: WhatsappIcon, color: "text-[#25D366]", bg: "bg-[#25D366]/10", border: "hover:border-[#25D366]/30", link: "https://wa.me/918826418950", linkText: "Message" },
-              { title: "Email Us", desc: "For detailed information", icon: Mail, color: "text-[#06B6D4]", bg: "bg-[#06B6D4]/10", border: "hover:border-[#06B6D4]/30", link: "mailto:wciecdelhi2025@gmail.com", linkText: "Send Email" },
+              { title: "WhatsApp", desc: "Chat for quick queries", icon: WhatsappIcon, color: "text-[#25D366]", bg: "bg-[#25D366]/10", border: "hover:border-[#25D366]/30", link: "https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad.", linkText: "Message" },
+              { title: "Email Us", desc: "For detailed information", icon: Mail, color: "text-[#06B6D4]", bg: "bg-[#06B6D4]/10", border: "hover:border-[#06B6D4]/30", link: "mailto:wciec3182@gmail.com", linkText: "Send Email" },
               { title: "Visit Office", desc: "Face-to-face counseling", icon: MapPin, color: "text-[#8B5CF6]", bg: "bg-[#8B5CF6]/10", border: "hover:border-[#8B5CF6]/30", link: "https://www.google.com/maps/place/WCIEC/@28.6306198,77.2750274,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce352d10d6f4f:0x1e9382f6a04d3f05!8m2!3d28.6306151!4d77.2776023!16s%2Fg%2F11xdb9lqvm?entry=ttu&g_ep=EgoyMDI2MDUxMC4wIKXMDSoASAFQAw%3D%3D", linkText: "Get Directions" }
             ].map((card, i) => (
               <motion.a
@@ -330,7 +338,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#2563EB]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/director-image.png" alt="Dr. Firoz Khan" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/director-image.webp" alt="Dr. Firoz Khan" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Dr. Firoz Khan</h3>
@@ -348,7 +356,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#8B5CF6]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/sweta-image.png" alt="Shweta Arora - Management Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/sweta-image.webp" alt="Shweta Arora - Management Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Shweta Arora</h3>
@@ -366,7 +374,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#06B6D4]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/consulerImg.png" alt="Shweta Singh - Senior Admission Counselor" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/consulerimg.webp" alt="Shweta Singh - Senior Admission Counselor" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Shweta Singh</h3>
@@ -384,7 +392,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#059669]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/Vaishnavi.png" alt="Vishu - Customer Support Executive" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/vaishnavi.webp" alt="Vishu - Customer Support Executive" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Vishu</h3>
@@ -402,7 +410,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#DB2777]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/Gaytri.png" alt="Advocate Gaytri Singh - Legal Advisor" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/gaytri.webp" alt="Advocate Gaytri Singh - Legal Advisor" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Advocate Gaytri Singh</h3>
@@ -420,7 +428,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#10B981]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/Siraj.png" alt="Md Siraj - Business partner" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/siraj.webp" alt="Md Siraj - Business partner" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Md Siraj</h3>
@@ -438,10 +446,10 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#3B82F6]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/Rizwan.png" alt="Mohad Rizwan - Business partner" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/rizwan.webp" alt="Mohad Rizwan - Business partner" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Mohad Rizwan</h3>
+              <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Md Rizwan</h3>
               <p className="text-[#3B82F6] font-bold text-sm uppercase tracking-widest mb-6">Business partner</p>
             </motion.div>
 
@@ -456,7 +464,7 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#EF4444]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/dr-zm.png" alt="Dr Z. M. SOUDAGAR - Head of Karnataka Team" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/dr-zm.webp" alt="Dr Z. M. SOUDAGAR - Head of Karnataka Team" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Dr Z. M. SOUDAGAR</h3>
@@ -474,11 +482,11 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#6366F1]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/hasnain.png" alt="Md Hasnain Raza - Chief Technology Officer" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/hasnain.webp" alt="Md Hasnain Raza - Chief Technology Officer" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Md Hasnain Raza</h3>
-              <p className="text-[#6366F1] font-bold text-sm uppercase tracking-widest mb-6">Chief Technology Officer</p>
+              <p className="text-[#6366F1] font-bold text-sm uppercase tracking-widest mb-6">Head of Technology</p>
             </motion.div>
 
             {/* 10: Jamil Anjum */}
@@ -492,10 +500,10 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#EA580C]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                   <Image src="/images/jamil.png" alt="Jamil Anjum - Marketing Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
+                  <Image src="/images/optimized/jamil.webp" alt="Jamil Anjum - Marketing Head" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Jamil Anjum</h3>
+              <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Jameel Anjum</h3>
               <p className="text-[#EA580C] font-bold text-sm uppercase tracking-widest mb-6">Marketing Head</p>
             </motion.div>
 
@@ -510,11 +518,11 @@ export default function ContactUsPage() {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <div className="absolute inset-0 bg-[#F59E0B]/20 rounded-full blur-2xl group-hover:scale-110 transition-transform" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image src="/images/kunain.png" alt="Mohd Kaunain - Chief Marketing Officer" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top scale-[1.15]" />
+                  <Image src="/images/optimized/kunain.webp" alt="Mohd Kaunain - Chief Marketing Officer" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top scale-[1.15]" />
                 </div>
               </div>
               <h3 className="text-2xl font-bold text-[#0F172A] mb-1">Mohd Kaunain</h3>
-              <p className="text-[#F59E0B] font-bold text-sm uppercase tracking-widest mb-6">Chief Marketing Officer</p>
+              <p className="text-[#F59E0B] font-bold text-sm uppercase tracking-widest mb-6">Digital Marketing Head</p>
             </motion.div>
           </div>
         </div>
@@ -590,7 +598,7 @@ export default function ContactUsPage() {
               </div>
             </div>
             <div className="relative w-64 h-64 lg:w-80 lg:h-80 shrink-0 hidden md:block">
-              <Image src="/images/consulerImg.png" alt="WCIEC Senior Counselor" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top rounded-full border-8 border-white/20 shadow-2xl z-10" />
+              <Image src="/images/optimized/consulerimg.webp" alt="WCIEC Senior Counselor" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top rounded-full border-8 border-white/20 shadow-2xl z-10" />
               <div className="absolute inset-0 bg-white/20 rounded-full blur-2xl transform scale-110" />
             </div>
           </div>

@@ -16,16 +16,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wciec.org'),
+  metadataBase: new URL('https://wciecdelhi.com'),
   title: {
-    default: "MBBS in Kyrgyzstan for Indian Students 2026 | Study Medicine Abroad",
-    template: "%s | WCIEC Organization"
+    default: "MBBS Abroad 2026 | Study MBBS Abroad with WCIEC Delhi",
+    template: "%s"
   },
-  description: "WCIEC offers direct MBBS admission in Kyrgyzstan for Indian students. Affordable medical education, NMC recognized universities, Indian food & hostel. Admission 2026 open now!",
-  keywords: "MBBS in Kyrgyzstan for Indian Students, Study Medicine in Kyrgyzstan, Affordable Medical Education in Kyrgyzstan, Direct MBBS Admission in Kyrgyzstan, Best Medical Universities in Kyrgyzstan, NMC Recognized Medical Colleges in Kyrgyzstan, Low-Cost MBBS Abroad in Kyrgyzstan, MBBS Admission 2026 Kyrgyzstan, NEET Qualified Students MBBS Kyrgyzstan",
-  authors: [{ name: "WCIEC Organization" }],
-  creator: "WCIEC Organization",
-  publisher: "WCIEC Organization",
+  description: "WCIEC Delhi helps Indian students plan MBBS abroad admission for 2026 in Kyrgyzstan, Russia, Kazakhstan, Uzbekistan, Georgia, Bangladesh, Nepal, Egypt, and China.",
+  keywords: "MBBS Abroad, Study MBBS Abroad, MBBS Admission 2026, MBBS in Kyrgyzstan, MBBS in Russia, MBBS in Kazakhstan, MBBS Without Donation, MBBS Fees Abroad, MBBS Admission Through NEET, Best MBBS Consultant",
+  authors: [{ name: "WCIEC Delhi" }],
+  creator: "WCIEC Delhi",
+  publisher: "WCIEC Delhi",
   formatDetection: {
     email: false,
     address: false,
@@ -34,27 +34,27 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://wciec.org",
-    siteName: "WCIEC Organization",
-    title: "MBBS in Kyrgyzstan for Indian Students | Admissions Open 2026",
-    description: "Direct MBBS admission in top-ranked, NMC-recognized medical universities in Kyrgyzstan. Low fees, Indian mess, and expert FMGE coaching.",
+    url: "https://wciecdelhi.com/",
+    siteName: "WCIEC Delhi",
+    title: "MBBS Abroad 2026 | WCIEC Delhi",
+    description: "Plan MBBS abroad admission with country-wise guidance, transparent fees, NEET support, visa assistance, and student support.",
     images: [
       {
-        url: "/logos/logo.png",
+        url: "/logos/wciec-logo.webp",
         width: 1200,
         height: 630,
-        alt: "WCIEC Organization - MBBS in Kyrgyzstan",
+        alt: "WCIEC Delhi - MBBS Abroad Admission Guidance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Study MBBS in Kyrgyzstan | Direct Admission 2026",
-    description: "Trusted MBBS consultancy for Kyrgyzstan. Secure your medical seat today with WCIEC.",
-    images: ["/logos/logo.png"],
+    title: "MBBS Abroad 2026 | WCIEC Delhi",
+    description: "Trusted MBBS abroad consultancy for Indian students planning admission through NEET.",
+    images: ["/logos/wciec-logo.webp"],
   },
   alternates: {
-    canonical: "https://wciec.org",
+    canonical: "https://wciecdelhi.com/",
   },
   robots: {
     index: true,
@@ -73,6 +73,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ApplyModalProvider } from "@/context/ApplyModalContext";
 import { GlobalApplyModal } from "@/components/modals/GlobalApplyModal";
+import { LeadPopupFormTrigger } from "@/components/modals/LeadPopupFormTrigger";
 
 export default function RootLayout({
   children,
@@ -88,16 +89,16 @@ export default function RootLayout({
         <ApplyModalProvider>
           <OrganizationSchema />
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow w-full max-w-full overflow-x-hidden">
             {children}
           </main>
           <Footer />
           <FloatingCTAs />
           <GlobalApplyModal />
+          <LeadPopupFormTrigger />
         </ApplyModalProvider>
       </body>
     </html>
   );
 }
-
 

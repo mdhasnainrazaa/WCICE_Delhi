@@ -22,11 +22,11 @@ import {
 import { cn } from "@/lib/utils";
 
 const heroImages = [
-  "/images/Osh-State-University.png",
-  "/images/Jalal-Abad-banner.png",
-  "/images/osh-international-medical-university.png",
-  "/images/Jalal-Abad-International-University-hero.png",
-  "/images/Central-Asian-Medical-University.png",
+  "/images/optimized/osh-state-university.webp",
+  "/images/optimized/jalal-abad-banner.webp",
+  "/images/optimized/osh-international-medical-university.webp",
+  "/images/optimized/jalal-abad-international-university-hero.webp",
+  "/images/optimized/central-asian-medical-university.webp",
 ];
 
 const trustBadges = [
@@ -40,6 +40,7 @@ import { useApplyModal } from "@/context/ApplyModalContext";
 
 export function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const { openModal } = useApplyModal();
   const [formData, setFormData] = useState({
     name: "",
@@ -49,6 +50,7 @@ export function Hero() {
   });
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
     }, 5000);
@@ -69,7 +71,7 @@ export function Hero() {
     // Prefilled WhatsApp Message
     const message = `Hi WCIEC, I want free MBBS counselling. My name is ${formData.name}, phone ${formData.phone}, NEET status ${formData.neetStatus}, preferred university ${formData.university}.`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/918826418950?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/918586873357?text=${encodedMessage}`;
     
     // Redirect to WhatsApp
     window.open(whatsappUrl, "_blank");
@@ -83,40 +85,50 @@ export function Hero() {
 
       {/* Image Slider Layer */}
       <div className="absolute inset-0 -z-20">
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={currentImage}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
+        {!mounted ? (
+          <div className="absolute inset-0">
             <Image
-              src={heroImages[currentImage]}
+              src="/images/optimized/osh-state-university.webp"
               alt="WCIEC Partner University Campus"
               fill
-              className="object-cover"
               priority
+              sizes="100vw"
+              className="object-cover"
             />
             {/* Professional Overlays */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F33]/95 via-[#0B1F33]/70 to-[#0B1F33]/30" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent" />
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        ) : (
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={currentImage}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={heroImages[currentImage]}
+                alt="WCIEC Partner University Campus"
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+              {/* Professional Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F33]/95 via-[#0B1F33]/70 to-[#0B1F33]/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F33]/40 via-transparent to-transparent" />
+            </motion.div>
+          </AnimatePresence>
+        )}
       </div>
-
-
 
       <div className="max-w-7xl mx-auto px-4 w-full relative z-10 py-16 lg:py-24">
         {/* Content Section - Left Aligned to match image layout */}
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white space-y-8"
-          >
+          <div className="text-white space-y-8">
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full shadow-lg">
               <div className="w-5 h-5 bg-[#00B4D8] rounded-full flex items-center justify-center">
@@ -127,13 +139,13 @@ export function Hero() {
 
             {/* Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-poppins leading-tight">
-              Study MBBS Abroad <br />
+              Study MD / MBBS Abroad <br />
               with <span className="text-[#00B4D8]">Trusted Guidance</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
-              WCIEC Organization helps students secure internationally recognized medical degrees with transparent fees, visa support, hostel assistance, and expert counselling.
+              WCIEC Organization helps students secure internationally recognized medical degrees (<span className="text-[#00B4D8] font-semibold">MD Physician equivalent to MBBS</span>) with transparent fees, visa support, hostel assistance, and expert counselling.
             </p>
 
             {/* Features Row - Matching the image */}
@@ -158,14 +170,13 @@ export function Hero() {
               </div>
             </div>
 
-
             {/* CTA Buttons - Aligned in a single line */}
             <div className="flex flex-row flex-wrap lg:flex-nowrap items-center gap-4 pt-6">
               <button onClick={openModal} className="bg-[#00B4D8] hover:bg-[#0096b4] text-white px-5 py-3 rounded-lg font-bold text-sm md:text-base flex items-center gap-2 transition-all shadow-lg shadow-[#00B4D8]/20 whitespace-nowrap">
                 Apply Now <ArrowRight size={16} />
               </button>
               <a 
-                href="/Brouchers/WCIEC DELHI.pdf"
+                href="/Brouchers/wciec-delhi-brochure.pdf"
                 download
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-5 py-3 rounded-lg font-bold text-sm md:text-base flex items-center gap-2 transition-all whitespace-nowrap"
               >
@@ -173,25 +184,27 @@ export function Hero() {
               </a>
             </div>
 
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* Slider Indicators: Premium Pill Style */}
+      {/* Slider Indicators: Composited Transform scale indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {heroImages.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentImage(i)}
             className={cn(
-              "w-10 h-1.5 rounded-full transition-all duration-700",
-              currentImage === i ? "bg-[#00B4D8] w-14" : "bg-white/30"
+              "w-8 h-1.5 rounded-full transition-all duration-300 will-change-transform bg-white/30",
+              currentImage === i ? "bg-[#00B4D8]" : ""
             )}
+            style={{
+              transform: currentImage === i ? "scaleX(1.4)" : "scaleX(1)",
+            }}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
       </div>
-
 
     </section>
   );

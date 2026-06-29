@@ -1,0 +1,22 @@
+{
+  "redirects": [
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/about.php", "destination": "/about-us/", "permanent": true },
+    { "source": "/contact.php", "destination": "/contact-us/", "permanent": true },
+    { "source": "/admission.php", "destination": "/admission/", "permanent": true },
+    { "source": "/admission-process.php", "destination": "/admission/", "permanent": true },
+    { "source": "/mbbs-admission-abroad.php", "destination": "/mbbs-abroad/", "permanent": true },
+    { "source": "/neet-mbbs-abroad.php", "destination": "/mbbs-admission-through-neet/", "permanent": true },
+    { "source": "/mbbs-admission-india.php", "destination": "/mbbs-admission-2026/", "permanent": true },
+    { "source": "/medical-scholarship.php", "destination": "/mbbs-abroad-scholarships/", "permanent": true },
+    { "source": "/kyrgyzstan-universities.php", "destination": "/mbbs-in-kyrgyzstan/", "permanent": true },
+    { "source": "/kazakhstan-universities.php", "destination": "/mbbs-in-kazakhstan/", "permanent": true },
+    { "source": "/russia-universities.php", "destination": "/mbbs-in-russia/", "permanent": true },
+    { "source": "/uzbekistan-universities.php", "destination": "/mbbs-in-uzbekistan/", "permanent": true },
+    { "source": "/georgia-universities.php", "destination": "/mbbs-in-georgia/", "permanent": true },
+    { "source": "/bangladesh-universities.php", "destination": "/mbbs-in-bangladesh/", "permanent": true },
+    { "source": "/nepal-universities.php", "destination": "/mbbs-in-nepal/", "permanent": true },
+    { "source": "/china-universities.php", "destination": "/mbbs-in-china/", "permanent": true },
+    { "source": "/egypt-universities.php", "destination": "/mbbs-in-egypt/", "permanent": true }
+  ]
+}

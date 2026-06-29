@@ -9,7 +9,7 @@ const socialLinks = [
   { 
     name: "Facebook", 
     href: "https://www.facebook.com/profile.php?id=61569910095151", 
-    icon: (props: any) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
       </svg>
@@ -18,7 +18,7 @@ const socialLinks = [
   { 
     name: "Instagram", 
     href: "https://www.instagram.com/wciecdelhi/", 
-    icon: (props: any) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -29,7 +29,7 @@ const socialLinks = [
   { 
     name: "Linkedin", 
     href: "https://www.linkedin.com/company/wciecdelhi/", 
-    icon: (props: any) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
         <rect width="4" height="12" x="2" y="9" />
@@ -41,18 +41,20 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy pt-12 pb-8 text-white overflow-hidden">
+    <footer className="bg-navy text-white min-h-[960px] sm:min-h-[580px] lg:min-h-[460px] pt-12 pb-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-12 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 mb-10">
           {/* Brand Info */}
-          <div className="col-span-1 md:col-span-1">
+          <div className="col-span-1">
             <Link href="/" className="flex items-center gap-4 mb-6 group">
-              <div className="relative w-14 h-14 bg-white rounded-2xl p-2 shadow-xl flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="relative w-16 h-16 bg-white rounded-2xl p-2 shadow-xl flex items-center justify-center transition-transform group-hover:scale-105 shrink-0 overflow-hidden">
                 <Image 
-                  src="/logos/logo.png" 
+                  src="/logos/wciec-logo.webp" 
                   alt="WCIEC Logo" 
-                  fill
-                  className="object-contain p-1"
+                  width={48}
+                  height={60}
+                  style={{ width: "auto", height: "auto" }}
+                  className="object-contain"
                 />
               </div>
               <div className="flex flex-col">
@@ -70,6 +72,7 @@ export function Footer() {
                   href={social.href} 
                   target="_blank" 
                   rel="noopener noreferrer" 
+                  aria-label={`Follow WCIEC Delhi on ${social.name}`}
                   className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-medical hover:text-white transition-all"
                 >
                   <social.icon className="w-5 h-5" />
@@ -85,14 +88,37 @@ export function Footer() {
             <ul className="space-y-4 text-gray-400 text-sm">
               {[
                 { name: "Home", href: "/" },
-                { name: "About WCIEC", href: "/about-us" },
-                { name: "University", href: "/#universities" },
-                { name: "Admission", href: "/admission" },
-                { name: "Privacy Policy", href: "/legal" },
-                { name: "Contact Us", href: "/contact-us" }
+                { name: "MBBS Abroad", href: "/mbbs-abroad/" },
+                { name: "MBBS Admission 2026", href: "/mbbs-abroad-admission-2026/" },
+                { name: "About WCIEC", href: "/about-us/" },
+                { name: "Admission", href: "/admission/" },
+                { name: "Blog", href: "/blog/" },
+                { name: "Contact Us", href: "/contact-us/" }
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-medical transition-colors">{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* MBBS Countries */}
+          <div>
+            <h4 className="text-lg font-bold mb-6 font-poppins">MBBS Countries</h4>
+            <ul className="space-y-4 text-gray-400 text-sm">
+              {[
+                { name: "MBBS in Kyrgyzstan", href: "/mbbs-in-kyrgyzstan/" },
+                { name: "MBBS in Russia", href: "/mbbs-in-russia/" },
+                { name: "MBBS in Kazakhstan", href: "/mbbs-in-kazakhstan/" },
+                { name: "MBBS in Uzbekistan", href: "/mbbs-in-uzbekistan/" },
+                { name: "MBBS in Georgia", href: "/mbbs-in-georgia/" },
+                { name: "MBBS in Bangladesh", href: "/mbbs-in-bangladesh/" },
+                { name: "MBBS in Nepal", href: "/mbbs-in-nepal/" },
+                { name: "MBBS in Egypt", href: "/mbbs-in-egypt/" },
+                { name: "MBBS in China", href: "/mbbs-in-china/" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-medical transition-colors leading-relaxed block">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -103,11 +129,11 @@ export function Footer() {
             <h4 className="text-lg font-bold mb-6 font-poppins">Our Universities</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
               {[
-                { name: "Jalal-Abad International University", href: "/universities/jalal-abad-international-university" },
-                { name: "Jalal-Abad State University", href: "/universities/jalal-abad-state-university" },
-                { name: "Osh State University International Medical Faculty", href: "/universities/osh-state-university" },
-                { name: "Central Asian International Medical University", href: "/universities/central-asian-international-medical-university" },
-                { name: "Osh International Medical University", href: "/universities/osh-international-medical-university" }
+                { name: "Jalal-Abad International University", href: "/universities/jalal-abad-international-university/" },
+                { name: "Jalal-Abad State University", href: "/universities/jalal-abad-state-university/" },
+                { name: "Osh State University International Medical Faculty", href: "/universities/osh-state-university/" },
+                { name: "Central Asian International Medical University", href: "/universities/central-asian-international-medical-university/" },
+                { name: "Osh International Medical University", href: "/universities/osh-international-medical-university/" }
               ].map((uni) => (
                 <li key={uni.name}>
                   <Link href={uni.href} className="hover:text-medical transition-colors leading-relaxed block">{uni.name}</Link>
@@ -139,7 +165,7 @@ export function Footer() {
                 </div>
                 <div>
                   <div className="text-white font-semibold">Email</div>
-                  <a href="mailto:wciecdelhi2025@gmail.com" className="hover:text-medical">wciecdelhi2025@gmail.com</a>
+                  <a href="mailto:wciec3182@gmail.com" className="hover:text-medical">wciec3182@gmail.com</a>
                 </div>
               </li>
               <li className="flex gap-4">
@@ -154,7 +180,7 @@ export function Footer() {
                     rel="noopener noreferrer" 
                     className="leading-relaxed hover:text-medical transition-colors block"
                   >
-                    WCIEC – Shakarpur, New Delhi<br />
+                    WCIEC - Shakarpur, New Delhi<br />
                     Near Laxmi Nagar Metro Station, behind Karim Hotel
                   </a>
                 </div>
@@ -164,11 +190,14 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-8 text-center">
-          <div className="text-gray-500 text-xs flex flex-wrap justify-center items-center gap-2">
-            <span>© 2026 WCIEC Organization. All rights reserved.</span>
+          <div className="text-gray-400 text-xs flex flex-wrap justify-center items-center gap-2">
+            <span>2026 WCIEC Organization. All rights reserved.</span>
             <span className="text-white/10 hidden sm:inline">|</span>
-            <Link href="/legal" className="hover:text-white transition-colors">Privacy Policy</Link>
-
+            <Link href="/legal/" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="text-white/10 hidden sm:inline">|</span>
+            <Link href="/mbbs-fees-abroad/" className="hover:text-white transition-colors">MBBS Fees</Link>
+            <span className="text-white/10 hidden sm:inline">|</span>
+            <Link href="/nmc-guidelines-for-mbbs-abroad/" className="hover:text-white transition-colors">NMC Guide</Link>
           </div>
         </div>
       </div>

@@ -96,13 +96,13 @@ export default function JASUClient() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-8">
               <div className="inline-flex items-center gap-2 bg-[#F97316]/20 text-[#FACC15] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#F97316]/30 backdrop-blur-md">
-                <Globe2 size={16} /> MBBS in Kyrgyzstan
+                <Globe2 size={16} /> MD / MBBS in Kyrgyzstan (MD Physician equivalent to MBBS)
               </div>
               <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
                 Jalal-Abad State <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University</span>
               </h1>
               <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
-                Study MBBS at Jalal-Abad State University, a top-ranked government university in Kyrgyzstan. Start your medical journey with a 30-year legacy of excellence.
+                Study MD / MBBS (MD Physician equivalent to MBBS) at Jalal-Abad State University, a top-ranked government university in Kyrgyzstan. Start your medical journey with a 30-year legacy of excellence.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
@@ -110,7 +110,7 @@ export default function JASUClient() {
                   Apply Now <ArrowRight size={20} />
                 </button>
                 <a 
-                  href="/Brouchers/jasu.pdf" 
+                  href="/Brouchers/jalal-abad-state-university-brochure.pdf" 
                   download 
                   className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md flex items-center gap-2"
                 >
@@ -128,7 +128,6 @@ export default function JASUClient() {
                   {[
                     { label: "Established", value: "1993", icon: Building2 },
                     { label: "Location", value: "Jalal-Abad, KG", icon: MapPin },
-                    { label: "Course", value: "MD / MBBS", icon: BookOpen },
                     { label: "Duration", value: "5 Years", icon: Clock },
                     { label: "FMGE Coaching", value: "Available", icon: Target },
                   ].map((stat, i) => (
@@ -183,7 +182,7 @@ export default function JASUClient() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-2xl group">
-              <Image src="/images/Jalal-Abad-banner.png" alt="JASU Building" fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="600px" />
+              <Image src="/images/optimized/jalal-abad-banner.webp" alt="JASU Building" fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="600px" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 to-transparent" />
             </div>
             <div>
@@ -286,7 +285,7 @@ export default function JASUClient() {
       <section className="py-24 bg-[#0F172A] text-white relative overflow-hidden" id="fee-structure">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <PromDown 
-            title="Affordable MBBS Fee Structure" 
+            title="Jalal-Abad State University - Affordable MBBS Fee Structure" 
             subtitle="Pricing" 
             defaultOpen={true} 
             staticOnMobile={true}
@@ -341,12 +340,28 @@ export default function JASUClient() {
               </table>
             </div>
 
-            <div className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] rounded-2xl p-8 text-center shadow-2xl relative overflow-hidden group">
-              <h3 className="text-lg font-black mb-1 uppercase tracking-widest">Complete Program Total</h3>
-              <div className="text-4xl md:text-5xl font-black mb-4">{currency === 'INR' ? "₹34.69 Lakhs" : "$38,550"}*</div>
-              <button onClick={openModal} className="bg-white text-[#2563EB] px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition-transform">
-                Apply for Admission
-              </button>
+            <div className={`grid gap-8 items-stretch ${currency === 'INR' ? 'md:grid-cols-2' : 'max-w-2xl mx-auto'}`}>
+              <div className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] rounded-2xl p-8 text-center shadow-2xl relative overflow-hidden group flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-black mb-1 uppercase tracking-widest">Complete Program Total</h3>
+                  <div className="text-4xl md:text-5xl font-black mb-6">{currency === 'INR' ? "₹34.69 Lakhs" : "$38,550"}*</div>
+                </div>
+                <button onClick={openModal} className="bg-white text-[#2563EB] px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition-transform w-full">
+                  Apply for Admission
+                </button>
+              </div>
+
+              {currency === 'INR' && (
+                <div className="bg-gradient-to-r from-[#7C3AED] to-[#EC4899] rounded-2xl p-8 text-center shadow-2xl relative overflow-hidden group flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-lg font-black mb-1 uppercase tracking-widest text-[#06B6D4]">Alternative Option</h3>
+                    <div className="text-4xl md:text-5xl font-black mb-6">₹27.50 Lakhs</div>
+                  </div>
+                  <div className="text-white/85 font-black uppercase tracking-widest text-xs py-3 border border-white/25 rounded-xl bg-white/10 backdrop-blur-sm w-full">
+                    One Time Payment
+                  </div>
+                </div>
+              )}
             </div>
           </PromDown>
         </div>

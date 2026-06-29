@@ -21,7 +21,8 @@ import {
   Eye,
   Sparkles,
   ArrowRight,
-  FolderOpen
+  FolderOpen,
+  AlertCircle
 } from "lucide-react";
 import { useApplyModal } from "@/context/ApplyModalContext";
 
@@ -103,10 +104,28 @@ const deleteDBItem = async (id: string): Promise<void> => {
 // --- Initial Seed Gallery Items (Real assets from the public folder!) ---
 const INITIAL_ITEMS = [
   {
+    id: "hg-campusvideo",
+    type: "video" as const,
+    url: "/images/HomeGallery/campus-video.mp4",
+    thumbnail: "/images/optimized/jalal-abad-banner.webp",
+    title: "Campus Tour",
+    category: "Campus Tour",
+    description: "Take a walkthrough of the modern academic buildings and high-tech clinical campus environment."
+  },
+  {
+    id: "hg-classroomvideo",
+    type: "video" as const,
+    url: "/images/HomeGallery/classroom-video.mp4",
+    thumbnail: "/images/optimized/jalal-abad-banner.webp",
+    title: "Modern Simulative Classroom Environment",
+    category: "Campus Tour",
+    description: "High-fidelity classrooms and medical learning centers equipped with smart tech for MBBS students."
+  },
+  {
     id: "hg-admissionabroad",
     type: "video" as const,
     url: "/images/HomeGallery/admissionabroad.mp4",
-    thumbnail: "/images/Jalal-Abad-banner.png",
+    thumbnail: "/images/optimized/jalal-abad-banner.webp",
     title: "Global MBBS Admission Guidance",
     category: "Campus Tour",
     description: "Insights into securing admissions in top medical universities abroad with WCIEC expert guidance."
@@ -115,7 +134,7 @@ const INITIAL_ITEMS = [
     id: "hg-admissionvideo",
     type: "video" as const,
     url: "/images/HomeGallery/admissionvideo.mp4",
-    thumbnail: "/images/Jalal-Abad-International-University-hero.png",
+    thumbnail: "/images/optimized/jalal-abad-international-university-hero.webp",
     title: "Direct Admission & Counselling Support",
     category: "Student Activities",
     description: "Complete process walk-through of securing medical seats transparently and securely."
@@ -124,7 +143,7 @@ const INITIAL_ITEMS = [
     id: "hg-event",
     type: "video" as const,
     url: "/images/HomeGallery/event.mp4",
-    thumbnail: "/images/osh-international-medical-university.png",
+    thumbnail: "/images/optimized/osh-international-medical-university.webp",
     title: "WCIEC Student Meet & Success Event",
     category: "Student Activities",
     description: "Interactive session and celebration moments of WCIEC students pursuing MBBS abroad."
@@ -141,8 +160,8 @@ const INITIAL_ITEMS = [
   {
     id: "hg-eventvideo",
     type: "video" as const,
-    url: "/images/HomeGallery/eventVideo.mp4",
-    thumbnail: "/images/Central-Asian-Medical-University.png",
+    url: "/images/HomeGallery/event-video.mp4",
+    thumbnail: "/images/optimized/central-asian-medical-university.webp",
     title: "WCIEC Grand Student Celebration",
     category: "Student Activities",
     description: "Vibrant cultural festival and event showcasing student talents and unity."
@@ -151,7 +170,7 @@ const INITIAL_ITEMS = [
     id: "jasu-vid-1",
     type: "video" as const,
     url: "/images/jasu-gallery/jalabasState.mp4",
-    thumbnail: "/images/Jalal-Abad-banner.png",
+    thumbnail: "/images/optimized/jalal-abad-banner.webp",
     title: "Jalal-Abad State University Campus Tour",
     category: "Campus Tour",
     description: "Explore the modern academic facilities, smart classrooms, and clinical learning centers at JASU."
@@ -160,7 +179,7 @@ const INITIAL_ITEMS = [
     id: "osu-vid-1",
     type: "video" as const,
     url: "/images/osu-gallery/oshStateUniversity.mp4",
-    thumbnail: "/images/Osh-State-University.png",
+    thumbnail: "/images/optimized/osh-state-university.webp",
     title: "Osh State University - Life of Indian Students",
     category: "Student Activities",
     description: "Indian MBBS students sharing their academic journey, hostel life, and support at Osh State University."
@@ -168,8 +187,8 @@ const INITIAL_ITEMS = [
   {
     id: "jaiu-vid-1",
     type: "video" as const,
-    url: "/images/jaiu-gallery/jalabasInternational.mp4",
-    thumbnail: "/images/Jalal-Abad-International-University-hero.png",
+    url: "/images/jaiu-gallery/jalalabad-international.mp4",
+    thumbnail: "/images/optimized/jalal-abad-international-university-hero.webp",
     title: "Jalal-Abad International University Campus Life",
     category: "Campus Tour",
     description: "A comprehensive look at the classrooms, high-fidelity laboratories, and campus facilities of JAIU."
@@ -178,7 +197,7 @@ const INITIAL_ITEMS = [
     id: "oimu-vid-1",
     type: "video" as const,
     url: "/images/oimu-gallery/oshaInternational.mp4",
-    thumbnail: "/images/osh-international-medical-university.png",
+    thumbnail: "/images/optimized/osh-international-medical-university.webp",
     title: "Osh International Medical University Highlights",
     category: "Campus Tour",
     description: "Glimpses of administrative blocks, anatomical models, library collections, and academic environment."
@@ -187,19 +206,10 @@ const INITIAL_ITEMS = [
     id: "caimu-vid-1",
     type: "video" as const,
     url: "/images/caimu-gallery/CAIS.mp4",
-    thumbnail: "/images/Central-Asian-Medical-University.png",
+    thumbnail: "/images/optimized/central-asian-medical-university.webp",
     title: "Central Asian International Medical University Experience",
     category: "Student Activities",
     description: "Fascinating moments from WCIEC student induction, campus festivals, sports tournaments, and student life."
-  },
-  {
-    id: "osu-img-1",
-    type: "image" as const,
-    url: "/images/osu-gallery/oshRealtion.png",
-    thumbnail: "/images/osu-gallery/oshRealtion.png",
-    title: "WCIEC Director with University Administration",
-    category: "Student Activities",
-    description: "Maintaining strict transparency and active partnerships with university authorities to ensure seamless student support."
   }
 ];
 
@@ -230,6 +240,9 @@ export function GallerySection() {
   
   // Production Code copied state
   const [copiedCode, setCopiedCode] = useState(false);
+
+  // Video loading errors state
+  const [videoErrors, setVideoErrors] = useState<Record<string, boolean>>({});
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -443,7 +456,7 @@ export function GallerySection() {
   const generateDevCode = () => {
     const itemsCode = userItems.map((item) => {
       const thumbnailUrl = item.type === "video"
-        ? "/images/Jalal-Abad-banner.png"
+        ? "/images/optimized/jalal-abad-banner.webp"
         : `/images/HomeGallery/${item.originalName}`;
 
       return `  {
@@ -546,19 +559,13 @@ export function GallerySection() {
                       loading="lazy"
                     />
                   ) : (
-                    <div className="relative w-full h-full bg-navy/95 overflow-hidden">
-                      {item.thumbnail ? (
-                        <img
-                          src={item.thumbnail}
-                          alt={item.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-navy to-slate-900">
-                          <VideoIcon size={48} className="text-white/20 mb-2" />
-                          <span className="text-xs text-white/50">Local Student Video</span>
-                        </div>
-                      )}
+                    <div className="relative w-full h-full bg-navy overflow-hidden">
+                      <img
+                        src={item.thumbnail || "/images/optimized/jalal-abad-banner.webp"}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85 pointer-events-none"
+                        loading="lazy"
+                      />
 
                       {/* Pulse Play Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
@@ -572,17 +579,6 @@ export function GallerySection() {
                   {/* Gradient shadow for text readibility */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
 
-                  {/* Floating labels */}
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="bg-white/95 text-navy font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
-                      {item.category}
-                    </span>
-                    {item.isUserUploaded && (
-                      <span className="bg-medical text-white font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-sm flex items-center gap-1 animate-pulse">
-                        <Sparkles size={8} /> Local Upload
-                      </span>
-                    )}
-                  </div>
 
                   {/* Description Box */}
                   <div className="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end text-white">
@@ -640,15 +636,6 @@ export function GallerySection() {
               >
                 Apply Now
               </button>
-              <button
-                onClick={() => {
-                  const el = document.getElementById("counselling-form");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="w-full sm:w-auto bg-white/10 hover:bg-white/15 text-white border border-white/20 px-8 py-5 rounded-2xl font-bold text-lg transition-all hover:-translate-y-1 active:translate-y-0 cursor-pointer text-center"
-              >
-                Book Free Consultation
-              </button>
             </div>
           </div>
         </motion.div>
@@ -678,16 +665,6 @@ export function GallerySection() {
               </div>
 
               <div className="flex items-center gap-4">
-                {/* Download media locally */}
-                <a
-                  href={galleryItems[lightboxIndex]?.url}
-                  download={galleryItems[lightboxIndex]?.title || "wciec-gallery-item"}
-                  className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors text-white hover:scale-105 cursor-pointer"
-                  title="Download Media File"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Download size={20} />
-                </a>
                 <button
                   onClick={() => setLightboxIndex(null)}
                   className="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors text-white hover:scale-105 cursor-pointer"
@@ -697,7 +674,7 @@ export function GallerySection() {
                 </button>
               </div>
             </div>
-
+ 
             {/* Media Content Slider Container */}
             <div className="relative w-full max-w-5xl h-[55vh] md:h-[65vh] flex items-center justify-center z-10">
               {/* Left Action Slide Button */}
@@ -711,7 +688,7 @@ export function GallerySection() {
               >
                 <ChevronLeft size={24} />
               </button>
-
+ 
               {/* Main Content Render */}
               <motion.div
                 key={galleryItems[lightboxIndex]?.id}
@@ -727,14 +704,58 @@ export function GallerySection() {
                     className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/10"
                   />
                 ) : (
-                  <div className="relative w-full max-h-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10 max-w-4xl">
-                    <video
-                      key={galleryItems[lightboxIndex]?.url}
-                      src={galleryItems[lightboxIndex]?.url}
-                      controls
-                      autoPlay
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="relative w-full max-h-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10 max-w-4xl flex items-center justify-center">
+                    {videoErrors[galleryItems[lightboxIndex]?.id] ? (
+                      <div className="text-center p-8 space-y-4">
+                        <div className="w-16 h-16 rounded-full bg-rose-500/10 border border-rose-500/20 text-[#e2a613] flex items-center justify-center mx-auto shadow-inner">
+                          <AlertCircle size={32} />
+                        </div>
+                        <h4 className="text-lg font-bold font-poppins text-white">Video Playback Unavailable</h4>
+                        <p className="text-sm text-gray-400 max-w-xs mx-auto">
+                          This video asset could not be fetched or loaded by your browser. Please check your internet connection or contact support.
+                        </p>
+                      </div>
+                    ) : (
+                      <video
+                        key={galleryItems[lightboxIndex]?.url}
+                        src={galleryItems[lightboxIndex]?.url}
+                        controls
+                        controlsList="nodownload"
+                        onContextMenu={(e) => e.preventDefault()}
+                        autoPlay
+                        onError={() => setVideoErrors(prev => ({ ...prev, [galleryItems[lightboxIndex]?.id]: true }))}
+                        className="w-full h-full object-contain"
+                      >
+                        {/* Dynamically attach VTT captions for accessibility conformance */}
+                        {galleryItems[lightboxIndex]?.id === "hg-classroomvideo" && (
+                          <track
+                            src="/captions/classroom-video.vtt"
+                            kind="captions"
+                            srcLang="en"
+                            label="English"
+                            default
+                          />
+                        )}
+                        {galleryItems[lightboxIndex]?.id === "hg-eventvideo" && (
+                          <track
+                            src="/captions/event-video.vtt"
+                            kind="captions"
+                            srcLang="en"
+                            label="English"
+                            default
+                          />
+                        )}
+                        {galleryItems[lightboxIndex]?.id === "hg-admissionvideo" && (
+                          <track
+                            src="/captions/admission-video.vtt"
+                            kind="captions"
+                            srcLang="en"
+                            label="English"
+                            default
+                          />
+                        )}
+                      </video>
+                    )}
                   </div>
                 )}
               </motion.div>
