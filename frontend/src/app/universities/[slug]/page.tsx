@@ -21,7 +21,7 @@ import {
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -31,7 +31,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const uni = universities.find(u => u.slug === params.slug);
+  const { slug } = await params;
+  const uni = universities.find(u => u.slug === slug);
   if (!uni) return { title: "University Not Found" };
 
   return {
@@ -40,8 +41,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function UniversityPage({ params }: Props) {
-  const uni = universities.find(u => u.slug === params.slug);
+export default async function UniversityPage({ params }: Props) {
+  const { slug } = await params;
+  const uni = universities.find(u => u.slug === slug);
   if (!uni) notFound();
 
   return (
