@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { universities } from "@/data/universities";
+import { generateUniversityMetadata, generateUniversitySchemas } from "@/lib/seoHelper";
 
 import { GlassCard } from "@/components/ui/GlassCard";
 import { 
@@ -35,10 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const uni = universities.find(u => u.slug === slug);
   if (!uni) return { title: "University Not Found" };
 
-  return {
-    title: `${uni.name} MBBS Fees, Admission 2026 | WCIEC`,
-    description: `Get complete details about ${uni.name} MBBS admission, fee structure, hostel, and Indian food. Study MBBS in ${uni.location} with WCIEC.`,
-  };
+  return generateUniversityMetadata(uni);
 }
 
 export default async function UniversityPage({ params }: Props) {
@@ -46,7 +44,45 @@ export default async function UniversityPage({ params }: Props) {
   const uni = universities.find(u => u.slug === slug);
   if (!uni) notFound();
 
+  const schemas = generateUniversitySchemas(uni);
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.collegeSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.eduOrgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.articleSchema) }}
+      />
+      {schemas.faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.faqSchema) }}
+        />
+      )}
+
     <main className="pt-24 pb-20">
         {/* Hero Section */}
         <section className="relative py-20 bg-navy text-white overflow-hidden">
@@ -210,5 +246,6 @@ export default async function UniversityPage({ params }: Props) {
           </div>
         </section>
       </main>
+    </>
   );
 }

@@ -1,18 +1,13 @@
 import { MetadataRoute } from 'next';
 import { seoPages } from '@/data/seoPages';
+import { universities } from '@/data/universities';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://wciecdelhi.com';
   
-  const universities = [
-    'osh-state-university',
-    'jalal-abad-state-university',
-    'jalal-abad-international-university',
-    'osh-international-medical-university',
-    'central-asian-international-medical-university',
-  ];
+  const universitySlugs = universities.map(uni => uni.slug);
 
   const blogSlugs = [
     'why-kyrgyzstan-top-choice-mbbs',
@@ -41,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.priority,
   }));
 
-  const universityRoutes = universities.map((slug) => ({
+  const universityRoutes = universitySlugs.map((slug) => ({
     url: `${baseUrl}/universities/${slug}/`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
