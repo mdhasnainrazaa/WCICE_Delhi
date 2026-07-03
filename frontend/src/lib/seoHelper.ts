@@ -2,27 +2,33 @@ import { Metadata } from "next";
 import { University } from "@/data/universities";
 
 export function generateUniversityMetadata(uni: University): Metadata {
-  const brandName = "Nile Education";
+  const brandName = "WCIEC Delhi";
   const baseUrl = "https://wciecdelhi.com";
   const absoluteUrl = `${baseUrl}/universities/${uni.slug}/`;
   
-  // Custom SEO titles and descriptions based on requested brand/target patterns
-  const title = `${uni.name} MBBS 2026-27 | Fees, Admission & Ranking | ${brandName}`;
-  const description = `Study MBBS at ${uni.name}, Kyrgyzstan. Check MBBS fees, admission process, eligibility, NMC approval, FMGE eligibility, hostel, scholarships and apply through Nile Education Consultancy.`;
+  const displayName = uni.slug === "osh-state-university" ? "Osh State University" : uni.name;
+  const countryName = uni.location.split(",")[1]?.trim() || "Kyrgyzstan";
+
+  // Dynamic search title matching the user requirements
+  const title = `${displayName} MBBS 2026-27 | Fees, Admission & Ranking | ${brandName}`;
+  
+  // Custom meta description containing all target keywords within 150-160 characters
+  // Keywords included: [displayName] (e.g. Osh State University), MBBS, [countryName] (Kyrgyzstan), Fees, Admission, NMC, FMGE, Hostel, Scholarships, WCIEC Delhi
+  const description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
   
   const defaultKeywords = [
-    uni.name,
-    `${uni.name} MBBS`,
-    `MBBS in ${uni.name}`,
-    `${uni.name} Kyrgyzstan`,
-    `${uni.name} Fees`,
-    `${uni.name} Admission`,
-    `${uni.name} Ranking`,
-    `${uni.name} Hostel`,
-    `${uni.name} FMGE`,
-    `${uni.name} NMC Approved`,
+    displayName,
+    `${displayName} MBBS`,
+    `MBBS in ${displayName}`,
+    `${displayName} ${countryName}`,
+    `${displayName} Fees`,
+    `${displayName} Admission`,
+    `${displayName} Ranking`,
+    `${displayName} Hostel`,
+    `${displayName} FMGE`,
+    `${displayName} NMC Approved`,
     "Study MBBS Abroad",
-    "MBBS in Kyrgyzstan"
+    `MBBS in ${countryName}`
   ];
 
   const imageUrl = uni.bannerImage 
@@ -40,7 +46,7 @@ export function generateUniversityMetadata(uni: University): Metadata {
       title,
       description,
       url: absoluteUrl,
-      siteName: `${brandName} Consultancy`,
+      siteName: brandName,
       type: "website",
       locale: "en_US",
       images: [
@@ -48,7 +54,7 @@ export function generateUniversityMetadata(uni: University): Metadata {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${uni.name} Campus, Kyrgyzstan`,
+          alt: `${displayName} Campus, ${countryName}`,
         }
       ],
     },
@@ -69,17 +75,21 @@ export function generateUniversityMetadata(uni: University): Metadata {
       },
     },
     authors: [{ name: brandName, url: baseUrl }],
-    publisher: `${brandName} Consultancy`,
+    publisher: brandName,
     category: "Education",
   };
 }
 
 export function generateUniversitySchemas(uni: University) {
-  const brandName = "Nile Education Consultancy";
+  const brandName = "WCIEC Delhi";
   const baseUrl = "https://wciecdelhi.com";
   const absoluteUrl = `${baseUrl}/universities/${uni.slug}/`;
   const logoUrl = `${baseUrl}/logos/wciec-logo.webp`;
   
+  const displayName = uni.slug === "osh-state-university" ? "Osh State University" : uni.name;
+  const countryName = uni.location.split(",")[1]?.trim() || "Kyrgyzstan";
+  const cityName = uni.location.split(",")[0]?.trim() || "Osh";
+
   const campusImageUrl = uni.bannerImage 
     ? `${baseUrl}${uni.bannerImage}`
     : `${baseUrl}/images/osu-gallery/osh-state-university-campus.webp`;
@@ -104,13 +114,13 @@ export function generateUniversitySchemas(uni: University) {
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Kyrgyzstan",
+        "name": countryName,
         "item": `${baseUrl}/mbbs-in-kyrgyzstan/`
       },
       {
         "@type": "ListItem",
         "position": 4,
-        "name": uni.name,
+        "name": displayName,
         "item": absoluteUrl
       }
     ]
@@ -121,8 +131,8 @@ export function generateUniversitySchemas(uni: University) {
     "@type": "WebPage",
     "@id": `${absoluteUrl}#webpage`,
     "url": absoluteUrl,
-    "name": `${uni.name} MBBS 2026-27 | Fees, Admission & Ranking | Nile Education`,
-    "description": `Study MBBS at ${uni.name}, Kyrgyzstan. Check MBBS fees, admission process, eligibility, NMC approval, FMGE eligibility, hostel, scholarships and apply through Nile Education Consultancy.`,
+    "name": `${displayName} MBBS 2026-27 | Fees, Admission & Ranking | ${brandName}`,
+    "description": `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`,
     "isPartOf": {
       "@type": "WebSite",
       "@id": `${baseUrl}/#website`,
@@ -139,7 +149,7 @@ export function generateUniversitySchemas(uni: University) {
     "@type": "CollegeOrUniversity",
     "@id": `${absoluteUrl}#university`,
     "name": uni.name,
-    "alternateName": uni.name.split(" ")[0] || uni.name,
+    "alternateName": displayName,
     "description": uni.about,
     "url": absoluteUrl,
     "logo": logoUrl,
@@ -147,8 +157,8 @@ export function generateUniversitySchemas(uni: University) {
     "foundingDate": uni.established || "1939",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": uni.location.split(",")[0].trim(),
-      "addressCountry": uni.location.split(",")[1]?.trim() || "Kyrgyzstan"
+      "addressLocality": cityName,
+      "addressCountry": countryName
     }
   };
 
@@ -162,8 +172,8 @@ export function generateUniversitySchemas(uni: University) {
     "image": campusImageUrl,
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": uni.location.split(",")[0].trim(),
-      "addressCountry": uni.location.split(",")[1]?.trim() || "Kyrgyzstan"
+      "addressLocality": cityName,
+      "addressCountry": countryName
     }
   };
 
@@ -204,8 +214,8 @@ export function generateUniversitySchemas(uni: University) {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${absoluteUrl}#article`,
-    "headline": `${uni.name} MBBS 2026-27 | Fees, Admission & Ranking`,
-    "description": `Comprehensive guide to studying MBBS at ${uni.name}, Kyrgyzstan. Learn about fees structure, eligibility criteria, admission process, hostel facilities, and NMC approval details.`,
+    "headline": `${displayName} MBBS 2026-27 | Fees, Admission & Ranking`,
+    "description": `Comprehensive guide to studying MBBS at ${displayName}, ${countryName}. Learn about fees structure, eligibility criteria, admission process, hostel facilities, and NMC approval details.`,
     "inLanguage": "en-US",
     "mainEntityOfPage": absoluteUrl,
     "image": campusImageUrl,
