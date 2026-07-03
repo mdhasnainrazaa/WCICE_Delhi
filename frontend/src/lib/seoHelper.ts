@@ -13,7 +13,6 @@ export function generateUniversityMetadata(uni: University): Metadata {
   const title = `${displayName} MBBS 2026-27 | Fees, Admission & Ranking | ${brandName}`;
   
   // Custom meta description containing all target keywords within 150-160 characters
-  // Keywords included: [displayName] (e.g. Osh State University), MBBS, [countryName] (Kyrgyzstan), Fees, Admission, NMC, FMGE, Hostel, Scholarships, WCIEC Delhi
   const description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
   
   const defaultKeywords = [
@@ -141,6 +140,10 @@ export function generateUniversitySchemas(uni: University) {
     },
     "breadcrumb": {
       "@id": `${absoluteUrl}#breadcrumb`
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "#about-heading", "#fees-heading", "#hostel-heading", "#faq-heading"]
     }
   };
 
@@ -170,6 +173,24 @@ export function generateUniversitySchemas(uni: University) {
     "url": absoluteUrl,
     "logo": logoUrl,
     "image": campusImageUrl,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": cityName,
+      "addressCountry": countryName
+    }
+  };
+
+  const medicalCollegeSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalCollege",
+    "@id": `${absoluteUrl}#medicalcollege`,
+    "name": uni.name,
+    "alternateName": displayName,
+    "description": uni.about,
+    "url": absoluteUrl,
+    "logo": logoUrl,
+    "image": campusImageUrl,
+    "foundingDate": uni.established || "1939",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": cityName,
@@ -254,6 +275,7 @@ export function generateUniversitySchemas(uni: University) {
     webpageSchema,
     collegeSchema,
     eduOrgSchema,
+    medicalCollegeSchema,
     websiteSchema,
     orgSchema,
     articleSchema,

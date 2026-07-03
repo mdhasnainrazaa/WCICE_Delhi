@@ -80,7 +80,7 @@ export const universities: University[] = [
         answer: "Graduates are fully eligible to appear for FMGE/NExT. The university consistently ranks among the top institutions in Kyrgyzstan for FMGE pass percentages due to its rigorous curriculum and special coaching faculty."
       },
       {
-        question: "What are the hostel facilities like?",
+        question: "What are the hostel facilities like at Osh State University?",
         answer: "The university provides modern separate hostels for male and female students with laundry, high-speed Wi-Fi, heating systems, and study desks."
       },
       {
@@ -100,12 +100,12 @@ export const universities: University[] = [
         answer: "Osh State University is ranked as the premier public university in the Kyrgyz Republic and is highly respected globally for its academic standard."
       },
       {
-        question: "What documents are required for MBBS admission?",
+        question: "What documents are required for MBBS admission at Osh State University?",
         answer: "You need passing certificates and marksheets of 10th and 12th grades (minimum 50% in PCB), a valid passport, a qualified NEET scorecard, and recent passport-size photos."
       },
       {
-        question: "What is the admission process for Osh State University?",
-        answer: "The process involves submitting marksheets and passport scans, receiving the offer/admission letter, processing the visa invitation from the Ministry of Education, visa stamping, and flying to the university."
+        question: "What is the admission process for Osh State University through WCIEC Delhi?",
+        answer: "The process involves submitting marksheets and passport scans to WCIEC Delhi, receiving the offer/admission letter, processing the visa invitation from the Ministry of Education, visa stamping, and flying to the university."
       },
       {
         question: "What clinical exposure does Osh State University offer?",
@@ -113,7 +113,47 @@ export const universities: University[] = [
       },
       {
         question: "Who is the official partner for Osh State University admission?",
-        answer: "Nile Education Consultancy (WCIEC Delhi) is the official trusted admission partner, helping students from application, visa processing to hostelling and local registrations."
+        answer: "WCIEC Delhi (World Choice International Education Consultant) is the official trusted admission partner, helping students from application, visa processing to hostelling and local registrations."
+      },
+      {
+        question: "Can I apply for Osh State University MBBS admission online?",
+        answer: "Yes, you can apply online through the official WCIEC Delhi website. Our expert counselors will handle your entire application process smoothly."
+      },
+      {
+        question: "What is the medium of instruction for MBBS at Osh State University?",
+        answer: "The entire course is taught in 100% English. Local language classes (Russian/Kyrgyz) are also conducted to help students interact with patients during clinical rotations."
+      },
+      {
+        question: "Is there any entrance exam required for Osh State University other than NEET?",
+        answer: "No, there is no additional entrance exam or donation required. Admission is based directly on your 12th PCB percentage and NEET qualifying scores."
+      },
+      {
+        question: "How does WCIEC Delhi support students after arrival in Kyrgyzstan?",
+        answer: "WCIEC Delhi provides extensive after-arrival support including airport pickup, hostel check-in, registration with the local ministry, medical insurance setup, and local SIM card assistance."
+      },
+      {
+        question: "What is the climate like in Osh, Kyrgyzstan?",
+        answer: "Osh has a temperate climate. Winters are cold with occasional snowfall, while summers are warm and pleasant. Hostels and classrooms are equipped with central heating."
+      },
+      {
+        question: "Are graduates of Osh State University eligible to work in countries other than India?",
+        answer: "Yes, because the university is WHO listed and ECFMG recognized, graduates are eligible to sit for international medical licensing exams such as USMLE (USA), PLAB (UK), and AMC (Australia)."
+      },
+      {
+        question: "What is the FMGE passing ratio of Osh State University graduates?",
+        answer: "Osh State University historically has had one of the highest FMGE passing ratios among medical colleges in Kyrgyzstan, with dedicated FMGE/NExT coaching seminars offered on campus."
+      },
+      {
+        question: "Is there a library available for medical students?",
+        answer: "Yes, the university has a massive medical library containing thousands of physical books, research journals, and online digital databases accessible to all students."
+      },
+      {
+        question: "Does Osh State University have clinical simulation centers?",
+        answer: "Yes, the university features state-of-the-art simulation labs where students practice clinical skills on advanced medical manikins before actual hospital training."
+      },
+      {
+        question: "Why should I choose WCIEC Delhi for my MBBS admission?",
+        answer: "WCIEC Delhi has over 15+ years of experience, having successfully guided 5000+ Indian students. We offer complete documentation, visa support, pre-departure briefings, and dedicated 24/7 post-arrival assistance."
       }
     ]
   },

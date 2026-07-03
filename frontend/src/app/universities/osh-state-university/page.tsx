@@ -20,7 +20,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://wciecdelhi.com/#localbusiness",
-    "name": "Nile Education Consultancy",
+    "name": "WCIEC Delhi",
     "image": "https://wciecdelhi.com/logos/wciec-logo.webp",
     "url": "https://wciecdelhi.com/",
     "telephone": "+918586873357",
@@ -52,6 +52,10 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.eduOrgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.medicalCollegeSchema) }}
       />
       <script
         type="application/ld+json"
