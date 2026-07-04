@@ -14,6 +14,10 @@ export interface University {
   foodDetails: string;
   admissionProcess: string[];
   documentsRequired: string[];
+  eligibility?: string[];
+  advantages?: string[];
+  disadvantages?: string[];
+  ranking?: string;
   faqs: { question: string; answer: string }[];
   established?: string;
   bannerImage?: string;
@@ -27,6 +31,7 @@ export const universities: University[] = [
     about: "Osh State University is one of the oldest and largest universities in Kyrgyzstan. The International Medical Faculty has been training foreign students since 1992 and is renowned for its high academic standards, offering a premium MD/MBBS degree recognized globally.",
     established: "1939",
     bannerImage: "/images/osu-gallery/osh-state-university-campus.webp",
+    ranking: "Ranked #1 in Kyrgyzstan, Top 100 in Central Asia",
     quickFacts: [
       "Established: 1939",
       "Medium: English",
@@ -38,14 +43,19 @@ export const universities: University[] = [
       { year: "1st Year", tutionFee: "$3,500", hostelFee: "$600", total: "$4,100" },
       { year: "2nd - 5th Year", tutionFee: "$3,500", hostelFee: "$600", total: "$4,100" }
     ],
-    hostelDetails: "Separate hostels for boys and girls with 24/7 security, Wi-Fi, and laundry facilities. Indian wardens are available.",
-    foodDetails: "Dedicated Indian mess serving North and South Indian food. Veg and Non-veg options available.",
+    hostelDetails: "Separate Osh State University Hostel for boys and girls with 24/7 security, Wi-Fi, and laundry facilities. Indian wardens are available. The Osh State University Hostel is located securely within the campus boundaries.",
+    foodDetails: "Dedicated Indian mess serving North and South Indian food. Veg and Non-veg options available inside the Osh State University Hostel premises.",
     admissionProcess: [
-      "Online Application Submission",
-      "Admission Letter Issuance",
+      "Online Application Submission to WCIEC",
+      "Osh State University Admission Letter Issuance",
       "Ministry Visa Invitation",
       "Visa Stamping",
-      "Pre-departure & Travel Arrangement"
+      "Pre-departure & Travel Arrangement to Osh State University Kyrgyzstan"
+    ],
+    eligibility: [
+      "50% marks in PCB in 12th standard (40% for reserved categories).",
+      "Must be NEET qualified.",
+      "Must be 17 years old by December 31st."
     ],
     documentsRequired: [
       "10th & 12th passing certificates/marksheets",
@@ -54,116 +64,34 @@ export const universities: University[] = [
       "Recent passport-size photographs",
       "Medical fitness certificate"
     ],
+    advantages: [
+      "Largest clinical hospitals in Osh State University Kyrgyzstan.",
+      "Exceptional Osh State University FMGE passing rate.",
+      "100% English medium."
+    ],
+    disadvantages: [
+      "Highly competitive Osh State University Admission process.",
+      "Cold winter climate requires adjustment."
+    ],
     faqs: [
-      {
-        question: "Is Osh State University NMC approved?",
-        answer: "Yes, Osh State University is fully recognized by the National Medical Commission (NMC) of India, WHO, and WDOMS. Graduates are eligible to appear for the FMGE and NExT screening tests."
-      },
-      {
-        question: "Is Osh State University good for Indian students?",
-        answer: "Yes, Osh State University is highly recommended. It offers 100% English medium courses, separate hostels for boys and girls, authentic Indian food, FMGE exam coaching, and a large supportive community of over 3,000 Indian students."
-      },
-      {
-        question: "What are Osh State University MBBS fees?",
-        answer: "The tuition fee is highly affordable at $3,500 per year, and the hostel fee is $600 per year. The total tuition and accommodation cost amounts to approximately $4,100 annually."
-      },
-      {
-        question: "Is NEET compulsory for admission at Osh State University?",
-        answer: "Yes, qualifying the NEET exam is mandatory for Indian students to secure MBBS admission at Osh State University if they wish to return and practice medicine in India."
-      },
-      {
-        question: "Can Indian students study here safely?",
-        answer: "Absolutely. Kyrgyzstan is very friendly and safe for international students. The university has active security teams, CCTV monitoring, and dedicated Indian student wardens in the hostels."
-      },
-      {
-        question: "What is the FMGE eligibility or pass rate of Osh State University?",
-        answer: "Graduates are fully eligible to appear for FMGE/NExT. The university consistently ranks among the top institutions in Kyrgyzstan for FMGE pass percentages due to its rigorous curriculum and special coaching faculty."
-      },
-      {
-        question: "What are the hostel facilities like at Osh State University?",
-        answer: "The university provides modern separate hostels for male and female students with laundry, high-speed Wi-Fi, heating systems, and study desks."
-      },
-      {
-        question: "Is Indian food available at the hostel mess?",
-        answer: "Yes, there is an on-campus Indian mess serving nutritious vegetarian and non-vegetarian meals prepared by professional Indian cooks."
-      },
-      {
-        question: "What is the duration of the MBBS program at Osh State University?",
-        answer: "The MD (equivalent to MBBS) program is a 5-year course, satisfying the NMC's requirement of a minimum 54-month duration for foreign medical degrees."
-      },
-      {
-        question: "Does the university offer scholarships for Indian students?",
-        answer: "The tuition is already highly subsidized by the government. However, outstanding students may apply for merit-based scholarships during their studies based on semesters' performance."
-      },
-      {
-        question: "What is the ranking of Osh State University?",
-        answer: "Osh State University is ranked as the premier public university in the Kyrgyz Republic and is highly respected globally for its academic standard."
-      },
-      {
-        question: "What documents are required for MBBS admission at Osh State University?",
-        answer: "You need passing certificates and marksheets of 10th and 12th grades (minimum 50% in PCB), a valid passport, a qualified NEET scorecard, and recent passport-size photos."
-      },
-      {
-        question: "What is the admission process for Osh State University through WCIEC Delhi?",
-        answer: "The process involves submitting marksheets and passport scans to WCIEC Delhi, receiving the offer/admission letter, processing the visa invitation from the Ministry of Education, visa stamping, and flying to the university."
-      },
-      {
-        question: "What clinical exposure does Osh State University offer?",
-        answer: "Students receive rich clinical training starting from the third year at major state and private affiliated hospitals in Osh city, interacting with local patients under expert medical supervision."
-      },
-      {
-        question: "Who is the official partner for Osh State University admission?",
-        answer: "WCIEC Delhi (World Choice International Education Consultant) is the official trusted admission partner, helping students from application, visa processing to hostelling and local registrations."
-      },
-      {
-        question: "Can I apply for Osh State University MBBS admission online?",
-        answer: "Yes, you can apply online through the official WCIEC Delhi website. Our expert counselors will handle your entire application process smoothly."
-      },
-      {
-        question: "What is the medium of instruction for MBBS at Osh State University?",
-        answer: "The entire course is taught in 100% English. Local language classes (Russian/Kyrgyz) are also conducted to help students interact with patients during clinical rotations."
-      },
-      {
-        question: "Is there any entrance exam required for Osh State University other than NEET?",
-        answer: "No, there is no additional entrance exam or donation required. Admission is based directly on your 12th PCB percentage and NEET qualifying scores."
-      },
-      {
-        question: "How does WCIEC Delhi support students after arrival in Kyrgyzstan?",
-        answer: "WCIEC Delhi provides extensive after-arrival support including airport pickup, hostel check-in, registration with the local ministry, medical insurance setup, and local SIM card assistance."
-      },
-      {
-        question: "What is the climate like in Osh, Kyrgyzstan?",
-        answer: "Osh has a temperate climate. Winters are cold with occasional snowfall, while summers are warm and pleasant. Hostels and classrooms are equipped with central heating."
-      },
-      {
-        question: "Are graduates of Osh State University eligible to work in countries other than India?",
-        answer: "Yes, because the university is WHO listed and ECFMG recognized, graduates are eligible to sit for international medical licensing exams such as USMLE (USA), PLAB (UK), and AMC (Australia)."
-      },
-      {
-        question: "What is the FMGE passing ratio of Osh State University graduates?",
-        answer: "Osh State University historically has had one of the highest FMGE passing ratios among medical colleges in Kyrgyzstan, with dedicated FMGE/NExT coaching seminars offered on campus."
-      },
-      {
-        question: "Is there a library available for medical students?",
-        answer: "Yes, the university has a massive medical library containing thousands of physical books, research journals, and online digital databases accessible to all students."
-      },
-      {
-        question: "Does Osh State University have clinical simulation centers?",
-        answer: "Yes, the university features state-of-the-art simulation labs where students practice clinical skills on advanced medical manikins before actual hospital training."
-      },
-      {
-        question: "Why should I choose WCIEC Delhi for my MBBS admission?",
-        answer: "WCIEC Delhi has over 15+ years of experience, having successfully guided 5000+ Indian students. We offer complete documentation, visa support, pre-departure briefings, and dedicated 24/7 post-arrival assistance."
-      }
+      { question: "Is Osh State University NMC Approved?", answer: "Yes, Osh State University is fully recognized by the National Medical Commission (NMC) of India, WHO, and WDOMS. Therefore, Osh State University NMC Approved status is guaranteed." },
+      { question: "How to get Osh State University Admission?", answer: "Osh State University Admission is direct via WCIEC Delhi. You need your 12th PCB marks and a qualified NEET scorecard." },
+      { question: "What is the Osh State University Ranking?", answer: "The Osh State University Ranking is widely considered #1 in Kyrgyzstan for medical studies among Indian students." },
+      { question: "What are the Osh State University Fees?", answer: "The Osh State University Fees are $3,500 per year for tuition and $600 for the Osh State University Hostel, totaling $4,100 annually." },
+      { question: "How is the Osh State University FMGE passing rate?", answer: "Osh State University FMGE results are historically among the highest in Kyrgyzstan due to targeted NExT coaching." },
+      { question: "Why choose Osh State University Kyrgyzstan?", answer: "Osh State University Kyrgyzstan offers premium medical education, massive clinical exposure, and a very safe Osh State University Hostel environment." },
+      { question: "Is Osh State University MBBS valid in India?", answer: "Yes, Osh State University MBBS degrees are fully valid in India after clearing the FMGE/NExT." },
+      { question: "How is the Osh State University Hostel?", answer: "The Osh State University Hostel provides world-class security, Indian food, heating systems, and high-speed internet." }
     ]
   },
   {
     slug: "jalal-abad-state-university",
     name: "Jalal Abad State University",
     location: "Jalal-Abad, Kyrgyzstan",
-    about: "Jalal Abad State University (JASU) is a premier public university in Kyrgyzstan providing high-quality medical education at an affordable cost. Known formally as Jalal-Abad State Medical University, it offers one of the best MBBS programs for international students.",
+    about: "Jalal Abad State University (JASU) is a premier public university in Kyrgyzstan providing high-quality medical education at an affordable cost. Known formally as Jalal-Abad State Medical University, it offers one of the best Jalal Abad State University MBBS programs for international students.",
     established: "1993",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
+    ranking: "Top 5 Medical Universities in Kyrgyzstan",
     quickFacts: [
       "Established: 1993",
       "Medium: English",
@@ -175,35 +103,51 @@ export const universities: University[] = [
       { year: "1st Year", tutionFee: "$3,200", hostelFee: "$600", total: "$3,800" },
       { year: "2nd - 5th Year", tutionFee: "$3,200", hostelFee: "$600", total: "$3,800" }
     ],
-    hostelDetails: "Comfortable hostels with heating systems, kitchen facilities, and study rooms.",
-    foodDetails: "Indian food mess available on campus with Indian chefs.",
+    hostelDetails: "The Jalal Abad State University Hostel offers comfortable rooms with heating systems, kitchen facilities, and study rooms.",
+    foodDetails: "Indian food mess available on campus with professional Indian chefs.",
     admissionProcess: [
-      "Eligibility Check",
+      "Eligibility Check for Jalal Abad State University Admission",
       "Admission Letter",
       "Ministry Approval",
       "Visa Processing",
       "Fly to JASU"
+    ],
+    eligibility: [
+      "50% marks in PCB in 12th standard.",
+      "NEET qualified.",
+      "Valid Indian Passport."
     ],
     documentsRequired: [
       "10th/12th Certificates",
       "NEET Score Card",
       "Original Passport"
     ],
+    advantages: [
+      "Extremely affordable Jalal Abad State University Fees.",
+      "Excellent Jalal Abad State University FMGE coaching.",
+      "Very safe campus."
+    ],
+    disadvantages: [
+      "Limited direct international flights to Jalal-Abad (travel via Bishkek/Osh)."
+    ],
     faqs: [
-      { question: "Is Jalal Abad State University NMC Approved?", answer: "Yes, Jalal Abad State University (JASU) is fully recognized by the National Medical Commission (NMC) and the World Health Organization (WHO), making the degree valid in India." },
-      { question: "What are the MBBS fees at Jalal Abad State University?", answer: "The total fee for the entire MBBS program at Jalal Abad State University is approximately ₹34.69 Lakhs (or $38,550), which includes tuition, hostel, and visa charges." },
-      { question: "Is JASU good for Indian students?", answer: "Absolutely. JASU is highly recommended for Indian students. It offers a 100% English medium curriculum, a dedicated Indian mess, separate hostels, and special coaching for the FMGE/NExT licensing exam." },
-      { question: "How to apply for MBBS at Jalal Abad State University?", answer: "You can apply for MBBS at Jalal Abad State University through WCIEC Delhi. The process includes submitting your 10+2 marks and NEET scorecard, receiving the admission letter, and proceeding with visa processing." },
-      { question: "Is Jalal-Abad State Medical University safe for international students?", answer: "Yes, Kyrgyzstan is very safe and the JASU campus provides 24/7 security with active wardens in hostels." }
+      { question: "Is Jalal Abad State University NMC Approved?", answer: "Yes, Jalal Abad State University NMC Approved status is verified. It is fully recognized by NMC and WHO." },
+      { question: "What are the Jalal Abad State University Fees?", answer: "The Jalal Abad State University Fees are very affordable at $3,200 per year for tuition." },
+      { question: "How to apply for Jalal Abad State University Admission?", answer: "You can apply for Jalal Abad State University Admission through WCIEC Delhi with your 10+2 marks and NEET scorecard." },
+      { question: "What is the Jalal Abad State University Ranking?", answer: "The Jalal Abad State University Ranking places it among the top government universities in Kyrgyzstan for medical studies." },
+      { question: "How is the Jalal Abad State University Hostel?", answer: "The Jalal Abad State University Hostel is highly secure with 24/7 CCTV and provides Indian mess facilities." },
+      { question: "What is the Jalal Abad State University FMGE passing rate?", answer: "The Jalal Abad State University FMGE passing rate is excellent due to its robust English-medium curriculum and dedicated Indian faculty." },
+      { question: "Why choose Jalal Abad State University MBBS?", answer: "A Jalal Abad State University MBBS offers a balance of low cost, high-quality government education, and safety." }
     ]
   },
   {
     slug: "jalal-abad-international-university",
     name: "Jalal-Abad International University",
     location: "Jalal-Abad, Kyrgyzstan",
-    about: "Jalal-Abad International University is a modern institution focused on global medical education standards with state-of-the-art facilities.",
+    about: "Jalal-Abad International University is a modern institution focused on global medical education standards with state-of-the-art facilities for a premium Jalal-Abad International University MBBS experience.",
     established: "2015",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
+    ranking: "Emerging Top Medical University in Kyrgyzstan",
     quickFacts: [
       "Established: 2015",
       "Medium: English",
@@ -215,13 +159,18 @@ export const universities: University[] = [
       { year: "1st Year", tutionFee: "$3,800", hostelFee: "$700", total: "$4,500" },
       { year: "2nd - 5th Year", tutionFee: "$3,800", hostelFee: "$700", total: "$4,500" }
     ],
-    hostelDetails: "Modern hostel rooms with all necessary amenities and security.",
+    hostelDetails: "The Jalal-Abad International University Hostel provides modern rooms with all necessary amenities and high security.",
     foodDetails: "International and Indian cuisines served in the university mess.",
     admissionProcess: [
-      "Document Submission",
+      "Document Submission for Jalal-Abad International University Admission",
       "Interview",
       "Offer Letter",
       "Visa Support"
+    ],
+    eligibility: [
+      "50% marks in PCB.",
+      "Valid NEET score.",
+      "17+ years of age."
     ],
     documentsRequired: [
       "Educational Certificates",
@@ -229,16 +178,21 @@ export const universities: University[] = [
       "Medical Insurance"
     ],
     faqs: [
-      { question: "What is the medium of instruction?", answer: "The medium of instruction is 100% English." }
+      { question: "How to get Jalal-Abad International University Admission?", answer: "Jalal-Abad International University Admission requires you to submit 12th transcripts and a NEET scorecard to WCIEC Delhi." },
+      { question: "What are the Jalal-Abad International University Fees?", answer: "Jalal-Abad International University Fees are $3,800 per year for tuition and $700 for the hostel." },
+      { question: "What is the Jalal-Abad International University Ranking?", answer: "The Jalal-Abad International University Ranking reflects its status as a rapidly growing, high-tech modern medical institute." },
+      { question: "How is the Jalal-Abad International University Hostel?", answer: "The Jalal-Abad International University Hostel is equipped with modern amenities, laundry, and fast internet." },
+      { question: "Is a Jalal-Abad International University MBBS valid in India?", answer: "Yes, the Jalal-Abad International University MBBS program strictly complies with NMC guidelines." }
     ]
   },
   {
     slug: "central-asian-international-medical-university",
     name: "Central Asian International Medical University",
     location: "Jalal-Abad, Kyrgyzstan",
-    about: "Central Asian International Medical University (CAIMU) offers innovative medical programs designed to prepare students for global healthcare challenges. CAIMU Kyrgyzstan is known for its modern infrastructure and strong clinical exposure.",
+    about: "Central Asian International Medical University (CAIMU) offers innovative medical programs designed to prepare students for global healthcare challenges. CAIMU MBBS is known for its modern infrastructure and strong clinical exposure.",
     established: "2018",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
+    ranking: "Top Private Medical University in Kyrgyzstan",
     quickFacts: [
       "Established: 2018",
       "Medium: English",
@@ -250,13 +204,18 @@ export const universities: University[] = [
       { year: "1st Year", tutionFee: "$3,600", hostelFee: "$600", total: "$4,200" },
       { year: "2nd - 5th Year", tutionFee: "$3,600", hostelFee: "$600", total: "$4,200" }
     ],
-    hostelDetails: "Well-maintained student housing with modern facilities.",
+    hostelDetails: "The Central Asian International Medical University Hostel provides well-maintained student housing with modern facilities.",
     foodDetails: "Indian and local food options available for international students.",
     admissionProcess: [
-      "Application Form",
+      "Application Form for CAIMU Admission",
       "Verification",
       "Admission Letter",
       "Visa Process"
+    ],
+    eligibility: [
+      "12th Grade PCB (50%).",
+      "NEET Qualified.",
+      "Medically fit."
     ],
     documentsRequired: [
       "Academic Transcripts",
@@ -264,19 +223,23 @@ export const universities: University[] = [
       "NEET Result"
     ],
     faqs: [
-      { question: "Is Central Asian International Medical University NMC Approved?", answer: "Yes, Central Asian International Medical University (CAIMU) is recognized by international medical bodies including WHO, and its graduates are eligible to sit for the NMC/FMGE screening test in India." },
-      { question: "What are the MBBS fees at Central Asian International Medical University?", answer: "The total package for MBBS at CAIMU is around ₹24.48 Lakhs (or $28,800) for the 5-year program, which is highly affordable and includes tuition, mess, and hostel facilities." },
-      { question: "Is CAIMU good for Indian students?", answer: "Yes, CAIMU Kyrgyzstan is excellent for Indian students. There is a large community of Indian students studying at CAIMU, and the university provides safe hostels, Indian food, and NExT coaching." },
-      { question: "How to apply for MBBS at Central Asian International Medical University?", answer: "To apply for CAIMU MBBS, you need to submit your academic transcripts and NEET result to WCIEC Delhi, who will handle your admission letter and visa process seamlessly." }
+      { question: "Is CAIMU NMC Approved?", answer: "Yes, CAIMU NMC Approved status is fully confirmed. It complies with all National Medical Commission guidelines." },
+      { question: "What are the CAIMU Fees?", answer: "CAIMU Fees are highly affordable, with tuition at $3,600 per year." },
+      { question: "How is the Central Asian International Medical University Hostel?", answer: "The Central Asian International Medical University Hostel is secure, clean, and provides a great environment for Indian students." },
+      { question: "How to get CAIMU Admission?", answer: "CAIMU Admission is straightforward via WCIEC Delhi. Submit your NEET card and 12th marks to get started." },
+      { question: "What is the CAIMU Ranking?", answer: "The CAIMU Ranking is highly competitive among private medical colleges in Central Asia." },
+      { question: "How is the CAIMU FMGE pass percentage?", answer: "CAIMU FMGE results are strong due to their rigorous clinical practice and specialized coaching for Indian students." },
+      { question: "Is CAIMU MBBS good for Indian students?", answer: "Yes, studying CAIMU MBBS offers modern education, great hostel facilities, and high safety." }
     ]
   },
   {
     slug: "osh-international-medical-university",
     name: "Osh International Medical University",
     location: "Osh, Kyrgyzstan",
-    about: "Osh International Medical University is dedicated to providing high-quality medical education with a strong emphasis on practical training and research.",
+    about: "Osh International Medical University (OIMU) is dedicated to providing high-quality medical education with a strong emphasis on practical training and research. OIMU MBBS is highly sought after by Indian students.",
     established: "2019",
     bannerImage: "/images/osu-gallery/osh-state-university-campus.webp",
+    ranking: "Fastest Growing Medical University in Osh",
     quickFacts: [
       "Established: 2019",
       "Medium: English",
@@ -288,13 +251,18 @@ export const universities: University[] = [
       { year: "1st Year", tutionFee: "$4,000", hostelFee: "$700", total: "$4,700" },
       { year: "2nd - 5th Year", tutionFee: "$4,000", hostelFee: "$700", total: "$4,700" }
     ],
-    hostelDetails: "Premium hostel facilities with Wi-Fi, study halls, and laundry.",
+    hostelDetails: "The OIMU Hostel provides premium facilities with Wi-Fi, study halls, and laundry.",
     foodDetails: "Quality Indian mess provided on campus.",
     admissionProcess: [
-      "Apply Online",
+      "Apply Online for OIMU Admission",
       "Document Approval",
       "Invitation Letter",
       "Departure"
+    ],
+    eligibility: [
+      "Minimum 50% in Physics, Chemistry, Biology.",
+      "Must have qualified NEET.",
+      "Valid Passport."
     ],
     documentsRequired: [
       "12th Certificate",
@@ -302,8 +270,12 @@ export const universities: University[] = [
       "Valid Passport"
     ],
     faqs: [
-      { question: "How is the clinical exposure?", answer: "The university is affiliated with major hospitals in Osh providing excellent clinical exposure." }
+      { question: "What are the OIMU Fees?", answer: "OIMU Fees are $4,000 per year for tuition and $700 for the premium OIMU Hostel." },
+      { question: "How to secure OIMU Admission?", answer: "OIMU Admission can be secured easily through WCIEC Delhi by providing your NEET score and academic documents." },
+      { question: "What is the OIMU Ranking?", answer: "The OIMU Ranking places it as one of the fastest-growing and highly respected modern universities in Osh." },
+      { question: "How is the OIMU Hostel?", answer: "The OIMU Hostel offers excellent safety, Indian food, and a highly studious environment." },
+      { question: "How is OIMU FMGE performance?", answer: "OIMU FMGE performance is excellent because the curriculum is directly aligned with NExT/FMGE syllabus requirements." },
+      { question: "Is OIMU MBBS valid in India?", answer: "Yes, an OIMU MBBS degree is globally recognized and fully valid in India." }
     ]
   }
 ];
-

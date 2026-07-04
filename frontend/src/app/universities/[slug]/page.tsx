@@ -86,6 +86,12 @@ export default async function UniversityPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.faqSchema) }}
         />
       )}
+      {schemas.courseSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.courseSchema) }}
+        />
+      )}
 
     <main className="pt-24 pb-20">
         {/* Hero Section */}
@@ -99,6 +105,11 @@ export default async function UniversityPage({ params }: Props) {
                   {uni.location}
                 </div>
                 <h1 className="text-4xl md:text-6xl mb-6">{uni.name}</h1>
+                {uni.ranking && (
+                  <div className="inline-block bg-amber-500 text-navy font-bold px-4 py-2 rounded-full text-sm mb-6 shadow-lg shadow-amber-500/20">
+                    🏆 {uni.ranking}
+                  </div>
+                )}
                 <div className="flex flex-wrap gap-4">
                   {uni.quickFacts.slice(0, 3).map((fact, i) => (
                     <div key={i} className="bg-white/10 px-4 py-2 rounded-full text-sm backdrop-blur-md">
@@ -125,7 +136,40 @@ export default async function UniversityPage({ params }: Props) {
             {/* About */}
             <section>
               <h2 className="text-3xl mb-6">About University</h2>
-              <p className="text-gray-600 leading-relaxed text-lg">{uni.about}</p>
+              <p className="text-gray-600 leading-relaxed text-lg mb-8">{uni.about}</p>
+              
+              {(uni.advantages || uni.disadvantages) && (
+                <div className="grid md:grid-cols-2 gap-6 mt-8">
+                  {uni.advantages && (
+                    <div className="bg-green-50 border border-green-100 rounded-2xl p-6">
+                      <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
+                        <CheckCircle2 className="text-green-600" /> Advantages
+                      </h3>
+                      <ul className="space-y-3">
+                        {uni.advantages.map((adv, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-green-700">
+                            <span className="text-green-500 mt-1">•</span> {adv}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {uni.disadvantages && (
+                    <div className="bg-red-50 border border-red-100 rounded-2xl p-6">
+                      <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
+                        <ShieldCheck className="text-red-600" /> Disadvantages
+                      </h3>
+                      <ul className="space-y-3">
+                        {uni.disadvantages.map((dis, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-red-700">
+                            <span className="text-red-500 mt-1">•</span> {dis}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
             </section>
 
             {/* Fee Structure */}
@@ -172,8 +216,22 @@ export default async function UniversityPage({ params }: Props) {
               </GlassCard>
             </div>
 
-            {/* Admission Process */}
+            {/* Admission Process & Eligibility */}
             <section className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+              {uni.eligibility && (
+                <div className="mb-10">
+                  <h2 className="text-2xl mb-6">Eligibility Criteria</h2>
+                  <ul className="grid md:grid-cols-2 gap-4">
+                    {uni.eligibility.map((criterion, i) => (
+                      <li key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <CheckCircle2 className="text-medical shrink-0" size={20} />
+                        <span className="text-sm text-navy font-medium">{criterion}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               <h2 className="text-3xl mb-8">Admission Process</h2>
               <div className="space-y-6">
                 {uni.admissionProcess.map((step, i) => (

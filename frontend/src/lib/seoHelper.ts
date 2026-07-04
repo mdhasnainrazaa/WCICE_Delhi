@@ -302,6 +302,29 @@ export function generateUniversitySchemas(uni: University) {
     }))
   } : null;
 
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": `${displayName} MBBS`,
+    "description": `Study MBBS at ${displayName} in ${countryName}. A 5-year MD program equivalent to MBBS in India, recognized by NMC and WHO.`,
+    "provider": {
+      "@type": "CollegeOrUniversity",
+      "name": displayName,
+      "sameAs": absoluteUrl
+    },
+    "coursePrerequisites": "12th Standard PCB with 50% and NEET Qualification",
+    "educationalCredentialAwarded": "MD (Doctor of Medicine) / MBBS",
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "Onsite",
+      "courseWorkload": "PT5Y",
+      "instructor": {
+        "@type": "Organization",
+        "name": displayName
+      }
+    }
+  };
+
   return {
     breadcrumbSchema,
     webpageSchema,
@@ -311,6 +334,7 @@ export function generateUniversitySchemas(uni: University) {
     websiteSchema,
     orgSchema,
     articleSchema,
-    faqSchema
+    faqSchema,
+    courseSchema
   };
 }

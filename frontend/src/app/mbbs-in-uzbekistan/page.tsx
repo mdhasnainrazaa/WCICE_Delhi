@@ -74,33 +74,74 @@ const universities = [
 ];
 
 const faqs = [
+  // Primary & Admission Intents
   {
     question: "Is MBBS in Uzbekistan good for Indian students?",
-    answer: "Yes, Uzbekistan is becoming highly popular due to its ultra-affordable medical education, safe environment, and universities that strictly adhere to international and Indian (NMC) medical standards."
+    answer: "Yes, Uzbekistan is becoming highly popular due to its ultra-affordable medical education, safe environment, and universities that strictly adhere to international and Indian (NMC) medical standards. It is one of the best choices for MBBS abroad."
+  },
+  {
+    question: "How to apply for MBBS Admission Uzbekistan?",
+    answer: "To secure MBBS Admission in Uzbekistan, you need to contact WCIEC Delhi, submit your 10th and 12th mark sheets, provide your NEET scorecard, and apply for the visa. We offer direct admission in top Uzbekistan Medical Colleges."
   },
   {
     question: "Is NEET compulsory for MBBS Uzbekistan?",
-    answer: "Yes, qualifying the NEET-UG exam is strictly mandatory for Indian students planning to pursue MBBS abroad and seeking to practice medicine back in India."
+    answer: "Yes, qualifying the NEET-UG exam is strictly mandatory for Indian students planning to study MBBS in Uzbekistan and seeking to practice medicine back in India."
   },
   {
     question: "What is the duration of MBBS in Uzbekistan?",
     answer: "The duration of the MBBS program in Uzbekistan is generally 5 to 6 years, which fully complies with the NMC's requirement for foreign medical graduates (minimum 54 months)."
   },
+  // Fee & Cost Intents
   {
-    question: "What is the cost of MBBS in Uzbekistan?",
-    answer: "The total estimated cost for MBBS in Uzbekistan ranges between INR 16 Lakhs to 22 Lakhs. This generally includes the total tuition fee and hostel accommodation."
+    question: "What are the MBBS in Uzbekistan Fees 2026?",
+    answer: "The MBBS in Uzbekistan Fees 2026 range from USD 3,000 to USD 3,500 per year for tuition. This makes it a highly affordable MBBS in Uzbekistan option for Indian students."
   },
   {
-    question: "Are Uzbekistan medical universities approved by NMC?",
-    answer: "Yes, many of the top state medical universities in Uzbekistan are fully recognized by WHO and comply with the latest NMC guidelines."
+    question: "What is the total MBBS in Uzbekistan Cost?",
+    answer: "The total estimated cost for MBBS in Uzbekistan ranges between INR 16 Lakhs to 22 Lakhs for the entire 5 to 6-year duration. This makes it the cheapest MBBS in Uzbekistan compared to Russia or Kazakhstan."
   },
   {
-    question: "Is MBBS taught in English in Uzbekistan?",
-    answer: "Yes, major state medical institutes offering medical programs for international students provide English medium medical education."
+    question: "What is the detailed MBBS Fee Structure Uzbekistan?",
+    answer: "The MBBS Fee Structure in Uzbekistan typically involves $3000-$3500 yearly tuition, $500-$600 yearly hostel fees, and around $1200 yearly living expenses."
+  },
+  // NMC & Licensing Intents
+  {
+    question: "Are there NMC Approved Medical Universities in Uzbekistan?",
+    answer: "Yes, all major state medical universities in Uzbekistan are WHO approved and fully comply with the latest NMC guidelines for Indian students."
+  },
+  {
+    question: "What is the FMGE Passing Rate in Uzbekistan?",
+    answer: "The FMGE Passing Rate for students graduating from top Medical Universities in Uzbekistan is very high, thanks to a strict curriculum and dedicated NExT exam coaching."
+  },
+  {
+    question: "Is MBBS Valid in India if done from Uzbekistan?",
+    answer: "Yes, an MBBS degree from Uzbekistan is 100% valid in India provided the student completes the 54-month course, a 12-month internship, and clears the FMGE/NExT exam."
+  },
+  // Informational & Lifestyle Intents
+  {
+    question: "Why Study MBBS in Uzbekistan?",
+    answer: "You should study MBBS in Uzbekistan because of the low cost MBBS in Uzbekistan, high safety index, English-medium curriculum, and the easy visa process."
+  },
+  {
+    question: "What are the disadvantages of MBBS in Uzbekistan?",
+    answer: "The primary disadvantage is the language barrier off-campus (Russian/Uzbek is spoken locally), though the entire MBBS course is taught in English."
+  },
+  {
+    question: "Is Indian food available in Uzbekistan?",
+    answer: "Yes, excellent Indian food is available. Most top Uzbekistan medical colleges have dedicated Indian messes serving vegetarian and non-vegetarian meals."
+  },
+  {
+    question: "How is student life and safety in Uzbekistan?",
+    answer: "Uzbekistan is incredibly safe for international students. Student life is vibrant, and the cost of living is very low, making it ideal for Indian students."
+  },
+  // Comparison Intents
+  {
+    question: "Uzbekistan vs Kyrgyzstan for MBBS?",
+    answer: "Both are excellent for low-budget MBBS. Uzbekistan offers slightly more modern infrastructure in places like Tashkent, while Kyrgyzstan offers the absolute cheapest tuition fees."
   },
   {
     question: "Does WCIEC help with Uzbekistan visa?",
-    answer: "Absolutely. WCIEC Delhi provides end-to-end support, from university application to complete visa processing, document apostille, and final departure assistance."
+    answer: "Absolutely. As the best Study Abroad Consultant in Delhi, WCIEC Delhi provides end-to-end support, from university application to complete visa processing, document apostille, and final departure assistance."
   }
 ];
 
@@ -147,6 +188,15 @@ export default function MBBSInUzbekistanPage() {
             "@type": "Answer",
             "text": faq.answer
           }
+        }))
+      },
+      {
+        "@type": "ItemList",
+        "itemListElement": universities.map((uni, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": uni.name,
+          "description": `Study MBBS at ${uni.name} located in ${uni.city}.`
         }))
       }
     ]
