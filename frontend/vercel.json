@@ -19,6 +19,7 @@
     { "source": "/china-universities.php", "destination": "/mbbs-in-china/", "permanent": true },
     { "source": "/egypt-universities.php", "destination": "/mbbs-in-egypt/", "permanent": true },
     { "source": "/abroad/mbbs-admission-new-delhi-7404(/?)", "destination": "/mbbs-abroad/", "permanent": true },
+    { "source": "/abroad/mbbs-admission-jamia-nagar-7471(/?)", "destination": "/mbbs-in-kyrgyzstan/", "permanent": true },
     { "source": "/abroad/mbbs-admission-in-kyrgyzstan", "destination": "/mbbs-in-kyrgyzstan/", "permanent": true },
     { "source": "/abroad/:path*", "destination": "/", "permanent": true },
     { "source": "/login", "destination": "/universities/", "permanent": true },
