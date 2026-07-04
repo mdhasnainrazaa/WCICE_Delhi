@@ -101,6 +101,35 @@ export default function MBBSAbroadPage() {
             "text": faq.answer
           }
         }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://wciecdelhi.com/mbbs-abroad/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wciecdelhi.com/" },
+          { "@type": "ListItem", "position": 2, "name": "MBBS Abroad", "item": "https://wciecdelhi.com/mbbs-abroad/" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://wciecdelhi.com/mbbs-abroad/#article",
+        "headline": "MBBS Abroad 2026-27 | Admission & Fees for Indian Students",
+        "description": "Get direct admission for MBBS abroad in 2026. Explore low-cost, NMC & WHO approved medical universities for Indian students.",
+        "inLanguage": "en-US",
+        "mainEntityOfPage": "https://wciecdelhi.com/mbbs-abroad/",
+        "author": {
+          "@type": "Organization",
+          "name": "WCIEC Delhi",
+          "url": "https://wciecdelhi.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "WCIEC Delhi",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://wciecdelhi.com/logos/wciec-logo.webp"
+          }
+        }
       }
     ]
   };

@@ -84,6 +84,21 @@ export function OrganizationSchema() {
         "areaServed": "IN",
         "serviceType": "Study abroad admission counselling",
         "description": "Country and university selection, admission documentation, visa guidance, pre-departure preparation, hostel support, and post-arrival student support for MBBS abroad."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wciecdelhi.com/#website",
+        "url": "https://wciecdelhi.com/",
+        "name": "WCIEC Delhi",
+        "description": "WCIEC Delhi helps Indian students plan MBBS abroad admission for 2026.",
+        "publisher": {
+          "@id": "https://wciecdelhi.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://wciecdelhi.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
     ]
   };

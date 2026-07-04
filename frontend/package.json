@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && node scripts/copy-build.js",
+    "dev": "next dev --turbopack",
+    "build": "next build && node scripts/copy-build.js && node scripts/ping-indexnow.js",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint"
   },
   "dependencies": {
     "clsx": "^2.1.1",

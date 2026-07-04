@@ -154,6 +154,36 @@ export default function MBBSInKyrgyzstanPage() {
             "text": faq.answer
           }
         }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wciecdelhi.com/" },
+          { "@type": "ListItem", "position": 2, "name": "MBBS Abroad", "item": "https://wciecdelhi.com/mbbs-abroad/" },
+          { "@type": "ListItem", "position": 3, "name": "MBBS in Kyrgyzstan", "item": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/#article",
+        "headline": "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
+        "description": "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees. Direct admission, NEET guidance & Indian hostel.",
+        "inLanguage": "en-US",
+        "mainEntityOfPage": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/",
+        "author": {
+          "@type": "Organization",
+          "name": "WCIEC Delhi",
+          "url": "https://wciecdelhi.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "WCIEC Delhi",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://wciecdelhi.com/logos/wciec-logo.webp"
+          }
+        }
       }
     ]
   };

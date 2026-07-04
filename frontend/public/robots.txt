@@ -17,4 +17,7 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: bingbot
+Allow: /
+
 Sitemap: https://wciecdelhi.com/sitemap.xml
