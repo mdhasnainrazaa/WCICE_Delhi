@@ -128,10 +128,10 @@ export default function MBBSInKyrgyzstanPage() {
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy assisting Indian students with MBBS admission in Kyrgyzstan.",
         "address": {
           "@type": "PostalAddress",
@@ -281,7 +281,7 @@ export default function MBBSInKyrgyzstanPage() {
         </section>
 
         {/* ── CORE CONTENT: REDESIGNED TO BE FULL-WIDTH & BALANCED ── */}
-        <section className="py-20">
+        <article className="py-20">
           <div className="max-w-6xl mx-auto px-4 space-y-20">
             
             {/* 1. Introduction & Trust Banner (Combined in a balanced way) */}
@@ -291,10 +291,10 @@ export default function MBBSInKyrgyzstanPage() {
                   <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight">What is MBBS in Kyrgyzstan?</h2>
                   <div className="w-20 h-1 bg-medical rounded-full mb-6" />
                   <p className="text-gray-600 leading-relaxed text-lg">
-                    When you choose to study medicine abroad, Kyrgyzstan stands out as the most preferred destination for Indian students. Medical programs in Kyrgyzstan award the <strong>MD Physician degree</strong>, which is globally recognized and strictly equivalent to the <strong>MBBS</strong> degree awarded in India.
+                    When you choose to <Link href="/mbbs-abroad" className="text-medical font-medium hover:underline">study medicine abroad</Link>, Kyrgyzstan stands out as the most preferred destination for Indian students. Medical programs in Kyrgyzstan award the <strong>MD Physician degree</strong>, which is globally recognized and strictly equivalent to the <strong>MBBS</strong> degree awarded in India.
                   </p>
                   <p className="text-gray-600 leading-relaxed">
-                    Over the last two decades, <strong>MBBS in Kyrgyzstan for Indian students</strong> has become a massive trend. Why? Because it offers highly affordable medical education without compromising on academic quality. Students get to study in state-of-the-art government medical universities, avoiding the massive donations common in private Indian colleges.
+                    Over the last two decades, <strong>MBBS in Kyrgyzstan for Indian students</strong> has become a massive trend. Why? Because it offers highly affordable medical education without compromising on academic quality. Students get to study in state-of-the-art government medical <Link href="/universities" className="text-medical font-medium hover:underline">universities</Link>, avoiding the massive donations common in private Indian colleges.
                   </p>
                 </div>
               </div>
@@ -623,7 +623,7 @@ export default function MBBSInKyrgyzstanPage() {
             </div>
 
           </div>
-        </section>
+        </article>
 
         {/* Bottom Call to Action Strip */}
         <section className="bg-navy py-16 md:py-24 text-white text-center relative overflow-hidden" id="counselling">

@@ -223,7 +223,7 @@ export default function MBBSAbroadPage() {
         </section>
 
         {/* ── CORE CONTENT: REDESIGNED TO BE FULL-WIDTH & BALANCED ── */}
-        <section className="py-20">
+        <article className="py-20">
           <div className="max-w-6xl mx-auto px-4 space-y-20">
             
             {/* 1. Introduction & Trust Banner (Combined in a balanced way) */}
@@ -236,7 +236,7 @@ export default function MBBSAbroadPage() {
                     Every year, thousands of medical aspirants plan to <strong>study medicine abroad</strong> to fulfill their dream of becoming successful doctors. But exactly what is MBBS abroad, and why do Indian students choose foreign medical universities?
                   </p>
                   <p className="text-gray-600 leading-relaxed">
-                    <strong>MBBS abroad for Indian students</strong> refers to pursuing an undergraduate medical degree (MD Physician or MBBS) outside India. Due to limited government seats, high NEET competition, and massive donation demands in private Indian medical colleges, choosing an international destination is the smartest alternative. Reputed <strong>foreign medical universities</strong> offer high-quality, fully English-medium medical programs that are globally recognized, giving students a pathway to practice medicine anywhere in the world.
+                    <strong>MBBS abroad for Indian students</strong> refers to pursuing an undergraduate medical degree (MD Physician or MBBS) outside India. Due to limited government seats, high NEET competition, and massive donation demands in private Indian medical colleges, choosing an international destination is the smartest alternative. Reputed <Link href="/universities" className="text-medical font-medium hover:underline">foreign medical universities</Link> offer high-quality, fully English-medium medical programs that are globally recognized, giving students a pathway to practice medicine anywhere in the world.
                   </p>
                 </div>
               </div>
@@ -420,20 +420,20 @@ export default function MBBSAbroadPage() {
               
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Kyrgyzstan */}
-                <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">MBBS in Kyrgyzstan</h3>
-                  <p className="text-gray-600 mb-6 flex-grow">Kyrgyzstan is known for providing highly affordable MBBS abroad options with top NMC recognized universities like Osh State Medical University and Jalal-Abad State University.</p>
+                <Link href="/mbbs-in-kyrgyzstan" className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full group">
+                  <h3 className="text-2xl font-bold text-navy mb-4 group-hover:text-medical transition-colors">MBBS in Kyrgyzstan</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">Kyrgyzstan is known for providing highly affordable MBBS abroad options with top NMC recognized universities like <span className="font-medium text-navy">Osh State Medical University</span> and <span className="font-medium text-navy">Jalal-Abad State University</span>.</p>
                   <ul className="space-y-2 text-sm text-gray-600 bg-gray-50 p-6 rounded-2xl">
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Fees:</strong> Approx. 15-20 Lakhs (Total)</li>
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Duration:</strong> 5 Years</li>
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Recognition:</strong> WHO, NMC, FAIMER</li>
                     <li className="flex justify-between"><strong>Indian Support:</strong> Indian mess, 1000+ students</li>
                   </ul>
-                </div>
+                </Link>
 
                 {/* Russia */}
-                <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">MBBS in Russia</h3>
+                <Link href="/mbbs-in-russia" className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full group">
+                  <h3 className="text-2xl font-bold text-navy mb-4 group-hover:text-medical transition-colors">MBBS in Russia</h3>
                   <p className="text-gray-600 mb-6 flex-grow">Russia has been a traditional favorite for foreign medical colleges for Indian students due to its historic, century-old federal medical universities and strong clinical base.</p>
                   <ul className="space-y-2 text-sm text-gray-600 bg-gray-50 p-6 rounded-2xl">
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Fees:</strong> Approx. 20-35 Lakhs (Total)</li>
@@ -441,11 +441,11 @@ export default function MBBSAbroadPage() {
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Recognition:</strong> WHO, NMC, ECFMG</li>
                     <li className="flex justify-between"><strong>Indian Support:</strong> High FMGE passing rate</li>
                   </ul>
-                </div>
+                </Link>
 
                 {/* Kazakhstan */}
-                <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">MBBS in Kazakhstan</h3>
+                <Link href="/mbbs-in-kazakhstan" className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full group">
+                  <h3 className="text-2xl font-bold text-navy mb-4 group-hover:text-medical transition-colors">MBBS in Kazakhstan</h3>
                   <p className="text-gray-600 mb-6 flex-grow">Kazakhstan is emerging as a premier destination with completely English medium programs spanning 5 years, providing an ideal mix of affordability and excellent education.</p>
                   <ul className="space-y-2 text-sm text-gray-600 bg-gray-50 p-6 rounded-2xl">
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Fees:</strong> Approx. 20-25 Lakhs (Total)</li>
@@ -453,11 +453,11 @@ export default function MBBSAbroadPage() {
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Recognition:</strong> WHO, NMC</li>
                     <li className="flex justify-between"><strong>Indian Support:</strong> Direct flights, safe</li>
                   </ul>
-                </div>
+                </Link>
 
                 {/* Georgia */}
-                <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">MBBS in Georgia</h3>
+                <Link href="/mbbs-in-georgia" className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full group">
+                  <h3 className="text-2xl font-bold text-navy mb-4 group-hover:text-medical transition-colors">MBBS in Georgia</h3>
                   <p className="text-gray-600 mb-6 flex-grow">Georgia offers premium European-standard medical education. It is considered one of the safest countries globally with 100% English medium medical faculties.</p>
                   <ul className="space-y-2 text-sm text-gray-600 bg-gray-50 p-6 rounded-2xl">
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Fees:</strong> Approx. 25-40 Lakhs (Total)</li>
@@ -465,7 +465,7 @@ export default function MBBSAbroadPage() {
                     <li className="flex justify-between border-b border-gray-200 pb-2"><strong>Recognition:</strong> WHO, NMC, WFME</li>
                     <li className="flex justify-between"><strong>Indian Support:</strong> Large Indian community</li>
                   </ul>
-                </div>
+                </Link>
               </div>
             </div>
 
@@ -556,7 +556,7 @@ export default function MBBSAbroadPage() {
             </div>
 
           </div>
-        </section>
+        </article>
 
         {/* Bottom Call to Action Strip */}
         <section className="bg-navy py-16 md:py-24 text-white text-center relative overflow-hidden" id="counselling">

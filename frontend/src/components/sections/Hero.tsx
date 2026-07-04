@@ -22,11 +22,11 @@ import {
 import { cn } from "@/lib/utils";
 
 const heroImages = [
-  "/images/optimized/osh-state-university.webp",
-  "/images/optimized/jalal-abad-banner.webp",
-  "/images/optimized/osh-international-medical-university.webp",
-  "/images/optimized/jalal-abad-international-university-hero.webp",
-  "/images/optimized/central-asian-medical-university.webp",
+  { src: "/images/optimized/osh-state-university.webp", alt: "Osh State University Medical Campus in Kyrgyzstan" },
+  { src: "/images/optimized/jalal-abad-banner.webp", alt: "Jalal-Abad State Medical University Campus Building" },
+  { src: "/images/optimized/osh-international-medical-university.webp", alt: "Osh International Medical University Students Campus" },
+  { src: "/images/optimized/jalal-abad-international-university-hero.webp", alt: "Jalal-Abad International University Campus View" },
+  { src: "/images/optimized/central-asian-medical-university.webp", alt: "Central Asian Medical University Campus in Kyrgyzstan" },
 ];
 
 const trustBadges = [
@@ -88,8 +88,8 @@ export function Hero() {
         {!mounted ? (
           <div className="absolute inset-0">
             <Image
-              src="/images/optimized/osh-state-university.webp"
-              alt="WCIEC Partner University Campus"
+              src={heroImages[0].src}
+              alt={heroImages[0].alt}
               fill
               priority
               sizes="100vw"
@@ -110,10 +110,11 @@ export function Hero() {
               className="absolute inset-0"
             >
               <Image
-                src={heroImages[currentImage]}
-                alt="WCIEC Partner University Campus"
+                src={heroImages[currentImage].src}
+                alt={heroImages[currentImage].alt}
                 fill
-                priority
+                priority={currentImage === 0}
+                loading={currentImage === 0 ? "eager" : "lazy"}
                 sizes="100vw"
                 className="object-cover"
               />

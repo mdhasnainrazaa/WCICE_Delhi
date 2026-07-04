@@ -9,8 +9,8 @@ export function generateUniversityMetadata(uni: University): Metadata {
   const displayName = uni.slug === "osh-state-university" ? "Osh State University" : uni.name;
   const countryName = uni.location.split(",")[1]?.trim() || "Kyrgyzstan";
 
-  // Dynamic search title matching the user requirements
-  const title = `${displayName} MBBS 2026-27 | Fees, Admission & Ranking | ${brandName}`;
+  // Dynamic search title matching the user requirements (Under 65 chars)
+  const title = `${displayName} MBBS | Fees & Admission 2026 | WCIEC`;
   
   // Custom meta description containing all target keywords within 150-160 characters
   const description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
@@ -133,7 +133,7 @@ export function generateUniversitySchemas(uni: University) {
     "@type": "WebPage",
     "@id": `${absoluteUrl}#webpage`,
     "url": absoluteUrl,
-    "name": `${displayName} MBBS 2026-27 | Fees, Admission & Ranking | ${brandName}`,
+    "name": `${displayName} MBBS | Fees & Admission 2026 | WCIEC`,
     "description": `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`,
     "isPartOf": {
       "@type": "WebSite",
@@ -238,7 +238,7 @@ export function generateUniversitySchemas(uni: University) {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${absoluteUrl}#article`,
-    "headline": `${displayName} MBBS 2026-27 | Fees, Admission & Ranking`,
+    "headline": `${displayName} MBBS | Fees & Admission 2026`,
     "description": `Comprehensive guide to studying MBBS at ${displayName}, ${countryName}. Learn about fees structure, eligibility criteria, admission process, hostel facilities, and NMC approval details.`,
     "inLanguage": "en-US",
     "mainEntityOfPage": absoluteUrl,
