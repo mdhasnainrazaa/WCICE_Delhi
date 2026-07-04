@@ -25,12 +25,12 @@ export const metadata: Metadata = {
   title: "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
   description: "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees. Direct admission, NEET guidance & Indian hostel.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-kyrgyzstan/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/",
   },
   openGraph: {
     title: "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
     description: "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees. Direct admission, NEET guidance & Indian hostel.",
-    url: "https://wciecdelhi.com/mbbs-in-kyrgyzstan/",
+    url: "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -116,13 +116,12 @@ export default function MBBSInKyrgyzstanPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/",
         "name": "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
         "description": "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
           "url": "https://wciecdelhi.com/"
         }
@@ -145,7 +144,7 @@ export default function MBBSInKyrgyzstanPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,
@@ -157,31 +156,31 @@ export default function MBBSInKyrgyzstanPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/#breadcrumb",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wciecdelhi.com/" },
-          { "@type": "ListItem", "position": 2, "name": "MBBS Abroad", "item": "https://wciecdelhi.com/mbbs-abroad/" },
-          { "@type": "ListItem", "position": 3, "name": "MBBS in Kyrgyzstan", "item": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.wciecdelhi.com/" },
+          { "@type": "ListItem", "position": 2, "name": "MBBS Abroad", "item": "https://www.wciecdelhi.com/mbbs-abroad/" },
+          { "@type": "ListItem", "position": 3, "name": "MBBS in Kyrgyzstan", "item": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/" }
         ]
       },
       {
         "@type": "Article",
-        "@id": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/#article",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/#article",
         "headline": "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
         "description": "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees. Direct admission, NEET guidance & Indian hostel.",
         "inLanguage": "en-US",
-        "mainEntityOfPage": "https://wciecdelhi.com/mbbs-in-kyrgyzstan/",
+        "mainEntityOfPage": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/",
         "author": {
           "@type": "Organization",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         },
         "publisher": {
           "@type": "Organization",
           "name": "WCIEC Delhi",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://wciecdelhi.com/logos/wciec-logo.webp"
+            "url": "https://www.wciecdelhi.com/logos/wciec-logo.webp"
           }
         }
       }

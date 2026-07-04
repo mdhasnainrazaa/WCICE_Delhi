@@ -5,7 +5,7 @@ import { universities } from '@/data/universities';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://wciecdelhi.com';
+  const baseUrl = 'https://www.wciecdelhi.com';
   
   const universitySlugs = universities.map(uni => uni.slug);
 

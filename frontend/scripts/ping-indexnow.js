@@ -3,17 +3,17 @@ const https = require('https');
 const host = 'api.indexnow.org';
 const key = '5a069df8a34947dc9366e857ab34db6d';
 const urlList = [
-  'https://wciecdelhi.com/',
-  'https://wciecdelhi.com/mbbs-in-kyrgyzstan/',
-  'https://wciecdelhi.com/mbbs-abroad/',
-  'https://wciecdelhi.com/universities/osh-state-university/',
-  'https://wciecdelhi.com/universities/jalal-abad-state-university/'
+  'https://www.wciecdelhi.com/',
+  'https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/',
+  'https://www.wciecdelhi.com/mbbs-abroad/',
+  'https://www.wciecdelhi.com/universities/osh-state-university/',
+  'https://www.wciecdelhi.com/universities/jalal-abad-state-university/'
 ];
 
 const data = JSON.stringify({
-  host: 'wciecdelhi.com',
+  host: 'www.wciecdelhi.com',
   key: key,
-  keyLocation: `https://wciecdelhi.com/${key}.txt`,
+  keyLocation: `https://www.wciecdelhi.com/${key}.txt`,
   urlList: urlList
 });
 

@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://wciecdelhi.com'),
+  metadataBase: new URL('https://www.wciecdelhi.com'),
   title: {
     default: "MBBS Abroad 2026 | Study MBBS Abroad with WCIEC Delhi",
     template: "%s"
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://wciecdelhi.com/",
+    url: "https://www.wciecdelhi.com/",
     siteName: "WCIEC Delhi",
     title: "MBBS Abroad 2026 | WCIEC Delhi",
     description: "Plan MBBS abroad admission with country-wise guidance, transparent fees, NEET support, visa assistance, and student support.",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     images: ["/logos/wciec-logo.webp"],
   },
   alternates: {
-    canonical: "https://wciecdelhi.com/",
+    canonical: "https://www.wciecdelhi.com/",
   },
   robots: {
     index: true,

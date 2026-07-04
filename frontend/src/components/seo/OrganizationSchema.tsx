@@ -6,17 +6,17 @@ export function OrganizationSchema() {
     "@graph": [
       {
         "@type": ["Organization", "EducationalOrganization", "LocalBusiness"],
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi",
         "alternateName": "World Choice International Education Consultant Private Limited",
-        "url": "https://wciecdelhi.com/",
+        "url": "https://www.wciecdelhi.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://wciecdelhi.com/logos/wciec-logo.webp",
+          "url": "https://www.wciecdelhi.com/logos/wciec-logo.webp",
           "width": 1200,
           "height": 630
         },
-        "image": "https://wciecdelhi.com/logos/wciec-logo.webp",
+        "image": "https://www.wciecdelhi.com/logos/wciec-logo.webp",
         "description": "WCIEC Delhi provides MBBS abroad admission counselling, university shortlisting, documentation, visa assistance, travel support, and student support for Indian medical aspirants.",
         "telephone": ["+918586873357", "+919911635435", "+919811385441"],
         "email": "wciec3182@gmail.com",
@@ -76,10 +76,10 @@ export function OrganizationSchema() {
       },
       {
         "@type": "Service",
-        "@id": "https://wciecdelhi.com/#mbbs-abroad-service",
+        "@id": "https://www.wciecdelhi.com/#mbbs-abroad-service",
         "name": "MBBS Abroad Admission Counselling",
         "provider": {
-          "@id": "https://wciecdelhi.com/#organization"
+          "@id": "https://www.wciecdelhi.com/#organization"
         },
         "areaServed": "IN",
         "serviceType": "Study abroad admission counselling",
@@ -87,16 +87,16 @@ export function OrganizationSchema() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://wciecdelhi.com/#website",
-        "url": "https://wciecdelhi.com/",
+        "@id": "https://www.wciecdelhi.com/#website",
+        "url": "https://www.wciecdelhi.com/",
         "name": "WCIEC Delhi",
         "description": "WCIEC Delhi helps Indian students plan MBBS abroad admission for 2026.",
         "publisher": {
-          "@id": "https://wciecdelhi.com/#organization"
+          "@id": "https://www.wciecdelhi.com/#organization"
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://wciecdelhi.com/search?q={search_term_string}",
+          "target": "https://www.wciecdelhi.com/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }

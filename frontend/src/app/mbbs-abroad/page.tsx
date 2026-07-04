@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   title: "MBBS Abroad 2026-27 | Admission & Fees for Indian Students",
   description: "Get direct admission for MBBS abroad in 2026. Explore low-cost, NMC & WHO approved medical universities for Indian students. Complete guidance & visa support.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-abroad/",
+    canonical: "https://www.wciecdelhi.com/mbbs-abroad/",
   },
   openGraph: {
     title: "MBBS Abroad 2026-27 | Admission & Fees for Indian Students",
     description: "Get direct admission for MBBS abroad in 2026. Explore low-cost, NMC & WHO approved medical universities for Indian students. Complete guidance & visa support.",
-    url: "https://wciecdelhi.com/mbbs-abroad/",
+    url: "https://www.wciecdelhi.com/mbbs-abroad/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -66,33 +66,33 @@ export default function MBBSAbroadPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-abroad/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-abroad/",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-abroad/",
         "name": "MBBS Abroad 2026-27 | Admission & Fees for Indian Students",
         "description": "Get direct admission for MBBS abroad in 2026. Explore low-cost, NMC & WHO approved medical universities for Indian students.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://wciecdelhi.com/mbbs-abroad/#service",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad/#service",
         "name": "MBBS Abroad Admission Counselling",
         "provider": {
           "@type": "EducationalOrganization",
-          "@id": "https://wciecdelhi.com/#organization",
+          "@id": "https://www.wciecdelhi.com/#organization",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         },
         "areaServed": "IN",
         "description": "Expert admission guidance, documentation, visa assistance and pre-departure briefings for Indian medical students."
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-abroad/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,
@@ -104,30 +104,30 @@ export default function MBBSAbroadPage() {
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://wciecdelhi.com/mbbs-abroad/#breadcrumb",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad/#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://wciecdelhi.com/" },
-          { "@type": "ListItem", "position": 2, "name": "MBBS Abroad", "item": "https://wciecdelhi.com/mbbs-abroad/" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.wciecdelhi.com/" },
+          { "@type": "ListItem", "position": 2, "name": "MBBS Abroad", "item": "https://www.wciecdelhi.com/mbbs-abroad/" }
         ]
       },
       {
         "@type": "Article",
-        "@id": "https://wciecdelhi.com/mbbs-abroad/#article",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad/#article",
         "headline": "MBBS Abroad 2026-27 | Admission & Fees for Indian Students",
         "description": "Get direct admission for MBBS abroad in 2026. Explore low-cost, NMC & WHO approved medical universities for Indian students.",
         "inLanguage": "en-US",
-        "mainEntityOfPage": "https://wciecdelhi.com/mbbs-abroad/",
+        "mainEntityOfPage": "https://www.wciecdelhi.com/mbbs-abroad/",
         "author": {
           "@type": "Organization",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         },
         "publisher": {
           "@type": "Organization",
           "name": "WCIEC Delhi",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://wciecdelhi.com/logos/wciec-logo.webp"
+            "url": "https://www.wciecdelhi.com/logos/wciec-logo.webp"
           }
         }
       }

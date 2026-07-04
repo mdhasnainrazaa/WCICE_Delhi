@@ -3,7 +3,7 @@ import { University } from "@/data/universities";
 
 export function generateUniversityMetadata(uni: University): Metadata {
   const brandName = "WCIEC Delhi";
-  const baseUrl = "https://wciecdelhi.com";
+  const baseUrl = "https://www.wciecdelhi.com";
   const absoluteUrl = `${baseUrl}/universities/${uni.slug}/`;
   
   const displayName = uni.slug === "osh-state-university" ? "Osh State University" : uni.name;
@@ -66,6 +66,9 @@ export function generateUniversityMetadata(uni: University): Metadata {
     robots: {
       index: true,
       follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
       googleBot: {
         index: true,
         follow: true,
@@ -81,7 +84,7 @@ export function generateUniversityMetadata(uni: University): Metadata {
 
 export function generateUniversitySchemas(uni: University) {
   const brandName = "WCIEC Delhi";
-  const baseUrl = "https://wciecdelhi.com";
+  const baseUrl = "https://www.wciecdelhi.com";
   const absoluteUrl = `${baseUrl}/universities/${uni.slug}/`;
   const logoUrl = `${baseUrl}/logos/wciec-logo.webp`;
   
