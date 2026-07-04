@@ -6,7 +6,7 @@ import JASUClient from "./JASUClient";
 
 export const metadata: Metadata = (() => {
   const uni = universities.find(u => u.slug === "jalal-abad-state-university");
-  if (!uni) return { title: "Jalal-Abad State University Not Found" };
+  if (!uni) return { title: "Jalal Abad State University Not Found" };
   return generateUniversityMetadata(uni);
 })();
 

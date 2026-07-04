@@ -13,8 +13,8 @@ export function generateUniversityMetadata(uni: University): Metadata {
   let description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
 
   if (uni.slug === "jalal-abad-state-university") {
-    title = "JASU MBBS 2026 | Jalal-Abad State University"; // 44 chars
-    description = `Study MBBS at Jalal-Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
+    title = "JASU MBBS 2026 | Jalal Abad State University"; // 44 chars
+    description = `Study MBBS at Jalal Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
   } else if (uni.slug === "central-asian-international-medical-university") {
     title = "CAIMU MBBS 2026 | Central Asian International Medical University"; // 62 chars
     description = `Study MBBS at Central Asian International Medical University (CAIMU). Check CAIMU MBBS fees, admission, NMC, FMGE, and hostels. Apply via ${brandName}!`;
@@ -113,8 +113,8 @@ export function generateUniversitySchemas(uni: University) {
   let sameAsLinks: string[] = [];
 
   if (uni.slug === "jalal-abad-state-university") {
-    title = "JASU MBBS 2026 | Jalal-Abad State University";
-    description = `Study MBBS at Jalal-Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
+    title = "JASU MBBS 2026 | Jalal Abad State University";
+    description = `Study MBBS at Jalal Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
     alternateNames = ["JASU", "Jalal Abad State University", "Jalal-Abad State Medical University"];
     sameAsLinks = ["https://en.wikipedia.org/wiki/Jalal-Abad_State_University"];
   } else if (uni.slug === "central-asian-international-medical-university") {

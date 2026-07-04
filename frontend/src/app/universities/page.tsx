@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Medical Universities in Kyrgyzstan | WCIEC",
   description: "Explore top-ranked medical universities in Kyrgyzstan for Indian students. Get detailed info about NMC & WHO recognized colleges, low-cost MBBS fees, and direct admission for 2026.",
-  keywords: "Medical Universities in Kyrgyzstan, top MBBS colleges Kyrgyzstan, Osh State University fees, Jalal-Abad State University, Central Asian International Medical University, low cost MBBS abroad",
+  keywords: "Medical Universities in Kyrgyzstan, top MBBS colleges Kyrgyzstan, Osh State University fees, Jalal Abad State University, Central Asian International Medical University, low cost MBBS abroad",
   alternates: {
     canonical: "https://wciecdelhi.com/universities/",
   },
@@ -127,7 +127,7 @@ export default function UniversitiesPage() {
               </div>
 
               <div className="space-y-4 border-l-4 border-[#2563EB]/20 pl-4">
-                <h4 className="font-bold text-lg text-[#0F172A]">Jalal-Abad State University (JASU)</h4>
+                <h4 className="font-bold text-lg text-[#0F172A]">Jalal Abad State University (JASU)</h4>
                 <p className="text-sm text-gray-600">
                   JASU is another premier government university located in the city of Jalal-Abad. It is famous for its strict academic discipline, highly affordable fee structure, and excellent FMGE passing rates. The university provides comfortable hostels with dedicated Indian mess facilities.
                 </p>

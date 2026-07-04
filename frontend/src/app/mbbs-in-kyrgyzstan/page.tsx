@@ -46,7 +46,7 @@ const universities = [
     link: "/universities/osh-state-university/"
   },
   {
-    name: "Jalal-Abad State University (JASU)",
+    name: "Jalal Abad State University (JASU)",
     tuition: "USD 4,200 / year",
     hostel: "USD 600 / year",
     total: "INR 20-22 Lakhs",
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "Which Kyrgyzstan universities are NMC approved?",
-    answer: "Top NMC and WHO approved universities include Osh State University, Jalal-Abad State University (JASU), Jalal-Abad International University, Central Asian International Medical University (CAIMU), and Osh International Medical University."
+    answer: "Top NMC and WHO approved universities include Osh State University, Jalal Abad State University (JASU), Jalal-Abad International University, Central Asian International Medical University (CAIMU), and Osh International Medical University."
   }
 ];
 
@@ -484,7 +484,7 @@ export default function MBBSInKyrgyzstanPage() {
                 </div>
 
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4"><Link href="/universities/jalal-abad-state-university" className="hover:text-medical transition-colors">2. Jalal-Abad State University (JASU)</Link></h3>
+                  <h3 className="text-2xl font-bold text-navy mb-4"><Link href="/universities/jalal-abad-state-university" className="hover:text-medical transition-colors">2. Jalal Abad State University (JASU)</Link></h3>
                   <p className="text-gray-600 flex-grow">A prestigious government institution offering an excellent balance of affordable tuition fees and premium education. Study MBBS at JASU, a very popular option among Indian students looking for an NMC Approved Medical University Kyrgyzstan.</p>
                 </div>
 

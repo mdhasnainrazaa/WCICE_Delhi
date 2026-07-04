@@ -159,9 +159,9 @@ export const universities: University[] = [
   },
   {
     slug: "jalal-abad-state-university",
-    name: "Jalal-Abad State University",
+    name: "Jalal Abad State University",
     location: "Jalal-Abad, Kyrgyzstan",
-    about: "Jalal-Abad State University (JASU) is a premier public university in Kyrgyzstan providing high-quality medical education at an affordable cost. Known formally as Jalal-Abad State Medical University, it offers one of the best MBBS programs for international students.",
+    about: "Jalal Abad State University (JASU) is a premier public university in Kyrgyzstan providing high-quality medical education at an affordable cost. Known formally as Jalal-Abad State Medical University, it offers one of the best MBBS programs for international students.",
     established: "1993",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
     quickFacts: [
@@ -190,10 +190,10 @@ export const universities: University[] = [
       "Original Passport"
     ],
     faqs: [
-      { question: "Is Jalal-Abad State University NMC Approved?", answer: "Yes, Jalal-Abad State University (JASU) is fully recognized by the National Medical Commission (NMC) and the World Health Organization (WHO), making the degree valid in India." },
-      { question: "What are the MBBS fees at Jalal-Abad State University?", answer: "The total fee for the entire MBBS program at Jalal-Abad State University is approximately ₹34.69 Lakhs (or $38,550), which includes tuition, hostel, and visa charges." },
+      { question: "Is Jalal Abad State University NMC Approved?", answer: "Yes, Jalal Abad State University (JASU) is fully recognized by the National Medical Commission (NMC) and the World Health Organization (WHO), making the degree valid in India." },
+      { question: "What are the MBBS fees at Jalal Abad State University?", answer: "The total fee for the entire MBBS program at Jalal Abad State University is approximately ₹34.69 Lakhs (or $38,550), which includes tuition, hostel, and visa charges." },
       { question: "Is JASU good for Indian students?", answer: "Absolutely. JASU is highly recommended for Indian students. It offers a 100% English medium curriculum, a dedicated Indian mess, separate hostels, and special coaching for the FMGE/NExT licensing exam." },
-      { question: "How to apply for MBBS at Jalal-Abad State University?", answer: "You can apply for MBBS at Jalal-Abad State University through WCIEC Delhi. The process includes submitting your 10+2 marks and NEET scorecard, receiving the admission letter, and proceeding with visa processing." },
+      { question: "How to apply for MBBS at Jalal Abad State University?", answer: "You can apply for MBBS at Jalal Abad State University through WCIEC Delhi. The process includes submitting your 10+2 marks and NEET scorecard, receiving the admission letter, and proceeding with visa processing." },
       { question: "Is Jalal-Abad State Medical University safe for international students?", answer: "Yes, Kyrgyzstan is very safe and the JASU campus provides 24/7 security with active wardens in hostels." }
     ]
   },

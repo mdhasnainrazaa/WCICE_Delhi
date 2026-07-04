@@ -261,7 +261,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
           required
         >
           <option value="" disabled>Choose Institution</option>
-          <option value="Jalal-Abad State University">Jalal-Abad State University</option>
+          <option value="Jalal Abad State University">Jalal Abad State University</option>
           <option value="Jalal-Abad International University">Jalal-Abad International University</option>
           <option value="Osh State University">Osh State University</option>
           <option value="Osh International Medical University">Osh International Medical University</option>

@@ -75,7 +75,7 @@ const universities = [
   },
   {
     abbr: "JASU",
-    name: "Jalal-Abad State University",
+    name: "Jalal Abad State University",
     city: "Jalalabad",
     image: "/images/optimized/jalal-abad-banner.webp",
     highlight: "Government University",

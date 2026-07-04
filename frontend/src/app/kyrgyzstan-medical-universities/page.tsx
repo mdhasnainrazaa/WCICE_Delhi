@@ -45,7 +45,7 @@ const universitiesList = [
     features: ["Oldest Government Faculty", "15+ Affiliated Hospitals", "NExT Exam Prep Classes", "Pure Indian Messes"]
   },
   {
-    name: "Jalal-Abad State University",
+    name: "Jalal Abad State University",
     est: "1993",
     type: "Government University",
     tuition: "USD 4,200 / Year",
@@ -89,7 +89,7 @@ const universitiesList = [
 const faqs = [
   {
     question: "Which is the best university in Kyrgyzstan for Indian medical students?",
-    answer: "Osh State University and Jalal-Abad State University are government-recognized universities and are highly recommended. Osh State is the oldest medical faculty in the country and has the largest clinical hospitals, whereas Jalal-Abad State offers premium academic infra and highly experienced professors."
+    answer: "Osh State University and Jalal Abad State University are government-recognized universities and are highly recommended. Osh State is the oldest medical faculty in the country and has the largest clinical hospitals, whereas Jalal-Abad State offers premium academic infra and highly experienced professors."
   },
   {
     question: "What is the medium of teaching in Kyrgyzstan medical universities?",

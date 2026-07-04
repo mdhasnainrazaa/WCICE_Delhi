@@ -17,7 +17,7 @@ const universities = [
     tags: ["Top Ranked", "NMC Approved"]
   },
   {
-    name: "Jalal-Abad State University",
+    name: "Jalal Abad State University",
     location: "Kyrgyzstan",
     fees: "$3,200/Year",
     image: "/images/optimized/jalal-abad-banner.webp",

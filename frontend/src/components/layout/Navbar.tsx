@@ -27,7 +27,7 @@ const navLinks = [
     name: "University", 
     href: "/universities/",
     dropdown: [
-      { name: "Jalal-Abad State University", href: "/universities/jalal-abad-state-university/" },
+      { name: "Jalal Abad State University", href: "/universities/jalal-abad-state-university/" },
       { name: "Jalal-Abad International University", href: "/universities/jalal-abad-international-university/" },
       { name: "Osh State University International Medical Faculty", href: "/universities/osh-state-university/" },
       { name: "Central Asian International Medical University", href: "/universities/central-asian-international-medical-university/" },

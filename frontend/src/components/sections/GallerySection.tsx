@@ -171,7 +171,7 @@ const INITIAL_ITEMS = [
     type: "video" as const,
     url: "/images/jasu-gallery/jalabasState.mp4",
     thumbnail: "/images/optimized/jalal-abad-banner.webp",
-    title: "Jalal-Abad State University Campus Tour",
+    title: "Jalal Abad State University Campus Tour",
     category: "Campus Tour",
     description: "Explore the modern academic facilities, smart classrooms, and clinical learning centers at JASU."
   },
