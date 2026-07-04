@@ -95,7 +95,7 @@ export default function OSUClient() {
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   return (
-    <main className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#14B8A6] selection:text-white">
+    <article className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#14B8A6] selection:text-white">
 
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
@@ -452,6 +452,56 @@ export default function OSUClient() {
         </div>
       </section>
 
+      {/* DOCUMENTS & VISA PROCESS */}
+      <section className="py-24 bg-white border-y border-[#E2E8F0]">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <SectionHeading subtitle="Admissions" title="Required Documents & Visa Process" center />
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
+            <div className="bg-[#F8FAFC] p-10 rounded-[3rem] border border-[#E2E8F0] shadow-sm">
+              <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+                <BookOpen className="text-[#2563EB]" /> Required Documents
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "10th and 12th Marksheets (Original)",
+                  "NEET Scorecard (Valid)",
+                  "Original Passport (Min. 18 months validity)",
+                  "10 Passport-size photos (White background)",
+                  "Medical Fitness Certificate (HIV Negative)",
+                  "Birth Certificate (Optional/If under 18)"
+                ].map((doc, i) => (
+                  <li key={i} className="flex gap-3 text-[#64748B] font-medium text-sm">
+                    <CheckCircle2 size={18} className="text-[#14B8A6] shrink-0" /> {doc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-[#F8FAFC] p-10 rounded-[3rem] border border-[#E2E8F0] shadow-sm">
+              <h3 className="text-2xl font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+                <Globe2 className="text-[#F97316]" /> Student Visa Process
+              </h3>
+              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-[11px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+                {[
+                  { step: "1", title: "Invitation Letter", desc: "WCIEC processes the official invitation letter from the Ministry of Education." },
+                  { step: "2", title: "Visa Application", desc: "Submission of documents to the Embassy in New Delhi." },
+                  { step: "3", title: "E-Visa Issuance", desc: "The student E-Visa is issued within 10-15 working days." }
+                ].map((v, i) => (
+                  <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full border border-white bg-[#2563EB] text-white font-bold text-xs shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                      {v.step}
+                    </div>
+                    <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
+                      <h4 className="font-bold text-[#0F172A] mb-1">{v.title}</h4>
+                      <p className="text-xs text-[#64748B] font-medium">{v.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ SECTION */}
       <section className="py-24 bg-white" id="faq">
         <div className="max-w-3xl mx-auto px-6">
@@ -496,6 +546,6 @@ export default function OSUClient() {
         </div>
       </section>
 
-    </main>
+    </article>
   );
 }

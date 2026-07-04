@@ -86,7 +86,7 @@ export default function OIMUClient() {
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   return (
-    <main className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#0EA5E9] selection:text-white">
+    <article className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#0EA5E9] selection:text-white">
 
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
@@ -230,6 +230,32 @@ export default function OIMUClient() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4.5 ── RECOGNITION & ACCREDITATIONS ── */}
+      <section className="py-16 bg-white border-y border-[#E2E8F0]">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <SectionHeading subtitle="Global Recognition" title="Accreditations & Approvals" center />
+          <p className="text-[#64748B] max-w-3xl mx-auto mb-12">
+            Osh International Medical University is officially recognized by the world's leading medical councils and organizations, ensuring your degree is valid globally.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { name: "NMC", sub: "National Medical Commission (India)" },
+              { name: "WHO", sub: "World Health Organization" },
+              { name: "FAIMER", sub: "Foundation for Advancement of Int. Medical Education" },
+              { name: "WFME", sub: "World Federation for Medical Education" }
+            ].map((acc, i) => (
+              <div key={i} className="p-6 border border-[#E2E8F0] rounded-3xl bg-[#F8FAFC] hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 mx-auto bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm border border-[#E2E8F0]">
+                  <ShieldCheck size={28} className="text-[#0057B8]" />
+                </div>
+                <h4 className="font-bold text-lg text-[#0F172A]">{acc.name}</h4>
+                <p className="text-xs text-[#64748B] font-semibold mt-2">{acc.sub}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -667,6 +693,6 @@ export default function OIMUClient() {
         </div>
       </section>
 
-    </main>
+    </article>
   );
 }

@@ -199,7 +199,7 @@ export default function JAIUClient() {
   const { openModal } = useApplyModal();
 
   return (
-    <main className="bg-white min-h-screen">
+    <article className="bg-white min-h-screen">
 
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
@@ -374,6 +374,32 @@ export default function JAIUClient() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── RECOGNITION & ACCREDITATIONS ── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <SectionHeading eyebrow="Global Recognition" title="Accreditations & Approvals" center />
+          <p className="text-gray-600 max-w-3xl mx-auto mb-12">
+            Jalal-Abad International University is officially recognized by the world's leading medical councils and organizations, ensuring your degree is valid globally.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { name: "NMC", sub: "National Medical Commission (India)" },
+              { name: "WHO", sub: "World Health Organization" },
+              { name: "FAIMER", sub: "Foundation for Advancement of Int. Medical Education" },
+              { name: "WFME", sub: "World Federation for Medical Education" }
+            ].map((acc, i) => (
+              <div key={i} className="p-6 border border-gray-100 rounded-3xl bg-gray-50 hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center mb-4 shadow-sm border border-gray-100">
+                  <ShieldCheck size={28} className="text-[#1a4db8]" />
+                </div>
+                <h4 className="font-black text-lg text-[#0B1F33]">{acc.name}</h4>
+                <p className="text-xs text-gray-500 font-bold mt-2">{acc.sub}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -557,6 +583,55 @@ export default function JAIUClient() {
         </div>
       </section>
 
+      {/* ── DOCUMENTS & VISA PROCESS ── */}
+      <section className="py-24 bg-[#f8f9fc]">
+        <div className="max-w-7xl mx-auto px-4">
+          <SectionHeading eyebrow="Admissions" title="Required Documents & Visa Process" />
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl">
+              <h3 className="text-2xl font-black text-[#0B1F33] mb-6 flex items-center gap-3">
+                <BookOpen className="text-[#1a4db8]" /> Required Documents
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  "10th and 12th Marksheets (Original)",
+                  "NEET Scorecard (Valid)",
+                  "Original Passport (Min. 18 months validity)",
+                  "10 Passport-size photos (White background)",
+                  "Medical Fitness Certificate (HIV Negative)",
+                  "Birth Certificate (Optional/If under 18)"
+                ].map((doc, i) => (
+                  <li key={i} className="flex gap-3 text-gray-700 font-medium text-sm">
+                    <CheckCircle2 size={18} className="text-[#10b981] shrink-0" /> {doc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl">
+              <h3 className="text-2xl font-black text-[#0B1F33] mb-6 flex items-center gap-3">
+                <Globe2 className="text-[#e2a613]" /> Student Visa Process
+              </h3>
+              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-[11px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+                {[
+                  { step: "1", title: "Invitation Letter", desc: "WCIEC processes the official invitation letter from the Ministry of Education, Kyrgyzstan." },
+                  { step: "2", title: "Visa Application", desc: "Submission of documents to the Embassy of Kyrgyzstan in New Delhi." },
+                  { step: "3", title: "E-Visa Issuance", desc: "The student E-Visa is issued within 10-15 working days." }
+                ].map((v, i) => (
+                  <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full border border-white bg-[#1a4db8] text-white font-bold text-xs shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                      {v.step}
+                    </div>
+                    <div className="w-[calc(100%-3rem)] md:w-[calc(50%-2.5rem)] bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                      <h4 className="font-bold text-[#0B1F33] mb-1">{v.title}</h4>
+                      <p className="text-xs text-gray-500 font-medium">{v.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ SECTION ── */}
       <section className="py-24 bg-gray-50">
@@ -599,6 +674,6 @@ export default function JAIUClient() {
         </div>
       </section>
 
-    </main>
+    </article>
   );
 }

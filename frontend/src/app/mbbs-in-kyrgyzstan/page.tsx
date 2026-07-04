@@ -479,7 +479,7 @@ export default function MBBSInKyrgyzstanPage() {
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">1. Osh State University</h3>
+                  <h3 className="text-2xl font-bold text-navy mb-4"><Link href="/universities/osh-state-university" className="hover:text-medical transition-colors">1. Osh State University</Link></h3>
                   <p className="text-gray-600 flex-grow">Recognized as the <strong>Best Medical University in Kyrgyzstan</strong>, Osh State University offers world-class education with top international ranking. It provides modern facilities, massive clinical exposure, and is fully recognized by WHO and NMC. Fees are highly subsidized.</p>
                 </div>
 
@@ -489,7 +489,7 @@ export default function MBBSInKyrgyzstanPage() {
                 </div>
 
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">3. Jalal-Abad International University</h3>
+                  <h3 className="text-2xl font-bold text-navy mb-4"><Link href="/universities/jalal-abad-international-university" className="hover:text-medical transition-colors">3. Jalal-Abad International University</Link></h3>
                   <p className="text-gray-600 flex-grow">Known for its modern infrastructure, excellent English-medium curriculum, and focus on international students, making it a great option for MBBS after NEET in Kyrgyzstan.</p>
                 </div>
 
@@ -499,7 +499,7 @@ export default function MBBSInKyrgyzstanPage() {
                 </div>
 
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full md:col-span-2 lg:col-span-1 lg:col-start-1 lg:ml-[50%] lg:w-[calc(200%+2rem)] xl:w-full xl:col-span-2 xl:ml-0 xl:max-w-3xl xl:mx-auto">
-                  <h3 className="text-2xl font-bold text-navy mb-4">5. Osh International Medical University</h3>
+                  <h3 className="text-2xl font-bold text-navy mb-4"><Link href="/universities/osh-international-medical-university" className="hover:text-medical transition-colors">5. Osh International Medical University</Link></h3>
                   <p className="text-gray-600 flex-grow">A highly recommended university offering premium medical coaching specifically tailored for Indian students aiming to clear the FMGE/NExT screening test efficiently.</p>
                 </div>
               </div>
