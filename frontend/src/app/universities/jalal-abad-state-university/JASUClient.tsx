@@ -79,7 +79,7 @@ export default function JASUClient() {
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   return (
-    <main className="bg-[#F8FAFC] min-h-screen font-inter">
+    <article className="bg-[#F8FAFC] min-h-screen font-inter">
 
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
@@ -99,10 +99,10 @@ export default function JASUClient() {
                 <Globe2 size={16} /> MD / MBBS in Kyrgyzstan (MD Physician equivalent to MBBS)
               </div>
               <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
-                Jalal-Abad State <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University</span>
+                Jalal-Abad State <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">University (JASU)</span>
               </h1>
               <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
-                Study MD / MBBS (MD Physician equivalent to MBBS) at Jalal-Abad State University, a top-ranked government university in Kyrgyzstan. Start your medical journey with a 30-year legacy of excellence.
+                Study MD / MBBS (MD Physician equivalent to MBBS) at Jalal-Abad State University (JASU), a top-ranked government university in Kyrgyzstan. Start your medical journey with a 30-year legacy of excellence at Jalal-Abad State Medical University.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
@@ -186,10 +186,10 @@ export default function JASUClient() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 to-transparent" />
             </div>
             <div>
-              <SectionHeading eyebrow="Academic Heritage" title="About Jalal-Abad State University" />
+              <SectionHeading eyebrow="Academic Heritage" title="About Jalal-Abad State University (JASU)" />
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
                 <p>
-                  Jalal-Abad State University (JASU), named after B. Osmonov, is one of the leading medical universities in Kyrgyzstan established in 1993. The university provides globally recognized MBBS education with modern infrastructure and advanced clinical training.
+                  Jalal-Abad State University (JASU), also referred to as Jalal-Abad State Medical University, is one of the leading medical universities in Kyrgyzstan established in 1993. The university provides globally recognized MBBS education with modern infrastructure and advanced clinical training. Study MBBS at JASU to experience high patient flow and a dedicated Indian student community.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-8 mt-12">
                   <div className="p-6 bg-white rounded-[24px] shadow-sm border border-gray-100">
@@ -285,7 +285,7 @@ export default function JASUClient() {
       <section className="py-24 bg-[#0F172A] text-white relative overflow-hidden" id="fee-structure">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <PromDown 
-            title="Jalal-Abad State University - Affordable MBBS Fee Structure" 
+            title="Jalal-Abad State University (JASU) - Affordable MBBS Fees" 
             subtitle="Pricing" 
             defaultOpen={true} 
             staticOnMobile={true}
@@ -539,11 +539,11 @@ export default function JASUClient() {
           <PromDown title="Frequently Asked Questions" subtitle="FAQs" defaultOpen={false}>
             <div className="space-y-3 mt-4">
               {[
-                { q: "Is JASU NMC approved?", a: "Yes, Jalal-Abad State University is fully recognized by the National Medical Commission (NMC) and WHO, making the degree valid for practice in India after passing NExT/FMGE." },
-                { q: "What is the total MBBS fees?", a: "The total fee for the entire 6-year program is approximately ₹34.69 Lakhs, which covers tuition, hostel, and initial processing." },
-                { q: "Is Indian food available?", a: "Yes, the university has a dedicated Indian mess on campus serving North and South Indian food prepared by Indian chefs." },
-                { q: "Is NEET required?", a: "Yes, qualifying NEET-UG is mandatory for all Indian students who wish to study MBBS abroad and later practice in India." },
-                { q: "What is the course duration?", a: "The duration is 5 years of academic study followed by a 1-year mandatory clinical internship (5+1 years)." },
+                { q: "Is Jalal-Abad State University NMC Approved?", a: "Yes, Jalal-Abad State University (JASU) is fully recognized by the National Medical Commission (NMC) and WHO, making the degree valid for practice in India after passing NExT/FMGE." },
+                { q: "What are the MBBS fees at Jalal-Abad State University?", a: "The total fee for the entire program is approximately ₹34.69 Lakhs, which covers tuition, hostel, and initial processing." },
+                { q: "Is JASU good for Indian students?", a: "Absolutely. JASU is highly recommended for Indian students. It offers a 100% English medium curriculum, a dedicated Indian mess, separate hostels, and special coaching for the FMGE/NExT licensing exam." },
+                { q: "How to apply for MBBS at Jalal-Abad State University?", a: "You can apply for MBBS at Jalal-Abad State University through WCIEC Delhi. The process involves submitting your 10+2 marks and NEET scorecard, getting the admission letter, and proceeding with visa processing." },
+                { q: "What is the course duration at JASU?", a: "The duration is 5 years of academic study followed by a 1-year mandatory clinical internship (5+1 years)." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white border border-gray-100 p-4 rounded-xl shadow-sm">
                   <h4 className="text-sm font-black text-[#2563EB] mb-2">{faq.q}</h4>
@@ -582,6 +582,6 @@ export default function JASUClient() {
         </div>
       </section>
 
-    </main>
+    </article>
   );
 }

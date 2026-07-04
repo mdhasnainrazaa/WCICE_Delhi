@@ -83,7 +83,7 @@ export default function CAIMUClient() {
   const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
 
   return (
-    <main className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#F97316] selection:text-white">
+    <article className="bg-[#F8FAFC] min-h-screen font-inter overflow-x-hidden selection:bg-[#F97316] selection:text-white">
 
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
@@ -103,10 +103,10 @@ export default function CAIMUClient() {
                 <Globe2 size={16} /> MD / MBBS in Kyrgyzstan (MD Physician equivalent to MBBS)
               </div>
               <h1 className="text-5xl md:text-[64px] font-bold text-white leading-[1.1] mb-6">
-                Central Asian International <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">Medical University</span>
+                Central Asian International <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F97316] to-[#FACC15]">Medical University (CAIMU)</span>
               </h1>
               <p className="text-lg text-white/80 mb-10 leading-relaxed max-w-2xl">
-                Study MD / MBBS (MD Physician equivalent to MBBS) at CAIMU, Kyrgyzstan with modern medical education, clinical exposure, affordable fees, and international student support.
+                Study MD / MBBS (MD Physician equivalent to MBBS) at Central Asian International Medical University (CAIMU), Kyrgyzstan. We offer modern medical education, clinical exposure, affordable CAIMU MBBS fees, and international student support.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-16">
@@ -170,13 +170,13 @@ export default function CAIMUClient() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <SectionHeading subtitle="Overview" title="About Central Asian International Medical University" />
+              <SectionHeading subtitle="Overview" title="About Central Asian International Medical University (CAIMU)" />
               <div className="space-y-6 text-[#64748B] text-lg leading-relaxed">
                 <p>
-                  CAIMU was established in 2016 and is located in the beautiful city of Jalal-Abad, Kyrgyzstan. The university focuses on delivering quality medical education through a combination of theoretical learning, practical training, extensive clinical exposure, and research-oriented academic development.
+                  Central Asian International Medical University (CAIMU) was established in 2016 and is located in the beautiful city of Jalal-Abad, Kyrgyzstan. The university focuses on delivering quality medical education through a combination of theoretical learning, practical training, extensive clinical exposure, and research-oriented academic development.
                 </p>
                 <p>
-                  It enthusiastically welcomes international students and provides a safe, multicultural learning environment designed to nurture the global medical leaders of tomorrow.
+                  CAIMU enthusiastically welcomes international students and provides a safe, multicultural learning environment designed to nurture the global medical leaders of tomorrow. Pursuing CAIMU MBBS ensures a bright future for aspiring doctors.
                 </p>
               </div>
               <div className="flex gap-4 mt-8">
@@ -381,7 +381,7 @@ export default function CAIMUClient() {
       <section className="py-24 bg-white" id="fee-structure">
         <div className="max-w-[1200px] mx-auto px-6">
           <PromDown 
-            title="Central Asian International Medical University - Affordable MBBS Fee Structure" 
+            title="Central Asian International Medical University (CAIMU) - Affordable MBBS Fees" 
             subtitle="Affordable Education" 
             defaultOpen={true}
             staticOnMobile={true}
@@ -497,12 +497,11 @@ export default function CAIMUClient() {
           <PromDown title="Frequently Asked Questions" subtitle="Got Questions?" defaultOpen={false}>
             <div className="space-y-4 mt-6" itemScope itemType="https://schema.org/FAQPage">
               {[
-                { q: "Where is Central Asian International Medical University located?", a: "CAIMU is located in Jalal-Abad, Kyrgyzstan." },
-                { q: "When was CAIMU established?", a: "CAIMU was established in 2016." },
-                { q: "Does CAIMU offer MBBS for international students?", a: "Yes, CAIMU offers MD/MBBS education for local and international students." },
-                { q: "Is hostel facility available at CAIMU?", a: "Yes, CAIMU provides safe hostel and mess facilities for students." },
-                { q: "Does CAIMU provide FMGE/NExT coaching?", a: "Yes, CAIMU provides coaching support for Indian students preparing for FMGE/NExT." },
-                { q: "What is the duration of MBBS at CAIMU?", a: "The MD/MBBS program duration is 5 years." }
+                { q: "Is Central Asian International Medical University NMC Approved?", a: "Yes, Central Asian International Medical University (CAIMU) is recognized by international medical bodies including WHO, and its graduates are eligible to sit for the NMC/FMGE screening test in India." },
+                { q: "What are the MBBS fees at Central Asian International Medical University?", a: "The total package for MBBS at CAIMU is around ₹24.48 Lakhs (or $28,800) for the 5-year program, which is highly affordable and includes tuition, mess, and hostel facilities." },
+                { q: "Is CAIMU good for Indian students?", a: "Yes, CAIMU Kyrgyzstan is excellent for Indian students. There is a large community of Indian students studying at CAIMU, and the university provides safe hostels, Indian food, and NExT coaching." },
+                { q: "How to apply for MBBS at Central Asian International Medical University?", a: "To apply for CAIMU MBBS, you need to submit your academic transcripts and NEET result to WCIEC Delhi, who will handle your admission letter and visa process seamlessly." },
+                { q: "What is the duration of MBBS at CAIMU?", a: "The MD/MBBS program duration is 5 years of academic and clinical training." }
               ].map((item, i) => (
                 <FAQItem key={i} question={item.q} answer={item.a} />
               ))}
@@ -538,6 +537,6 @@ export default function CAIMUClient() {
         </div>
       </section>
 
-    </main>
+    </article>
   );
 }

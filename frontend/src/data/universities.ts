@@ -161,7 +161,7 @@ export const universities: University[] = [
     slug: "jalal-abad-state-university",
     name: "Jalal-Abad State University",
     location: "Jalal-Abad, Kyrgyzstan",
-    about: "Jalal-Abad State University (JASU) is a premier public university in Kyrgyzstan providing high-quality medical education at an affordable cost.",
+    about: "Jalal-Abad State University (JASU) is a premier public university in Kyrgyzstan providing high-quality medical education at an affordable cost. Known formally as Jalal-Abad State Medical University, it offers one of the best MBBS programs for international students.",
     established: "1993",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
     quickFacts: [
@@ -190,7 +190,11 @@ export const universities: University[] = [
       "Original Passport"
     ],
     faqs: [
-      { question: "Is JASU safe for Indian students?", answer: "Yes, Kyrgyzstan is very safe and the university provides 24/7 security." }
+      { question: "Is Jalal-Abad State University NMC Approved?", answer: "Yes, Jalal-Abad State University (JASU) is fully recognized by the National Medical Commission (NMC) and the World Health Organization (WHO), making the degree valid in India." },
+      { question: "What are the MBBS fees at Jalal-Abad State University?", answer: "The total fee for the entire MBBS program at Jalal-Abad State University is approximately ₹34.69 Lakhs (or $38,550), which includes tuition, hostel, and visa charges." },
+      { question: "Is JASU good for Indian students?", answer: "Absolutely. JASU is highly recommended for Indian students. It offers a 100% English medium curriculum, a dedicated Indian mess, separate hostels, and special coaching for the FMGE/NExT licensing exam." },
+      { question: "How to apply for MBBS at Jalal-Abad State University?", answer: "You can apply for MBBS at Jalal-Abad State University through WCIEC Delhi. The process includes submitting your 10+2 marks and NEET scorecard, receiving the admission letter, and proceeding with visa processing." },
+      { question: "Is Jalal-Abad State Medical University safe for international students?", answer: "Yes, Kyrgyzstan is very safe and the JASU campus provides 24/7 security with active wardens in hostels." }
     ]
   },
   {
@@ -232,7 +236,7 @@ export const universities: University[] = [
     slug: "central-asian-international-medical-university",
     name: "Central Asian International Medical University",
     location: "Jalal-Abad, Kyrgyzstan",
-    about: "Central Asian International Medical University (CAIMU) offers innovative medical programs designed to prepare students for global healthcare challenges.",
+    about: "Central Asian International Medical University (CAIMU) offers innovative medical programs designed to prepare students for global healthcare challenges. CAIMU Kyrgyzstan is known for its modern infrastructure and strong clinical exposure.",
     established: "2018",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
     quickFacts: [
@@ -260,7 +264,10 @@ export const universities: University[] = [
       "NEET Result"
     ],
     faqs: [
-      { question: "Are there Indian students at CAIMU?", answer: "Yes, there is a large community of Indian students studying at CAIMU." }
+      { question: "Is Central Asian International Medical University NMC Approved?", answer: "Yes, Central Asian International Medical University (CAIMU) is recognized by international medical bodies including WHO, and its graduates are eligible to sit for the NMC/FMGE screening test in India." },
+      { question: "What are the MBBS fees at Central Asian International Medical University?", answer: "The total package for MBBS at CAIMU is around ₹24.48 Lakhs (or $28,800) for the 5-year program, which is highly affordable and includes tuition, mess, and hostel facilities." },
+      { question: "Is CAIMU good for Indian students?", answer: "Yes, CAIMU Kyrgyzstan is excellent for Indian students. There is a large community of Indian students studying at CAIMU, and the university provides safe hostels, Indian food, and NExT coaching." },
+      { question: "How to apply for MBBS at Central Asian International Medical University?", answer: "To apply for CAIMU MBBS, you need to submit your academic transcripts and NEET result to WCIEC Delhi, who will handle your admission letter and visa process seamlessly." }
     ]
   },
   {

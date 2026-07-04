@@ -9,13 +9,18 @@ export function generateUniversityMetadata(uni: University): Metadata {
   const displayName = uni.slug === "osh-state-university" ? "Osh State University" : uni.name;
   const countryName = uni.location.split(",")[1]?.trim() || "Kyrgyzstan";
 
-  // Dynamic search title matching the user requirements (Under 65 chars)
-  const title = `${displayName} MBBS Fees 2026 | ${countryName} | WCIEC`;
+  let title = `${displayName} MBBS Fees 2026 | ${countryName} | WCIEC`;
+  let description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
+
+  if (uni.slug === "jalal-abad-state-university") {
+    title = "JASU MBBS 2026 | Jalal-Abad State University"; // 44 chars
+    description = `Study MBBS at Jalal-Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
+  } else if (uni.slug === "central-asian-international-medical-university") {
+    title = "CAIMU MBBS 2026 | Central Asian International Medical University"; // 62 chars
+    description = `Study MBBS at Central Asian International Medical University (CAIMU). Check CAIMU MBBS fees, admission, NMC, FMGE, and hostels. Apply via ${brandName}!`;
+  }
   
-  // Custom meta description containing all target keywords within 150-160 characters
-  const description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
-  
-  const defaultKeywords = [
+  let defaultKeywords = [
     displayName,
     `${displayName} MBBS`,
     `MBBS in ${displayName}`,
@@ -29,6 +34,12 @@ export function generateUniversityMetadata(uni: University): Metadata {
     "Study MBBS Abroad",
     `MBBS in ${countryName}`
   ];
+
+  if (uni.slug === "jalal-abad-state-university") {
+    defaultKeywords = [...defaultKeywords, "JASU", "JASU MBBS", "Jalal Abad State Medical University", "MBBS in Jalal Abad State University", "Jalal Abad State University MBBS"];
+  } else if (uni.slug === "central-asian-international-medical-university") {
+    defaultKeywords = [...defaultKeywords, "CAIMU", "CAIMU MBBS", "CAIMU Kyrgyzstan", "Central Asian International Medical University MBBS", "MBBS in Central Asian International Medical University"];
+  }
 
   const imageUrl = uni.bannerImage 
     ? `${baseUrl}${uni.bannerImage}`
@@ -96,6 +107,22 @@ export function generateUniversitySchemas(uni: University) {
     ? `${baseUrl}${uni.bannerImage}`
     : `${baseUrl}/images/osu-gallery/osh-state-university-campus.webp`;
 
+  let title = `${displayName} MBBS Fees 2026 | ${countryName} | WCIEC`;
+  let description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
+  let alternateNames: string[] = [displayName];
+  let sameAsLinks: string[] = [];
+
+  if (uni.slug === "jalal-abad-state-university") {
+    title = "JASU MBBS 2026 | Jalal-Abad State University";
+    description = `Study MBBS at Jalal-Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
+    alternateNames = ["JASU", "Jalal Abad State University", "Jalal-Abad State Medical University"];
+    sameAsLinks = ["https://en.wikipedia.org/wiki/Jalal-Abad_State_University"];
+  } else if (uni.slug === "central-asian-international-medical-university") {
+    title = "CAIMU MBBS 2026 | Central Asian International Medical University";
+    description = `Study MBBS at Central Asian International Medical University (CAIMU). Check CAIMU MBBS fees, admission, NMC, FMGE, and hostels. Apply via ${brandName}!`;
+    alternateNames = ["CAIMU", "Central Asian International Medical University"];
+  }
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -133,8 +160,8 @@ export function generateUniversitySchemas(uni: University) {
     "@type": "WebPage",
     "@id": `${absoluteUrl}#webpage`,
     "url": absoluteUrl,
-    "name": `${displayName} MBBS Fees 2026 | ${countryName} | WCIEC`,
-    "description": `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`,
+    "name": title,
+    "description": description,
     "isPartOf": {
       "@type": "WebSite",
       "@id": `${baseUrl}/#website`,
@@ -155,11 +182,12 @@ export function generateUniversitySchemas(uni: University) {
     "@type": "CollegeOrUniversity",
     "@id": `${absoluteUrl}#university`,
     "name": uni.name,
-    "alternateName": displayName,
+    "alternateName": alternateNames,
     "description": uni.about,
     "url": absoluteUrl,
     "logo": logoUrl,
     "image": campusImageUrl,
+    "sameAs": sameAsLinks.length > 0 ? sameAsLinks : undefined,
     "foundingDate": uni.established || "1939",
     "address": {
       "@type": "PostalAddress",
@@ -188,11 +216,12 @@ export function generateUniversitySchemas(uni: University) {
     "@type": "MedicalCollege",
     "@id": `${absoluteUrl}#medicalcollege`,
     "name": uni.name,
-    "alternateName": displayName,
+    "alternateName": alternateNames,
     "description": uni.about,
     "url": absoluteUrl,
     "logo": logoUrl,
     "image": campusImageUrl,
+    "sameAs": sameAsLinks.length > 0 ? sameAsLinks : undefined,
     "foundingDate": uni.established || "1939",
     "address": {
       "@type": "PostalAddress",
@@ -238,8 +267,8 @@ export function generateUniversitySchemas(uni: University) {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${absoluteUrl}#article`,
-    "headline": `${displayName} MBBS Fees 2026 | ${countryName}`,
-    "description": `Comprehensive guide to studying MBBS at ${displayName}, ${countryName}. Learn about fees structure, eligibility criteria, admission process, hostel facilities, and NMC approval details.`,
+    "headline": title,
+    "description": description,
     "inLanguage": "en-US",
     "mainEntityOfPage": absoluteUrl,
     "image": campusImageUrl,

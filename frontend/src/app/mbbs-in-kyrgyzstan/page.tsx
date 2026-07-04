@@ -46,7 +46,7 @@ const universities = [
     link: "/universities/osh-state-university/"
   },
   {
-    name: "Jalal-Abad State University",
+    name: "Jalal-Abad State University (JASU)",
     tuition: "USD 4,200 / year",
     hostel: "USD 600 / year",
     total: "INR 20-22 Lakhs",
@@ -62,7 +62,7 @@ const universities = [
     link: "/universities/jalal-abad-international-university/"
   },
   {
-    name: "Central Asian International Medical University",
+    name: "Central Asian International Medical University (CAIMU)",
     tuition: "USD 3,200 / year",
     hostel: "USD 500 / year",
     total: "INR 15-17 Lakhs",
@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     question: "Which Kyrgyzstan universities are NMC approved?",
-    answer: "Top NMC and WHO approved universities include Osh State University, Jalal-Abad State University, Jalal-Abad International University, Central Asian International Medical University, and Osh International Medical University."
+    answer: "Top NMC and WHO approved universities include Osh State University, Jalal-Abad State University (JASU), Jalal-Abad International University, Central Asian International Medical University (CAIMU), and Osh International Medical University."
   }
 ];
 
@@ -484,8 +484,8 @@ export default function MBBSInKyrgyzstanPage() {
                 </div>
 
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">2. Jalal-Abad State University</h3>
-                  <p className="text-gray-600 flex-grow">A prestigious government institution offering an excellent balance of affordable tuition fees and premium education. Very popular among Indian students looking for an NMC Approved Medical University Kyrgyzstan.</p>
+                  <h3 className="text-2xl font-bold text-navy mb-4"><Link href="/universities/jalal-abad-state-university" className="hover:text-medical transition-colors">2. Jalal-Abad State University (JASU)</Link></h3>
+                  <p className="text-gray-600 flex-grow">A prestigious government institution offering an excellent balance of affordable tuition fees and premium education. Study MBBS at JASU, a very popular option among Indian students looking for an NMC Approved Medical University Kyrgyzstan.</p>
                 </div>
 
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
@@ -494,8 +494,8 @@ export default function MBBSInKyrgyzstanPage() {
                 </div>
 
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <h3 className="text-2xl font-bold text-navy mb-4">4. Central Asian International Medical University</h3>
-                  <p className="text-gray-600 flex-grow">The cheapest medical university in Kyrgyzstan that doesn't compromise on quality. It boasts state-of-the-art anatomy labs, robotic training centers, and direct hospital tie-ups.</p>
+                  <h3 className="text-2xl font-bold text-navy mb-4"><Link href="/universities/central-asian-international-medical-university" className="hover:text-medical transition-colors">4. Central Asian International Medical University (CAIMU)</Link></h3>
+                  <p className="text-gray-600 flex-grow">The cheapest medical university in Kyrgyzstan that doesn't compromise on quality. CAIMU MBBS boasts state-of-the-art anatomy labs, robotic training centers, and direct hospital tie-ups.</p>
                 </div>
 
                 <div className="border border-gray-100 rounded-3xl p-8 bg-white shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full md:col-span-2 lg:col-span-1 lg:col-start-1 lg:ml-[50%] lg:w-[calc(200%+2rem)] xl:w-full xl:col-span-2 xl:ml-0 xl:max-w-3xl xl:mx-auto">
