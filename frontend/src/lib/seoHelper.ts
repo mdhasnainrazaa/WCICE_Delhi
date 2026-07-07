@@ -9,17 +9,32 @@ export function generateUniversityMetadata(uni: University): Metadata {
   const displayName = uni.slug === "osh-state-university" ? "Osh State University" : uni.name;
   const countryName = uni.location.split(",")[1]?.trim() || "Kyrgyzstan";
 
-  let title = `${displayName} MBBS Fees 2026 | ${countryName} | WCIEC`;
-  let description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
+  // Keyword-rich titles ≤60 chars with primary search term + year
+  let title = `${displayName} MBBS 2026-27 | NMC Approved | WCIEC`;
+  let description = `Study MBBS at ${displayName}, ${countryName} — NMC & WHO approved. Fees, admission 2026-27, eligibility, hostel & FMGE coaching. Apply free via ${brandName}!`;
 
   if (uni.slug === "jalal-abad-state-university") {
-    title = "JASU MBBS 2026 | Jalal Abad State University"; // 44 chars
-    description = `Study MBBS at Jalal Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
+    // 50 chars — primary brand name + year + acronym
+    title = "Jalal Abad State University MBBS 2026 | JASU";
+    description = "Jalal Abad State University (JASU) — NMC & WHO approved MBBS in Kyrgyzstan. Fees from $3,200/yr, English medium, FMGE coaching. Apply now via WCIEC Delhi!";
+  } else if (uni.slug === "jalal-abad-international-university") {
+    // 53 chars
+    title = "Jalal-Abad International University MBBS 2026 | Fees";
+    description = "Study MBBS at Jalal-Abad International University, Kyrgyzstan — NMC approved, English medium, $3,800/yr, hostel & FMGE coaching. Apply via WCIEC Delhi!";
+  } else if (uni.slug === "osh-state-university") {
+    // 50 chars
+    title = "Osh State University MBBS 2026 | #1 Kyrgyzstan";
+    description = "Osh State University — Kyrgyzstan's #1 NMC & WHO approved medical university. MBBS from $3,500/yr, English medium, FMGE coaching. Apply free via WCIEC!";
   } else if (uni.slug === "central-asian-international-medical-university") {
-    title = "CAIMU MBBS 2026 | Central Asian International Medical University"; // 62 chars
-    description = `Study MBBS at Central Asian International Medical University (CAIMU). Check CAIMU MBBS fees, admission, NMC, FMGE, and hostels. Apply via ${brandName}!`;
+    // 51 chars
+    title = "CAIMU MBBS 2026 | Central Asian Medical University";
+    description = "Central Asian International Medical University (CAIMU), Kyrgyzstan — NMC approved MBBS, $3,600/yr, modern curriculum, FMGE coaching. Apply via WCIEC Delhi!";
+  } else if (uni.slug === "osh-international-medical-university") {
+    // 54 chars
+    title = "Osh International Medical University MBBS 2026 | OIMU";
+    description = "Osh International Medical University (OIMU), Kyrgyzstan — NMC approved MBBS from $4,000/yr, English medium, FMGE coaching. Apply free via WCIEC Delhi!";
   }
-  
+
   let defaultKeywords = [
     displayName,
     `${displayName} MBBS`,
@@ -32,13 +47,54 @@ export function generateUniversityMetadata(uni: University): Metadata {
     `${displayName} FMGE`,
     `${displayName} NMC Approved`,
     "Study MBBS Abroad",
-    `MBBS in ${countryName}`
+    `MBBS in ${countryName}`,
+    "NMC approved medical university Kyrgyzstan",
+    "best medical college in Kyrgyzstan",
+    "MBBS abroad for Indian students",
   ];
 
   if (uni.slug === "jalal-abad-state-university") {
-    defaultKeywords = [...defaultKeywords, "JASU", "JASU MBBS", "Jalal Abad State Medical University", "MBBS in Jalal Abad State University", "Jalal Abad State University MBBS"];
+    defaultKeywords = [
+      ...defaultKeywords,
+      "JASU", "JASU MBBS", "JASU Fees", "JASU Admission",
+      "Jalalabad State University", "Jalalabad State University MBBS",
+      "Jalal Abad State Medical University",
+      "MBBS in Jalal Abad State University",
+      "Jalal Abad State University MBBS",
+    ];
+  } else if (uni.slug === "jalal-abad-international-university") {
+    defaultKeywords = [
+      ...defaultKeywords,
+      "JAIU", "JAIU MBBS",
+      "Jalal Abad International University",
+      "Jalal-Abad International University MBBS",
+      "MBBS in Jalal-Abad International University",
+    ];
+  } else if (uni.slug === "osh-state-university") {
+    defaultKeywords = [
+      ...defaultKeywords,
+      "Osh State University Medical Faculty",
+      "MBBS in Osh State University",
+      "Osh State University fees",
+      "Osh State University NMC approved",
+      "best university in Kyrgyzstan MBBS",
+    ];
   } else if (uni.slug === "central-asian-international-medical-university") {
-    defaultKeywords = [...defaultKeywords, "CAIMU", "CAIMU MBBS", "CAIMU Kyrgyzstan", "Central Asian International Medical University MBBS", "MBBS in Central Asian International Medical University"];
+    defaultKeywords = [
+      ...defaultKeywords,
+      "CAIMU", "CAIMU MBBS", "CAIMU Kyrgyzstan",
+      "Central Asian International Medical University MBBS",
+      "MBBS in Central Asian International Medical University",
+      "CAIMU NMC approved",
+    ];
+  } else if (uni.slug === "osh-international-medical-university") {
+    defaultKeywords = [
+      ...defaultKeywords,
+      "OIMU", "OIMU MBBS",
+      "Osh International Medical University MBBS",
+      "MBBS in Osh International Medical University",
+      "OIMU NMC approved",
+    ];
   }
 
   const imageUrl = uni.bannerImage 
@@ -107,20 +163,33 @@ export function generateUniversitySchemas(uni: University) {
     ? `${baseUrl}${uni.bannerImage}`
     : `${baseUrl}/images/osu-gallery/osh-state-university-campus.webp`;
 
-  let title = `${displayName} MBBS Fees 2026 | ${countryName} | WCIEC`;
-  let description = `Study MBBS at ${displayName}, ${countryName}. Check MBBS fees, admission, NMC guidelines, FMGE, hostel & scholarships. Apply via ${brandName} today!`;
+  let title = `${displayName} MBBS 2026-27 | NMC Approved | WCIEC`;
+  let description = `Study MBBS at ${displayName}, ${countryName} — NMC & WHO approved. Fees, admission 2026-27, eligibility, hostel & FMGE coaching. Apply free via ${brandName}!`;
   let alternateNames: string[] = [displayName];
   let sameAsLinks: string[] = [];
 
   if (uni.slug === "jalal-abad-state-university") {
-    title = "JASU MBBS 2026 | Jalal Abad State University";
-    description = `Study MBBS at Jalal Abad State University (JASU). Check JASU MBBS fees, admission, NMC guidelines, FMGE, and hostels. Apply via ${brandName} today!`;
-    alternateNames = ["JASU", "Jalal Abad State University", "Jalal-Abad State Medical University"];
+    title = "Jalal Abad State University MBBS 2026 | JASU";
+    description = "Jalal Abad State University (JASU) — NMC & WHO approved MBBS in Kyrgyzstan. Fees from $3,200/yr, English medium, FMGE coaching. Apply now via WCIEC Delhi!";
+    alternateNames = ["JASU", "Jalal Abad State University", "Jalal-Abad State Medical University", "Jalalabad State University"];
     sameAsLinks = ["https://en.wikipedia.org/wiki/Jalal-Abad_State_University"];
+  } else if (uni.slug === "jalal-abad-international-university") {
+    title = "Jalal-Abad International University MBBS 2026 | Fees";
+    description = "Study MBBS at Jalal-Abad International University, Kyrgyzstan — NMC approved, English medium, $3,800/yr, hostel & FMGE coaching. Apply via WCIEC Delhi!";
+    alternateNames = ["JAIU", "Jalal Abad International University", "Jalal-Abad International University"];
+  } else if (uni.slug === "osh-state-university") {
+    title = "Osh State University MBBS 2026 | #1 Kyrgyzstan";
+    description = "Osh State University — Kyrgyzstan's #1 NMC & WHO approved medical university. MBBS from $3,500/yr, English medium, FMGE coaching. Apply free via WCIEC!";
+    alternateNames = ["OSU", "Osh State University", "Osh State University International Medical Faculty"];
+    sameAsLinks = ["https://en.wikipedia.org/wiki/Osh_State_University"];
   } else if (uni.slug === "central-asian-international-medical-university") {
-    title = "CAIMU MBBS 2026 | Central Asian International Medical University";
-    description = `Study MBBS at Central Asian International Medical University (CAIMU). Check CAIMU MBBS fees, admission, NMC, FMGE, and hostels. Apply via ${brandName}!`;
+    title = "CAIMU MBBS 2026 | Central Asian Medical University";
+    description = "Central Asian International Medical University (CAIMU), Kyrgyzstan — NMC approved MBBS, $3,600/yr, modern curriculum, FMGE coaching. Apply via WCIEC Delhi!";
     alternateNames = ["CAIMU", "Central Asian International Medical University"];
+  } else if (uni.slug === "osh-international-medical-university") {
+    title = "Osh International Medical University MBBS 2026 | OIMU";
+    description = "Osh International Medical University (OIMU), Kyrgyzstan — NMC approved MBBS from $4,000/yr, English medium, FMGE coaching. Apply free via WCIEC Delhi!";
+    alternateNames = ["OIMU", "Osh International Medical University"];
   }
 
   const breadcrumbSchema = {
@@ -192,7 +261,7 @@ export function generateUniversitySchemas(uni: University) {
     "address": {
       "@type": "PostalAddress",
       "addressLocality": cityName,
-      "addressCountry": countryName
+      "addressCountry": "KG"
     }
   };
 
@@ -207,7 +276,7 @@ export function generateUniversitySchemas(uni: University) {
     "address": {
       "@type": "PostalAddress",
       "addressLocality": cityName,
-      "addressCountry": countryName
+      "addressCountry": "KG"
     }
   };
 
@@ -226,7 +295,7 @@ export function generateUniversitySchemas(uni: University) {
     "address": {
       "@type": "PostalAddress",
       "addressLocality": cityName,
-      "addressCountry": countryName
+      "addressCountry": "KG"
     }
   };
 
@@ -305,23 +374,33 @@ export function generateUniversitySchemas(uni: University) {
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
-    "name": `${displayName} MBBS`,
-    "description": `Study MBBS at ${displayName} in ${countryName}. A 5-year MD program equivalent to MBBS in India, recognized by NMC and WHO.`,
+    "@id": `${absoluteUrl}#course`,
+    "name": `MBBS at ${displayName}`,
+    "description": `A 5+1 year MD/MBBS program at ${displayName} in ${cityName}, ${countryName}. Taught entirely in English, recognised by NMC and WHO. Open to Indian students with qualified NEET score.`,
     "provider": {
       "@type": "CollegeOrUniversity",
+      "@id": `${absoluteUrl}#university`,
       "name": displayName,
       "sameAs": absoluteUrl
     },
-    "coursePrerequisites": "12th Standard PCB with 50% and NEET Qualification",
-    "educationalCredentialAwarded": "MD (Doctor of Medicine) / MBBS",
+    "coursePrerequisites": "10+2 PCB with minimum 50% marks and a qualified NEET score",
+    "educationalCredentialAwarded": "MD (Doctor of Medicine) — equivalent to MBBS in India",
     "hasCourseInstance": {
       "@type": "CourseInstance",
       "courseMode": "Onsite",
       "courseWorkload": "PT5Y",
+      "startDate": "2026-09-01",
       "instructor": {
         "@type": "Organization",
         "name": displayName
       }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": uni.fees?.[0]?.tutionFee ?? "Contact for fees",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2026-01-01"
     }
   };
 

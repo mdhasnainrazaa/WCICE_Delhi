@@ -532,6 +532,49 @@ export default function OSUClient() {
         </div>
       </section>
 
+      {/* ── SEO CONTENT SECTION ── */}
+      <section className="py-20 bg-white" aria-label="About Osh city and Osh State University student life">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="prose max-w-none space-y-10 text-gray-700 leading-relaxed">
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Osh City: Campus Life, Safety &amp; Indian Student Community</h2>
+              <p>
+                Osh is Kyrgyzstan&apos;s second-largest city and is often called the <strong>cultural capital of southern Kyrgyzstan</strong>. It is a cosmopolitan city with a rich history spanning over 3,000 years, a well-connected airport (OSS) with regular flights to Bishkek and seasonal routes to Moscow, and a large bazaar where Indian groceries, spices, and familiar produce are readily available. For Indian students, the city&apos;s warm southern climate, consistent internet connectivity, and affordable restaurants make it a very liveable destination.
+              </p>
+              <p>
+                Osh State University&apos;s hostel is located within the secure university campus. Security is stringent: all visitor access requires ID verification, CCTV covers every corridor, and Indian wardens are available around the clock. A large, established Indian student community of over 1,000 students currently enrolled at Osh State University Kyrgyzstan means seniors are always available to guide first-year students through local registration, banking, and FMGE study resources.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Kyrgyzstan Student Visa Process for Osh State University</h2>
+              <ol className="list-decimal pl-6 space-y-3 text-sm">
+                <li><strong>Document Collection</strong> — WCIEC collects your 10+2 transcripts, NEET scorecard, valid passport (min 2-year validity), and medical fitness certificate.</li>
+                <li><strong>Admission Letter</strong> — Osh State University issues an official admission letter within 7–10 working days after document approval.</li>
+                <li><strong>Ministry Invitation</strong> — The university applies to the Kyrgyz Ministry of Education for a visa invitation. This takes 15–25 days.</li>
+                <li><strong>Visa Stamping</strong> — Visit the Kyrgyz Embassy in New Delhi. Submit the invitation letter, passport, recent photographs, and health certificate. Visa is typically ready in 3–5 working days.</li>
+                <li><strong>Group Departure</strong> — WCIEC organises group flights from Delhi/Mumbai. Upon landing at Osh International Airport, WCIEC representatives and Osh State University staff escort students directly to the hostel.</li>
+              </ol>
+              <p className="text-sm mt-4">
+                For the latest NMC screening exam requirements and eligibility verification, read the official <Link href="/nmc-guidelines-for-mbbs-abroad/" className="text-[#2563EB] font-semibold hover:underline">NMC guidelines for MBBS abroad</Link> — mandatory reading for every Indian student planning overseas medical education.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Why Osh State University is the Best Medical University in Kyrgyzstan</h2>
+              <p>
+                Osh State University stands apart from other medical colleges in Kyrgyzstan due to its founding in 1939 — making it the oldest university in the country and the one with the deepest clinical infrastructure. Its International Medical Faculty has been training foreign students specifically since 1992, meaning its systems, Hindi-speaking advisors, Indian mess facilities, and FMGE preparation programmes are battle-tested across decades. Newer private universities in Kyrgyzstan may offer modern campuses, but they lack OSU&apos;s vast hospital network and NExT result track record.
+              </p>
+              <p>
+                To compare total 6-year costs across all Kyrgyzstan medical universities, see our comprehensive <Link href="/mbbs-fees-abroad/" className="text-[#2563EB] font-semibold hover:underline">MBBS fees abroad breakdown</Link>. To explore all five WCIEC partner universities and find the best fit for your profile, visit our <Link href="/mbbs-in-kyrgyzstan/" className="text-[#2563EB] font-semibold hover:underline">complete MBBS in Kyrgyzstan guide</Link>.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CALL TO ACTION */}
       <section className="py-24 bg-[#0F172A] text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#2563EB]/10 rounded-full blur-[100px]" />

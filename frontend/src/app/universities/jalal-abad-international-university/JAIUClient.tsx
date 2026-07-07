@@ -204,7 +204,7 @@ export default function JAIUClient() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="/images/optimized/jalal-abad-international-university-hero.webp" alt="Jalal-Abad International University" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image src="/images/optimized/jalal-abad-international-university-hero.webp" alt="Jalal-Abad International University campus building, Kyrgyzstan" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
           {/* Orange Glow */}
@@ -650,6 +650,49 @@ export default function JAIUClient() {
               ))}
             </div>
           </PromDown>
+        </div>
+      </section>
+
+      {/* ── SEO CONTENT SECTION ── */}
+      <section className="py-20 bg-white" aria-label="About Jalal-Abad International University and student life">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="prose max-w-none space-y-10 text-gray-700 leading-relaxed">
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0B1F33] mb-4">Life in Jalal-Abad for International Students</h2>
+              <p>
+                Jalal-Abad International University sits in the heart of Jalal-Abad city, a peaceful southern Kyrgyz city known for its tree-lined streets, mild climate, and thriving student culture. Indian students will find familiar spices and produce at local bazaars, while the university mess serves freshly prepared Indian meals daily. Public minibuses connect the campus to the city centre, airport taxi transfer points, and popular hangout areas within 20 minutes.
+              </p>
+              <p>
+                Safety at Jalal-Abad International University is taken seriously — the campus is secured with biometric access, CCTV on all entry/exit points, and 24-hour security personnel. Female students have a separate, warden-supervised hostel block. The active Indian Students Association regularly organises cultural events, Diwali and Holi celebrations, cricket tournaments, and FMGE preparation study groups, ensuring a strong social support structure from the very first day.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0B1F33] mb-4">Kyrgyzstan Student Visa: Step-by-Step for JAIU Applicants</h2>
+              <ol className="list-decimal pl-6 space-y-3 text-sm">
+                <li><strong>Submit Application</strong> — Provide your 10+2 mark sheet, NEET scorecard, and valid passport to WCIEC. Our team processes the JAIU admission application within 5–7 working days.</li>
+                <li><strong>Admission Offer Letter</strong> — The university issues your official offer letter, which is mandatory for the visa application.</li>
+                <li><strong>Ministry Visa Invitation</strong> — JAIU applies for a government visa invitation letter on your behalf. This typically takes 15–20 days.</li>
+                <li><strong>Embassy Appointment</strong> — Apply at the Kyrgyz Embassy, New Delhi with the invitation, passport (6+ months validity), photos, and a medical fitness certificate. Visa is usually issued within 5 days.</li>
+                <li><strong>Travel &amp; Arrival Support</strong> — WCIEC arranges group departures. University representatives and WCIEC staff meet you at the airport for hassle-free campus check-in.</li>
+              </ol>
+              <p className="text-sm mt-4">
+                Understanding what documents Googlebot needs is important — students should also read the <Link href="/nmc-guidelines-for-mbbs-abroad/" className="text-[#1a4db8] font-semibold hover:underline">NMC guidelines for MBBS abroad</Link> to ensure their degree will be valid in India.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0B1F33] mb-4">Why Jalal-Abad International University vs Other Kyrgyzstan Medical Colleges?</h2>
+              <p>
+                Established in 2015, Jalal-Abad International University represents a newer generation of medical institutions in Kyrgyzstan — built from the ground up with international students in mind. Its modern simulation labs, virtual anatomy software, and international faculty mix set it apart from older universities that rely on traditional lecture-heavy methods. For students who want a tech-forward medical education with strong clinical exposure from Year 3, JAIU is a compelling option.
+              </p>
+              <p>
+                When comparing programme costs, our <Link href="/mbbs-fees-abroad/" className="text-[#1a4db8] font-semibold hover:underline">MBBS fees abroad comparison guide</Link> provides a transparent breakdown of tuition, hostel, and living costs across all Kyrgyzstan universities. You can also explore the full <Link href="/mbbs-in-kyrgyzstan/" className="text-[#1a4db8] font-semibold hover:underline">MBBS in Kyrgyzstan admissions guide</Link> to understand how JAIU fits alongside all five WCIEC partner universities.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 

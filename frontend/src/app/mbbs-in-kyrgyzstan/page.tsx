@@ -470,6 +470,34 @@ export default function MBBSInKyrgyzstanPage() {
               </div>
             </div>
 
+            {/* WCIEC Partner Universities Prose Section */}
+            <div className="space-y-8 bg-gray-50 rounded-3xl p-10 border border-gray-100">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight mb-4">WCIEC Partner Universities in Kyrgyzstan</h2>
+                <div className="w-20 h-1 bg-medical rounded-full mb-6" />
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  WCIEC Delhi is the direct admission partner for five top-ranked, NMC-approved medical universities in Kyrgyzstan. Each university has a distinct profile catering to different student preferences and budgets. Below is a quick overview:
+                </p>
+                <div className="space-y-5 text-gray-600 leading-relaxed">
+                  <p>
+                    <Link href="/universities/osh-state-university/" className="font-bold text-navy hover:text-medical transition-colors">Osh State University</Link> — Founded in 1939, OSU is Kyrgyzstan&apos;s oldest and most prestigious medical university. Its International Medical Faculty has been training Indian students for over 30 years. With a vast hospital network, high FMGE pass rates, and a well-established Indian community of 1,000+ students, it remains the top choice for Indian families seeking a proven, government-backed MBBS programme.
+                  </p>
+                  <p>
+                    <Link href="/universities/jalal-abad-state-university/" className="font-bold text-navy hover:text-medical transition-colors">Jalal Abad State University (JASU)</Link> — Also known as Jalalabad State University, JASU is a premier government institution in Jalal-Abad city offering one of the most affordable MBBS fee structures in Kyrgyzstan (from $3,200/yr). Its strict academic discipline, dedicated Indian mess, gated hostel with CCTV, and consistently strong FMGE coaching make it an exceptional value choice.
+                  </p>
+                  <p>
+                    <Link href="/universities/jalal-abad-international-university/" className="font-bold text-navy hover:text-medical transition-colors">Jalal-Abad International University</Link> — Established in 2015, JAIU is one of the fastest-growing private medical colleges in Kyrgyzstan. It combines advanced simulation labs, virtual anatomy software, and international faculty with a curriculum built around NExT examination standards. Ideal for students prioritising a technology-forward education.
+                  </p>
+                  <p>
+                    <Link href="/universities/central-asian-international-medical-university/" className="font-bold text-navy hover:text-medical transition-colors">Central Asian International Medical University (CAIMU)</Link> — CAIMU, established in 2018, is widely regarded as the most innovative medical university in Kyrgyzstan. It was built from the ground up with competency-based medical education, making it highly aligned with both FMGE and NExT patterns. CAIMU MBBS fees are among the lowest in the country.
+                  </p>
+                  <p>
+                    <Link href="/universities/osh-international-medical-university/" className="font-bold text-navy hover:text-medical transition-colors">Osh International Medical University (OIMU)</Link> — Founded in 2019, OIMU is the newest WCIEC partner university in Kyrgyzstan. Located in Osh city, it offers a premium hostel experience, small batch sizes for personalised attention, and a clinical rotation programme that starts from Year 3. An excellent option for students who want modern infrastructure and a tech-first teaching methodology.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* 5. Top Medical Universities (2-Col Grid) */}
             <div className="space-y-8">
               <div className="text-center max-w-3xl mx-auto">

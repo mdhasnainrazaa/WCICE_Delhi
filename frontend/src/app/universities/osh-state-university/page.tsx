@@ -79,6 +79,10 @@ export default function Page() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.faqSchema) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas.courseSchema) }}
+      />
       <OSUClient />
     </>
   );

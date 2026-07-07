@@ -20,4 +20,4 @@ Allow: /
 User-agent: bingbot
 Allow: /
 
-Sitemap: https://wciecdelhi.com/sitemap.xml
+Sitemap: https://www.wciecdelhi.com/sitemap.xml

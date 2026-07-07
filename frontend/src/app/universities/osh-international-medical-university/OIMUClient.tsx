@@ -91,7 +91,7 @@ export default function OIMUClient() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200" alt="Osh International Medical University" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
+          <Image src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200" alt="Osh International Medical University (OIMU) campus building, Osh, Kyrgyzstan" fill className="object-cover opacity-20" priority sizes="(max-width: 768px) 100vw, 50vw" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
           {/* Orange Glow */}
@@ -663,6 +663,50 @@ export default function OIMUClient() {
               ))}
             </div>
           </PromDown>
+        </div>
+      </section>
+
+      {/* ── SEO CONTENT SECTION ── */}
+      <section className="py-20 bg-white" aria-label="About Osh International Medical University and student life">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="prose max-w-none space-y-10 text-gray-700 leading-relaxed">
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Life in Osh: Campus Safety &amp; Indian Student Community at OIMU</h2>
+              <p>
+                Osh International Medical University is situated in Osh — Kyrgyzstan&apos;s second-largest city and one of the oldest cities in Central Asia. For Indian students, Osh offers a familiar South Asian atmosphere: Hindi is widely understood in student neighbourhoods, Indian restaurants operate year-round, and Bollywood films screen at local cinemas. The city&apos;s climate, while cold in winter, is manageable with the well-heated OIMU hostel facilities which include central heating, geysers, and insulated windows throughout dormitories.
+              </p>
+              <p>
+                Security at Osh International Medical University is a priority. The hostel compound has restricted entry with biometric verification, uniformed guards at the gate around the clock, and an in-residence Indian warden for welfare support. Female students are housed in a separate, warden-supervised wing. OIMU&apos;s relatively smaller batch size (compared to legacy universities) means faculty-student interaction is more personal, and first-year students receive dedicated onboarding support.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Step-by-Step Kyrgyzstan Visa Process for OIMU Students</h2>
+              <ol className="list-decimal pl-6 space-y-3 text-sm">
+                <li><strong>Initial Application</strong> — Share your 10+2 mark sheets, NEET score, and passport with WCIEC. Document review takes 3–5 working days.</li>
+                <li><strong>OIMU Admission Offer</strong> — Osh International Medical University issues an official offer letter after document approval (approximately 7–10 days).</li>
+                <li><strong>Government Visa Invitation</strong> — OIMU applies to the Kyrgyz Ministry of Education for a visa invitation letter (15–25 days).</li>
+                <li><strong>Kyrgyz Embassy Visa Stamping</strong> — Visit the Kyrgyz Embassy in New Delhi. Submit the invitation letter, valid passport (6+ months remaining), recent photographs, and a medical fitness certificate. Visa is issued in 3–5 working days.</li>
+                <li><strong>Group Departure &amp; Arrival</strong> — WCIEC organises group travel from Delhi/Mumbai. OIMU and WCIEC representatives meet students at Osh International Airport and provide direct transport to the campus hostel.
+                </li>
+              </ol>
+              <p className="text-sm mt-4">
+                Before travelling, all students must understand the <Link href="/nmc-guidelines-for-mbbs-abroad/" className="text-[#2563EB] font-semibold hover:underline">NMC guidelines for MBBS abroad</Link>, which dictate screening exam eligibility and the minimum university standards required for Indian practitioners.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Why Osh International Medical University? A Practical Comparison</h2>
+              <p>
+                Founded in 2019, Osh International Medical University (OIMU) is one of the newest medical institutions in Kyrgyzstan. This is actually an advantage: OIMU was designed from inception around the NExT examination syllabus, with a curriculum structure, clinical rotation schedule, and assessment pattern that mirrors what Indian students will face in their licensing exam. Older universities are still adapting — OIMU was built ready.
+              </p>
+              <p>
+                OIMU&apos;s tuition ($4,000/yr) is slightly higher than JASU but reflects the premium facility investment. For a full side-by-side cost comparison, visit our <Link href="/mbbs-fees-abroad/" className="text-[#2563EB] font-semibold hover:underline">MBBS fees abroad guide</Link>. For context on all five WCIEC partner universities in Kyrgyzstan and how to choose between them, read our comprehensive <Link href="/mbbs-in-kyrgyzstan/" className="text-[#2563EB] font-semibold hover:underline">MBBS in Kyrgyzstan guide</Link>.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 

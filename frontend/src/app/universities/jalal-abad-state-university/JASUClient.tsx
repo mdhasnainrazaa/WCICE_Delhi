@@ -84,7 +84,7 @@ export default function JASUClient() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1920" alt="Jalal Abad State University" fill className="object-cover opacity-20" priority />
+          <Image src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1920" alt="Jalal Abad State University campus medical building, Jalal-Abad, Kyrgyzstan" fill className="object-cover opacity-20" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
           {/* Orange Glow */}
@@ -182,14 +182,14 @@ export default function JASUClient() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative aspect-square rounded-[32px] overflow-hidden shadow-2xl group">
-              <Image src="/images/optimized/jalal-abad-banner.webp" alt="JASU Building" fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="600px" />
+              <Image src="/images/optimized/jalal-abad-banner.webp" alt="Jalal Abad State University (JASU) main building, Jalal-Abad city, Kyrgyzstan" fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="600px" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/60 to-transparent" />
             </div>
             <div>
               <SectionHeading eyebrow="Academic Heritage" title="About Jalal Abad State University (JASU)" />
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed font-medium">
                 <p>
-                  Jalal Abad State University (JASU), also referred to as Jalal-Abad State Medical University, is one of the leading medical universities in Kyrgyzstan established in 1993. The university provides globally recognized MBBS education with modern infrastructure and advanced clinical training. Study MBBS at JASU to experience high patient flow and a dedicated Indian student community.
+                  Jalal Abad State University (JASU), also referred to as Jalal-Abad State Medical University or <strong>Jalalabad State University</strong> (no-hyphen spelling), is one of the leading medical universities in Kyrgyzstan established in 1993. The university provides globally recognized MBBS education with modern infrastructure and advanced clinical training. Study MBBS at JASU to experience high patient flow and a dedicated Indian student community.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-8 mt-12">
                   <div className="p-6 bg-white rounded-[24px] shadow-sm border border-gray-100">
@@ -552,6 +552,49 @@ export default function JASUClient() {
               ))}
             </div>
           </PromDown>
+        </div>
+      </section>
+
+      {/* ── SEO CONTENT SECTION ── */}
+      <section className="py-20 bg-white" aria-label="About Jalal-Abad and JASU Student Life">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="prose max-w-none space-y-10 text-gray-700 leading-relaxed">
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Life in Jalal-Abad: City, Safety &amp; Indian Community</h2>
+              <p>
+                Jalal-Abad (also spelled Jalalabad) is a warm, welcoming city in south-western Kyrgyzstan with a population of around 100,000 residents. The city has a well-developed public transport network of buses and shared taxis (<em>marshrutkas</em>) making it easy for students to commute between hostels, the campus, and local markets. The cost of living is notably low — groceries, local transport, and everyday essentials cost a fraction of Indian metro prices, letting students comfortably manage on a monthly budget of $150–200 USD beyond their tuition.
+              </p>
+              <p>
+                Indian students report feeling safe in Jalal-Abad. JASU hostels are gated with 24/7 security guards and CCTV surveillance. An Indian warden is present in the hostel to address cultural or personal needs. A thriving community of 500+ Indian medical students already studying at JASU means new joiners are never alone — seniors guide them through city navigation, shopping, and exam preparation from day one.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Step-by-Step Kyrgyzstan Student Visa Process for JASU</h2>
+              <ol className="list-decimal pl-6 space-y-3 text-sm">
+                <li><strong>Receive Admission Letter</strong> — WCIEC collects your documents (10+2 transcripts, NEET scorecard, passport) and obtains your official JASU admission letter within 7–10 working days.</li>
+                <li><strong>Ministry Visa Invitation</strong> — The university applies for a visa invitation letter from the Kyrgyz Ministry of Education. This takes approximately 15–20 days.</li>
+                <li><strong>Visa Stamping</strong> — Visit the Kyrgyz Embassy in New Delhi (or the consulate nearest to you) with the invitation letter, passport, photographs, and health certificate to get your student visa stamped within 5–7 working days.</li>
+                <li><strong>Pre-Departure Briefing</strong> — WCIEC conducts a pre-departure orientation covering packing essentials, currency exchange, SIM card advice, and airport transfer arrangements.</li>
+                <li><strong>Fly &amp; Settle</strong> — Group departures are arranged from Delhi/Mumbai. WCIEC representatives receive students at Osh or Bishkek airport and escort them to the Jalal-Abad campus and hostel.</li>
+              </ol>
+              <p className="text-sm mt-4">
+                For complete visa eligibility rules, refer to the <Link href="/nmc-guidelines-for-mbbs-abroad/" className="text-[#2563EB] font-semibold hover:underline">NMC guidelines for MBBS abroad</Link> that govern Indian students studying medicine outside India.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Why Choose Jalal Abad State University Over Other Kyrgyzstan Universities?</h2>
+              <p>
+                Compared to private institutions in Kyrgyzstan, Jalal Abad State University (JASU) is a <strong>government-run public university</strong> — meaning its degree carries stronger recognition weight among Indian evaluation committees. Its 30+ year track record, lower tuition fees ($3,200/yr vs $3,800–$4,000/yr at newer private colleges), and documented FMGE pass performance make it the preferred choice for budget-conscious families without compromising on quality.
+              </p>
+              <p>
+                For a detailed comparison of total programme costs, see our guide to <Link href="/mbbs-fees-abroad/" className="text-[#2563EB] font-semibold hover:underline">MBBS fees abroad</Link>. If you are evaluating other destinations alongside Kyrgyzstan, our <Link href="/mbbs-in-kyrgyzstan/" className="text-[#2563EB] font-semibold hover:underline">MBBS in Kyrgyzstan guide</Link> covers all five partner universities, eligibility, and the admission timeline in one place.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 

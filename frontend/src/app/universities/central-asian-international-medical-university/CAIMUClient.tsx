@@ -88,7 +88,7 @@ export default function CAIMUClient() {
       {/* 1️⃣ HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#0F172A] min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="/images/optimized/central-asian-medical-university.webp" alt="CAIMU Campus" fill className="object-cover opacity-20" priority />
+          <Image src="/images/optimized/central-asian-medical-university.webp" alt="Central Asian International Medical University (CAIMU) campus, Jalal-Abad, Kyrgyzstan" fill className="object-cover opacity-20" priority />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A] via-[#0F172A]/90 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent" />
           {/* Orange Glow */}
@@ -187,7 +187,7 @@ export default function CAIMUClient() {
               </div>
             </div>
             <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden shadow-2xl group">
-              <Image src="/images/optimized/central-asian-medical-university.webp" alt="CAIMU Campus" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/images/optimized/central-asian-medical-university.webp" alt="Central Asian International Medical University (CAIMU) main building exterior, Kyrgyzstan" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>
@@ -273,7 +273,7 @@ export default function CAIMUClient() {
               </div>
             </div>
             <div className="relative aspect-square md:aspect-[4/3] rounded-[32px] overflow-hidden">
-               <Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200" alt="MD Program" fill className="object-cover" />
+               <Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200" alt="CAIMU MD/MBBS medical program students in clinical training, Kyrgyzstan" fill className="object-cover" />
                <div className="absolute inset-0 bg-[#F97316]/20 mix-blend-overlay" />
             </div>
           </div>
@@ -507,6 +507,49 @@ export default function CAIMUClient() {
               ))}
             </div>
           </PromDown>
+        </div>
+      </section>
+
+      {/* ── SEO CONTENT SECTION ── */}
+      <section className="py-20 bg-white" aria-label="About CAIMU and student life in Jalal-Abad, Kyrgyzstan">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="prose max-w-none space-y-10 text-gray-700 leading-relaxed">
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Campus Life at CAIMU: Jalal-Abad City, Safety &amp; Indian Community</h2>
+              <p>
+                Central Asian International Medical University is located in Jalal-Abad, a safe and student-friendly city in the south of Kyrgyzstan. The city&apos;s compact layout means everything students need — markets, pharmacies, restaurants, and banks — is within a 10–15 minute ride. Indian grocery stores and spice shops are well established in the local bazaar, so recreating home-cooked meals is straightforward even when the university mess is closed.
+              </p>
+              <p>
+                CAIMU&apos;s campus is fully enclosed with controlled-access gates and 24/7 guard posts. All hostel corridors are CCTV-monitored, and an Indian Mess Coordinator is available on campus for dietary and welfare concerns. A dedicated Indian Students Society at CAIMU organises orientation days, cultural festivals (including Diwali and Navratri), group study sessions for FMGE/NExT, and weekend city tours, making the transition to a new country feel far less daunting.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Kyrgyzstan Student Visa for CAIMU: A Step-by-Step Guide</h2>
+              <ol className="list-decimal pl-6 space-y-3 text-sm">
+                <li><strong>Application Submission</strong> — Submit your 10+2 certificates, NEET scorecard, and passport copy to WCIEC Delhi. Verification takes 3–5 working days.</li>
+                <li><strong>CAIMU Admission Letter</strong> — Upon approval, CAIMU issues an official admission letter within 7–12 working days.</li>
+                <li><strong>Ministry Visa Invitation</strong> — CAIMU applies for a visa invitation from the Kyrgyz government (15–20 days processing time).</li>
+                <li><strong>Visa from Kyrgyz Embassy</strong> — Attend the Kyrgyz Embassy in New Delhi with the invitation letter, passport, photographs, and medical fitness certificate. Visa is issued within 5 working days.</li>
+                <li><strong>Travel &amp; Arrival</strong> — WCIEC coordinates group departures. On arrival at Osh or Bishkek airport, students are escorted to the CAIMU hostel by WCIEC coordinators on the ground.</li>
+              </ol>
+              <p className="text-sm mt-4">
+                Before finalising your application, review the mandatory <Link href="/nmc-guidelines-for-mbbs-abroad/" className="text-[#2563EB] font-semibold hover:underline">NMC guidelines for MBBS abroad</Link> — these govern screening exam eligibility and the list of recognised universities updated by India&apos;s National Medical Commission.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-[#0F172A] mb-4">Why Choose CAIMU Over Other Medical Colleges in Kyrgyzstan?</h2>
+              <p>
+                Central Asian International Medical University (CAIMU) was purpose-built in 2018 to address one common complaint about older Kyrgyzstan medical institutions: outdated teaching methods. CAIMU deploys virtual anatomy software, high-fidelity simulation labs, and a competency-based curriculum designed to align precisely with the NExT examination pattern. This means students spend less time re-learning exam formats after graduating.
+              </p>
+              <p>
+                For students concerned about total investment, our <Link href="/mbbs-fees-abroad/" className="text-[#2563EB] font-semibold hover:underline">MBBS fees abroad guide</Link> compares CAIMU&apos;s $3,600/yr tuition with all partner universities side by side. To understand the full Kyrgyzstan MBBS landscape before making your decision, explore the detailed <Link href="/mbbs-in-kyrgyzstan/" className="text-[#2563EB] font-semibold hover:underline">MBBS in Kyrgyzstan guide</Link> covering eligibility, intake dates, and university profiles.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 

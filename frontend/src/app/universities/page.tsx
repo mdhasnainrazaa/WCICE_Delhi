@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 import { UniversityGrid } from "@/components/sections/UniversityGrid";
 import { 
   GraduationCap, 
@@ -120,23 +121,37 @@ export default function UniversitiesPage() {
               </h3>
               
               <div className="space-y-4 border-l-4 border-[#2563EB]/20 pl-4">
-                <h4 className="font-bold text-lg text-[#0F172A]">Osh State University (Medical Faculty)</h4>
+                <h4 className="font-bold text-lg text-[#0F172A]"><Link href="/universities/osh-state-university/" className="hover:text-[#2563EB] transition-colors">Osh State University (Medical Faculty)</Link></h4>
                 <p className="text-sm text-gray-600">
-                  Established in 1993, Osh State University is one of the oldest and largest public institutions in Kyrgyzstan. Its Medical Faculty has been training international students for over three decades. It boasts a highly qualified academic faculty, advanced simulation centers, and massive clinical rotation hospitals.
+                  Established in 1939, <Link href="/universities/osh-state-university/" className="text-[#2563EB] font-semibold hover:underline">Osh State University</Link> is one of the oldest and largest public institutions in Kyrgyzstan. Its Medical Faculty has been training international students for over three decades. It boasts a highly qualified academic faculty, advanced simulation centers, and massive clinical rotation hospitals.
                 </p>
               </div>
 
               <div className="space-y-4 border-l-4 border-[#2563EB]/20 pl-4">
-                <h4 className="font-bold text-lg text-[#0F172A]">Jalal Abad State University (JASU)</h4>
+                <h4 className="font-bold text-lg text-[#0F172A]"><Link href="/universities/jalal-abad-state-university/" className="hover:text-[#2563EB] transition-colors">Jalal Abad State University (JASU)</Link></h4>
                 <p className="text-sm text-gray-600">
-                  JASU is another premier government university located in the city of Jalal-Abad. It is famous for its strict academic discipline, highly affordable fee structure, and excellent FMGE passing rates. The university provides comfortable hostels with dedicated Indian mess facilities.
+                  <Link href="/universities/jalal-abad-state-university/" className="text-[#2563EB] font-semibold hover:underline">Jalal Abad State University</Link> is another premier government university located in the city of Jalal-Abad. It is famous for its strict academic discipline, highly affordable fee structure, and excellent FMGE passing rates. The university provides comfortable hostels with dedicated Indian mess facilities.
                 </p>
               </div>
 
               <div className="space-y-4 border-l-4 border-[#2563EB]/20 pl-4">
-                <h4 className="font-bold text-lg text-[#0F172A]">Central Asian International Medical University (CAIMU)</h4>
+                <h4 className="font-bold text-lg text-[#0F172A]"><Link href="/universities/central-asian-international-medical-university/" className="hover:text-[#2563EB] transition-colors">Central Asian International Medical University (CAIMU)</Link></h4>
                 <p className="text-sm text-gray-600">
-                  CAIMU is a modern, rapidly growing international medical university equipped with state-of-the-art teaching modules, virtual anatomy software, and highly interactive clinical laboratories. It specializes in training international students according to the latest global licensing exam patterns.
+                  <Link href="/universities/central-asian-international-medical-university/" className="text-[#2563EB] font-semibold hover:underline">Central Asian International Medical University (CAIMU)</Link> is a modern, rapidly growing international medical university equipped with state-of-the-art teaching modules, virtual anatomy software, and highly interactive clinical laboratories. It specialises in training international students according to the latest global licensing exam patterns.
+                </p>
+              </div>
+
+              <div className="space-y-4 border-l-4 border-[#2563EB]/20 pl-4">
+                <h4 className="font-bold text-lg text-[#0F172A]"><Link href="/universities/jalal-abad-international-university/" className="hover:text-[#2563EB] transition-colors">Jalal-Abad International University</Link></h4>
+                <p className="text-sm text-gray-600">
+                  <Link href="/universities/jalal-abad-international-university/" className="text-[#2563EB] font-semibold hover:underline">Jalal-Abad International University</Link> is a modern institution focused on global medical education standards with state-of-the-art facilities. Established in 2015, it offers advanced simulation labs, international faculty, and a curriculum designed to prepare Indian students for the NExT licensing exam from day one.
+                </p>
+              </div>
+
+              <div className="space-y-4 border-l-4 border-[#2563EB]/20 pl-4">
+                <h4 className="font-bold text-lg text-[#0F172A]"><Link href="/universities/osh-international-medical-university/" className="hover:text-[#2563EB] transition-colors">Osh International Medical University (OIMU)</Link></h4>
+                <p className="text-sm text-gray-600">
+                  <Link href="/universities/osh-international-medical-university/" className="text-[#2563EB] font-semibold hover:underline">Osh International Medical University (OIMU)</Link>, established in 2019, is the newest WCIEC partner university in Kyrgyzstan. Built from the ground up with the NExT syllabus in mind, OIMU offers premium hostel facilities, practical-first teaching, and an Indian mess — making it an increasingly popular choice for students who prioritise a modern academic environment.
                 </p>
               </div>
             </div>
