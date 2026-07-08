@@ -70,6 +70,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: "40THUTZ62pWnAXxRKXmTCeGFOycX4NHB1zDtORLS2Ko",
+  },
 };
 
 import { Navbar } from "@/components/layout/Navbar";
