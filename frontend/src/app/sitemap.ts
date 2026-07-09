@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { seoPages } from '@/data/seoPages';
 import { universities } from '@/data/universities';
 
+import { blogPostsArray } from '@/data/blogs';
+
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,18 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const universitySlugs = universities.map(uni => uni.slug);
 
-  const blogSlugs = [
-    'why-kyrgyzstan-top-choice-mbbs',
-    'neet-2026-mbbs-abroad-guide',
-    'mbbs-abroad-after-neet',
-    'mbbs-in-kyrgyzstan-fees',
-    'best-country-for-mbbs-abroad',
-    'mbbs-abroad-documents-required',
-    'is-mbbs-in-kyrgyzstan-good',
-    'mbbs-abroad-vs-india',
-    'nmc-approved-medical-universities-abroad',
-    'mbbs-abroad-consultant-delhi',
-  ];
+  const blogSlugs = blogPostsArray.map(post => post.slug);
 
   const blogRoutes = blogSlugs.map((slug) => ({
     url: `${baseUrl}/blog/${slug}/`,
