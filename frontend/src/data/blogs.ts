@@ -629,6 +629,294 @@ export const BLOG_DATA: Record<string, Omit<BlogPost, 'slug'>> = {
       { question: "How much does the Indian mess cost?", answer: "The monthly fee for the Indian mess is typically between $100 and $130, which covers unlimited food for all three meals." },
       { question: "Can students cook their own food?", answer: "Yes, all university hostels provide shared kitchens equipped with electric stoves where students can cook their own meals if they prefer." }
     ]
+  },
+  "how-many-years-is-mbbs-in-kyrgyzstan": {
+    title: "How Many Years is MBBS in Kyrgyzstan? (NMC Rules Explained)",
+    excerpt: "Clarifying the exact duration of MBBS in Kyrgyzstan. Learn how the 5-year course and 1-year internship comply with NMC rules.",
+    date: "July 25, 2026",
+    author: "WCIEC Academic Team",
+    reviewer: "Legal Department",
+    category: "FAQ Hub",
+    seoTitle: "How Many Years is MBBS in Kyrgyzstan? Duration & Internship",
+    seoDescription: "What is the exact duration of MBBS in Kyrgyzstan? We explain the 5-year academic course and the 1-year mandatory clinical internship as per NMC guidelines.",
+    introduction: "One of the most common questions Indian students ask is regarding the exact duration of the MBBS course in Kyrgyzstan. With changing NMC regulations, it is critical to understand the timeline.",
+    sections: [
+      {
+        heading: "The Exact Duration: 5 Years + 1 Year",
+        content: [
+          "The academic medical course in Kyrgyzstan lasts for exactly 5 years (60 months). This perfectly satisfies the NMC FMGL 2021 regulation which mandates a minimum of 54 months of theoretical and practical training.",
+          "Following the 5 years of study, students must complete a 1-year (12 months) clinical internship at the same university's affiliated hospitals."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Can I do the internship in India?", answer: "No. According to the NMC FMGL 2021 rules, you must complete the 12-month internship in the same country where you earned your degree." },
+      { question: "Is a 5-year degree valid in India?", answer: "Yes, a 5-year academic degree followed by a 1-year internship is 100% valid and fully compliant with NMC regulations." }
+    ]
+  },
+  "is-neet-compulsory-for-mbbs-in-kyrgyzstan": {
+    title: "Is NEET Compulsory for MBBS in Kyrgyzstan? The Legal Truth",
+    excerpt: "Can you study MBBS abroad without NEET? We reveal the legal reality of NMC guidelines regarding NEET qualification.",
+    date: "July 26, 2026",
+    author: "WCIEC Admission Desk",
+    reviewer: "Chief Counsellor",
+    category: "FAQ Hub",
+    seoTitle: "Is NEET Compulsory for MBBS in Kyrgyzstan? 2026 Rules",
+    seoDescription: "Is NEET qualification mandatory to study MBBS in Kyrgyzstan? Learn the legal truth about NMC guidelines and foreign medical degrees.",
+    introduction: "Many students who score low in NEET wonder if they can bypass the exam and study MBBS abroad. Be warned: fraudulent agents often promise admission without NEET. Here is the legal truth.",
+    sections: [
+      {
+        heading: "The Legal Requirement",
+        content: [
+          "Yes, qualifying the NEET-UG examination is absolutely compulsory for any Indian citizen who wishes to pursue an MBBS degree abroad and eventually practice medicine in India.",
+          "If you take admission in Kyrgyzstan without a qualifying NEET scorecard, you will not be allowed to sit for the FMGE/NExT screening test when you return to India."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "What is the minimum NEET score required?", answer: "You must score the minimum qualifying percentile announced by the NTA for your respective category (usually around 50th percentile for General and 40th for OBC/SC/ST)." },
+      { question: "Can I take admission this year and clear NEET next year?", answer: "No. You must have a qualified NEET scorecard at the time of your admission and departure." }
+    ]
+  },
+  "practice-in-uk-usa-after-mbbs-kyrgyzstan": {
+    title: "Can I Practice in the UK or USA After MBBS in Kyrgyzstan?",
+    excerpt: "A guide to the global validity of a Kyrgyzstan medical degree. How to clear the USMLE or PLAB.",
+    date: "July 27, 2026",
+    author: "WCIEC Global Careers Team",
+    reviewer: "Medical Board Expert",
+    category: "FAQ Hub",
+    seoTitle: "Practice in USA/UK after MBBS in Kyrgyzstan | USMLE & PLAB",
+    seoDescription: "Can an Indian student practice in the USA or UK after completing MBBS in Kyrgyzstan? Yes. Learn about ECFMG, USMLE, and PLAB pathways.",
+    introduction: "A degree from Kyrgyzstan is not just valid in India. Because top universities in Kyrgyzstan are WHO-recognized and listed in WDOMS, the world is open to you.",
+    sections: [
+      {
+        heading: "The USMLE Pathway (USA)",
+        content: [
+          "Universities like Osh State and JASU hold the critical 'Sponsor Notes' in the WDOMS directory, making their graduates fully eligible for ECFMG certification. This allows you to sit for the USMLE steps and pursue residency in the USA."
+        ]
+      },
+      {
+        heading: "The PLAB Pathway (UK)",
+        content: [
+          "Similarly, a medical degree from Kyrgyzstan is recognized by the General Medical Council (GMC) of the UK. Graduates can appear for the PLAB (Professional and Linguistic Assessments Board) test to practice in the United Kingdom."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Do universities in Kyrgyzstan teach USMLE syllabus?", answer: "Yes, modern universities like JAIU have integrated USMLE testing standards directly into their curriculum." },
+      { question: "Is the degree valid in the Middle East?", answer: "Yes, a WHO-recognized degree from Kyrgyzstan allows you to appear for licensing exams in Dubai (DHA), Qatar, and Saudi Arabia." }
+    ]
+  },
+  "what-happens-if-i-fail-an-exam-kyrgyz-university": {
+    title: "What Happens if I Fail an Exam in a Kyrgyz Medical University?",
+    excerpt: "Understanding the grading system, retake policies, and academic discipline in Kyrgyzstan medical colleges.",
+    date: "July 28, 2026",
+    author: "WCIEC Student Support",
+    reviewer: "Academic Director",
+    category: "FAQ Hub",
+    seoTitle: "What Happens if I Fail an Exam in a Kyrgyz Medical University?",
+    seoDescription: "Failed an exam in Kyrgyzstan? Don't panic. Learn about the grading system, retake policies (modules), and academic support in medical universities.",
+    introduction: "Medical school is notoriously difficult, and occasionally, students may fail an internal exam or module. It is important to know how the academic system in Kyrgyzstan handles such situations.",
+    sections: [
+      {
+        heading: "The Module System and Retakes",
+        content: [
+          "Kyrgyz universities follow the European Credit Transfer System (ECTS). If you fail a module or a final semester exam, you are not immediately expelled. The university provides an official 'Retake Period' (often called an 'OTK' or 'Module Retake').",
+          "You are usually given 2 to 3 chances to clear the subject by paying a nominal administrative fee for the retake."
+        ]
+      },
+      {
+        heading: "Academic Discipline",
+        content: [
+          "However, if a student continuously fails to clear a subject even after multiple retakes, or fails to maintain minimum attendance, the university retains the right to expel the student. Regular attendance is strictly monitored."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Is attendance compulsory?", answer: "Yes, 100% attendance is expected. If you fall below 80% attendance without a valid medical reason, you will not be allowed to sit for exams." },
+      { question: "Does WCIEC help struggling students?", answer: "Yes, our on-campus representatives monitor student performance and arrange senior student tutoring if someone is struggling academically." }
+    ]
+  },
+  "do-kyrgyzstan-universities-require-donations": {
+    title: "Do Medical Universities in Kyrgyzstan Require Donations?",
+    excerpt: "The truth about capitation fees and donations in Central Asian medical education.",
+    date: "July 29, 2026",
+    author: "WCIEC Finance Team",
+    reviewer: "Legal Expert",
+    category: "FAQ Hub",
+    seoTitle: "Do Medical Universities in Kyrgyzstan Require Donations?",
+    seoDescription: "Are there any hidden capitation fees or donations for MBBS in Kyrgyzstan? Read the truth about transparent government university admissions.",
+    introduction: "In India, private medical colleges are infamous for demanding massive capitation fees or 'donations' running into crores of rupees. Does the same system exist in Kyrgyzstan?",
+    sections: [
+      {
+        heading: "Zero Donation Policy",
+        content: [
+          "Absolutely not. Both government and recognized private medical universities in Kyrgyzstan operate on a strict Zero Donation policy.",
+          "Admissions are granted purely on the basis of merit (12th PCB marks and NEET qualification) and seating availability. You only pay the official, published tuition fees."
+        ]
+      },
+      {
+        heading: "Beware of Fraudulent Agents",
+        content: [
+          "If an educational consultant or agent asks you for a 'donation' to secure a seat in Osh State or JASU, they are scamming you. WCIEC Delhi ensures 100% transparency; fees are paid directly to the university."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "How do I pay my tuition fees?", answer: "Tuition fees are usually paid via official international bank wire transfers (SWIFT) directly into the university's official bank account." },
+      { question: "Is there an application fee?", answer: "Universities do charge a minor official processing/admission fee, which is completely transparent and receipted." }
+    ]
+  },
+  "are-hostels-in-kyrgyzstan-safe-cctv": {
+    title: "Are the Hostels in Kyrgyzstan Safe? (Security Protocols Explained)",
+    excerpt: "Detailing the extensive security measures, CCTV, and warden systems that protect Indian students in Kyrgyzstan.",
+    date: "July 30, 2026",
+    author: "Student Welfare Desk",
+    reviewer: "WCIEC Director",
+    category: "FAQ Hub",
+    seoTitle: "Are Hostels in Kyrgyzstan Safe? | Security for Indian Students",
+    seoDescription: "Learn about the high-level security protocols in Kyrgyzstan medical university hostels. Discover CCTV surveillance, biometric entry, and Indian wardens.",
+    introduction: "When living 3,000 kilometers away from home, hostel safety is paramount. Medical universities in Kyrgyzstan treat the security of international students with extreme seriousness.",
+    sections: [
+      {
+        heading: "Multi-Layer Security Systems",
+        content: [
+          "Hostels at universities like JASU and OIMU are fortified. They feature 24/7 armed local security guards at the main gates. Entry into the hostel blocks is usually controlled by biometric (fingerprint or face-ID) turnstiles.",
+          "High-definition CCTV cameras monitor every hallway, common area, and exterior perimeter."
+        ]
+      },
+      {
+        heading: "Strict Curfews and Wardens",
+        content: [
+          "Students are not allowed to wander outside at night. A strict curfew is enforced. Furthermore, dedicated Indian wardens reside within the hostels to maintain discipline and handle any late-night medical emergencies."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Are boys and girls housed together?", answer: "No. Hostels have completely separate blocks or strictly separated floors for male and female students." },
+      { question: "Can outsiders enter the hostel?", answer: "Outsiders, including locals, are strictly prohibited from entering the student residential areas." }
+    ]
+  },
+  "currency-of-kyrgyzstan-and-inr-exchange-rate": {
+    title: "What is the Currency of Kyrgyzstan and its INR Exchange Rate?",
+    excerpt: "A financial guide for Indian students: Understanding the Kyrgyzstani Som (KGS) and managing daily expenses.",
+    date: "July 31, 2026",
+    author: "WCIEC Finance Team",
+    reviewer: "Operations Manager",
+    category: "FAQ Hub",
+    seoTitle: "Kyrgyzstan Currency & INR Exchange Rate for Students",
+    seoDescription: "What is the currency of Kyrgyzstan? Learn about the Kyrgyzstani Som (KGS), the current INR exchange rate, and how Indian students manage money.",
+    introduction: "Managing finances is a crucial part of studying abroad. Understanding the local currency and its value compared to the Indian Rupee helps students budget effectively.",
+    sections: [
+      {
+        heading: "The Kyrgyzstani Som (KGS)",
+        content: [
+          "The official currency of Kyrgyzstan is the Kyrgyzstani Som (KGS). It is a stable currency heavily used in daily life, from paying for groceries to riding the bus."
+        ]
+      },
+      {
+        heading: "The KGS to INR Exchange Rate",
+        content: [
+          "One of the best advantages for Indian students is the highly favorable and easy-to-calculate exchange rate. Historically, 1 INR is roughly equal to 1.05 KGS.",
+          "This means prices in Kyrgyzstan feel exactly like prices in India. If a bottle of water costs 20 KGS, it is effectively 20 Rupees."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "How do students withdraw money?", answer: "Students use international debit cards (like Niyo Global or SBI Forex) at local ATMs in Kyrgyzstan to withdraw Soms directly." },
+      { question: "Are US Dollars accepted?", answer: "Tuition fees are calculated in USD, and you can easily exchange USD for Soms at any local bank or exchange bureau." }
+    ]
+  },
+  "flight-cost-delhi-to-bishkek-kyrgyzstan": {
+    title: "How Much Does a Flight from Delhi to Bishkek Cost?",
+    excerpt: "Detailing the travel routes, flight durations, and average ticket costs from India to Kyrgyzstan.",
+    date: "August 01, 2026",
+    author: "WCIEC Travel Desk",
+    reviewer: "Senior Counsellor",
+    category: "FAQ Hub",
+    seoTitle: "Flight Cost from Delhi to Bishkek, Kyrgyzstan | Travel Guide",
+    seoDescription: "How much does a flight from New Delhi to Bishkek cost? Learn about direct flights, travel durations, and how WCIEC organizes group student travel.",
+    introduction: "Kyrgyzstan's geographical proximity to India makes travel incredibly convenient. Here is everything you need to know about flying to your new university.",
+    sections: [
+      {
+        heading: "Direct Flights and Travel Duration",
+        content: [
+          "There are direct flights operating from New Delhi (DEL) to Bishkek (FRU) via airlines like Aero Nomad. The flight duration is incredibly short—only about 3.5 to 4 hours.",
+          "From Bishkek, students traveling to Osh or Jalal-Abad take a quick 45-minute domestic flight."
+        ]
+      },
+      {
+        heading: "Average Ticket Costs",
+        content: [
+          "A one-way direct flight from Delhi to Bishkek generally costs between INR 15,000 to INR 20,000, depending on how early you book.",
+          "WCIEC Delhi organizes massive group departures, securing bulk student discounts for our enrollees."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Do parents travel with the students?", answer: "Yes, WCIEC Delhi arranges tourist visas and flight tickets for parents who wish to drop off their children." },
+      { question: "Is the airport pickup arranged?", answer: "Absolutely. WCIEC representatives will be waiting at the Bishkek/Osh airport with buses to transport students directly to their hostels." }
+    ]
+  },
+  "health-insurance-for-indian-students-kyrgyzstan": {
+    title: "Is Local Health Insurance Provided to Indian Students in Kyrgyzstan?",
+    excerpt: "Understanding medical insurance, healthcare access, and student clinics in Kyrgyzstan.",
+    date: "August 02, 2026",
+    author: "Student Welfare Desk",
+    reviewer: "Medical Expert",
+    category: "FAQ Hub",
+    seoTitle: "Health Insurance for Indian Students in Kyrgyzstan",
+    seoDescription: "Do Indian students get health insurance in Kyrgyzstan? Learn about mandatory medical insurance and access to healthcare for international students.",
+    introduction: "Falling ill in a foreign country can be stressful. However, as medical students studying in highly advanced universities, your health is a top priority.",
+    sections: [
+      {
+        heading: "Mandatory Medical Insurance",
+        content: [
+          "Yes, every international student is legally required to purchase local medical insurance upon arrival. The cost is usually very affordable, ranging from $100 to $150 per year.",
+          "This insurance covers general physician visits, emergency care, and hospitalization in local government clinics."
+        ]
+      },
+      {
+        heading: "University Clinics and Medical Rooms",
+        content: [
+          "Furthermore, all major university hostels (like Osh State and JASU) have in-house medical rooms staffed by nurses. Because you are studying in a massive clinical hospital system, top-tier medical help is literally right next door."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Are medicines expensive in Kyrgyzstan?", answer: "No, basic generic medicines are highly affordable. However, we recommend students carry a basic first-aid and medicine kit from India for minor ailments." },
+      { question: "What if there is a severe medical emergency?", answer: "WCIEC's on-campus representatives immediately assist the student with hospital admission and communicate directly with the parents in India." }
+    ]
+  },
+  "wciec-delhi-consultation-fees": {
+    title: "Does WCIEC Delhi Charge Consultation Fees?",
+    excerpt: "Transparency first: Understanding WCIEC Delhi's processing fees and our zero hidden cost policy.",
+    date: "August 03, 2026",
+    author: "WCIEC Directors",
+    reviewer: "Legal Department",
+    category: "FAQ Hub",
+    seoTitle: "Does WCIEC Delhi Charge Consultation Fees? | Transparent Costs",
+    seoDescription: "Are there hidden consultation fees at WCIEC Delhi? Discover our 100% transparent fee structure and free initial counseling for MBBS abroad.",
+    introduction: "In an industry plagued by hidden charges, WCIEC Delhi prides itself on absolute financial transparency. Students and parents have a right to know exactly what they are paying for.",
+    sections: [
+      {
+        heading: "Free Initial Counselling",
+        content: [
+          "WCIEC Delhi does NOT charge any fees for initial consultations, profile evaluations, or career guidance. You can visit our Delhi office or call our experts for free advice."
+        ]
+      },
+      {
+        heading: "Official Processing Fees",
+        content: [
+          "We charge a standard, official processing fee only after you decide to proceed with an admission. This fee covers tangible services: Apostille of documents, Visa Invitation Letter procurement, Embassy Visa stamping, flight booking assistance, and on-campus support in Kyrgyzstan.",
+          "This processing fee is stated upfront in writing before any contract is signed."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Can I pay the processing fee in installments?", answer: "Yes, the processing fee is usually broken down into stages (e.g., at the time of admission letter, and at the time of visa stamping)." },
+      { question: "Do you charge extra for airport pickup?", answer: "No. Airport pickup and initial hostel settling are completely covered under our standard processing agreement." }
+    ]
   }
 };
 
