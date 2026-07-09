@@ -22,14 +22,14 @@ import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
-  description: "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees. Direct admission, NEET guidance & Indian hostel.",
+  title: "MBBS in Kyrgyzstan 2026 for Indian Students | Fees & Colleges",
+  description: "Looking to study MBBS in Kyrgyzstan? Explore 2026 fees, top NMC approved medical colleges like JASU & Osh State, admission process, and FMGE passing rates. Apply via WCIEC Delhi.",
   alternates: {
     canonical: "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/",
   },
   openGraph: {
-    title: "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
-    description: "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees. Direct admission, NEET guidance & Indian hostel.",
+    title: "MBBS in Kyrgyzstan 2026 for Indian Students | Fees & Colleges",
+    description: "Looking to study MBBS in Kyrgyzstan? Explore 2026 fees, top NMC approved medical colleges like JASU & Osh State, admission process, and FMGE passing rates. Apply via WCIEC Delhi.",
     url: "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/",
     siteName: "WCIEC Delhi",
     type: "website",
@@ -82,31 +82,43 @@ const universities = [
 const faqs = [
   {
     question: "Is MBBS in Kyrgyzstan valid in India?",
-    answer: "Yes, MBBS in Kyrgyzstan is fully valid in India. Degrees from NMC and WHO approved universities in Kyrgyzstan are recognized. Indian students need to qualify the NExT/FMGE exam to practice in India."
-  },
-  {
-    question: "What is the fees of MBBS in Kyrgyzstan?",
-    answer: "MBBS Kyrgyzstan fees are very affordable. The average total cost, including tuition and hostel for the 5-year duration, ranges from INR 15 Lakhs to INR 22 Lakhs depending on the chosen university."
+    answer: "Yes. Degrees from NMC-approved universities in Kyrgyzstan are fully valid in India. Graduates must pass the FMGE/NExT exam and complete a 1-year internship in India to acquire their medical license."
   },
   {
     question: "Can Indian students study MBBS in Kyrgyzstan without NEET?",
-    answer: "No, as per NMC guidelines, qualifying the NEET-UG exam is strictly mandatory for Indian students who wish to study MBBS abroad and practice in India in the future."
+    answer: "No. Qualifying the NEET exam is a mandatory requirement by the National Medical Commission (NMC) for any Indian student who wishes to study medicine abroad and practice in India."
   },
   {
-    question: "Which is the cheapest medical university in Kyrgyzstan?",
-    answer: "Central Asian International Medical University (CAIMU) is currently one of the most affordable options, with a total package of around INR 15-17 Lakhs for the complete course."
+    question: "Is IELTS or TOEFL required for admission?",
+    answer: "No. Indian students do not need to take IELTS or TOEFL. Admission is based on your 12th-grade PCB marks and NEET qualification."
   },
   {
-    question: "Is English used for MBBS teaching in Kyrgyzstan?",
-    answer: "Yes! All major medical universities offering programs for international students provide 100% English medium medical education for the entire course duration."
+    question: "Can I get an MBBS admission in Kyrgyzstan without donation?",
+    answer: "Absolutely. There are zero capitation fees or donations required. Admissions are strictly merit-based and transparent."
   },
   {
-    question: "How many years is MBBS in Kyrgyzstan?",
-    answer: "The duration of MBBS in Kyrgyzstan is 5 years. This fully complies with the NMC's requirement of a minimum 54-month academic course duration for foreign medical graduates."
+    question: "What is the total cost of MBBS in Kyrgyzstan?",
+    answer: "The total cost, including tuition fees, hostel, and living expenses for 6 years, generally ranges from INR 18 Lakhs to INR 30 Lakhs, depending on the exact university."
   },
   {
-    question: "Which Kyrgyzstan universities are NMC approved?",
-    answer: "Top NMC and WHO approved universities include Osh State University, Jalal Abad State University (JASU), Jalal-Abad International University, Central Asian International Medical University (CAIMU), and Osh International Medical University."
+    question: "Are there scholarships available for Indian students in Kyrgyzstan?",
+    answer: "While direct tuition fee waivers are rare, universities often reward top-performing students with stipends or fee reductions in higher semesters based on exceptional academic merit."
+  },
+  {
+    question: "Which is the best medical college in Kyrgyzstan for Indian students?",
+    answer: "Top choices include Jalal Abad State University, Osh State University International Medical Faculty, and Central Asian International Medical University due to their excellent infrastructure and high FMGE pass rates."
+  },
+  {
+    question: "Is Indian food available?",
+    answer: "Yes. All top universities have dedicated Indian messes serving hygienic vegetarian and non-vegetarian Indian meals."
+  },
+  {
+    question: "Is it safe for female students?",
+    answer: "Yes. Kyrgyzstan is known for its hospitality and safety. University hostels are heavily guarded with CCTV surveillance and strict entry/exit protocols."
+  },
+  {
+    question: "What happens if I fail the FMGE/NExT exam?",
+    answer: "You can retake the exam. There is no limit on the number of attempts for the FMGE. However, dedicated coaching provided in Kyrgyzstan ensures most hardworking students pass on their first attempt."
   }
 ];
 
@@ -166,8 +178,8 @@ export default function MBBSInKyrgyzstanPage() {
       {
         "@type": "Article",
         "@id": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/#article",
-        "headline": "MBBS in Kyrgyzstan 2026 for Indian Students | Admission & Fee",
-        "description": "Get direct admission for MBBS in Kyrgyzstan 2026. Explore NMC approved medical universities with low fees. Direct admission, NEET guidance & Indian hostel.",
+        "headline": "MBBS in Kyrgyzstan for Indian Students 2026: Fees, Colleges, Admission",
+        "description": "Complete guide for Indian students planning to study MBBS in Kyrgyzstan. Discover 2026 fees, top NMC approved medical colleges like Jalal Abad State University, admission process, and FMGE passing rates.",
         "inLanguage": "en-US",
         "mainEntityOfPage": "https://www.wciecdelhi.com/mbbs-in-kyrgyzstan/",
         "author": {
@@ -626,6 +638,91 @@ export default function MBBSInKyrgyzstanPage() {
                     <strong className="text-navy block mb-1">Student Support</strong>
                     <span className="text-gray-600 text-sm">On-ground WCIEC support team available 24/7 for medical emergencies or guidance.</span>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* NEW SECTION: Clinical Exposure & NMC Guidelines */}
+            <div className="bg-gray-50 p-10 rounded-3xl border border-gray-100 shadow-sm max-w-5xl mx-auto space-y-8">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold font-poppins text-navy tracking-tight mb-4">Academics: Clinical Exposure & The NMC Guidelines</h2>
+                <div className="w-20 h-1 bg-medical rounded-full mb-6" />
+                <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                  The quality of your medical degree is determined by the clinical exposure you receive and its legal validity in your home country. <strong>MBBS in Kyrgyzstan</strong> excels in both areas, provided you choose the right university.
+                </p>
+                <div className="space-y-4 text-gray-600 leading-relaxed">
+                  <p><strong>First 3 Years:</strong> Focus on pre-clinical and para-clinical subjects (Anatomy, Physiology, Biochemistry, Pathology, Pharmacology) using advanced simulation labs and 3D cadavers.</p>
+                  <p><strong>Last 2 Years:</strong> Extensive clinical rotations in affiliated government and private hospitals in cities like Osh and Jalal-Abad. You will interact with real patients under the supervision of senior doctors.</p>
+                  <p><strong>Final Year (Internship):</strong> The 6th year is dedicated entirely to a compulsory rotating medical internship, as mandated by the NMC.</p>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold text-navy mb-3">NMC Guidelines for Foreign Medical Graduates (FMGL 2021)</h3>
+                <p className="text-gray-600 mb-4">Is a Kyrgyz medical degree valid in India? Yes, but <strong>ONLY IF</strong> the university complies strictly with the National Medical Commission&apos;s latest FMGL Regulations. To practice in India, your MBBS abroad must meet these strict criteria:</p>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex gap-3 items-start"><CheckCircle2 className="text-medical mt-1 shrink-0" size={18} /> <span><strong>Duration:</strong> Minimum course duration must be 54 months. <em>Kyrgyzstan programs are 5 years.</em></span></li>
+                  <li className="flex gap-3 items-start"><CheckCircle2 className="text-medical mt-1 shrink-0" size={18} /> <span><strong>Internship:</strong> Must include a minimum 12-month compulsory clinical internship. <em>Kyrgyzstan mandates a 1-year internship.</em></span></li>
+                  <li className="flex gap-3 items-start"><CheckCircle2 className="text-medical mt-1 shrink-0" size={18} /> <span><strong>Medium of Instruction:</strong> Must be entirely in English. <em>Our top 5 partner universities are 100% English medium.</em></span></li>
+                  <li className="flex gap-3 items-start"><CheckCircle2 className="text-medical mt-1 shrink-0" size={18} /> <span><strong>Licensing:</strong> The student must be registered with the respective professional regulatory body. <em>Kyrgyzstan allows this.</em></span></li>
+                </ul>
+              </div>
+              <div className="bg-red-50 text-red-800 p-4 rounded-xl border border-red-100 flex gap-4 mt-4">
+                <ShieldCheck className="shrink-0" size={24} />
+                <p className="text-sm"><strong>Warning for Students:</strong> Never enroll in a "bilingual" (Russian + English) program. The NMC explicitly rejects degrees from bilingual programs. At WCIEC Delhi, we guarantee admission strictly to 100% English-medium universities like JASU and CAIMU.</p>
+              </div>
+            </div>
+
+            {/* NEW SECTION: Country Comparisons */}
+            <div className="space-y-8">
+              <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight mb-4">Kyrgyzstan vs Other Top Destinations</h2>
+                <div className="w-20 h-1 bg-medical rounded-full mx-auto mb-6" />
+                <p className="text-gray-600 leading-relaxed">Students often find themselves confused between various countries. Let&apos;s compare objectively.</p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm">
+                  <h4 className="text-xl font-bold text-navy mb-3 flex items-center gap-2"><Globe size={20} className="text-medical" /> Kyrgyzstan vs Russia</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed"><strong>Duration:</strong> Russia requires 6 years + 1 year internship. Kyrgyzstan is 5 years + 1 year internship.<br/><strong>Cost:</strong> Kyrgyzstan is generally more affordable.<br/><strong>Language:</strong> The language barrier off-campus is easier to navigate in Kyrgyzstan due to smaller, student-centric cities like Osh and Jalal-Abad.</p>
+                </div>
+                <div className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm">
+                  <h4 className="text-xl font-bold text-navy mb-3 flex items-center gap-2"><Globe size={20} className="text-medical" /> Kyrgyzstan vs Kazakhstan</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">Both share similar climatic conditions and culture. However, Kyrgyzstan often offers a more budget-friendly fee structure without compromising on quality. The Indian student community is intensely concentrated in Kyrgyzstan, fostering a strong support system.</p>
+                </div>
+                <div className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm">
+                  <h4 className="text-xl font-bold text-navy mb-3 flex items-center gap-2"><Globe size={20} className="text-medical" /> Kyrgyzstan vs Uzbekistan</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">Uzbekistan is rapidly developing its medical infrastructure, but Kyrgyzstan has a more mature and historically established medical education system. Universities like Osh State IMF and JASU have decades of Indian alumni practicing globally.</p>
+                </div>
+                <div className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm">
+                  <h4 className="text-xl font-bold text-navy mb-3 flex items-center gap-2"><Globe size={20} className="text-medical" /> Kyrgyzstan vs Nepal/Bangladesh</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">Nepal and Bangladesh are significantly more expensive (often requiring ₹40-50 Lakhs). Furthermore, they have highly competitive entrance criteria. Kyrgyzstan offers direct merit-based admissions without exorbitant capitation fees.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* NEW SECTION: Parents Guide */}
+            <div className="bg-[#07132a] text-white p-10 md:p-14 rounded-3xl shadow-xl max-w-5xl mx-auto relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-medical/20 rounded-full blur-3xl" />
+              <h2 className="text-3xl font-bold font-poppins tracking-tight mb-6 relative z-10">Parents Guide: Who Should Choose Kyrgyzstan?</h2>
+              
+              <div className="grid md:grid-cols-2 gap-10 relative z-10">
+                <div>
+                  <h4 className="text-xl font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle2 size={20} /> The PERFECT choice if:</h4>
+                  <ul className="space-y-3 text-gray-300 text-sm">
+                    <li className="flex items-start gap-2"><span>• You want an affordable, low-cost MBBS without compromising NMC recognition.</span></li>
+                    <li className="flex items-start gap-2"><span>• The student is determined and ready to work hard for the FMGE/NExT exam.</span></li>
+                    <li className="flex items-start gap-2"><span>• You want a safe, peaceful environment with a massive Indian student community.</span></li>
+                    <li className="flex items-start gap-2"><span>• You want to avoid the stress of private medical college donations in India.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-red-400 mb-4 flex items-center gap-2">Mistakes to Avoid:</h4>
+                  <ul className="space-y-3 text-gray-300 text-sm">
+                    <li className="flex items-start gap-2"><span>• <strong>Fake Agents:</strong> Beware of agents quoting hidden fees or promising "guaranteed" FMGE passing. Passing depends on the student.</span></li>
+                    <li className="flex items-start gap-2"><span>• <strong>Non-Approved Universities:</strong> Always verify the university on WDOMS/NMC websites. Stick to our 5 vetted partner institutions.</span></li>
+                    <li className="flex items-start gap-2"><span>• <strong>Delaying Application:</strong> Applying in September limits choices. Apply early to secure seats in JASU or Osh State.</span></li>
+                  </ul>
                 </div>
               </div>
             </div>
