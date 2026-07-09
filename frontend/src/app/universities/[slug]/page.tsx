@@ -133,10 +133,34 @@ export default async function UniversityPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 mt-12 grid lg:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
-            {/* About */}
-            <section>
-              <h2 className="text-3xl mb-6">About University</h2>
-              <p className="text-gray-600 leading-relaxed text-lg mb-8">{uni.about}</p>
+            {/* About & Detailed Overview */}
+            <section className="space-y-12">
+              <div>
+                <h2 className="text-3xl font-bold text-navy mb-6">About {uni.name}</h2>
+                <div className="w-16 h-1 bg-medical rounded-full mb-6" />
+                <p className="text-gray-600 leading-relaxed text-lg mb-6 font-medium">{uni.about}</p>
+                {uni.detailedOverview && (
+                  <p className="text-gray-600 leading-relaxed text-lg mb-8">{uni.detailedOverview}</p>
+                )}
+              </div>
+
+              {uni.clinicalExposure && (
+                <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                  <h3 className="text-2xl font-bold text-navy mb-4 flex items-center gap-2">
+                    <CheckCircle2 className="text-medical" /> Clinical Exposure & Hospitals
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">{uni.clinicalExposure}</p>
+                </div>
+              )}
+
+              {uni.fmgePerformance && (
+                <div className="bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                  <h3 className="text-2xl font-bold text-navy mb-4 flex items-center gap-2">
+                    <CheckCircle2 className="text-medical" /> FMGE / NExT Performance
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">{uni.fmgePerformance}</p>
+                </div>
+              )}
               
               {(uni.advantages || uni.disadvantages) && (
                 <div className="grid md:grid-cols-2 gap-6 mt-8">

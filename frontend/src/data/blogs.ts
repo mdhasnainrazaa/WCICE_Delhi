@@ -1,201 +1,375 @@
 export interface BlogPost { title: string; excerpt: string; date: string; author: string; reviewer: string; category: string; seoTitle: string; seoDescription: string; introduction: string; sections: { heading: string; content: string[]; }[]; faqs: { question: string; answer: string; }[]; slug: string; }
 
 export const BLOG_DATA: Record<string, Omit<BlogPost, 'slug'>> = {
-  "why-study-mbbs-in-uzbekistan-2026": {
-    title: "Why Study MBBS in Uzbekistan in 2026? (Complete Guide)",
-    excerpt: "Uzbekistan is becoming the top choice for Indian students. Learn about the affordable fees, NMC approved universities, and student lifestyle in this complete guide.",
-    date: "June 15, 2026",
-    author: "Dr. Anjali Verma",
-    reviewer: "WCIEC Senior Medical Counsellor",
-    category: "Uzbekistan",
-    seoTitle: "Why Study MBBS in Uzbekistan in 2026? | Fees & Admission",
-    seoDescription: "Discover why Indian students are choosing Uzbekistan for their MBBS in 2026. Explore NMC approved medical universities, low fees, and Indian food facilities.",
-    introduction: "With the rising competition and exorbitant fees of private medical colleges in India, thousands of NEET aspirants are looking for affordable alternatives. In 2026, Uzbekistan has emerged as one of the most preferred destinations for Indian students to study MBBS. But why is it so popular?",
+  "mbbs-in-kyrgyzstan-fees-structure-2026": {
+    title: "Exact MBBS in Kyrgyzstan Fees Structure 2026",
+    excerpt: "Discover the 100% transparent fee structure for MBBS in Kyrgyzstan for 2026. Compare tuition, hostels, and hidden costs.",
+    date: "July 01, 2026",
+    author: "WCIEC Finance Team",
+    reviewer: "Senior Medical Counsellor",
+    category: "Kyrgyzstan",
+    seoTitle: "MBBS in Kyrgyzstan Fees Structure 2026 | Exact Cost",
+    seoDescription: "Get the exact MBBS in Kyrgyzstan fees structure for 2026. Compare top NMC approved medical universities, hostel costs, and hidden charges.",
+    introduction: "Cost is often the deciding factor for Indian students studying abroad. Kyrgyzstan offers one of the most affordable MBBS programs in the world without compromising on WHO and NMC standards. In this guide, we break down the exact tuition fees, hostel charges, and living expenses for the 2026 intake.",
     sections: [
       {
-        heading: "1. Ultra-Affordable MBBS in Uzbekistan Fees",
+        heading: "1. Tuition Fees of Top Universities",
         content: [
-          "One of the primary reasons students choose Uzbekistan is the highly affordable tuition fees. Top government medical universities like Tashkent Medical Academy and Samarkand State Medical University offer tuition fees ranging from USD 3,000 to USD 3,500 per year.",
-          "When combined with low hostel fees (around $500/year) and affordable living expenses, the total package for a 5-6 year course easily fits into a budget of INR 16-20 Lakhs, making it significantly cheaper than Indian private colleges."
+          "Jalal Abad State University (JASU): $3,200 / Year",
+          "Osh State University: $3,500 / Year",
+          "Central Asian International Medical University (CAIMU): $3,600 / Year",
+          "Jalal-Abad International University: $3,800 / Year",
+          "Osh International Medical University: $4,000 / Year"
         ]
       },
       {
-        heading: "2. 100% English Medium Curriculum",
+        heading: "2. Hostel and Indian Mess Costs",
         content: [
-          "Unlike some European or Asian countries where the medium of instruction switches to the local language in later years, medical universities in Uzbekistan teach the entire MBBS course in English. This ensures Indian students can focus entirely on medical science without the burden of mastering a foreign language for academics."
+          "Hostel accommodation in Kyrgyzstan ranges from $600 to $700 per year, depending on the university. These hostels are heavily secured and equipped with central heating.",
+          "Indian mess facilities, which serve three meals a day, typically cost around $100 to $130 per month."
         ]
       },
       {
-        heading: "3. NMC Approved Medical Universities in Uzbekistan",
+        heading: "3. Hidden Costs to Watch Out For",
         content: [
-          "All major state medical universities in Uzbekistan are recognized by the World Health Organization (WHO) and strictly adhere to the latest National Medical Commission (NMC) guidelines for Indian students.",
-          "This means graduates are fully eligible to appear for the FMGE or NExT licensing exams upon returning to India."
+          "Always budget for annual visa extensions ($150-$200) and mandatory medical insurance ($100-$150). With WCIEC Delhi, all initial processing costs are transparently stated before admission."
         ]
       }
     ],
     faqs: [
-      { question: "Is MBBS in Uzbekistan valid in India?", answer: "Yes, the degree is 100% valid in India provided the university is WHO-recognized and you complete the NMC-mandated 54-month course and 12-month internship." },
-      { question: "Is Indian food available in Uzbekistan?", answer: "Yes, most top medical universities have dedicated Indian messes offering vegetarian and non-vegetarian meals prepared by Indian chefs." }
+      { question: "What is the total budget for 5 years in Kyrgyzstan?", answer: "Including tuition, hostel, food, and basic living expenses, the total budget for a 5-year MBBS in Kyrgyzstan typically ranges between INR 18 Lakhs to 22 Lakhs." },
+      { question: "Can I pay the fees in installments?", answer: "Yes, most universities allow you to pay the tuition fee in two semi-annual installments." }
     ]
   },
-  "osh-state-vs-jalal-abad-state-university": {
-    title: "Osh State University vs Jalal Abad State University: Which is Better?",
-    excerpt: "Comparing the two giants of medical education in Kyrgyzstan. We break down the fees, FMGE passing rates, and campus life to help you decide.",
-    date: "June 18, 2026",
+  "step-by-step-admission-process-mbbs-kyrgyzstan": {
+    title: "Step-by-Step Admission Process for MBBS in Kyrgyzstan",
+    excerpt: "A complete guide on how to secure your medical seat in Kyrgyzstan for the 2026 intake without any hassle.",
+    date: "July 02, 2026",
+    author: "Admissions Desk",
+    reviewer: "Chief Admission Officer",
+    category: "Admissions",
+    seoTitle: "Step-by-Step Admission Process for MBBS in Kyrgyzstan 2026",
+    seoDescription: "Learn the exact step-by-step admission process for MBBS in Kyrgyzstan. Discover eligibility criteria, required documents, and visa processing timelines.",
+    introduction: "Securing admission to a foreign medical university can seem daunting. However, with WCIEC Delhi, the process for Kyrgyzstan is streamlined, transparent, and incredibly fast. Here is the exact step-by-step roadmap to secure your seat for the 2026 intake.",
+    sections: [
+      {
+        heading: "Step 1: Eligibility Check and Document Submission",
+        content: [
+          "Ensure you have a minimum of 50% in your 12th standard PCB and a valid NEET-UG scorecard. Submit scanned copies of your passport and academic transcripts to WCIEC Delhi for a free profile evaluation."
+        ]
+      },
+      {
+        heading: "Step 2: Receiving the Provisional Admission Letter",
+        content: [
+          "Once your documents are verified, WCIEC will apply to your chosen university (e.g., JASU or Osh State). Within 3-4 working days, you will receive the official Provisional Admission Letter."
+        ]
+      },
+      {
+        heading: "Step 3: Ministry Visa Invitation",
+        content: [
+          "WCIEC will submit your documents to the Ministry of Education and Science of the Kyrgyz Republic to process your official Visa Invitation Letter. This process takes 3 to 4 weeks."
+        ]
+      },
+      {
+        heading: "Step 4: Visa Stamping and Departure",
+        content: [
+          "With the invitation letter in hand, WCIEC will process your student visa at the Embassy in New Delhi. Finally, you will join our group departure flights to Bishkek/Osh with our representatives."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Is NEET compulsory for admission?", answer: "Yes, qualifying the NEET exam is a mandatory legal requirement set by the NMC for any Indian student studying MBBS abroad." },
+      { question: "How long does the entire admission process take?", answer: "From document submission to visa stamping, the entire process takes approximately 45 to 60 days." }
+    ]
+  },
+  "jalal-abad-state-university-admission-guide-2026": {
+    title: "Jalal Abad State University Fees and Admission Guide 2026",
+    excerpt: "Everything you need to know about JASU: precise fees, clinical exposure, FMGE passing rates, and the 2026 admission process.",
+    date: "July 03, 2026",
+    author: "WCIEC University Relations",
+    reviewer: "Senior Counsellor",
+    category: "Kyrgyzstan",
+    seoTitle: "Jalal Abad State University Admission 2026 | Fees & Ranking",
+    seoDescription: "Complete guide to Jalal Abad State University (JASU) MBBS admission 2026. Get exact fees, NMC recognition details, and hostel information.",
+    introduction: "Jalal Abad State University (JASU) is one of the most sought-after government medical universities in Kyrgyzstan. Known for its strict academic discipline and affordable fee structure, it is the top choice for thousands of Indian students.",
+    sections: [
+      {
+        heading: "1. Why Choose JASU?",
+        content: [
+          "JASU is fully recognized by the NMC, WHO, and ECFMG. It operates completely in English and offers an incredible FMGE/NExT coaching program directly aligned with the Indian medical syllabus."
+        ]
+      },
+      {
+        heading: "2. JASU Fee Structure 2026",
+        content: [
+          "Tuition Fee: $3,200 per year.",
+          "Hostel Fee: $600 per year.",
+          "Total Annual Cost: $3,800. This makes JASU one of the most budget-friendly government universities globally."
+        ]
+      },
+      {
+        heading: "3. Campus and Hostel Life",
+        content: [
+          "JASU features a highly secure, gated campus. The hostels are equipped with central heating, biometric entry systems, and a dedicated Indian mess serving highly nutritious food cooked by Indian chefs."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "What is the FMGE passing rate of JASU?", answer: "JASU has one of the highest FMGE passing rates in Kyrgyzstan due to its mandatory, intensive NExT coaching programs starting from the 3rd year." },
+      { question: "Are there direct flights to Jalal-Abad?", answer: "Students typically fly from Delhi to Bishkek or Osh, and then take a short domestic flight or scenic drive to Jalal-Abad." }
+    ]
+  },
+  "osh-international-medical-university-vs-osh-state": {
+    title: "Osh International Medical University vs Osh State University",
+    excerpt: "Comparing the modern luxury of OIMU against the historic legacy of Osh State University to help you make the right choice.",
+    date: "July 04, 2026",
     author: "WCIEC Research Group",
-    reviewer: "Senior Admission Counsellor",
+    reviewer: "Academic Director",
     category: "Kyrgyzstan",
-    seoTitle: "Osh State University vs Jalal Abad State University MBBS Comparison",
-    seoDescription: "Should you choose Osh State University or Jalal Abad State University (JASU) for your MBBS? Compare tuition fees, FMGE results, and hostel facilities.",
-    introduction: "When Indian students research MBBS in Kyrgyzstan, two names constantly dominate the list: Osh State University and Jalal Abad State University (JASU). Both are prestigious government institutions, fully recognized by NMC and WHO. But which one is the right fit for you? Let’s break down the differences.",
+    seoTitle: "Osh International Medical University vs Osh State University",
+    seoDescription: "Which is better: Osh International Medical University (OIMU) or Osh State University? Compare fees, clinical exposure, and campus life.",
+    introduction: "Osh is the educational capital of Kyrgyzstan, home to two massive institutions: the historic Osh State University and the ultra-modern Osh International Medical University (OIMU). Choosing between them depends entirely on your priorities.",
     sections: [
       {
-        heading: "1. Tuition Fees and Affordability",
+        heading: "1. Legacy vs Modern Infrastructure",
         content: [
-          "Osh State University charges approximately $3,500 per year for tuition, making it a highly reasonable option given its massive clinical infrastructure.",
-          "Jalal Abad State University (JASU) is slightly more affordable, with tuition fees hovering around $3,200 per year. For students strictly maximizing their budget, JASU offers a slight financial advantage."
+          "Osh State University was established in 1939 and has a massive alumni network and legacy government hospitals.",
+          "OIMU, established recently, focuses on modern luxury, smaller batch sizes, and cutting-edge simulation laboratories."
         ]
       },
       {
-        heading: "2. Campus and Clinical Exposure",
+        heading: "2. Fee Comparison",
         content: [
-          "Osh State University is one of the oldest and largest universities in Central Asia. It boasts massive affiliated government hospitals, giving students unparalleled clinical exposure and hands-on patient interaction.",
-          "Jalal Abad State University, while slightly smaller, offers a very tight-knit, highly secure campus environment. It is famous for its dedicated focus on international students and excellent student support systems."
+          "Osh State charges $3,500 per year for tuition.",
+          "OIMU charges a premium at $4,000 per year, which reflects the smaller class sizes and premium hostel facilities."
         ]
       },
       {
-        heading: "3. FMGE Passing Rates and Coaching",
+        heading: "3. Clinical Exposure",
         content: [
-          "Both universities excel in FMGE/NExT preparation. They both have dedicated Indian faculty who conduct regular screening test classes right from the third year of the MBBS program, resulting in consistently high FMGE passing percentages."
+          "Osh State has the advantage of massive patient inflow due to its affiliation with the largest regional government hospitals.",
+          "OIMU counters this by providing highly personalized clinical training where fewer students share access to patients and surgeons."
         ]
       }
     ],
     faqs: [
-      { question: "Are both universities NMC approved?", answer: "Yes, both Osh State University and Jalal Abad State University strictly comply with the National Medical Commission (NMC) regulations." },
-      { question: "Which city is better, Osh or Jalal-Abad?", answer: "Osh is the second-largest city in Kyrgyzstan and offers a more vibrant city life. Jalal-Abad is quieter and highly peaceful, making it ideal for highly focused studies." }
+      { question: "Is OIMU NMC approved?", answer: "Yes, both Osh International Medical University and Osh State University are fully recognized by the NMC and WHO." },
+      { question: "Which university has better hostels?", answer: "While Osh State has great, secure hostels, OIMU offers premium, hotel-style luxury hostels for students willing to pay a bit more." }
     ]
   },
-  "mbbs-in-uzbekistan-fees-structure-2026": {
-    title: "MBBS in Uzbekistan Fees Structure 2026 (Hidden Costs Revealed)",
-    excerpt: "A complete, transparent breakdown of the MBBS in Uzbekistan fees for 2026, including tuition, hostel, food, and hidden visa charges.",
-    date: "June 20, 2026",
-    author: "WCIEC Finance Committee",
-    reviewer: "Senior Operations Manager",
-    category: "Uzbekistan",
-    seoTitle: "MBBS in Uzbekistan Fees Structure 2026 | Cost Breakdown",
-    seoDescription: "Get the exact MBBS in Uzbekistan Fees Structure for 2026. Discover the actual costs for tuition, Indian mess, hostels, and visa extensions.",
-    introduction: "The primary factor driving Indian students to Central Asia is affordability. However, many agents hide the actual costs until after the student arrives. In this guide, we provide a 100% transparent breakdown of the true MBBS in Uzbekistan fees for the 2026 intake.",
+  "cheapest-nmc-approved-medical-universities-kyrgyzstan": {
+    title: "Cheapest NMC Approved Medical Universities in Kyrgyzstan",
+    excerpt: "A curated list of the most affordable, yet high-quality NMC approved medical universities in Kyrgyzstan for 2026.",
+    date: "July 05, 2026",
+    author: "WCIEC Finance Team",
+    reviewer: "Senior Counsellor",
+    category: "Kyrgyzstan",
+    seoTitle: "Cheapest NMC Approved Medical Universities in Kyrgyzstan 2026",
+    seoDescription: "Discover the cheapest NMC approved medical universities in Kyrgyzstan for 2026. High-quality MBBS education at the lowest tuition fees.",
+    introduction: "Studying MBBS abroad shouldn't lead to massive debt. Kyrgyzstan is famous for offering the lowest tuition fees in the world while strictly maintaining WHO and NMC standards. Here are the top cheapest medical universities in Kyrgyzstan.",
     sections: [
       {
-        heading: "1. University Tuition Fees",
+        heading: "1. Jalal Abad State University (JASU)",
         content: [
-          "The tuition fees for NMC-approved state medical universities in Uzbekistan typically range between USD 3,000 and USD 3,500 per academic year. For a 5-6 year program, this totals roughly $15,000 to $21,000."
+          "At just $3,200 per year, JASU is an unbeatable option. It is a fully public, government-funded university providing excellent education at the lowest possible cost."
         ]
       },
       {
-        heading: "2. Hostel and Accommodation Costs",
+        heading: "2. Osh State University",
         content: [
-          "Government university hostels are highly subsidized. You can expect to pay between USD 500 and USD 700 per year for a shared, fully furnished room equipped with heating and internet."
+          "At $3,500 per year, Osh State offers incredible value. As the #1 ranked university in the country, the massive clinical exposure justifies every penny."
         ]
       },
       {
-        heading: "3. Indian Mess and Food",
+        heading: "3. Central Asian International Medical University (CAIMU)",
         content: [
-          "Food is a crucial factor for Indian students. Dedicated Indian messes run by professional chefs usually cost between USD 100 to USD 130 per month, offering three nutritious meals a day."
-        ]
-      },
-      {
-        heading: "4. Hidden Costs (Visa, Insurance, Medical)",
-        content: [
-          "Students must budget for annual visa extensions (approx. $150-$200), mandatory medical insurance ($100-$150), and annual medical checkups ($50)."
+          "At $3,600 per year, CAIMU provides a highly modern, private university experience at a fraction of the cost of Indian private medical colleges."
         ]
       }
     ],
     faqs: [
-      { question: "Is education loan available for MBBS in Uzbekistan?", answer: "Yes, Indian banks easily provide education loans for students studying in WHO-recognized medical universities abroad. WCIEC provides the necessary admission letters to support your loan application." },
-      { question: "Can I pay the fees in installments?", answer: "Most universities require the tuition fee to be paid annually or semi-annually at the beginning of the semester." }
+      { question: "Are cheap medical universities safe?", answer: "Yes, the universities listed above are state-funded or highly regulated institutions that prioritize international student safety through 24/7 CCTV and gated campuses." },
+      { question: "Do these cheap universities teach in English?", answer: "Absolutely. All universities recommended by WCIEC Delhi teach the entire 5-year MBBS program strictly in English." }
     ]
   },
-  "understanding-nmc-guidelines-mbbs-abroad-2026": {
-    title: "Understanding NMC Guidelines for MBBS Abroad 2026",
-    excerpt: "Don't risk your medical career. Understand the exact National Medical Commission (NMC) rules you must follow to practice in India.",
-    date: "June 22, 2026",
-    author: "WCIEC Legal Department",
-    reviewer: "Chief Medical Consultant",
-    category: "Legal Guidance",
-    seoTitle: "NMC Guidelines for MBBS Abroad 2026 | Important Rules",
-    seoDescription: "Ensure your foreign MBBS degree is valid in India. Read the complete breakdown of the latest NMC guidelines for studying medicine abroad in 2026.",
-    introduction: "The National Medical Commission (NMC) has set strict regulations (the FMGL Regulations 2021) that every Indian student must follow if they intend to study MBBS abroad and eventually practice medicine in India. Ignoring these rules will render your degree invalid.",
+  "central-asian-international-medical-university-review": {
+    title: "Central Asian International Medical University (CAIMU) Complete Review",
+    excerpt: "Is CAIMU the right choice for you? We review the fees, infrastructure, and NExT coaching facilities.",
+    date: "July 06, 2026",
+    author: "WCIEC Academic Team",
+    reviewer: "Chief Counsellor",
+    category: "Kyrgyzstan",
+    seoTitle: "Central Asian International Medical University Review & Fees",
+    seoDescription: "Read the complete review of Central Asian International Medical University (CAIMU). Get details on fees, FMGE passing rates, and Indian mess.",
+    introduction: "Since its establishment in 2018, Central Asian International Medical University (CAIMU) has rapidly become a favorite for Indian students seeking a highly modern, incredibly supportive medical education environment.",
     sections: [
       {
-        heading: "1. Minimum Course Duration (54 Months + 12 Months)",
+        heading: "1. Affordable Excellence",
         content: [
-          "The NMC clearly states that the foreign medical degree course must have a minimum duration of 54 months of theoretical and practical training.",
-          "Furthermore, the student must complete an additional 12-month mandatory clinical internship at the same foreign medical institution where they studied."
+          "With tuition fees at just $3,600 per year, CAIMU positions itself as a premium yet affordable institution. The infrastructure is brand new, featuring bright lecture halls and highly equipped labs."
         ]
       },
       {
-        heading: "2. English Medium Requirement",
+        heading: "2. Indian Student Focus",
         content: [
-          "The entire course of study must be conducted in the English language. Universities that teach clinical subjects in the local language are strictly prohibited under the new rules."
+          "CAIMU's curriculum is heavily tailored towards Indian students. The university has a dedicated NExT examination coaching cell that operates from the 2nd year onwards."
         ]
       },
       {
-        heading: "3. Subject Equivalency",
+        heading: "3. Hostel and Safety",
         content: [
-          "The syllabus of the foreign medical university must be equivalent to the MBBS curriculum in India, encompassing mandatory subjects like Community Medicine, General Surgery, Pediatrics, and more."
-        ]
-      },
-      {
-        heading: "4. Registration in the Host Country",
-        content: [
-          "The student must be registered with the respective professional regulatory body in the country where the degree is awarded, granting them the license to practice medicine in that specific country on par with local citizens."
+          "The hostels are built specifically for international students, featuring high-speed internet, in-house laundry, and a fantastic Indian mess run by authentic Indian chefs."
         ]
       }
     ],
     faqs: [
-      { question: "Are 5-year MBBS programs valid under NMC rules?", answer: "Yes, a 5-year program (60 months) perfectly satisfies the NMC's requirement of a minimum 54-month academic course, provided there is a 1-year internship included or done subsequently." },
-      { question: "Is NEET qualification mandatory?", answer: "Absolutely. Qualifying the NEET-UG exam before departing for the foreign medical university is a non-negotiable legal requirement set by the NMC." }
+      { question: "Is CAIMU a private or government university?", answer: "CAIMU is a highly regulated, modern private medical university recognized by the Ministry of Education of the Kyrgyz Republic and the WHO." },
+      { question: "How is the clinical exposure at CAIMU?", answer: "CAIMU has strong affiliations with major regional hospitals in Jalal-Abad, ensuring students get excellent hands-on clinical rotations." }
     ]
   },
-  "cost-of-living-kyrgyzstan-vs-india": {
-    title: "Cost of Living in Kyrgyzstan vs India: A Guide for Students",
-    excerpt: "Is living in Kyrgyzstan cheaper than living in an Indian metro? We compare housing, food, and transport costs for Indian medical students.",
-    date: "June 25, 2026",
-    author: "WCIEC Student Support Team",
+  "wciec-delhi-review-best-consultants-kyrgyzstan": {
+    title: "WCIEC Delhi Review: Why We are the Best Consultants for Kyrgyzstan",
+    excerpt: "Avoid fraudulent agents. Discover why WCIEC Delhi is the most trusted name for MBBS admissions in Kyrgyzstan.",
+    date: "July 07, 2026",
+    author: "WCIEC Directors",
+    reviewer: "Legal Department",
+    category: "Admissions",
+    seoTitle: "WCIEC Delhi Review | Best MBBS Abroad Consultants for Kyrgyzstan",
+    seoDescription: "Why choose WCIEC Delhi? Read reviews and discover why we are the official, most trusted admission partners for Kyrgyzstan medical universities.",
+    introduction: "Every year, hundreds of Indian students are duped by fake agents promising hidden discounts or fake medical colleges. At WCIEC Delhi, we operate with 100% transparency. Here is why we are the top choice for MBBS in Kyrgyzstan.",
+    sections: [
+      {
+        heading: "1. Official University Partners",
+        content: [
+          "WCIEC Delhi holds official representation contracts with top universities like Osh State, JASU, and CAIMU. We do not use sub-agents; your admission goes directly to the university."
+        ]
+      },
+      {
+        heading: "2. Transparent Fee Structures",
+        content: [
+          "We publish the exact tuition, hostel, and processing fees upfront. There are absolutely no hidden charges, surprise visa fees, or last-minute demands."
+        ]
+      },
+      {
+        heading: "3. On-Campus Support",
+        content: [
+          "Our job doesn't end when you board the flight. WCIEC has dedicated representatives living on campus in Kyrgyzstan to assist students with hostel allocation, sim cards, banking, and any emergencies."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Does WCIEC Delhi charge consultation fees?", answer: "No, our initial counselling and profile evaluation are completely free." },
+      { question: "Can parents travel with students?", answer: "Yes, WCIEC Delhi frequently arranges tourist visas for parents who wish to accompany their children during the initial drop-off." }
+    ]
+  },
+  "how-to-get-direct-admission-osh-state-university": {
+    title: "How to Get Direct Admission in Osh State University",
+    excerpt: "Seats at Osh State University fill up fast. Learn how to secure your direct admission for the 2026 intake legally and safely.",
+    date: "July 08, 2026",
+    author: "Admissions Desk",
     reviewer: "Senior Operations Manager",
     category: "Kyrgyzstan",
-    seoTitle: "Cost of Living in Kyrgyzstan vs India for Students",
-    seoDescription: "Compare the cost of living in Kyrgyzstan vs India. Find out how much Indian students spend on hostels, food, and transport while studying MBBS.",
-    introduction: "One of the biggest concerns for parents sending their children abroad is the monthly living expense. Surprisingly, for Indian students pursuing their MBBS, the cost of living in Kyrgyzstan is incredibly similar—and sometimes even cheaper—than living in a major Indian metropolitan city like Delhi or Mumbai.",
+    seoTitle: "Direct Admission in Osh State University 2026 | Procedure",
+    seoDescription: "Learn how to get direct admission to Osh State University for the 2026 intake. Avoid fake agents and secure your seat with WCIEC Delhi.",
+    introduction: "Because it is the #1 ranked university, seats at Osh State University are highly competitive. Many unauthorized agents promise guaranteed seats but fail to deliver. Here is the legal, direct way to secure your admission through WCIEC Delhi.",
     sections: [
       {
-        heading: "1. Accommodation (Hostels vs Flats)",
+        heading: "1. Meet the Strict Eligibility Criteria",
         content: [
-          "In Kyrgyzstan, university hostels cost around $50 to $70 per month. If a student chooses to rent a private apartment off-campus, a shared flat usually costs between $100 and $150 per month per student.",
-          "Compared to metro cities in India where decent student housing can cost INR 10,000 to 15,000 ($120-$180) monthly, Kyrgyzstan is highly affordable."
+          "Osh State strictly enforces the 50% PCB rule and mandatory NEET qualification. If you do not meet these criteria, your application will be instantly rejected."
         ]
       },
       {
-        heading: "2. Food and Groceries",
+        heading: "2. Apply Early (By June/July)",
         content: [
-          "Enrolling in an Indian mess on campus usually costs about $100 to $130 per month. For students who prefer cooking, buying local groceries like fresh fruits, vegetables, and dairy is extremely cheap due to Kyrgyzstan's heavy agricultural output.",
-          "A monthly grocery bill for a student cooking at home rarely exceeds $60 to $80."
+          "Do not wait for the final round of Indian state counseling. You must book your seat provisionally by July to guarantee a spot in the September intake."
         ]
       },
       {
-        heading: "3. Transportation and Utilities",
+        heading: "3. Submit Documents via Official Partners",
         content: [
-          "Public transportation in cities like Bishkek, Osh, and Jalal-Abad is incredibly cheap. A typical marshrutka (minibus) ride costs just 15-20 KGS (around INR 15). Internet and mobile data plans are also very cheap, costing around $5 for unlimited monthly data."
+          "Submit your passport, 12th marks, and NEET scorecard to WCIEC Delhi. As official partners, we generate the Provisional Admission Letter directly from the university portal within 48 hours."
         ]
       }
     ],
     faqs: [
-      { question: "What is the currency of Kyrgyzstan?", answer: "The currency is the Kyrgyzstani Som (KGS). Currently, 1 INR is roughly equivalent to 1.05 KGS, making currency conversion incredibly simple for Indian students." },
-      { question: "How much pocket money does a student need per month?", answer: "Including food, transport, and basic leisure, a student can comfortably live in Kyrgyzstan with a monthly pocket money allowance of USD 120 to USD 150." }
+      { question: "Can I get admission in Osh State without NEET?", answer: "No. Osh State University strictly adheres to NMC guidelines and will not admit Indian students without a valid NEET scorecard." },
+      { question: "Is there any donation required for Osh State?", answer: "Absolutely not. Government universities in Kyrgyzstan strictly forbid donations or capitation fees." }
+    ]
+  },
+  "documents-required-kyrgyzstan-student-visa-2026": {
+    title: "Documents Required for Kyrgyzstan Student Visa in 2026",
+    excerpt: "A comprehensive checklist of every document you need to successfully stamp your Kyrgyzstan student visa in New Delhi.",
+    date: "July 09, 2026",
+    author: "Visa Processing Department",
+    reviewer: "Legal Expert",
+    category: "Admissions",
+    seoTitle: "Documents Required for Kyrgyzstan Student Visa 2026",
+    seoDescription: "Complete checklist of documents required for a Kyrgyzstan Student Visa in 2026. Learn about Apostille, medical certificates, and invitation letters.",
+    introduction: "Visa rejection can ruin your academic year. The Embassy of Kyrgyzstan in New Delhi is highly strict regarding document authenticity. WCIEC handles the entire process, but here is the exact checklist of documents you must provide.",
+    sections: [
+      {
+        heading: "1. The Official Invitation Letter",
+        content: [
+          "You cannot apply for a visa without the official Visa Invitation Letter issued by the Ministry of Foreign Affairs of Kyrgyzstan. WCIEC procures this for you after university admission."
+        ]
+      },
+      {
+        heading: "2. Academic and Identity Documents",
+        content: [
+          "Original Passport (with at least 2 years validity).",
+          "10th and 12th Original Marksheets (Must be Apostilled by the Ministry of External Affairs, India).",
+          "NEET UG Scorecard."
+        ]
+      },
+      {
+        heading: "3. Medical and Financials",
+        content: [
+          "Official Medical Fitness Certificate confirming negative status for HIV and Tuberculosis.",
+          "Bank statement of parents showing sufficient funds (usually 3 to 6 months of statements)."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "What is document Apostille?", answer: "Apostille is an official certification from the Ministry of External Affairs (MEA) of India that verifies your academic documents are genuine and legally valid internationally." },
+      { question: "Does WCIEC help with the visa interview?", answer: "Yes, our visa department prepares you for any potential embassy interviews and handles the entire submission and collection process." }
+    ]
+  },
+  "why-jalal-abad-international-university-top-choice": {
+    title: "Why Jalal-Abad International University is a Top Choice for 2026",
+    excerpt: "Explore the cutting-edge technology, simulation labs, and modern hostels that make JAIU the top choice for tech-forward medical students.",
+    date: "July 10, 2026",
+    author: "Academic Review Board",
+    reviewer: "Chief Medical Counsellor",
+    category: "Kyrgyzstan",
+    seoTitle: "Why Jalal-Abad International University is a Top Choice for 2026",
+    seoDescription: "Discover why Jalal-Abad International University (JAIU) is a top choice for Indian medical students in 2026. Explore modern labs, hostels, and fees.",
+    introduction: "While older universities rely on their historical legacy, Jalal-Abad International University (JAIU) has built its reputation on the future. Established in 2015, it is specifically designed to train the next generation of global doctors using cutting-edge technology.",
+    sections: [
+      {
+        heading: "1. Simulation-Based Learning",
+        content: [
+          "JAIU features advanced robotic simulation centers and 3D Anatomage tables. Before touching real patients, students practice complex surgical procedures on highly advanced medical mannequins."
+        ]
+      },
+      {
+        heading: "2. Global Faculty and USMLE Focus",
+        content: [
+          "The curriculum is highly integrated with USMLE and NExT standards. The university frequently hosts visiting professors from the UK, India, and the Middle East, giving students a massive global perspective on medicine."
+        ]
+      },
+      {
+        heading: "3. Premium Living Conditions",
+        content: [
+          "JAIU understands that international students need comfort to study effectively. Their hostels are comparable to premium hotels, featuring massive study halls, fast Wi-Fi, and an elite Indian multi-cuisine mess."
+        ]
+      }
+    ],
+    faqs: [
+      { question: "Is JAIU recognized globally?", answer: "Yes, JAIU is fully recognized by the WHO, NMC, and is listed in the World Directory of Medical Schools (WDOMS)." },
+      { question: "What are the fees for JAIU?", answer: "The tuition fee is $3,800 per year, making it an excellent investment for students seeking high-tech medical education." }
     ]
   }
 };
 
-// Convert object to array for mapping
 export const blogPostsArray = Object.keys(BLOG_DATA).map(slug => ({ ...BLOG_DATA[slug], slug }));
