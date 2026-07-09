@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   title: "MBBS in Georgia 2026 for Indian Students | Fees & Admission",
   description: "Explore MBBS in Georgia 2026 for Indian students. Find NMC approved medical universities, affordable Georgia MBBS fees, and complete NEET guidance.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-georgia/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-georgia/",
   },
   openGraph: {
     title: "MBBS in Georgia 2026 for Indian Students | Fees & Admission",
     description: "Explore MBBS in Georgia 2026 for Indian students. Find NMC approved medical universities, affordable Georgia MBBS fees, and complete NEET guidance.",
-    url: "https://wciecdelhi.com/mbbs-in-georgia/",
+    url: "https://www.wciecdelhi.com/mbbs-in-georgia/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -123,23 +123,23 @@ export default function MBBSInGeorgiaPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-georgia/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-georgia/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-georgia/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-georgia/",
         "name": "MBBS in Georgia 2026 for Indian Students | Fees & Admission",
         "description": "Explore MBBS in Georgia 2026 for Indian students. Find NMC approved medical universities, affordable Georgia MBBS fees.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy assisting Indian students with MBBS admission in Georgia.",
         "address": {
           "@type": "PostalAddress",
@@ -152,7 +152,7 @@ export default function MBBSInGeorgiaPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-georgia/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-georgia/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

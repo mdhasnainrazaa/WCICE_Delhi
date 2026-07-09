@@ -37,12 +37,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.seoTitle} | WCIEC Blog`,
     description: post.seoDescription,
     alternates: {
-      canonical: `https://wciecdelhi.com/blog/${slug}/`,
+      canonical: `https://www.wciecdelhi.com/blog/${slug}/`,
     },
     openGraph: {
       title: post.seoTitle,
       description: post.seoDescription,
-      url: `https://wciecdelhi.com/blog/${slug}/`,
+      url: `https://www.wciecdelhi.com/blog/${slug}/`,
       siteName: "WCIEC Delhi",
       type: "article",
     },
@@ -62,16 +62,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "@graph": [
       {
         "@type": "MedicalBusiness",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logos/wciec-logo.webp",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logos/wciec-logo.webp",
         "telephone": "+918586873357"
       },
       {
         "@type": "BlogPosting",
-        "@id": `https://wciecdelhi.com/blog/${slug}/#article`,
-        "url": `https://wciecdelhi.com/blog/${slug}/`,
+        "@id": `https://www.wciecdelhi.com/blog/${slug}/#article`,
+        "url": `https://www.wciecdelhi.com/blog/${slug}/`,
         "headline": post.title,
         "description": post.seoDescription,
         "datePublished": "2026-05-10T12:00:00Z",
@@ -82,12 +82,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         },
         "publisher": {
           "@type": "MedicalBusiness",
-          "@id": "https://wciecdelhi.com/#organization"
+          "@id": "https://www.wciecdelhi.com/#organization"
         }
       },
       {
         "@type": "FAQPage",
-        "@id": `https://wciecdelhi.com/blog/${slug}/#faq`,
+        "@id": `https://www.wciecdelhi.com/blog/${slug}/#faq`,
         "mainEntity": post.faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

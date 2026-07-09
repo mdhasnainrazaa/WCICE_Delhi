@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   title: "MBBS in Kazakhstan 2026 for Indian Students | Fees & Admission",
   description: "Get direct admission for MBBS in Kazakhstan 2026. Explore NMC approved medical universities with low fees, English medium courses, and NEET guidance.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-kazakhstan/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-kazakhstan/",
   },
   openGraph: {
     title: "MBBS in Kazakhstan 2026 for Indian Students | Fees & Admission",
     description: "Get direct admission for MBBS in Kazakhstan 2026. Explore NMC approved medical universities with low fees, English medium courses, and NEET guidance.",
-    url: "https://wciecdelhi.com/mbbs-in-kazakhstan/",
+    url: "https://www.wciecdelhi.com/mbbs-in-kazakhstan/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -110,23 +110,23 @@ export default function MBBSInKazakhstanPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-kazakhstan/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-kazakhstan/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-kazakhstan/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-kazakhstan/",
         "name": "MBBS in Kazakhstan 2026 for Indian Students | Fees & Admission",
         "description": "Get direct admission for MBBS in Kazakhstan 2026. Explore NMC approved medical universities with low fees.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy assisting Indian students with MBBS admission in Kazakhstan.",
         "address": {
           "@type": "PostalAddress",
@@ -139,7 +139,7 @@ export default function MBBSInKazakhstanPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-kazakhstan/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-kazakhstan/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

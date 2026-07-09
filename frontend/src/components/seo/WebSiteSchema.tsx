@@ -4,15 +4,15 @@ export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://wciecdelhi.com/#website",
+    "@id": "https://www.wciecdelhi.com/#website",
     "name": "WCIEC Delhi",
-    "url": "https://wciecdelhi.com/",
+    "url": "https://www.wciecdelhi.com/",
     "publisher": {
-      "@id": "https://wciecdelhi.com/#organization"
+      "@id": "https://www.wciecdelhi.com/#organization"
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://wciecdelhi.com/search/?q={search_term_string}",
+      "target": "https://www.wciecdelhi.com/search/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };

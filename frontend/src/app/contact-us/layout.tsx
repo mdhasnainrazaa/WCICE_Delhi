@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact WCIEC Delhi | Trusted Medical Admission Experts',
     description: 'Start your medical journey in Kyrgyzstan with the best guidance. Secure your seat today for the 2026 intake.',
-    url: 'https://wciecdelhi.com/contact-us/',
+    url: 'https://www.wciecdelhi.com/contact-us/',
     siteName: 'WCIEC Delhi',
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://wciecdelhi.com/contact-us/',
+    canonical: 'https://www.wciecdelhi.com/contact-us/',
   },
 };
 
@@ -38,15 +38,15 @@ export default function ContactLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "@id": "https://wciecdelhi.com/contact-us/#webpage",
-            "url": "https://wciecdelhi.com/contact-us/",
+            "@id": "https://www.wciecdelhi.com/contact-us/#webpage",
+            "url": "https://www.wciecdelhi.com/contact-us/",
             "name": "Contact WCIEC Delhi | MBBS Abroad Guidance",
             "description": "Connect with WCIEC Delhi for expert MBBS admission guidance, university selection, visa assistance, and student support.",
             "isPartOf": {
               "@type": "WebSite",
-              "@id": "https://wciecdelhi.com/#website",
+              "@id": "https://www.wciecdelhi.com/#website",
               "name": "WCIEC Delhi",
-              "url": "https://wciecdelhi.com/"
+              "url": "https://www.wciecdelhi.com/"
             }
           })
         }}
@@ -57,10 +57,10 @@ export default function ContactLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://wciecdelhi.com/contact-us/#localbusiness",
+            "@id": "https://www.wciecdelhi.com/contact-us/#localbusiness",
             "name": "WCIEC Delhi",
-            "image": "https://wciecdelhi.com/logos/wciec-logo.webp",
-            "url": "https://wciecdelhi.com/contact-us/",
+            "image": "https://www.wciecdelhi.com/logos/wciec-logo.webp",
+            "url": "https://www.wciecdelhi.com/contact-us/",
             "telephone": "+918586873357",
             "priceRange": "$$",
             "address": {

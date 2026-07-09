@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   title: "MBBS in Bangladesh 2026 for Indian Students | Fees & Admission",
   description: "Explore MBBS in Bangladesh 2026 for Indian students. Compare Bangladesh vs Kyrgyzstan, check NEET requirements, fees, and admission process.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-bangladesh/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-bangladesh/",
   },
   openGraph: {
     title: "MBBS in Bangladesh 2026 for Indian Students | Fees & Admission",
     description: "Explore MBBS in Bangladesh 2026 for Indian students. Compare Bangladesh vs Kyrgyzstan, check NEET requirements, fees, and admission process.",
-    url: "https://wciecdelhi.com/mbbs-in-bangladesh/",
+    url: "https://www.wciecdelhi.com/mbbs-in-bangladesh/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -70,23 +70,23 @@ export default function MBBSInBangladeshPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-bangladesh/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-bangladesh/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-bangladesh/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-bangladesh/",
         "name": "MBBS in Bangladesh 2026 for Indian Students",
         "description": "Explore MBBS in Bangladesh 2026 for Indian students. Find NMC approved medical universities and affordable fees.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy assisting Indian students with MBBS admission in Bangladesh.",
         "address": {
           "@type": "PostalAddress",
@@ -99,7 +99,7 @@ export default function MBBSInBangladeshPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-bangladesh/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-bangladesh/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

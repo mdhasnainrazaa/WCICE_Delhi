@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   title: "MBBS Abroad Admission 2026: Fees, Eligibility & NMC Rules",
   description: "Planning for MBBS abroad admission 2026? Check NMC guidelines, NEET eligibility, budget-friendly countries, and fees. Get expert WCIEC Delhi counseling!",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-abroad-admission-2026/",
+    canonical: "https://www.wciecdelhi.com/mbbs-abroad-admission-2026/",
   },
   openGraph: {
     title: "MBBS Abroad Admission 2026: Fees, Eligibility & NMC Rules",
     description: "Planning for MBBS abroad admission 2026? Check NMC guidelines, NEET eligibility, budget-friendly countries, and fees. Get expert WCIEC Delhi counseling!",
-    url: "https://wciecdelhi.com/mbbs-abroad-admission-2026/",
+    url: "https://www.wciecdelhi.com/mbbs-abroad-admission-2026/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -68,23 +68,23 @@ export default function Admission2026Page() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-abroad-admission-2026/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-abroad-admission-2026/",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad-admission-2026/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-abroad-admission-2026/",
         "name": "MBBS Abroad Admission 2026 Guide for Indian Students",
         "description": "Secure your MBBS abroad admission 2026. Complete guide on NEET rules, fees, top countries, and NMC compliance.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Expert admission counselors for MBBS abroad 2026. NMC compliance verified.",
         "address": {
           "@type": "PostalAddress",
@@ -97,7 +97,7 @@ export default function Admission2026Page() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-abroad-admission-2026/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad-admission-2026/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

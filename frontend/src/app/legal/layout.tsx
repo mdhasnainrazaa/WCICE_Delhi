@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Legal Information | WCIEC Delhi',
     description: 'Read the Privacy Policy, Refund Policy, and Terms & Conditions of WCIEC Delhi MBBS Abroad consultancy.',
-    url: 'https://wciecdelhi.com/legal/',
+    url: 'https://www.wciecdelhi.com/legal/',
     siteName: 'WCIEC Delhi',
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://wciecdelhi.com/legal/',
+    canonical: 'https://www.wciecdelhi.com/legal/',
   },
 };
 
@@ -38,15 +38,15 @@ export default function LegalLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://wciecdelhi.com/legal/#webpage",
-            "url": "https://wciecdelhi.com/legal/",
+            "@id": "https://www.wciecdelhi.com/legal/#webpage",
+            "url": "https://www.wciecdelhi.com/legal/",
             "name": "Legal Information | WCIEC Delhi",
             "description": "Read the Privacy Policy, Refund Policy, and Terms & Conditions of WCIEC Delhi MBBS Abroad consultancy.",
             "isPartOf": {
               "@type": "WebSite",
-              "@id": "https://wciecdelhi.com/#website",
+              "@id": "https://www.wciecdelhi.com/#website",
               "name": "WCIEC Delhi",
-              "url": "https://wciecdelhi.com/"
+              "url": "https://www.wciecdelhi.com/"
             }
           })
         }}

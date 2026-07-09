@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   title: "MBBS in Uzbekistan 2026 for Indian Students | Fees & Admission",
   description: "Explore MBBS in Uzbekistan 2026 for Indian students. Get direct admission, NEET guidance, and affordable MBBS Uzbekistan fees at NMC approved universities.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-uzbekistan/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-uzbekistan/",
   },
   openGraph: {
     title: "MBBS in Uzbekistan 2026 for Indian Students | Fees & Admission",
     description: "Explore MBBS in Uzbekistan 2026 for Indian students. Get direct admission, NEET guidance, and affordable MBBS Uzbekistan fees at NMC approved universities.",
-    url: "https://wciecdelhi.com/mbbs-in-uzbekistan/",
+    url: "https://www.wciecdelhi.com/mbbs-in-uzbekistan/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -151,23 +151,23 @@ export default function MBBSInUzbekistanPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-uzbekistan/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-uzbekistan/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-uzbekistan/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-uzbekistan/",
         "name": "MBBS in Uzbekistan 2026 for Indian Students | Fees & Admission",
         "description": "Explore MBBS in Uzbekistan 2026 for Indian students. Get direct admission, NEET guidance, and affordable MBBS Uzbekistan fees.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy assisting Indian students with MBBS admission in Uzbekistan.",
         "address": {
           "@type": "PostalAddress",
@@ -180,7 +180,7 @@ export default function MBBSInUzbekistanPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-uzbekistan/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-uzbekistan/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

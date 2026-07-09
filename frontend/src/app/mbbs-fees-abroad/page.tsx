@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   title: "MBBS Fees Abroad 2026 | Cost, Countries & Fee Structure",
   description: "Compare MBBS abroad fees, total cost, and fee structures across top countries. Find low cost MBBS abroad options for Indian students after NEET.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-fees-abroad/",
+    canonical: "https://www.wciecdelhi.com/mbbs-fees-abroad/",
   },
   openGraph: {
     title: "MBBS Fees Abroad 2026 | Cost, Countries & Fee Structure",
     description: "Compare MBBS abroad fees, total cost, and fee structures across top countries. Find low cost MBBS abroad options for Indian students after NEET.",
-    url: "https://wciecdelhi.com/mbbs-fees-abroad/",
+    url: "https://www.wciecdelhi.com/mbbs-fees-abroad/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -92,23 +92,23 @@ export default function MBBSFeesAbroadPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-fees-abroad/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-fees-abroad/",
+        "@id": "https://www.wciecdelhi.com/mbbs-fees-abroad/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-fees-abroad/",
         "name": "MBBS Fees Abroad 2026 | Cost, Countries & Fee Structure",
         "description": "Compare MBBS abroad fees, total cost, and fee structures across top countries.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy providing transparent MBBS abroad fee structures.",
         "address": {
           "@type": "PostalAddress",
@@ -121,7 +121,7 @@ export default function MBBSFeesAbroadPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-fees-abroad/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-fees-abroad/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

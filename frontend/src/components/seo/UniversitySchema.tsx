@@ -24,17 +24,17 @@ export function UniversitySchema({
   // Normalize URL to be absolute on wciecdelhi.com with trailing slash
   const cleanPath = url
     .replace("https://wciec.org", "")
-    .replace("https://wciecdelhi.com", "")
+    .replace("https://www.wciecdelhi.com", "")
     .replace("https://www.wciecdelhi.com", "")
     .replace(/^\/+|\/+$/g, ""); // strip leading/trailing slashes
 
-  const absoluteUrl = `https://wciecdelhi.com/${cleanPath}/`;
-  const absoluteLogoUrl = "https://wciecdelhi.com/logos/wciec-logo.webp";
+  const absoluteUrl = `https://www.wciecdelhi.com/${cleanPath}/`;
+  const absoluteLogoUrl = "https://www.wciecdelhi.com/logos/wciec-logo.webp";
   
   // Normalize image URL to be absolute
   let absoluteImageUrl = image;
   if (image && !image.startsWith("http")) {
-    absoluteImageUrl = `https://wciecdelhi.com${image.startsWith("/") ? "" : "/"}${image}`;
+    absoluteImageUrl = `https://www.wciecdelhi.com${image.startsWith("/") ? "" : "/"}${image}`;
   }
 
   const universitySchema = {
@@ -79,13 +79,13 @@ export function UniversitySchema({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://wciecdelhi.com/"
+        "item": "https://www.wciecdelhi.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Medical Universities",
-        "item": "https://wciecdelhi.com/universities/"
+        "item": "https://www.wciecdelhi.com/universities/"
       },
       {
         "@type": "ListItem",

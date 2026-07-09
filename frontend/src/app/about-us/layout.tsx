@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About WCIEC Delhi | Trusted MBBS Abroad Consultants',
     description: '15+ years of excellence guiding aspiring doctors to top medical universities in Kyrgyzstan. NMC & WHO recognized. 5000+ successful alumni.',
-    url: 'https://wciecdelhi.com/about-us/',
+    url: 'https://www.wciecdelhi.com/about-us/',
     siteName: 'WCIEC Delhi',
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://wciecdelhi.com/about-us/',
+    canonical: 'https://www.wciecdelhi.com/about-us/',
   },
 };
 
@@ -38,15 +38,15 @@ export default function AboutLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "AboutPage",
-            "@id": "https://wciecdelhi.com/about-us/#aboutpage",
-            "url": "https://wciecdelhi.com/about-us/",
+            "@id": "https://www.wciecdelhi.com/about-us/#aboutpage",
+            "url": "https://www.wciecdelhi.com/about-us/",
             "name": "About WCIEC Delhi | MBBS Abroad Consultants",
             "description": "Learn more about WCIEC Delhi, the best MBBS abroad education consultancy in India.",
             "isPartOf": {
               "@type": "WebSite",
-              "@id": "https://wciecdelhi.com/#website",
+              "@id": "https://www.wciecdelhi.com/#website",
               "name": "WCIEC Delhi",
-              "url": "https://wciecdelhi.com/"
+              "url": "https://www.wciecdelhi.com/"
             }
           })
         }}

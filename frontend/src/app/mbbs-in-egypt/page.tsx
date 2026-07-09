@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   title: "MBBS in Egypt 2026 for Indian Students | Fees & Admission",
   description: "Explore MBBS in Egypt for Indian students. Discover NMC approved medical universities, fees, NEET requirements, and compare Egypt vs Russia & Kyrgyzstan.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-egypt/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-egypt/",
   },
   openGraph: {
     title: "MBBS in Egypt 2026 for Indian Students | Fees & Admission",
     description: "Explore MBBS in Egypt for Indian students. Discover NMC approved medical universities, fees, NEET requirements, and compare Egypt vs Russia & Kyrgyzstan.",
-    url: "https://wciecdelhi.com/mbbs-in-egypt/",
+    url: "https://www.wciecdelhi.com/mbbs-in-egypt/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -70,23 +70,23 @@ export default function MBBSInEgyptPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-egypt/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-egypt/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-egypt/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-egypt/",
         "name": "MBBS in Egypt 2026 for Indian Students",
         "description": "Explore MBBS in Egypt for Indian students. Discover NMC approved medical universities, fees, and NEET requirements.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Medical consultancy assisting Indian students with NMC compliant MBBS admission in Egypt.",
         "address": {
           "@type": "PostalAddress",
@@ -99,7 +99,7 @@ export default function MBBSInEgyptPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-egypt/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-egypt/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

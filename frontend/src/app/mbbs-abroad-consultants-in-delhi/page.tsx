@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   title: "MBBS Abroad Consultants in Delhi | WCIEC Delhi Office",
   description: "WCIEC Delhi is the best MBBS abroad education consultancy in Delhi. 15+ years of experience helping medical students secure admissions in top government universities.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-abroad-consultants-in-delhi/",
+    canonical: "https://www.wciecdelhi.com/mbbs-abroad-consultants-in-delhi/",
   },
   openGraph: {
     title: "MBBS Abroad Consultants in Delhi | WCIEC Delhi Office",
     description: "Connect with premium MBBS abroad admission experts in Delhi. Free counseling, verified government universities, and direct fee payment support.",
-    url: "https://wciecdelhi.com/mbbs-abroad-consultants-in-delhi/",
+    url: "https://www.wciecdelhi.com/mbbs-abroad-consultants-in-delhi/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -90,24 +90,24 @@ export default function MBBSAbroadConsultantsInDelhiPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-abroad-consultants-in-delhi/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-abroad-consultants-in-delhi/",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad-consultants-in-delhi/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-abroad-consultants-in-delhi/",
         "name": "MBBS Abroad Consultants in Delhi | WCIEC Delhi",
         "description": "WCIEC Delhi is the best MBBS abroad education consultancy in Delhi.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "EducationalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi",
-        "url": "https://wciecdelhi.com/",
+        "url": "https://www.wciecdelhi.com/",
         "telephone": "+918586873357",
-        "logo": "https://wciecdelhi.com/logos/wciec-logo.webp",
+        "logo": "https://www.wciecdelhi.com/logos/wciec-logo.webp",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "WCIEC – Shakarpur, Near Laxmi Nagar Metro Station, behind Karim Hotel",
@@ -119,18 +119,18 @@ export default function MBBSAbroadConsultantsInDelhiPage() {
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://wciecdelhi.com/mbbs-abroad-consultants-in-delhi/#service",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad-consultants-in-delhi/#service",
         "name": "MBBS Abroad Consultancy Services",
         "provider": {
           "@type": "EducationalOrganization",
-          "@id": "https://wciecdelhi.com/#organization"
+          "@id": "https://www.wciecdelhi.com/#organization"
         },
         "areaServed": "Delhi NCR, India",
         "description": "End-to-end foreign medical admission guidance, visa stamping, legal document translation, airport transit, and local hostel setups."
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-abroad-consultants-in-delhi/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-abroad-consultants-in-delhi/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

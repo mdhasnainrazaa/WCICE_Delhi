@@ -24,12 +24,12 @@ export const metadata: Metadata = {
   title: "NMC Guidelines for MBBS Abroad 2026 | FMGL 2021 Rules Explained",
   description: "Complete guide to NMC guidelines for MBBS abroad. Understand the FMGL 2021 rules, the 54-month duration requirement, and NEET eligibility for Indian students.",
   alternates: {
-    canonical: "https://wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/",
+    canonical: "https://www.wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/",
   },
   openGraph: {
     title: "NMC Guidelines for MBBS Abroad 2026 | FMGL 2021 Rules Explained",
     description: "Complete guide to NMC guidelines for MBBS abroad. Understand the FMGL 2021 rules, the 54-month duration requirement, and NEET eligibility for Indian students.",
-    url: "https://wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/",
+    url: "https://www.wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -64,23 +64,23 @@ export default function NMCGuidelinesPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/#webpage",
-        "url": "https://wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/",
+        "@id": "https://www.wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/#webpage",
+        "url": "https://www.wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/",
         "name": "NMC Guidelines for MBBS Abroad (2026 Compliance Guide)",
         "description": "Complete guide to NMC guidelines for MBBS abroad. Understand FMGL 2021 rules and the 54-month requirement.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Authoritative medical consultancy providing strict NMC compliance verification for MBBS abroad.",
         "address": {
           "@type": "PostalAddress",
@@ -93,7 +93,7 @@ export default function NMCGuidelinesPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/#faq",
+        "@id": "https://www.wciecdelhi.com/nmc-guidelines-for-mbbs-abroad/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Search WCIEC Delhi MBBS abroad guides, country pages, universities, admission resources, fees, NEET, NMC, and visa information.",
   alternates: {
-    canonical: "https://wciecdelhi.com/search/",
+    canonical: "https://www.wciecdelhi.com/search/",
   },
   robots: {
     index: true,

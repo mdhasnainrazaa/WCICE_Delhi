@@ -135,7 +135,7 @@ export default function MBBSInKyrgyzstanPage() {
         "isPartOf": {
           "@type": "WebSite",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {

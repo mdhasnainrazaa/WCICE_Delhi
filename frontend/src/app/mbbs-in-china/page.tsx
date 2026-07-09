@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   title: "MBBS in China 2026 for Indian Students | Fees & Admission",
   description: "Study MBBS in China. Compare China vs Russia & Georgia. Verify NMC compliance, check NEET requirements, MBBS in China fees, and university admission.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-china/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-china/",
   },
   openGraph: {
     title: "MBBS in China 2026 for Indian Students | Fees & Admission",
     description: "Study MBBS in China. Compare China vs Russia & Georgia. Verify NMC compliance, check NEET requirements, MBBS in China fees, and university admission.",
-    url: "https://wciecdelhi.com/mbbs-in-china/",
+    url: "https://www.wciecdelhi.com/mbbs-in-china/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -70,23 +70,23 @@ export default function MBBSInChinaPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-china/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-china/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-china/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-china/",
         "name": "MBBS in China 2026 for Indian Students",
         "description": "Study MBBS in China. Compare China vs Russia & Georgia. Verify NMC compliance, check NEET requirements, and MBBS in China fees.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Medical consultancy providing safe, verified guidance for MBBS admission in China.",
         "address": {
           "@type": "PostalAddress",
@@ -99,7 +99,7 @@ export default function MBBSInChinaPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-china/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-china/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

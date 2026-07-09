@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   title: "MBBS in Russia 2026 for Indian Students | Fees & Admission",
   description: "Explore MBBS in Russia 2026 for Indian students at NMC approved universities. Get direct admission, NEET guidance, and affordable Russia MBBS fees structure.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-in-russia/",
+    canonical: "https://www.wciecdelhi.com/mbbs-in-russia/",
   },
   openGraph: {
     title: "MBBS in Russia 2026 for Indian Students | Fees & Admission",
     description: "Explore MBBS in Russia 2026 for Indian students at NMC approved universities. Get direct admission, NEET guidance, and affordable Russia MBBS fees structure.",
-    url: "https://wciecdelhi.com/mbbs-in-russia/",
+    url: "https://www.wciecdelhi.com/mbbs-in-russia/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -118,23 +118,23 @@ export default function MBBSInRussiaPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-russia/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-in-russia/",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-russia/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-in-russia/",
         "name": "MBBS in Russia 2026 for Indian Students | Fees & Admission",
         "description": "Explore MBBS in Russia 2026 for Indian students at NMC approved universities. Get direct admission, NEET guidance, and affordable Russia MBBS fees structure.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy assisting Indian students with MBBS admission in Russia.",
         "address": {
           "@type": "PostalAddress",
@@ -147,7 +147,7 @@ export default function MBBSInRussiaPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-in-russia/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-in-russia/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

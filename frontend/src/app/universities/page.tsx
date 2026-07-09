@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Explore top-ranked medical universities in Kyrgyzstan for Indian students. Get detailed info about NMC & WHO recognized colleges, low-cost MBBS fees, and direct admission for 2026.",
   keywords: "Medical Universities in Kyrgyzstan, top MBBS colleges Kyrgyzstan, Osh State University fees, Jalal Abad State University, Central Asian International Medical University, low cost MBBS abroad",
   alternates: {
-    canonical: "https://wciecdelhi.com/universities/",
+    canonical: "https://www.wciecdelhi.com/universities/",
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'MBBS Admission in Kyrgyzstan 2026 | WCIEC',
     description: 'Learn the step-by-step MBBS admission process in Kyrgyzstan for Indian students. Eligibility criteria, required documents, fee guidance, and visa support.',
-    url: 'https://wciecdelhi.com/admission/',
+    url: 'https://www.wciecdelhi.com/admission/',
     siteName: 'WCIEC Delhi',
     images: [
       {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://wciecdelhi.com/admission/',
+    canonical: 'https://www.wciecdelhi.com/admission/',
   },
 };
 
@@ -38,15 +38,15 @@ export default function AdmissionLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://wciecdelhi.com/admission/#webpage",
-            "url": "https://wciecdelhi.com/admission/",
+            "@id": "https://www.wciecdelhi.com/admission/#webpage",
+            "url": "https://www.wciecdelhi.com/admission/",
             "name": "MBBS Admission in Kyrgyzstan 2026 | WCIEC",
             "description": "Learn the step-by-step MBBS admission process in Kyrgyzstan for Indian students.",
             "isPartOf": {
               "@type": "WebSite",
-              "@id": "https://wciecdelhi.com/#website",
+              "@id": "https://www.wciecdelhi.com/#website",
               "name": "WCIEC Delhi",
-              "url": "https://wciecdelhi.com/"
+              "url": "https://www.wciecdelhi.com/"
             }
           })
         }}

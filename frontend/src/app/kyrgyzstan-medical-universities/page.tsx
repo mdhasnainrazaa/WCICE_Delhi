@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   title: "Top Medical Universities in Kyrgyzstan 2026 | Fees & Ranking",
   description: "Compare the best NMC & WHO approved medical universities in Kyrgyzstan. Get actual fee structures, course durations, eligibility requirements, and student support.",
   alternates: {
-    canonical: "https://wciecdelhi.com/kyrgyzstan-medical-universities/",
+    canonical: "https://www.wciecdelhi.com/kyrgyzstan-medical-universities/",
   },
   openGraph: {
     title: "Top Medical Universities in Kyrgyzstan 2026 | Fees & Ranking",
     description: "Detailed guide on the top government-recognized medical faculties in Kyrgyzstan. Complete fee package comparisons, academic quality, and hostels.",
-    url: "https://wciecdelhi.com/kyrgyzstan-medical-universities/",
+    url: "https://www.wciecdelhi.com/kyrgyzstan-medical-universities/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -111,20 +111,20 @@ export default function KyrgyzstanMedicalUniversitiesPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/kyrgyzstan-medical-universities/#webpage",
-        "url": "https://wciecdelhi.com/kyrgyzstan-medical-universities/",
+        "@id": "https://www.wciecdelhi.com/kyrgyzstan-medical-universities/#webpage",
+        "url": "https://www.wciecdelhi.com/kyrgyzstan-medical-universities/",
         "name": "Top Medical Universities in Kyrgyzstan 2026 | Fees & Ranking",
         "description": "Compare the best NMC & WHO approved medical universities in Kyrgyzstan.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/kyrgyzstan-medical-universities/#faq",
+        "@id": "https://www.wciecdelhi.com/kyrgyzstan-medical-universities/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,

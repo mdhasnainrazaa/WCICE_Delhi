@@ -17,7 +17,7 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-const baseUrl = "https://wciecdelhi.com";
+const baseUrl = "https://www.wciecdelhi.com";
 
 export const dynamicParams = false;
 

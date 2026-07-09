@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   title: "MBBS Admission Through NEET Abroad | 2026 Guide for Indian Students",
   description: "Planning MBBS abroad after NEET? Discover NMC rules, low NEET score options, and step-by-step admission process for Indian students.",
   alternates: {
-    canonical: "https://wciecdelhi.com/mbbs-admission-through-neet/",
+    canonical: "https://www.wciecdelhi.com/mbbs-admission-through-neet/",
   },
   openGraph: {
     title: "MBBS Admission Through NEET Abroad | 2026 Guide for Indian Students",
     description: "Planning MBBS abroad after NEET? Discover NMC rules, low NEET score options, and step-by-step admission process for Indian students.",
-    url: "https://wciecdelhi.com/mbbs-admission-through-neet/",
+    url: "https://www.wciecdelhi.com/mbbs-admission-through-neet/",
     siteName: "WCIEC Delhi",
     type: "website",
   },
@@ -67,23 +67,23 @@ export default function NEETAdmissionPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wciecdelhi.com/mbbs-admission-through-neet/#webpage",
-        "url": "https://wciecdelhi.com/mbbs-admission-through-neet/",
+        "@id": "https://www.wciecdelhi.com/mbbs-admission-through-neet/#webpage",
+        "url": "https://www.wciecdelhi.com/mbbs-admission-through-neet/",
         "name": "MBBS Admission Through NEET Abroad (2026 Guide)",
         "description": "Discover NMC rules, low NEET score options, and step-by-step admission process for Indian students studying MBBS abroad.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://wciecdelhi.com/#website",
+          "@id": "https://www.wciecdelhi.com/#website",
           "name": "WCIEC Delhi",
-          "url": "https://wciecdelhi.com/"
+          "url": "https://www.wciecdelhi.com/"
         }
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://wciecdelhi.com/#organization",
+        "@id": "https://www.wciecdelhi.com/#organization",
         "name": "WCIEC Delhi Medical Education",
-        "url": "https://wciecdelhi.com/",
-        "logo": "https://wciecdelhi.com/logo.png",
+        "url": "https://www.wciecdelhi.com/",
+        "logo": "https://www.wciecdelhi.com/logo.png",
         "description": "Leading medical consultancy guiding NEET qualified students for MBBS abroad admissions.",
         "address": {
           "@type": "PostalAddress",
@@ -96,7 +96,7 @@ export default function NEETAdmissionPage() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://wciecdelhi.com/mbbs-admission-through-neet/#faq",
+        "@id": "https://www.wciecdelhi.com/mbbs-admission-through-neet/#faq",
         "mainEntity": faqs.map(faq => ({
           "@type": "Question",
           "name": faq.question,
