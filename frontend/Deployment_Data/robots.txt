@@ -1,23 +1,7 @@
-User-agent: *
+User-Agent: *
 Allow: /
 Disallow: /api/
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: bingbot
-Allow: /
+Disallow: /admin/
+Disallow: /_next/
 
 Sitemap: https://www.wciecdelhi.com/sitemap.xml
