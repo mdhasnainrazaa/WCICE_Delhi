@@ -30,6 +30,7 @@ import {
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 import { PrintButton } from "@/components/ui/PrintButton";
 import HeroSlideshow from "@/components/ui/HeroSlideshow";
+import { ApplyNowButton } from "@/components/ui/ApplyNowButton";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -153,12 +154,12 @@ export default async function UniversityPage({ params }: Props) {
                   57 Lenin Street Jalal-Abad, 715600, Kyrgyzstan. | Nearest Airport: Jalal-Abad Airport
                 </p>
                 <div className="pt-2">
-                  <a 
-                    href="#apply" 
-                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2"
+                  <ApplyNowButton 
+                    noDefault={true}
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2 cursor-pointer"
                   >
                     Apply Now <ChevronRight size={16} />
-                  </a>
+                  </ApplyNowButton>
                 </div>
               </div>
 
@@ -725,12 +726,12 @@ export default async function UniversityPage({ params }: Props) {
                   Jalal-Abad, Kyrgyzstan. | Nearest Airport: Jalal-Abad Airport
                 </p>
                 <div className="pt-2">
-                  <a 
-                    href="#apply" 
-                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2"
+                  <ApplyNowButton 
+                    noDefault={true}
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2 cursor-pointer"
                   >
                     Apply Now <ChevronRight size={16} />
-                  </a>
+                  </ApplyNowButton>
                 </div>
               </div>
 
@@ -1278,12 +1279,12 @@ export default async function UniversityPage({ params }: Props) {
                   Bishkek, Kyrgyzstan. | Nearest Airport: Bishkek Airport
                 </p>
                 <div className="pt-2">
-                  <a 
-                    href="#apply" 
-                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2"
+                  <ApplyNowButton 
+                    noDefault={true}
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2 cursor-pointer"
                   >
                     Apply Now <ChevronRight size={16} />
-                  </a>
+                  </ApplyNowButton>
                 </div>
               </div>
 
@@ -1830,12 +1831,12 @@ export default async function UniversityPage({ params }: Props) {
                   331 Lenin Avenue, Osh 723500, Kyrgyzstan. | Nearest Airport: Osh Airport
                 </p>
                 <div className="pt-2">
-                  <a 
-                    href="#apply" 
-                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2"
+                  <ApplyNowButton 
+                    noDefault={true}
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2 cursor-pointer"
                   >
                     Apply Now <ChevronRight size={16} />
-                  </a>
+                  </ApplyNowButton>
                 </div>
               </div>
 
@@ -2458,12 +2459,12 @@ export default async function UniversityPage({ params }: Props) {
                   2, K. Sabirova Street Kyzyl Kyshtak, Osh city, 723500, Kyrgyzstan. | Nearest Airport: Osh International Airport
                 </p>
                 <div className="pt-2">
-                  <a 
-                    href="#apply" 
-                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2"
+                  <ApplyNowButton 
+                    noDefault={true}
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg inline-flex items-center gap-2 cursor-pointer"
                   >
                     Apply Now <ChevronRight size={16} />
-                  </a>
+                  </ApplyNowButton>
                 </div>
               </div>
 
@@ -3132,12 +3133,12 @@ export default async function UniversityPage({ params }: Props) {
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 pt-4">
-                <a 
-                  href="#apply" 
-                  className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg shadow-primary/20 flex items-center gap-2 hover:-translate-y-0.5 duration-200"
+                <ApplyNowButton 
+                  noDefault={true}
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black text-sm uppercase tracking-wider transition-all shadow-lg shadow-primary/20 flex items-center gap-2 hover:-translate-y-0.5 duration-200 cursor-pointer"
                 >
                   <GraduationCap size={18} /> Apply Admission 2026
-                </a>
+                </ApplyNowButton>
                 <a 
                   href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad." 
                   target="_blank" 
