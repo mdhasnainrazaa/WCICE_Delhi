@@ -8,9 +8,10 @@ interface GlobalApplyFormProps {
   onSuccess?: () => void;
   buttonText?: string;
   compact?: boolean;
+  isModal?: boolean;
 }
 
-export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", compact = false }: GlobalApplyFormProps) {
+export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", compact = false, isModal = false }: GlobalApplyFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -59,17 +60,15 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
     setIsSubmitting(true);
 
     try {
-      // Direct submission to Google Script for static export support
       const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
       
       const response = await fetch(scriptUrl || "/api/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-        mode: scriptUrl ? 'no-cors' : 'cors' // Use no-cors for direct script access
+        mode: scriptUrl ? 'no-cors' : 'cors'
       });
 
-      // When using no-cors, we can't check response.ok, so we assume success if no error is thrown
       if (scriptUrl) {
         setIsSuccess(true);
         setFormData({
@@ -78,7 +77,6 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
         if (onSuccess) onSuccess();
         setTimeout(() => setIsSuccess(false), 10000);
       } else if (response.ok) {
-        const result = await response.json();
         setIsSuccess(true);
         setFormData({
           name: "", phone: "", email: "", city: "", neetStatus: "", neetMarks: "", university: ""
@@ -102,51 +100,56 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
       <motion.div 
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        className="flex flex-col items-center justify-center py-16 text-center bg-white rounded-3xl"
+        className="flex flex-col items-center justify-center py-12 text-center bg-white rounded-3xl"
       >
         <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", damping: 12 }}
-          className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-8 shadow-xl shadow-green-100/50"
+          className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 shadow-xl shadow-green-100/50"
         >
-          <CheckCircle2 size={48} className="text-green-600" />
+          <CheckCircle2 size={40} className="text-green-600" />
         </motion.div>
-        <h3 className="text-3xl font-black text-[#0B1F33] mb-4 tracking-tight">Application Received!</h3>
-        <div className="space-y-2 px-4">
-          <p className="text-gray-600 text-lg font-medium leading-relaxed">
-            Thank you, <span className="text-[#0B1F33] font-bold">Your application is in.</span>
+        <h3 className="text-2xl font-black text-navy mb-3 tracking-tight">Application Received!</h3>
+        <div className="space-y-1.5 px-4 max-w-sm">
+          <p className="text-gray-600 text-base font-semibold">
+            Thank you! <span className="text-[#0B1F33] font-bold">Your application is in.</span>
           </p>
-          <p className="text-gray-500 font-medium">
+          <p className="text-gray-500 text-sm font-medium">
             One of our senior counselors will call you within 24 hours.
           </p>
         </div>
-        <button 
-          onClick={() => setIsSuccess(false)}
-          className="mt-10 px-8 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-sm font-bold transition-all"
-        >
-          Close & Return
-        </button>
+        {onSuccess && (
+          <button 
+            onClick={() => setIsSuccess(false)}
+            className="mt-8 px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-xs font-bold transition-all"
+          >
+            Close & Return
+          </button>
+        )}
       </motion.div>
     );
   }
 
-  return (
-    <form onSubmit={handleSubmit} className={compact ? "space-y-2.5" : "space-y-4"}>
+  const FormContent = (
+    <>
       {error && (
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="p-4 bg-red-50 border border-red-100 text-red-600 text-xs font-bold rounded-xl flex items-center gap-2"
+          className="p-3.5 bg-red-50 border border-red-100 text-red-600 text-xs font-bold rounded-xl flex items-center gap-2 mb-4"
         >
           <div className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse" />
           {error}
         </motion.div>
       )}
 
-      <div className="grid grid-cols-1 gap-4">
-        <div className="space-y-1.5">
-          <label htmlFor="apply-form-name" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Full Name *</label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-4">
+        {/* Name */}
+        <div className="flex flex-col">
+          <label htmlFor="apply-form-name" className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 ml-1">
+            Full Name *
+          </label>
           <input 
             type="text" 
             name="name"
@@ -154,13 +157,18 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your name"
-            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
+            className="w-full h-[52px] px-4 text-sm font-bold text-navy rounded-[14px] border border-gray-150 bg-gray-50/30 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
             required
+            autoFocus={isModal}
           />
         </div>
-        <div className="space-y-1.5">
-          <label htmlFor="apply-form-phone" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Phone Number *</label>
-          <div className="relative flex items-center">
+
+        {/* Phone */}
+        <div className="flex flex-col">
+          <label htmlFor="apply-form-phone" className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 ml-1">
+            Phone Number *
+          </label>
+          <div className="relative flex items-center h-[52px]">
             <span className="absolute left-4 text-sm text-gray-400 font-bold">+91</span>
             <input 
               type="tel" 
@@ -169,17 +177,18 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
               value={formData.phone}
               onChange={handleChange}
               placeholder="10-digit mobile"
-              className={`w-full pl-12 pr-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
+              className="w-full h-full pl-12 pr-4 text-sm font-bold text-navy rounded-[14px] border border-gray-150 bg-gray-50/30 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
               required
               maxLength={10}
             />
           </div>
         </div>
-      </div>
-      
-      <div className="grid grid-cols-1 gap-4">
-        <div className="space-y-1.5">
-          <label htmlFor="apply-form-email" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Email Address *</label>
+
+        {/* Email */}
+        <div className="flex flex-col">
+          <label htmlFor="apply-form-email" className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 ml-1">
+            Email Address *
+          </label>
           <input 
             type="email" 
             name="email"
@@ -187,12 +196,16 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
+            className="w-full h-[52px] px-4 text-sm font-bold text-navy rounded-[14px] border border-gray-150 bg-gray-50/30 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
             required
           />
         </div>
-        <div className="space-y-1.5">
-          <label htmlFor="apply-form-city" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">City *</label>
+
+        {/* City */}
+        <div className="flex flex-col">
+          <label htmlFor="apply-form-city" className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 ml-1">
+            City *
+          </label>
           <input 
             type="text" 
             name="city"
@@ -200,39 +213,76 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
             value={formData.city}
             onChange={handleChange}
             placeholder="Your City"
-            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
+            className="w-full h-[52px] px-4 text-sm font-bold text-navy rounded-[14px] border border-gray-150 bg-gray-50/30 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
             required
           />
         </div>
-      </div>
 
-      <div className="grid grid-cols-1 gap-4">
-        <div className="space-y-1.5">
-          <label htmlFor="apply-form-neetStatus" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">NEET Status *</label>
-          <select
-            name="neetStatus"
-            id="apply-form-neetStatus"
-            value={formData.neetStatus}
-            onChange={handleChange}
-            className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer`}
-            required
-          >
-            <option value="" disabled>Select Status</option>
-            <option value="Yes">Qualified / Appeared</option>
-            <option value="No">Not Appeared</option>
-            <option value="Appearing">Appearing This Year</option>
-          </select>
+        {/* NEET Status */}
+        <div className="flex flex-col">
+          <label htmlFor="apply-form-neetStatus" className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 ml-1">
+            NEET Status *
+          </label>
+          <div className="relative">
+            <select
+              name="neetStatus"
+              id="apply-form-neetStatus"
+              value={formData.neetStatus}
+              onChange={handleChange}
+              className="w-full h-[52px] px-4 text-sm font-bold text-navy rounded-[14px] border border-gray-150 bg-gray-50/30 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer"
+              required
+            >
+              <option value="" disabled>Select Status</option>
+              <option value="Yes">Qualified / Appeared</option>
+              <option value="No">Not Appeared</option>
+              <option value="Appearing">Appearing This Year</option>
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none border-l border-gray-150 pl-3">
+              <span className="text-gray-400 text-xs">▼</span>
+            </div>
+          </div>
         </div>
-        
+
+        {/* Preferred University */}
+        <div className="flex flex-col">
+          <label htmlFor="apply-form-university" className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 ml-1">
+            Preferred University *
+          </label>
+          <div className="relative">
+            <select
+              name="university"
+              id="apply-form-university"
+              value={formData.university}
+              onChange={handleChange}
+              className="w-full h-[52px] px-4 text-sm font-bold text-navy rounded-[14px] border border-gray-150 bg-gray-50/30 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer"
+              required
+            >
+              <option value="" disabled>Choose Institution</option>
+              <option value="Jalal Abad State University">Jalal Abad State University</option>
+              <option value="Jalal-Abad International University">Jalal-Abad International University</option>
+              <option value="Osh State University">Osh State University</option>
+              <option value="Osh International Medical University">Osh International Medical University</option>
+              <option value="Central Asian International Medical University">Central Asian International Medical University</option>
+              <option value="Not Sure Yet">I need counseling to decide</option>
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none border-l border-gray-150 pl-3">
+              <span className="text-gray-400 text-xs">▼</span>
+            </div>
+          </div>
+        </div>
+
+        {/* NEET Marks (conditional rendering, spans full row on desktop to avoid layout breaks) */}
         <AnimatePresence mode="wait">
           {formData.neetStatus === "Yes" && (
             <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              className="space-y-1.5"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="flex flex-col md:col-span-2 overflow-hidden"
             >
-              <label htmlFor="apply-form-neetMarks" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">NEET Marks *</label>
+              <label htmlFor="apply-form-neetMarks" className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1.5 ml-1">
+                NEET Marks *
+              </label>
               <input 
                 type="number" 
                 name="neetMarks"
@@ -242,54 +292,59 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
                 placeholder="Expected/Actual Marks (Max 700)"
                 max={700}
                 min={0}
-                className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300`}
+                className="w-full h-[52px] px-4 text-sm font-bold text-navy rounded-[14px] border border-gray-150 bg-gray-50/30 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all placeholder:text-gray-300"
                 required
               />
             </motion.div>
           )}
         </AnimatePresence>
       </div>
+    </>
+  );
 
-      <div className="space-y-1.5">
-        <label htmlFor="apply-form-university" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Preferred University *</label>
-        <select
-          name="university"
-          id="apply-form-university"
-          value={formData.university}
-          onChange={handleChange}
-          className={`w-full px-4 ${compact ? 'py-2.5' : 'py-3'} text-sm font-bold rounded-2xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all bg-white appearance-none cursor-pointer`}
-          required
-        >
-          <option value="" disabled>Choose Institution</option>
-          <option value="Jalal Abad State University">Jalal Abad State University</option>
-          <option value="Jalal-Abad International University">Jalal-Abad International University</option>
-          <option value="Osh State University">Osh State University</option>
-          <option value="Osh International Medical University">Osh International Medical University</option>
-          <option value="Central Asian International Medical University">Central Asian International Medical University</option>
-          <option value="Not Sure Yet">I need counseling to decide</option>
-        </select>
-      </div>
+  const SubmitButton = (
+    <button
+      type="submit"
+      disabled={isSubmitting}
+      className="w-full h-[56px] bg-gradient-to-r from-[#0B1F33] to-[#1a4db8] hover:from-[#1a4db8] hover:to-[#0B1F33] text-white font-black rounded-[14px] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 text-sm uppercase tracking-widest shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform-gpu"
+    >
+      {isSubmitting ? (
+        <>
+          <Loader2 className="animate-spin" size={18} />
+          Processing...
+        </>
+      ) : (
+        <>
+          {buttonText}
+          <CheckCircle2 size={18} />
+        </>
+      )}
+    </button>
+  );
 
+  if (isModal) {
+    return (
+      <form onSubmit={handleSubmit} className="flex flex-col h-full">
+        {/* Scrollable Form Body */}
+        <div className="flex-1 overflow-y-auto px-6 py-5 max-h-[60vh]">
+          {FormContent}
+        </div>
+        
+        {/* Sticky/Fixed Submit Footer */}
+        <div className="border-t border-gray-100 px-6 py-4 bg-gray-50/80 sticky bottom-0 z-20">
+          {SubmitButton}
+        </div>
+      </form>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className={compact ? "space-y-3" : "space-y-4"}>
+      {FormContent}
       <div className={compact ? "pt-2" : "pt-4"}>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className={`w-full bg-[#0B1F33] hover:bg-[#1a4db8] text-white font-black ${compact ? 'py-3.5' : 'py-4'} rounded-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-70 text-sm uppercase tracking-widest shadow-xl shadow-navy/10 group`}
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="animate-spin" size={18} />
-              Processing...
-            </>
-          ) : (
-            <>
-              {buttonText}
-              <CheckCircle2 size={18} className="group-hover:translate-x-1 transition-transform" />
-            </>
-          )}
-        </button>
-
+        {SubmitButton}
       </div>
     </form>
   );
 }
+
