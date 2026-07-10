@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { universities } from "@/data/universities";
 import { generateUniversityMetadata, generateUniversitySchemas } from "@/lib/seoHelper";
@@ -20,6 +21,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
+import { PrintButton } from "@/components/ui/PrintButton";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -93,7 +95,7 @@ export default async function UniversityPage({ params }: Props) {
         />
       )}
 
-    <main className="bg-background min-h-screen">
+    <main className="bg-background min-h-screen text-navy">
       {/* Hero Section */}
       <section className="relative py-24 bg-navy text-white overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
@@ -131,49 +133,62 @@ export default async function UniversityPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Section 1: Overview & Quick Application Portal */}
-      <section className="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-12 items-start" id="overview">
-        {/* Left Column: Academic Overview */}
+      {/* Visible Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-150 py-4">
+        <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider">
+          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <ChevronRight size={12} className="text-gray-300" />
+          <Link href="/universities/" className="hover:text-primary transition-colors">Universities</Link>
+          <ChevronRight size={12} className="text-gray-300" />
+          <Link href="/mbbs-in-kyrgyzstan/" className="hover:text-primary transition-colors">Kyrgyzstan</Link>
+          <ChevronRight size={12} className="text-gray-300" />
+          <span className="text-navy">{uni.name}</span>
+        </div>
+      </div>
+
+      {/* Section 1: Academic Overview & Compact Sidebar */}
+      <section className="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-12 items-start" id="about">
+        {/* Left Column: Academic Content */}
         <div className="lg:col-span-2 space-y-10">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight">About the University</h2>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight">Academic Profile & Details</h2>
             <div className="w-16 h-1 bg-medical rounded-full" />
-            <p className="text-gray-600 leading-relaxed text-lg font-medium">{uni.about}</p>
+            <p className="text-gray-650 leading-relaxed text-lg font-medium">{uni.about}</p>
             {uni.detailedOverview && (
-              <p className="text-gray-600 leading-relaxed text-lg">{uni.detailedOverview}</p>
+              <p className="text-gray-605 leading-relaxed text-lg">{uni.detailedOverview}</p>
             )}
           </div>
 
           {uni.clinicalExposure && (
-            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-4">
-              <h3 className="text-2xl font-bold text-navy flex items-center gap-2">
+            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-4" id="clinical">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
                 <CheckCircle2 className="text-medical shrink-0" size={24} /> 
                 <span>Clinical Exposure & Attached Hospitals</span>
               </h3>
-              <p className="text-gray-600 leading-relaxed text-base md:text-lg">{uni.clinicalExposure}</p>
+              <p className="text-gray-650 leading-relaxed text-base md:text-lg">{uni.clinicalExposure}</p>
             </div>
           )}
 
           {uni.fmgePerformance && (
-            <div className="bg-blue-50/50 p-8 rounded-3xl border border-blue-100/50 space-y-4">
-              <h3 className="text-2xl font-bold text-navy flex items-center gap-2">
+            <div className="bg-blue-50/40 p-8 rounded-3xl border border-blue-100/50 space-y-4" id="fmge">
+              <h3 className="text-2xl font-bold flex items-center gap-2">
                 <ShieldCheck className="text-primary shrink-0" size={24} /> 
                 <span>FMGE / NExT Preparation & Performance</span>
               </h3>
-              <p className="text-gray-600 leading-relaxed text-base md:text-lg">{uni.fmgePerformance}</p>
+              <p className="text-gray-650 leading-relaxed text-base md:text-lg">{uni.fmgePerformance}</p>
             </div>
           )}
           
           {(uni.advantages || uni.disadvantages) && (
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6" id="features">
               {uni.advantages && (
-                <div className="bg-green-50/40 border border-green-100/50 rounded-3xl p-8 space-y-4">
+                <div className="bg-green-50/30 border border-green-100/30 rounded-3xl p-8 space-y-4">
                   <h3 className="text-xl font-bold text-green-800 flex items-center gap-2">
                     <CheckCircle2 className="text-green-600" size={20} /> Key Advantages
                   </h3>
                   <ul className="space-y-3">
                     {uni.advantages.map((adv, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-green-700 font-medium">
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-green-700 font-bold">
                         <span className="text-green-500 mt-1 shrink-0">•</span> 
                         <span>{adv}</span>
                       </li>
@@ -182,13 +197,13 @@ export default async function UniversityPage({ params }: Props) {
                 </div>
               )}
               {uni.disadvantages && (
-                <div className="bg-red-50/40 border border-red-100/50 rounded-3xl p-8 space-y-4">
+                <div className="bg-red-50/30 border border-red-100/30 rounded-3xl p-8 space-y-4">
                   <h3 className="text-xl font-bold text-red-800 flex items-center gap-2">
                     <ShieldCheck className="text-red-600" size={20} /> Points to Consider
                   </h3>
                   <ul className="space-y-3">
                     {uni.disadvantages.map((dis, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-red-700 font-medium">
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-red-700 font-bold">
                         <span className="text-red-500 mt-1 shrink-0">•</span> 
                         <span>{dis}</span>
                       </li>
@@ -200,37 +215,58 @@ export default async function UniversityPage({ params }: Props) {
           )}
         </div>
 
-        {/* Right Column: Dynamic Sticky Application Form */}
-        <div className="lg:col-span-1 lg:sticky lg:top-28" id="apply">
+        {/* Right Column: Premium Compact Sidebar */}
+        <div className="lg:col-span-1 lg:sticky lg:top-28 space-y-6" id="apply">
+          {/* Apply Card */}
           <GlassCard className="bg-white border-gray-100 p-8 shadow-xl rounded-3xl">
             <div className="space-y-2 mb-6">
-              <h3 className="text-2xl font-black text-navy tracking-tight">Apply Online</h3>
-              <p className="text-gray-500 text-sm font-medium">Register now to secure your seat for 2026 batch.</p>
+              <h3 className="text-2xl font-black tracking-tight">Apply Online</h3>
+              <p className="text-gray-500 text-xs font-semibold">Register now to secure your seat for 2026 batch.</p>
             </div>
             <GlobalApplyForm buttonText="Submit Application" />
-            <div className="mt-6 pt-6 border-t border-gray-100 text-center space-y-3">
-              <span className="text-xs text-gray-400 font-bold uppercase tracking-wider block">Or Need Instant Support?</span>
+          </GlassCard>
+
+          {/* Quick Info & Navigation Card */}
+          <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl space-y-6">
+            {/* Quick Links Nav */}
+            <div className="space-y-3">
+              <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest block">Quick Navigation</span>
+              <div className="grid grid-cols-2 gap-2 text-xs font-bold">
+                <a href="#about" className="bg-gray-50 hover:bg-primary hover:text-white px-3 py-2 rounded-xl text-center transition-colors">Overview</a>
+                <a href="#fees" className="bg-gray-50 hover:bg-primary hover:text-white px-3 py-2 rounded-xl text-center transition-colors">Fees</a>
+                <a href="#accommodation" className="bg-gray-50 hover:bg-primary hover:text-white px-3 py-2 rounded-xl text-center transition-colors">Hostel</a>
+                <a href="#requirements" className="bg-gray-50 hover:bg-primary hover:text-white px-3 py-2 rounded-xl text-center transition-colors">Admissions</a>
+                <a href="#faq" className="bg-gray-50 hover:bg-primary hover:text-white px-3 py-2 rounded-xl text-center transition-colors">FAQ</a>
+                <a href="#apply" className="bg-primary text-white px-3 py-2 rounded-xl text-center hover:bg-navy transition-colors">Apply Now</a>
+              </div>
+            </div>
+
+            <hr className="border-gray-100" />
+
+            {/* CTAs */}
+            <div className="flex flex-col gap-3">
               <a 
                 href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad." 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full text-accent font-black text-sm hover:underline"
+                className="bg-[#25D366] hover:bg-[#1eb054] text-white py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg shadow-green-500/10"
               >
-                <MessageSquare size={18} /> Chat with Admission Expert
+                <MessageSquare size={16} /> WhatsApp Inquiry
               </a>
+              <PrintButton />
             </div>
-          </GlassCard>
+          </div>
         </div>
       </section>
 
-      {/* Section 2: Quick Facts & Documents Required (Full Width Panel) */}
-      <section className="bg-gray-50/50 border-y border-gray-100 py-20 my-12">
+      {/* Section 2: Highlights & Document Checklist (Full Width Panel) */}
+      <section className="bg-gray-50/50 border-y border-gray-100 py-20 my-12" id="highlights">
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start">
-          {/* Quick Facts Grid */}
+          {/* Quick Highlights */}
           <div className="lg:col-span-2 space-y-8">
             <div className="space-y-2">
-              <h2 className="text-3xl font-black text-navy tracking-tight">University Highlights</h2>
-              <p className="text-gray-500 font-medium text-base">Key facts and recognition details at a glance.</p>
+              <h2 className="text-3xl font-black tracking-tight">University Highlights</h2>
+              <p className="text-gray-500 font-medium text-base">Key credentials, recognition, and metrics.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {uni.quickFacts.map((fact, i) => (
@@ -247,15 +283,15 @@ export default async function UniversityPage({ params }: Props) {
             </div>
           </div>
 
-          {/* Documents Checklist Card */}
+          {/* Required Documents */}
           <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
-            <h3 className="text-2xl font-bold text-navy flex items-center gap-2">
+            <h3 className="text-2xl font-bold flex items-center gap-2">
               <FileText className="text-primary shrink-0" size={24} /> 
               <span>Documents Needed</span>
             </h3>
             <ul className="space-y-4">
               {uni.documentsRequired.map((doc, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-600 font-bold">
+                <li key={i} className="flex items-start gap-3 text-sm text-gray-650 font-bold">
                   <ChevronRight size={18} className="text-primary shrink-0 mt-0.5" />
                   <span>{doc}</span>
                 </li>
@@ -268,7 +304,7 @@ export default async function UniversityPage({ params }: Props) {
       {/* Section 3: Fee Structure & Campus Living (Full Width Panel) */}
       <section className="max-w-7xl mx-auto px-4 py-16 space-y-12" id="fees">
         <div className="space-y-4">
-          <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight flex items-center gap-3">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight flex items-center gap-3">
             <DollarSign className="text-medical" size={32} /> Fees & Accommodation
           </h2>
           <div className="w-16 h-1 bg-medical rounded-full" />
@@ -289,7 +325,7 @@ export default async function UniversityPage({ params }: Props) {
                 </thead>
                 <tbody className="divide-y divide-gray-150">
                   {uni.fees.map((fee, i) => (
-                    <tr key={i} className="hover:bg-gray-50/50 transition-colors font-medium">
+                    <tr key={i} className="hover:bg-gray-50/50 even:bg-gray-55/30 transition-colors font-medium">
                       <td className="p-5 font-bold text-navy">{fee.year}</td>
                       <td className="p-5 text-gray-600">{fee.tutionFee}</td>
                       <td className="p-5 text-gray-600">{fee.hostelFee}</td>
@@ -299,34 +335,34 @@ export default async function UniversityPage({ params }: Props) {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-gray-400 italic font-medium">* Fees are subject to official university revisions and exchange rate fluctuations. Consultation & processing fees are extra.</p>
+            <p className="text-xs text-gray-400 italic font-medium">* Fees are subject to change according to university policy. Food costs are handled independently in the student mess.</p>
           </div>
 
-          {/* Hostel & Food Stats */}
-          <div className="lg:col-span-1 space-y-6">
-            <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100/50 space-y-3">
+          {/* Hostel Details */}
+          <div className="lg:col-span-1 space-y-6" id="accommodation">
+            <div className="bg-blue-50/40 p-6 rounded-2xl border border-blue-100/50 space-y-3">
               <BedDouble className="text-primary" size={28} />
-              <h4 className="text-lg font-bold text-navy">Hostel Facilities</h4>
-              <p className="text-gray-600 text-sm font-medium leading-relaxed">{uni.hostelDetails}</p>
+              <h4 className="text-lg font-bold">Hostel Facilities</h4>
+              <p className="text-gray-605 text-sm font-medium leading-relaxed">{uni.hostelDetails}</p>
             </div>
-            <div className="bg-green-50/50 p-6 rounded-2xl border border-green-100/50 space-y-3">
+            <div className="bg-green-50/40 p-6 rounded-2xl border border-green-100/50 space-y-3">
               <Coffee className="text-accent" size={28} />
-              <h4 className="text-lg font-bold text-navy">Indian Food & Mess</h4>
-              <p className="text-gray-600 text-sm font-medium leading-relaxed">{uni.foodDetails}</p>
+              <h4 className="text-lg">Indian Food & Mess</h4>
+              <p className="text-gray-655 text-sm font-medium leading-relaxed">{uni.foodDetails}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Section 4: Eligibility & Admission Timeline (Full Width Panel) */}
-      <section className="bg-gray-50/50 border-t border-gray-100 py-20 mt-12">
+      <section className="bg-gray-50/50 border-t border-gray-100 py-20 mt-12" id="requirements">
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start">
           {/* Eligibility Criteria */}
           {uni.eligibility && (
             <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
               <div className="space-y-2">
-                <h3 className="text-2xl font-black text-navy tracking-tight">Eligibility Criteria</h3>
-                <p className="text-gray-500 text-xs font-medium">Verify your profile against requirements.</p>
+                <h3 className="text-2xl font-black tracking-tight">Eligibility Criteria</h3>
+                <p className="text-gray-500 text-xs font-medium">Academic & exam prerequisites.</p>
               </div>
               <ul className="space-y-4">
                 {uni.eligibility.map((criterion, i) => (
@@ -342,8 +378,8 @@ export default async function UniversityPage({ params }: Props) {
           {/* Admission Process Timeline */}
           <div className={uni.eligibility ? "lg:col-span-2 space-y-8" : "lg:col-span-3 space-y-8"}>
             <div className="space-y-2">
-              <h3 className="text-2xl font-black text-navy tracking-tight">Admission & Visa Journey</h3>
-              <p className="text-gray-500 text-sm font-medium">Transparent, step-by-step roadmap to start your studies.</p>
+              <h3 className="text-2xl font-black tracking-tight">Admission & Visa Journey</h3>
+              <p className="text-gray-500 text-sm font-medium">Timeline from verification to arrival in Kyrgyzstan.</p>
             </div>
             <div className="relative border-l border-gray-200 ml-4 pl-8 space-y-8">
               {uni.admissionProcess.map((step, i) => (
@@ -362,17 +398,17 @@ export default async function UniversityPage({ params }: Props) {
       {/* Section 5: Frequently Asked Questions */}
       <section className="max-w-7xl mx-auto px-4 py-24" id="faq">
         <div className="space-y-4 text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight">Frequently Asked Questions</h2>
           <div className="w-16 h-1 bg-medical rounded-full mx-auto" />
         </div>
         <div className="max-w-4xl mx-auto space-y-6">
           {uni.faqs.map((faq, i) => (
             <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-2">
-              <h4 className="text-lg font-black text-navy flex items-start gap-2">
+              <h4 className="text-lg font-black flex items-start gap-2">
                 <span className="text-medical text-xl font-black">Q.</span>
                 <span>{faq.question}</span>
               </h4>
-              <p className="text-gray-600 pl-6 text-base leading-relaxed font-medium">{faq.answer}</p>
+              <p className="text-gray-650 pl-6 text-base leading-relaxed font-medium">{faq.answer}</p>
             </div>
           ))}
         </div>
