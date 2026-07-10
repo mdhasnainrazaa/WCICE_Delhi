@@ -144,7 +144,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
         </motion.div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         <div className="space-y-1.5">
           <label htmlFor="apply-form-name" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Full Name *</label>
           <input 
@@ -177,7 +177,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         <div className="space-y-1.5">
           <label htmlFor="apply-form-email" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Email Address *</label>
           <input 
@@ -206,7 +206,7 @@ export function GlobalApplyForm({ onSuccess, buttonText = "Submit Application", 
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         <div className="space-y-1.5">
           <label htmlFor="apply-form-neetStatus" className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">NEET Status *</label>
           <select
