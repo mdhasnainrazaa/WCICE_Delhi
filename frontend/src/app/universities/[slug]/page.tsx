@@ -221,16 +221,7 @@ export default async function UniversityPage({ params }: Props) {
           </div>
 
           {/* Right Column: Premium Compact Sidebar */}
-          <div className="lg:col-span-1 lg:sticky lg:top-28 space-y-6" id="apply">
-            {/* Apply Card */}
-            <GlassCard className="bg-white border-gray-100 p-8 shadow-xl rounded-3xl">
-              <div className="space-y-2 mb-6">
-                <h3 className="text-2xl font-black tracking-tight">Apply Online</h3>
-                <p className="text-gray-500 text-xs font-semibold">Register now to secure your seat for 2026 batch.</p>
-              </div>
-              <GlobalApplyForm buttonText="Submit Application" />
-            </GlassCard>
-
+          <div className="lg:col-span-1 lg:sticky lg:top-28 space-y-6">
             {/* Quick Info & Navigation Card */}
             <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl space-y-6">
               {/* Quick Links Nav */}
@@ -396,6 +387,20 @@ export default async function UniversityPage({ params }: Props) {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5: Bottom Apply Form Section */}
+        <section className="bg-navy text-white py-16 px-6 md:px-12 rounded-3xl overflow-hidden relative shadow-xl" id="apply">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/15 blur-3xl rounded-full translate-x-1/2" />
+          <div className="max-w-3xl mx-auto relative z-10 space-y-8">
+            <div className="text-center space-y-3">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight">Apply Online</h2>
+              <p className="text-medical font-bold text-base md:text-lg">Register now to secure your seat for 2026 batch.</p>
+            </div>
+            <div className="bg-white text-navy p-8 md:p-12 rounded-3xl shadow-2xl">
+              <GlobalApplyForm buttonText="Submit Application" />
             </div>
           </div>
         </section>
