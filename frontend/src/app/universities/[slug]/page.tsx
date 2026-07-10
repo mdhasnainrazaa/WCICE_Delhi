@@ -160,7 +160,7 @@ export default async function UniversityPage({ params }: Props) {
           </div>
 
           {uni.clinicalExposure && (
-            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-4" id="clinical">
+            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-medical/30 transition-all duration-300 space-y-4" id="clinical">
               <h3 className="text-2xl font-bold flex items-center gap-2">
                 <CheckCircle2 className="text-medical shrink-0" size={24} /> 
                 <span>Clinical Exposure & Attached Hospitals</span>
@@ -170,7 +170,7 @@ export default async function UniversityPage({ params }: Props) {
           )}
 
           {uni.fmgePerformance && (
-            <div className="bg-blue-50/40 p-8 rounded-3xl border border-blue-100/50 space-y-4" id="fmge">
+            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 space-y-4" id="fmge">
               <h3 className="text-2xl font-bold flex items-center gap-2">
                 <ShieldCheck className="text-primary shrink-0" size={24} /> 
                 <span>FMGE / NExT Preparation & Performance</span>
@@ -182,7 +182,7 @@ export default async function UniversityPage({ params }: Props) {
           {(uni.advantages || uni.disadvantages) && (
             <div className="grid md:grid-cols-2 gap-6" id="features">
               {uni.advantages && (
-                <div className="bg-green-50/30 border border-green-100/30 rounded-3xl p-8 space-y-4">
+                <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl hover:border-green-500/30 transition-all duration-300 space-y-4">
                   <h3 className="text-xl font-bold text-green-800 flex items-center gap-2">
                     <CheckCircle2 className="text-green-600" size={20} /> Key Advantages
                   </h3>
@@ -197,7 +197,7 @@ export default async function UniversityPage({ params }: Props) {
                 </div>
               )}
               {uni.disadvantages && (
-                <div className="bg-red-50/30 border border-red-100/30 rounded-3xl p-8 space-y-4">
+                <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl hover:border-red-500/30 transition-all duration-300 space-y-4">
                   <h3 className="text-xl font-bold text-red-800 flex items-center gap-2">
                     <ShieldCheck className="text-red-600" size={20} /> Points to Consider
                   </h3>
@@ -270,7 +270,7 @@ export default async function UniversityPage({ params }: Props) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {uni.quickFacts.map((fact, i) => (
-                <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center">
+                <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-medical/20 transition-all duration-300 flex gap-4 items-center">
                   <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
                     <CheckCircle2 size={20} />
                   </div>
@@ -284,7 +284,7 @@ export default async function UniversityPage({ params }: Props) {
           </div>
 
           {/* Required Documents */}
-          <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
+          <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-medical/30 transition-all duration-300 space-y-6">
             <h3 className="text-2xl font-bold flex items-center gap-2">
               <FileText className="text-primary shrink-0" size={24} /> 
               <span>Documents Needed</span>
@@ -340,12 +340,12 @@ export default async function UniversityPage({ params }: Props) {
 
           {/* Hostel Details */}
           <div className="lg:col-span-1 space-y-6" id="accommodation">
-            <div className="bg-blue-50/40 p-6 rounded-2xl border border-blue-100/50 space-y-3">
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-medical/20 transition-all duration-300 space-y-3">
               <BedDouble className="text-primary" size={28} />
               <h4 className="text-lg font-bold">Hostel Facilities</h4>
               <p className="text-gray-605 text-sm font-medium leading-relaxed">{uni.hostelDetails}</p>
             </div>
-            <div className="bg-green-50/40 p-6 rounded-2xl border border-green-100/50 space-y-3">
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-accent/20 transition-all duration-300 space-y-3">
               <Coffee className="text-accent" size={28} />
               <h4 className="text-lg">Indian Food & Mess</h4>
               <p className="text-gray-655 text-sm font-medium leading-relaxed">{uni.foodDetails}</p>
@@ -359,7 +359,7 @@ export default async function UniversityPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start">
           {/* Eligibility Criteria */}
           {uni.eligibility && (
-            <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
+            <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-medical/30 transition-all duration-300 space-y-6">
               <div className="space-y-2">
                 <h3 className="text-2xl font-black tracking-tight">Eligibility Criteria</h3>
                 <p className="text-gray-500 text-xs font-medium">Academic & exam prerequisites.</p>
@@ -403,7 +403,7 @@ export default async function UniversityPage({ params }: Props) {
         </div>
         <div className="max-w-4xl mx-auto space-y-6">
           {uni.faqs.map((faq, i) => (
-            <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+            <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-medical/20 transition-all duration-300 space-y-2">
               <h4 className="text-lg font-black flex items-start gap-2">
                 <span className="text-medical text-xl font-black">Q.</span>
                 <span>{faq.question}</span>
