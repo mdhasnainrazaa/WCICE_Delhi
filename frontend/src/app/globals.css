@@ -170,9 +170,14 @@
     display: table-header-group !important;
   }
 
-  /* Optimize layout grid behavior in print */
-  .grid-cols-1, .md\:grid-cols-2, .lg\:grid-cols-3 {
-    gap: 1rem !important;
+  /* Force all grids to stack in a single column (vertical layout) for clean PDF rendering */
+  .grid,
+  .grid-cols-1,
+  .md\:grid-cols-2,
+  .lg\:grid-cols-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
   }
 }
 
