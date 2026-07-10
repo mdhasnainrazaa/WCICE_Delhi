@@ -93,245 +93,291 @@ export default async function UniversityPage({ params }: Props) {
         />
       )}
 
-    <main className="pt-24 pb-20">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-navy text-white overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="flex flex-col md:flex-row justify-between md:items-end gap-8">
-              <div>
-                <div className="flex items-center gap-2 text-medical font-bold mb-4">
-                  <MapPin size={18} />
-                  {uni.location}
-                </div>
-                <h1 className="text-4xl md:text-6xl mb-6">{uni.name}</h1>
-                {uni.ranking && (
-                  <div className="inline-block bg-amber-500 text-navy font-bold px-4 py-2 rounded-full text-sm mb-6 shadow-lg shadow-amber-500/20">
-                    🏆 {uni.ranking}
-                  </div>
-                )}
-                <div className="flex flex-wrap gap-4">
-                  {uni.quickFacts.slice(0, 3).map((fact, i) => (
-                    <div key={i} className="bg-white/10 px-4 py-2 rounded-full text-sm backdrop-blur-md">
-                      {fact}
-                    </div>
-                  ))}
-                </div>
+    <main className="bg-background min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-24 bg-navy text-white overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between md:items-end gap-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-medical font-bold">
+                <MapPin size={18} />
+                <span className="tracking-wide uppercase text-sm">{uni.location}</span>
               </div>
-              <div className="flex gap-4">
-                <button className="btn-primary flex items-center gap-2">
-                  <Download size={18} /> Download Brochure
-                </button>
-                <button className="bg-accent text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-accent/90 transition-all">
-                  <MessageSquare size={18} /> WhatsApp
-                </button>
-              </div>
+              <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">{uni.name}</h1>
+              {uni.ranking && (
+                <div className="inline-block bg-accent/20 border border-accent/30 text-accent font-black px-5 py-2.5 rounded-full text-xs uppercase tracking-widest shadow-md">
+                  🏆 {uni.ranking}
+                </div>
+              )}
+            </div>
+            <div className="flex flex-wrap gap-4 shrink-0">
+              <a 
+                href="#apply" 
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
+              >
+                <GraduationCap size={18} /> Apply Admission 2026
+              </a>
+              <a 
+                href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-[#25D366] hover:bg-[#1eb054] text-white px-6 py-4 rounded-full font-bold transition-all flex items-center gap-2 shadow-lg shadow-green-500/20"
+              >
+                <MessageSquare size={18} /> WhatsApp
+              </a>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <div className="max-w-7xl mx-auto px-4 mt-12 grid lg:grid-cols-3 gap-12">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-12">
-            {/* About & Detailed Overview */}
-            <section className="space-y-12">
-              <div>
-                <h2 className="text-3xl font-bold text-navy mb-6">About {uni.name}</h2>
-                <div className="w-16 h-1 bg-medical rounded-full mb-6" />
-                <p className="text-gray-600 leading-relaxed text-lg mb-6 font-medium">{uni.about}</p>
-                {uni.detailedOverview && (
-                  <p className="text-gray-600 leading-relaxed text-lg mb-8">{uni.detailedOverview}</p>
-                )}
-              </div>
+      {/* Section 1: Overview & Quick Application Portal */}
+      <section className="max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-12 items-start" id="overview">
+        {/* Left Column: Academic Overview */}
+        <div className="lg:col-span-2 space-y-10">
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight">About the University</h2>
+            <div className="w-16 h-1 bg-medical rounded-full" />
+            <p className="text-gray-600 leading-relaxed text-lg font-medium">{uni.about}</p>
+            {uni.detailedOverview && (
+              <p className="text-gray-600 leading-relaxed text-lg">{uni.detailedOverview}</p>
+            )}
+          </div>
 
-              {uni.clinicalExposure && (
-                <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100">
-                  <h3 className="text-2xl font-bold text-navy mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="text-medical" /> Clinical Exposure & Hospitals
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{uni.clinicalExposure}</p>
-                </div>
-              )}
-
-              {uni.fmgePerformance && (
-                <div className="bg-blue-50 p-8 rounded-3xl border border-blue-100">
-                  <h3 className="text-2xl font-bold text-navy mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="text-medical" /> FMGE / NExT Performance
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{uni.fmgePerformance}</p>
-                </div>
-              )}
-              
-              {(uni.advantages || uni.disadvantages) && (
-                <div className="grid md:grid-cols-2 gap-6 mt-8">
-                  {uni.advantages && (
-                    <div className="bg-green-50 border border-green-100 rounded-2xl p-6">
-                      <h3 className="text-xl font-bold text-green-800 mb-4 flex items-center gap-2">
-                        <CheckCircle2 className="text-green-600" /> Advantages
-                      </h3>
-                      <ul className="space-y-3">
-                        {uni.advantages.map((adv, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-green-700">
-                            <span className="text-green-500 mt-1">•</span> {adv}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {uni.disadvantages && (
-                    <div className="bg-red-50 border border-red-100 rounded-2xl p-6">
-                      <h3 className="text-xl font-bold text-red-800 mb-4 flex items-center gap-2">
-                        <ShieldCheck className="text-red-600" /> Disadvantages
-                      </h3>
-                      <ul className="space-y-3">
-                        {uni.disadvantages.map((dis, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-red-700">
-                            <span className="text-red-500 mt-1">•</span> {dis}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              )}
-            </section>
-
-            {/* Fee Structure */}
-            <section id="fees">
-              <h2 className="text-3xl mb-6 flex items-center gap-3">
-                <DollarSign className="text-medical" /> Fee Structure
-              </h2>
-              <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-xl">
-                <table className="w-full text-left min-w-[500px]">
-                  <thead className="bg-navy text-white">
-                    <tr>
-                      <th className="p-4">Year</th>
-                      <th className="p-4">Tuition Fee</th>
-                      <th className="p-4">Hostel Fee</th>
-                      <th className="p-4 font-bold text-medical">Total</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-50">
-                    {uni.fees.map((fee, i) => (
-                      <tr key={i} className="hover:bg-gray-50 transition-colors">
-                        <td className="p-4 font-semibold">{fee.year}</td>
-                        <td className="p-4">{fee.tutionFee}</td>
-                        <td className="p-4">{fee.hostelFee}</td>
-                        <td className="p-4 font-bold text-navy">{fee.total}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-4 text-xs text-gray-500 italic">* Fees are subject to university policy and exchange rates. Admission processing fees extra.</p>
-            </section>
-
-            {/* Hostel & Food */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <GlassCard className="border-none shadow-lg bg-blue-50">
-                <BedDouble className="text-primary mb-4" size={32} />
-                <h3 className="text-xl mb-3">Hostel Facilities</h3>
-                <p className="text-gray-600 text-sm">{uni.hostelDetails}</p>
-              </GlassCard>
-              <GlassCard className="border-none shadow-lg bg-green-50">
-                <Coffee className="text-accent mb-4" size={32} />
-                <h3 className="text-xl mb-3">Indian Food</h3>
-                <p className="text-gray-600 text-sm">{uni.foodDetails}</p>
-              </GlassCard>
+          {uni.clinicalExposure && (
+            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-4">
+              <h3 className="text-2xl font-bold text-navy flex items-center gap-2">
+                <CheckCircle2 className="text-medical shrink-0" size={24} /> 
+                <span>Clinical Exposure & Attached Hospitals</span>
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-base md:text-lg">{uni.clinicalExposure}</p>
             </div>
+          )}
 
-            {/* Admission Process & Eligibility */}
-            <section className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-              {uni.eligibility && (
-                <div className="mb-10">
-                  <h2 className="text-2xl mb-6">Eligibility Criteria</h2>
-                  <ul className="grid md:grid-cols-2 gap-4">
-                    {uni.eligibility.map((criterion, i) => (
-                      <li key={i} className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                        <CheckCircle2 className="text-medical shrink-0" size={20} />
-                        <span className="text-sm text-navy font-medium">{criterion}</span>
+          {uni.fmgePerformance && (
+            <div className="bg-blue-50/50 p-8 rounded-3xl border border-blue-100/50 space-y-4">
+              <h3 className="text-2xl font-bold text-navy flex items-center gap-2">
+                <ShieldCheck className="text-primary shrink-0" size={24} /> 
+                <span>FMGE / NExT Preparation & Performance</span>
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-base md:text-lg">{uni.fmgePerformance}</p>
+            </div>
+          )}
+          
+          {(uni.advantages || uni.disadvantages) && (
+            <div className="grid md:grid-cols-2 gap-6">
+              {uni.advantages && (
+                <div className="bg-green-50/40 border border-green-100/50 rounded-3xl p-8 space-y-4">
+                  <h3 className="text-xl font-bold text-green-800 flex items-center gap-2">
+                    <CheckCircle2 className="text-green-600" size={20} /> Key Advantages
+                  </h3>
+                  <ul className="space-y-3">
+                    {uni.advantages.map((adv, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-green-700 font-medium">
+                        <span className="text-green-500 mt-1 shrink-0">•</span> 
+                        <span>{adv}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               )}
-
-              <h2 className="text-3xl mb-8">Admission Process</h2>
-              <div className="space-y-6">
-                {uni.admissionProcess.map((step, i) => (
-                  <div key={i} className="flex items-center gap-6">
-                    <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold shrink-0">
-                      {i + 1}
-                    </div>
-                    <div className="text-navy font-medium text-lg">{step}</div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </div>
-
-          {/* Sidebar */}
-          <aside className="space-y-8">
-            {/* Lead Form Sidebar */}
-            <GlassCard className="sticky top-28 bg-white border-primary/10">
-              <h3 className="text-2xl mb-2">Apply Now</h3>
-              <p className="text-gray-500 text-sm mb-6">Secure your seat for 2026 batch today.</p>
-              <div className="pt-2">
-                <GlobalApplyForm buttonText="Submit Application" />
-              </div>
-              <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-                <p className="text-xs text-gray-400 mb-2 uppercase font-bold tracking-widest">Or Instant Support</p>
-                <button className="flex items-center justify-center gap-2 w-full text-accent font-bold hover:gap-3 transition-all">
-                  <MessageSquare size={18} /> Chat on WhatsApp
-                </button>
-              </div>
-            </GlassCard>
-
-            {/* Quick Facts Sidebar */}
-            <div className="bg-navy p-6 rounded-3xl text-white">
-              <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <GraduationCap className="text-medical" /> University Facts
-              </h4>
-              <ul className="space-y-4">
-                {uni.quickFacts.map((fact, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
-                    <CheckCircle2 size={16} className="text-accent" />
-                    {fact}
-                  </li>
-                ))}
-              </ul>
+              {uni.disadvantages && (
+                <div className="bg-red-50/40 border border-red-100/50 rounded-3xl p-8 space-y-4">
+                  <h3 className="text-xl font-bold text-red-800 flex items-center gap-2">
+                    <ShieldCheck className="text-red-600" size={20} /> Points to Consider
+                  </h3>
+                  <ul className="space-y-3">
+                    {uni.disadvantages.map((dis, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-red-700 font-medium">
+                        <span className="text-red-500 mt-1 shrink-0">•</span> 
+                        <span>{dis}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-
-            {/* Required Docs */}
-            <div className="bg-gray-50 p-6 rounded-3xl">
-              <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
-                <FileText className="text-primary" /> Documents Needed
-              </h4>
-              <ul className="space-y-3">
-                {uni.documentsRequired.map((doc, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <ChevronRight size={16} className="text-primary shrink-0 mt-1" />
-                    {doc}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
+          )}
         </div>
 
-        {/* FAQ Section */}
-        <section className="max-w-7xl mx-auto px-4 mt-24">
-          <h2 className="text-3xl mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {uni.faqs.map((faq, i) => (
-              <GlassCard key={i} className="border-none bg-white shadow-sm">
-                <h4 className="text-lg font-bold mb-2 text-navy">{faq.question}</h4>
-                <p className="text-gray-600">{faq.answer}</p>
-              </GlassCard>
-            ))}
+        {/* Right Column: Dynamic Sticky Application Form */}
+        <div className="lg:col-span-1 lg:sticky lg:top-28" id="apply">
+          <GlassCard className="bg-white border-gray-100 p-8 shadow-xl rounded-3xl">
+            <div className="space-y-2 mb-6">
+              <h3 className="text-2xl font-black text-navy tracking-tight">Apply Online</h3>
+              <p className="text-gray-500 text-sm font-medium">Register now to secure your seat for 2026 batch.</p>
+            </div>
+            <GlobalApplyForm buttonText="Submit Application" />
+            <div className="mt-6 pt-6 border-t border-gray-100 text-center space-y-3">
+              <span className="text-xs text-gray-400 font-bold uppercase tracking-wider block">Or Need Instant Support?</span>
+              <a 
+                href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad." 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full text-accent font-black text-sm hover:underline"
+              >
+                <MessageSquare size={18} /> Chat with Admission Expert
+              </a>
+            </div>
+          </GlassCard>
+        </div>
+      </section>
+
+      {/* Section 2: Quick Facts & Documents Required (Full Width Panel) */}
+      <section className="bg-gray-50/50 border-y border-gray-100 py-20 my-12">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start">
+          {/* Quick Facts Grid */}
+          <div className="lg:col-span-2 space-y-8">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-black text-navy tracking-tight">University Highlights</h2>
+              <p className="text-gray-500 font-medium text-base">Key facts and recognition details at a glance.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {uni.quickFacts.map((fact, i) => (
+                <div key={i} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center">
+                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                    <CheckCircle2 size={20} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest block">Fact #{i + 1}</span>
+                    <span className="text-navy font-bold text-base leading-snug">{fact}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
-      </main>
+
+          {/* Documents Checklist Card */}
+          <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
+            <h3 className="text-2xl font-bold text-navy flex items-center gap-2">
+              <FileText className="text-primary shrink-0" size={24} /> 
+              <span>Documents Needed</span>
+            </h3>
+            <ul className="space-y-4">
+              {uni.documentsRequired.map((doc, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-gray-600 font-bold">
+                  <ChevronRight size={18} className="text-primary shrink-0 mt-0.5" />
+                  <span>{doc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Fee Structure & Campus Living (Full Width Panel) */}
+      <section className="max-w-7xl mx-auto px-4 py-16 space-y-12" id="fees">
+        <div className="space-y-4">
+          <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight flex items-center gap-3">
+            <DollarSign className="text-medical" size={32} /> Fees & Accommodation
+          </h2>
+          <div className="w-16 h-1 bg-medical rounded-full" />
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          {/* Table Container */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="overflow-x-auto rounded-3xl border border-gray-100 shadow-xl bg-white">
+              <table className="w-full text-left min-w-[500px] border-collapse">
+                <thead className="bg-navy text-white">
+                  <tr>
+                    <th className="p-5 font-black text-xs uppercase tracking-wider">Year</th>
+                    <th className="p-5 font-black text-xs uppercase tracking-wider">Tuition Fee</th>
+                    <th className="p-5 font-black text-xs uppercase tracking-wider">Hostel Fee</th>
+                    <th className="p-5 font-black text-xs uppercase tracking-wider text-medical">Total Package</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-150">
+                  {uni.fees.map((fee, i) => (
+                    <tr key={i} className="hover:bg-gray-50/50 transition-colors font-medium">
+                      <td className="p-5 font-bold text-navy">{fee.year}</td>
+                      <td className="p-5 text-gray-600">{fee.tutionFee}</td>
+                      <td className="p-5 text-gray-600">{fee.hostelFee}</td>
+                      <td className="p-5 font-bold text-navy">{fee.total}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-gray-400 italic font-medium">* Fees are subject to official university revisions and exchange rate fluctuations. Consultation & processing fees are extra.</p>
+          </div>
+
+          {/* Hostel & Food Stats */}
+          <div className="lg:col-span-1 space-y-6">
+            <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100/50 space-y-3">
+              <BedDouble className="text-primary" size={28} />
+              <h4 className="text-lg font-bold text-navy">Hostel Facilities</h4>
+              <p className="text-gray-600 text-sm font-medium leading-relaxed">{uni.hostelDetails}</p>
+            </div>
+            <div className="bg-green-50/50 p-6 rounded-2xl border border-green-100/50 space-y-3">
+              <Coffee className="text-accent" size={28} />
+              <h4 className="text-lg font-bold text-navy">Indian Food & Mess</h4>
+              <p className="text-gray-600 text-sm font-medium leading-relaxed">{uni.foodDetails}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Eligibility & Admission Timeline (Full Width Panel) */}
+      <section className="bg-gray-50/50 border-t border-gray-100 py-20 mt-12">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start">
+          {/* Eligibility Criteria */}
+          {uni.eligibility && (
+            <div className="lg:col-span-1 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
+              <div className="space-y-2">
+                <h3 className="text-2xl font-black text-navy tracking-tight">Eligibility Criteria</h3>
+                <p className="text-gray-500 text-xs font-medium">Verify your profile against requirements.</p>
+              </div>
+              <ul className="space-y-4">
+                {uni.eligibility.map((criterion, i) => (
+                  <li key={i} className="flex items-start gap-3 bg-gray-50/50 p-4 rounded-xl border border-gray-100/50">
+                    <CheckCircle2 className="text-medical shrink-0 mt-0.5" size={18} />
+                    <span className="text-sm text-navy font-bold">{criterion}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Admission Process Timeline */}
+          <div className={uni.eligibility ? "lg:col-span-2 space-y-8" : "lg:col-span-3 space-y-8"}>
+            <div className="space-y-2">
+              <h3 className="text-2xl font-black text-navy tracking-tight">Admission & Visa Journey</h3>
+              <p className="text-gray-500 text-sm font-medium">Transparent, step-by-step roadmap to start your studies.</p>
+            </div>
+            <div className="relative border-l border-gray-200 ml-4 pl-8 space-y-8">
+              {uni.admissionProcess.map((step, i) => (
+                <div key={i} className="relative">
+                  <div className="absolute -left-12 top-0.5 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">
+                    {i + 1}
+                  </div>
+                  <div className="text-navy font-bold text-lg">{step}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Frequently Asked Questions */}
+      <section className="max-w-7xl mx-auto px-4 py-24" id="faq">
+        <div className="space-y-4 text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-black text-navy tracking-tight">Frequently Asked Questions</h2>
+          <div className="w-16 h-1 bg-medical rounded-full mx-auto" />
+        </div>
+        <div className="max-w-4xl mx-auto space-y-6">
+          {uni.faqs.map((faq, i) => (
+            <div key={i} className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+              <h4 className="text-lg font-black text-navy flex items-start gap-2">
+                <span className="text-medical text-xl font-black">Q.</span>
+                <span>{faq.question}</span>
+              </h4>
+              <p className="text-gray-600 pl-6 text-base leading-relaxed font-medium">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
     </>
   );
 }
