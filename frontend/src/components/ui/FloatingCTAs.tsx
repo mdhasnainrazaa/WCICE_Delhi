@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function FloatingCTAs() {
   return (
-    <div className="fixed bottom-6 right-6 z-[60] flex flex-col gap-4">
+    <div className="fixed bottom-6 right-6 z-[60] flex flex-col gap-4 floating-whatsapp">
       {/* WhatsApp Button */}
       <motion.a
         href="https://wa.me/918586873357?text=Hi%20WCIEC%2C%20I%20want%20guidance%20for%20MBBS%20admission%20abroad."

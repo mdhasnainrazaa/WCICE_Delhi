@@ -59,3 +59,120 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@media print {
+  /* Hide floating widgets and interactive elements that clutter PDFs */
+  .whatsapp-btn,
+  .floating-whatsapp,
+  #apply-btn,
+  iframe,
+  button,
+  a[href^="https://wa.me"],
+  footer {
+    display: none !important;
+  }
+
+  /* Make fixed nav static so it doesn't overlap or repeat across pages */
+  nav {
+    position: static !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    background: transparent !important;
+  }
+
+  /* Hide all header navigation links and controls, keeping only the logo */
+  nav .lg\:flex,
+  nav .sm\:gap-3,
+  nav .lg\:hidden {
+    display: none !important;
+  }
+
+  /* Standardize body background and text for clean printing */
+  body {
+    background: #ffffff !important;
+    color: #0b1f33 !important;
+    font-size: 12pt !important;
+  }
+
+  /* Compress paddings and margins to reduce page wastage */
+  main {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  section {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Compact the space-y layout utility */
+  .space-y-12 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem !important;
+  }
+  .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.75rem !important;
+  }
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.5rem !important;
+  }
+
+  /* Reduce grid gaps for print layout */
+  .gap-12 {
+    gap: 1.5rem !important;
+  }
+  .gap-8 {
+    gap: 1rem !important;
+  }
+  .gap-6 {
+    gap: 0.75rem !important;
+  }
+
+  /* Prevent containers and cards from breaking across pages */
+  .glass-card,
+  .bg-gray-50,
+  .bg-blue-50,
+  .bg-green-50,
+  .bg-red-50,
+  table,
+  tr,
+  ul,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Prevent headings from being separated from their content */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    color: #0b1f33 !important;
+  }
+
+  /* Clean up tables for print */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+  thead {
+    display: table-header-group !important;
+  }
+
+  /* Optimize layout grid behavior in print */
+  .grid-cols-1, .md\:grid-cols-2, .lg\:grid-cols-3 {
+    gap: 1rem !important;
+  }
+}
+
