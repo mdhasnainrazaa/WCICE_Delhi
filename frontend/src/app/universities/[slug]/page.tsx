@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 import { PrintButton } from "@/components/ui/PrintButton";
+import HeroSlideshow from "@/components/ui/HeroSlideshow";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -47,6 +48,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return generateUniversityMetadata(uni);
 }
+
+const slideshowImagesMap: Record<string, string[]> = {
+  "jalal-abad-state-university": [
+    "/images/jasu-gallery/jasu_campus_1.png",
+    "/images/jasu-gallery/jasu_campus_2.png",
+    "/images/jasu-gallery/jasu_campus_3.png",
+  ],
+  "jalal-abad-international-university": [
+    "/images/jaiu-gallery/jaiu_campus_1.png",
+    "/images/jaiu-gallery/jaiu_campus_2.png",
+    "/images/jaiu-gallery/jaiu_campus_3.png",
+  ],
+  "osh-state-university": [
+    "/images/osu-gallery/osh-state-university-campus.webp",
+    "/images/osu-gallery/osh-state-university-hostel.webp",
+    "/images/osu-gallery/osh-state-university-medical-building.webp",
+  ],
+  "central-asian-international-medical-university": [
+    "/images/caimu-gallery/caimu_campus_1.png",
+    "/images/caimu-gallery/caimu_campus_2.png",
+    "/images/caimu-gallery/caimu_campus_3.png",
+  ],
+  "osh-international-medical-university": [
+    "/images/oimu-gallery/oimu_campus_1.png",
+    "/images/oimu-gallery/oimu_campus_2.png",
+    "/images/oimu-gallery/oimu_campus_3.png",
+  ],
+};
 
 export default async function UniversityPage({ params }: Props) {
   const { slug } = await params;
@@ -106,7 +135,14 @@ export default async function UniversityPage({ params }: Props) {
         <main className="bg-background min-h-screen text-navy font-sans antialiased">
           {/* Hero Section */}
           <section className="relative py-16 bg-navy text-white overflow-hidden border-b border-white/5">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
+            <HeroSlideshow 
+              images={[
+                "/images/jasu-gallery/jasu_campus_1.png",
+                "/images/jasu-gallery/jasu_campus_2.png",
+                "/images/jasu-gallery/jasu_campus_3.png"
+              ]}
+              alt="Jalal-Abad State University"
+            />
             <div className="max-w-7xl mx-auto px-4 relative z-10 space-y-8">
               <div className="space-y-4">
                 <span className="bg-medical/20 border border-medical/30 text-medical font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-1.5">
@@ -670,9 +706,15 @@ export default async function UniversityPage({ params }: Props) {
         )}
 
         <main className="bg-background min-h-screen text-navy font-sans antialiased">
-          {/* Hero Section */}
           <section className="relative py-16 bg-navy text-white overflow-hidden border-b border-white/5">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
+            <HeroSlideshow 
+              images={[
+                "/images/jaiu-gallery/jaiu_campus_1.png",
+                "/images/jaiu-gallery/jaiu_campus_2.png",
+                "/images/jaiu-gallery/jaiu_campus_3.png"
+              ]}
+              alt="Jalal-Abad International University"
+            />
             <div className="max-w-7xl mx-auto px-4 relative z-10 space-y-8">
               <div className="space-y-4">
                 <span className="bg-medical/20 border border-medical/30 text-medical font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-1.5">
@@ -1217,9 +1259,15 @@ export default async function UniversityPage({ params }: Props) {
         )}
 
         <main className="bg-background min-h-screen text-navy font-sans antialiased">
-          {/* Hero Section */}
           <section className="relative py-16 bg-navy text-white overflow-hidden border-b border-white/5">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
+            <HeroSlideshow 
+              images={[
+                "/images/caimu-gallery/caimu_campus_1.png",
+                "/images/caimu-gallery/caimu_campus_2.png",
+                "/images/caimu-gallery/caimu_campus_3.png"
+              ]}
+              alt="Central Asian International Medical University"
+            />
             <div className="max-w-7xl mx-auto px-4 relative z-10 space-y-8">
               <div className="space-y-4">
                 <span className="bg-medical/20 border border-medical/30 text-medical font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-1.5">
@@ -1763,9 +1811,15 @@ export default async function UniversityPage({ params }: Props) {
         )}
 
         <main className="bg-background min-h-screen text-navy font-sans antialiased">
-          {/* Hero Section */}
           <section className="relative py-16 bg-navy text-white overflow-hidden border-b border-white/5">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
+            <HeroSlideshow 
+              images={[
+                "/images/osu-gallery/osh-state-university-campus.webp",
+                "/images/osu-gallery/osh-state-university-hostel.webp",
+                "/images/osu-gallery/osh-state-university-medical-building.webp"
+              ]}
+              alt="Osh State University"
+            />
             <div className="max-w-7xl mx-auto px-4 relative z-10 space-y-8">
               <div className="space-y-4">
                 <span className="bg-medical/20 border border-medical/30 text-medical font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-1.5">
@@ -2385,9 +2439,15 @@ export default async function UniversityPage({ params }: Props) {
         )}
 
         <main className="bg-background min-h-screen text-navy font-sans antialiased">
-          {/* Hero Section */}
           <section className="relative py-16 bg-navy text-white overflow-hidden border-b border-white/5">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
+            <HeroSlideshow 
+              images={[
+                "/images/oimu-gallery/oimu_campus_1.png",
+                "/images/oimu-gallery/oimu_campus_2.png",
+                "/images/oimu-gallery/oimu_campus_3.png"
+              ]}
+              alt="Osh International Medical University"
+            />
             <div className="max-w-7xl mx-auto px-4 relative z-10 space-y-8">
               <div className="space-y-4">
                 <span className="bg-medical/20 border border-medical/30 text-medical font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-wider inline-flex items-center gap-1.5">
@@ -3017,7 +3077,14 @@ export default async function UniversityPage({ params }: Props) {
     <main className="bg-background min-h-screen text-navy font-sans antialiased">
       {/* Hero Section */}
       <section className="relative py-16 md:py-20 bg-navy text-white overflow-hidden border-b border-white/5">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-medical/10 blur-3xl rounded-full translate-x-1/2" />
+        <HeroSlideshow 
+          images={slideshowImagesMap[uni.slug] || [
+            "/images/osu-gallery/osh-state-university-campus.webp",
+            "/images/osu-gallery/osh-state-university-hostel.webp",
+            "/images/osu-gallery/osh-state-university-medical-building.webp"
+          ]}
+          alt={uni.name}
+        />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Hero Left */}
