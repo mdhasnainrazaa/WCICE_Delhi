@@ -9,6 +9,21 @@ import { Calendar, User, ArrowRight } from "lucide-react";
 import { blogPostsArray } from "@/data/blogs";
 
 function getBlogImage(slug: string, category: string): string {
+  if (slug.includes("food") || slug.includes("eat")) {
+    return "/images/optimized/indian-mess-food.png";
+  }
+  if (slug.includes("visa") || slug.includes("document")) {
+    return "/images/optimized/student-visa-passport.png";
+  }
+  if (slug.includes("fmge") || slug.includes("next-exam") || slug.includes("study")) {
+    return "/images/optimized/medical-student-study.png";
+  }
+  if (slug.includes("neet")) {
+    return "/images/optimized/neet-exam-stethoscope.png";
+  }
+  if (slug.includes("uk-usa") || slug.includes("practice-in")) {
+    return "/images/optimized/global-medical-career.png";
+  }
   if (slug.includes("osh-state-university")) {
     return "/images/optimized/osh-state-university.webp";
   }
