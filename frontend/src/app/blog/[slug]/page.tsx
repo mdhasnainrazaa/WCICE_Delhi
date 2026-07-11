@@ -17,6 +17,28 @@ import { GlobalApplyForm } from "@/components/forms/GlobalApplyForm";
 
 import { blogPostsArray as BLOG_DATA } from "@/data/blogs";
 
+export function getBlogImage(slug: string, category: string): string {
+  if (slug.includes("osh-state-university")) {
+    return "/images/optimized/osh-state-university.webp";
+  }
+  if (slug.includes("jalal-abad-state-university") || slug.includes("jasu")) {
+    return "/images/optimized/jalal-abad-banner.webp";
+  }
+  if (slug.includes("jalal-abad-international-university") || slug.includes("jaiu")) {
+    return "/images/optimized/jalal-abad-international-university-hero.webp";
+  }
+  if (slug.includes("central-asian-international-medical-university") || slug.includes("caimu")) {
+    return "/images/optimized/central-asian-medical-university.webp";
+  }
+  if (slug.includes("osh-international-medical-university") || slug.includes("oimu")) {
+    return "/images/optimized/osh-international-medical-university.webp";
+  }
+  if (category === "Kyrgyzstan") {
+    return "/images/optimized/jalal-abad-banner.webp";
+  }
+  return "/images/optimized/osh-state-university.webp"; // default
+}
+
 export function generateStaticParams() {
   return BLOG_DATA.map((post) => ({
     slug: post.slug,
@@ -33,6 +55,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const imageUrl = getBlogImage(slug, post.category);
+
   return {
     title: `${post.seoTitle} | WCIEC Blog`,
     description: post.seoDescription,
@@ -45,7 +69,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://www.wciecdelhi.com/blog/${slug}/`,
       siteName: "WCIEC Delhi",
       type: "article",
+      images: [
+        {
+          url: `https://www.wciecdelhi.com${imageUrl}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ]
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle,
+      description: post.seoDescription,
+      images: [`https://www.wciecdelhi.com${imageUrl}`],
+    }
   };
 }
 
@@ -56,6 +94,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) {
     notFound();
   }
+
+  const imageUrl = getBlogImage(slug, post.category);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -74,6 +114,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         "url": `https://www.wciecdelhi.com/blog/${slug}/`,
         "headline": post.title,
         "description": post.seoDescription,
+        "image": `https://www.wciecdelhi.com${imageUrl}`,
         "datePublished": "2026-05-10T12:00:00Z",
         "dateModified": "2026-05-19T12:00:00Z",
         "author": {
@@ -140,6 +181,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <span className="flex items-center gap-1"><User size={14} /> Written by: <strong>{post.author}</strong></span>
               <span className="hidden sm:inline text-gray-300">|</span>
               <span className="flex items-center gap-1"><ShieldCheck size={14} className="text-emerald-500" /> Reviewed by: <strong>{post.reviewer}</strong></span>
+            </div>
+
+            {/* Featured Image Banner */}
+            <div className="relative w-full h-[240px] sm:h-[400px] rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+              <img 
+                src={imageUrl} 
+                alt={post.title} 
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
             </div>
 
             {/* Content Body */}

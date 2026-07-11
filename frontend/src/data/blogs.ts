@@ -1,4 +1,4 @@
-export interface BlogPost { title: string; excerpt: string; date: string; author: string; reviewer: string; category: string; seoTitle: string; seoDescription: string; introduction: string; sections: { heading: string; content: string[]; }[]; faqs: { question: string; answer: string; }[]; slug: string; }
+export interface BlogPost { title: string; excerpt: string; date: string; author: string; reviewer: string; category: string; seoTitle: string; seoDescription: string; introduction: string; sections: { heading: string; content: string[]; }[]; faqs: { question: string; answer: string; }[]; slug: string; image?: string; }
 
 export const BLOG_DATA: Record<string, Omit<BlogPost, 'slug'>> = {
   "mbbs-in-kyrgyzstan-fees-structure-2026": {
