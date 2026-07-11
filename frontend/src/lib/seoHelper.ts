@@ -326,9 +326,9 @@ export function generateUniversitySchemas(uni: University) {
       "url": logoUrl
     },
     "sameAs": [
-      "https://www.facebook.com/nileeducation",
-      "https://twitter.com/nileeducation",
-      "https://www.linkedin.com/company/nileeducation"
+      "https://www.facebook.com/profile.php?id=61569910095151",
+      "https://www.instagram.com/wciecdelhi/",
+      "https://www.linkedin.com/company/wciecdelhi/"
     ]
   };
 
