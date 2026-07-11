@@ -24,7 +24,6 @@ export interface University {
   faqs: { question: string; answer: string }[];
   established?: string;
   bannerImage?: string;
-  clinicalBeds?: string;
 }
 
 export const universities: University[] = [
@@ -39,7 +38,6 @@ export const universities: University[] = [
     established: "1939",
     bannerImage: "/images/osu-gallery/osh-state-university-campus.webp",
     ranking: "Ranked #1 in Kyrgyzstan, Top 100 in Central Asia",
-    clinicalBeds: "3,000+ Beds (across 10+ teaching hospitals)",
     quickFacts: [
       "Established: 1939",
       "Medium: 100% English",
@@ -102,7 +100,6 @@ export const universities: University[] = [
     established: "1993",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
     ranking: "Top 5 Medical Universities in Kyrgyzstan",
-    clinicalBeds: "1,200+ Beds (Provincial Hospital & city clinics)",
     quickFacts: [
       "Established: 1993",
       "Medium: 100% English",
@@ -163,7 +160,6 @@ export const universities: University[] = [
     established: "2015",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
     ranking: "Fastest Growing Modern Medical University in Kyrgyzstan",
-    clinicalBeds: "800+ Beds (regional multi-specialty clinics)",
     quickFacts: [
       "Established: 2015",
       "Medium: 100% English",
@@ -222,7 +218,6 @@ export const universities: University[] = [
     established: "2018",
     bannerImage: "/images/optimized/jalal-abad-banner.webp",
     ranking: "Most Affordable Top Medical University in Kyrgyzstan",
-    clinicalBeds: "600+ Beds (affiliated teaching clinics)",
     quickFacts: [
       "Established: 2018",
       "Medium: 100% English",
@@ -281,7 +276,6 @@ export const universities: University[] = [
     established: "2019",
     bannerImage: "/images/osu-gallery/osh-state-university-campus.webp",
     ranking: "Fastest Growing Premium Medical University in Osh",
-    clinicalBeds: "800+ Beds (exclusive partners and OIMU clinic)",
     quickFacts: [
       "Established: 2019",
       "Medium: 100% English",
