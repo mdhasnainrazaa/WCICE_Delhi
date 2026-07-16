@@ -506,38 +506,9 @@ export default function MBBSInKyrgyzstanPage() {
         {/* ── CORE ARTICLE CONTENT ── */}
         <article className="py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid lg:grid-cols-12 gap-12">
-              
-              {/* Left Column: Sidebar Table of Contents */}
-              <aside className="lg:col-span-3 hidden lg:block">
-                <div className="sticky top-28 bg-white border border-gray-200 rounded-3xl p-6 shadow-sm space-y-4 max-h-[80vh] overflow-y-auto no-scrollbar">
-                  <h3 className="font-bold text-lg font-poppins text-navy border-b border-gray-100 pb-3">Table of Contents</h3>
-                  <nav className="flex flex-col gap-2.5 text-sm text-gray-500 font-medium">
-                    <a href="#quick-facts" className="hover:text-medical transition-colors">Quick Facts Table</a>
-                    <a href="#why-kyrgyzstan" className="hover:text-medical transition-colors">Why Study in Kyrgyzstan?</a>
-                    <a href="#pros-cons" className="hover:text-medical transition-colors">Advantages & Disadvantages</a>
-                    <a href="#fee-breakdown" className="hover:text-medical transition-colors">Complete Fee Breakdown</a>
-                    <a href="#medical-universities" className="hover:text-medical transition-colors">Kyrgyz Medical Universities</a>
-                    <a href="#admission-process" className="hover:text-medical transition-colors">Step-by-Step Admission</a>
-                    <a href="#eligibility" className="hover:text-medical transition-colors">Eligibility & Documents</a>
-                    <a href="#visa-process" className="hover:text-medical transition-colors">Student Visa Process</a>
-                    <a href="#living-hostel" className="hover:text-medical transition-colors">Living Cost & Hostels</a>
-                    <a href="#academic-curriculum" className="hover:text-medical transition-colors">Curriculum & Exposure</a>
-                    <a href="#nmc-regulations" className="hover:text-medical transition-colors">NMC FMGL Guidelines</a>
-                    <a href="#fmge-next" className="hover:text-medical transition-colors">FMGE & NExT analysis</a>
-                    <a href="#career-scholarships" className="hover:text-medical transition-colors">Careers & Scholarships</a>
-                    <a href="#admission-timeline" className="hover:text-medical transition-colors">Admission Timeline 2026</a>
-                    <a href="#country-comparisons" className="hover:text-medical transition-colors">Country Comparisons</a>
-                    <a href="#who-should-choose" className="hover:text-medical transition-colors">Who Should Choose/Avoid</a>
-                    <a href="#mistakes-avoid" className="hover:text-medical transition-colors">Mistakes Students Make</a>
-                    <a href="#parents-guide" className="hover:text-medical transition-colors">Parent's Guide</a>
-                    <a href="#faqs" className="hover:text-medical transition-colors">Frequently Asked Questions</a>
-                  </nav>
-                </div>
-              </aside>
-
-              {/* Right Column: Main Content */}
-              <div className="lg:col-span-9 space-y-16">
+            
+            {/* Centered Main Content */}
+            <div className="max-w-4xl mx-auto space-y-16 w-full">
                 
                 {/* Inline Table of Contents */}
                 <section id="table-of-contents" className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm space-y-6">
@@ -1240,7 +1211,6 @@ export default function MBBSInKyrgyzstanPage() {
 
               </div>
 
-            </div>
           </div>
         </article>
       </main>
