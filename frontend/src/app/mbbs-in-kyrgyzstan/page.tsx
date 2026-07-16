@@ -539,6 +539,34 @@ export default function MBBSInKyrgyzstanPage() {
               {/* Right Column: Main Content */}
               <div className="lg:col-span-9 space-y-16">
                 
+                {/* Inline Table of Contents */}
+                <section id="table-of-contents" className="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm space-y-6">
+                  <h3 className="text-2xl font-bold text-navy font-poppins border-b border-gray-100 pb-3 flex items-center gap-2">
+                    <BookOpen size={24} className="text-medical" /> Table of Contents
+                  </h3>
+                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-3.5 text-sm text-gray-600 font-medium">
+                    <a href="#quick-facts" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Quick Facts Table</a>
+                    <a href="#why-kyrgyzstan" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Why Study in Kyrgyzstan?</a>
+                    <a href="#pros-cons" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Advantages & Disadvantages</a>
+                    <a href="#fee-breakdown" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Complete Fee Breakdown</a>
+                    <a href="#medical-universities" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Kyrgyz Medical Universities</a>
+                    <a href="#admission-process" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Step-by-Step Admission</a>
+                    <a href="#eligibility" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Eligibility & Documents</a>
+                    <a href="#visa-process" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Student Visa Process</a>
+                    <a href="#living-hostel" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Living Cost & Hostels</a>
+                    <a href="#academic-curriculum" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Curriculum & Exposure</a>
+                    <a href="#nmc-regulations" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> NMC FMGL Guidelines</a>
+                    <a href="#fmge-next" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> FMGE & NExT analysis</a>
+                    <a href="#career-scholarships" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Careers & Scholarships</a>
+                    <a href="#admission-timeline" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Admission Timeline 2026</a>
+                    <a href="#country-comparisons" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Country Comparisons</a>
+                    <a href="#who-should-choose" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Who Should Choose/Avoid</a>
+                    <a href="#mistakes-avoid" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Mistakes Students Make</a>
+                    <a href="#parents-guide" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Parent's Guide</a>
+                    <a href="#faqs" className="hover:text-medical transition-colors flex items-center gap-1.5"><ChevronRight size={14} className="text-medical shrink-0" /> Frequently Asked Questions</a>
+                  </div>
+                </section>
+
                 {/* Introduction Section */}
                 <section className="space-y-6">
                   <h2 className="text-3xl font-bold font-poppins text-navy tracking-tight">Introduction: Study MBBS in Kyrgyzstan for Indian Students</h2>
