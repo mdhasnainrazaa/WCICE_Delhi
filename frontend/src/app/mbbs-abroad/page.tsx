@@ -152,7 +152,7 @@ export default function MBBSAbroadPage() {
             }}
           />
           
-          <div className="max-w-7xl mx-auto px-4 relative z-20 w-full">
+          <div className="w-full mx-auto px-6 md:px-8 lg:px-12 max-w-[1380px] lg:max-w-[1500px] xl:max-w-[1600px] relative z-20">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-xs text-gray-400 mb-6 font-semibold uppercase tracking-wider">
               <Link href="/" className="hover:text-medical transition-colors">Home</Link>
@@ -192,7 +192,7 @@ export default function MBBSAbroadPage() {
               </div>
               
               {/* Sidebar Quick Form */}
-              <div className="lg:col-span-5 bg-white text-navy rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 relative overflow-hidden" id="apply">
+              <div className="lg:col-span-5 bg-white text-navy rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 relative overflow-hidden lg:max-w-[540px] w-full lg:ml-auto" id="apply">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-full bg-medical/5 flex items-center justify-center text-medical border border-medical/10">
                     <Award size={18} />
@@ -210,7 +210,7 @@ export default function MBBSAbroadPage() {
 
         {/* E-E-A-T Editorial Header */}
         <section className="bg-gray-50 border-y border-gray-100 py-3 text-xs text-gray-500">
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center gap-2">
+          <div className="w-full mx-auto px-6 md:px-8 lg:px-12 max-w-[1380px] lg:max-w-[1500px] xl:max-w-[1600px] flex flex-wrap justify-between items-center gap-2">
             <div>
               <span>Written by: <strong>WCIEC Delhi Education Experts</strong></span>
               <span className="mx-2">|</span>
@@ -224,7 +224,7 @@ export default function MBBSAbroadPage() {
 
         {/* ── CORE CONTENT: REDESIGNED TO BE FULL-WIDTH & BALANCED ── */}
         <article className="py-20">
-          <div className="max-w-6xl mx-auto px-4 space-y-20">
+          <div className="w-full mx-auto px-6 md:px-8 lg:px-12 max-w-[1380px] lg:max-w-[1500px] xl:max-w-[1600px] space-y-20">
             
             {/* 1. Introduction & Trust Banner (Combined in a balanced way) */}
             <div className="grid lg:grid-cols-5 gap-12 items-start" id="introduction">
@@ -232,10 +232,10 @@ export default function MBBSAbroadPage() {
                 <div className="space-y-4">
                   <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight">Introduction to MBBS Abroad</h2>
                   <div className="w-20 h-1 bg-medical rounded-full mb-6" />
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 text-[18px] leading-[1.8] max-w-[960px]">
                     Every year, thousands of medical aspirants plan to <strong>study medicine abroad</strong> to fulfill their dream of becoming successful doctors. But exactly what is MBBS abroad, and why do Indian students choose foreign medical universities?
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 text-[18px] leading-[1.8] max-w-[960px]">
                     <strong>MBBS abroad for Indian students</strong> refers to pursuing an undergraduate medical degree (MD Physician or MBBS) outside India. Due to limited government seats, high NEET competition, and massive donation demands in private Indian medical colleges, choosing an international destination is the smartest alternative. Reputed <Link href="/universities" className="text-medical font-medium hover:underline">foreign medical universities</Link> offer high-quality, fully English-medium medical programs that are globally recognized, giving students a pathway to practice medicine anywhere in the world.
                   </p>
                 </div>
@@ -266,10 +266,10 @@ export default function MBBSAbroadPage() {
 
             {/* 2. Why Study MBBS Abroad in 2026? (Full Width Grid) */}
             <div className="space-y-8 scroll-mt-24" id="benefits">
-              <div className="text-center max-w-3xl mx-auto">
+              <div className="text-center max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight mb-4">Why Study MBBS Abroad in 2026?</h2>
                 <div className="w-20 h-1 bg-medical rounded-full mx-auto mb-6" />
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 text-[18px] leading-[1.8] max-w-[960px] mx-auto">
                   Securing MBBS admission 2026 in top foreign medical colleges provides tremendous advantages for Indian students. Here are the top benefits:
                 </p>
               </div>
@@ -316,9 +316,9 @@ export default function MBBSAbroadPage() {
 
             {/* 3. Eligibility Criteria (Full Width Callout) */}
             <div className="bg-blue-50 p-8 md:p-12 rounded-3xl border border-blue-100">
-              <div className="max-w-4xl mx-auto space-y-6 text-center">
+              <div className="max-w-5xl mx-auto space-y-6 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight">MBBS Abroad Eligibility Criteria 2026</h2>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 text-[18px] leading-[1.8] max-w-[960px] mx-auto">
                   The National Medical Commission (NMC) has set strict guidelines for Indian students planning to study MBBS abroad after NEET. To be eligible, you must meet the following:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 text-left pt-4">
@@ -356,10 +356,10 @@ export default function MBBSAbroadPage() {
 
             {/* 4. Fees Structure (Full Width Table) */}
             <div className="space-y-8">
-              <div className="text-center max-w-3xl mx-auto">
+              <div className="text-center max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight mb-4">MBBS Abroad Fees Structure 2026</h2>
                 <div className="w-20 h-1 bg-medical rounded-full mx-auto mb-6" />
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 text-[18px] leading-[1.8] max-w-[960px] mx-auto">
                   Finding affordable MBBS abroad options is easier than you think. Below is an estimated comparison of the MBBS abroad fees across top countries:
                 </p>
               </div>
@@ -413,7 +413,7 @@ export default function MBBSAbroadPage() {
 
             {/* 5. Best Countries for MBBS Abroad (2-Col Grid) */}
             <div className="space-y-8">
-              <div className="text-center max-w-3xl mx-auto">
+              <div className="text-center max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight mb-4">Best Country for MBBS Abroad for Indian Students</h2>
                 <div className="w-20 h-1 bg-medical rounded-full mx-auto" />
               </div>
@@ -527,16 +527,16 @@ export default function MBBSAbroadPage() {
             </div>
 
             {/* 7. NMC Approved Universities (Full Width Text) */}
-            <div className="bg-white p-10 rounded-3xl border border-gray-200 shadow-sm text-center max-w-4xl mx-auto">
+            <div className="bg-white p-10 rounded-3xl border border-gray-200 shadow-sm text-center w-full max-w-[1050px] mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold font-poppins text-navy tracking-tight mb-4">NMC Approved Medical Universities Abroad</h2>
               <div className="w-20 h-1 bg-medical rounded-full mx-auto mb-6" />
-              <p className="text-gray-600 leading-relaxed text-lg">
+              <p className="text-gray-600 text-[18px] leading-[1.8] max-w-[960px] mx-auto">
                 Always ensure you apply to NMC Approved Medical Universities Abroad and WHO Approved Medical Universities. Studying at recognized institutions is critical because it allows you to appear for the FMGE/NExT screening test in India, keeps your degree valid internationally for USMLE/PLAB, and ensures the curriculum meets the 54-month study + 12-month internship NMC guidelines.
               </p>
             </div>
 
             {/* 8. FAQ SECTION (Full Width Centered) */}
-            <div className="max-w-4xl mx-auto space-y-8">
+            <div className="w-full max-w-[1050px] mx-auto space-y-8">
               <div className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold font-poppins text-navy tracking-tight mb-4">Frequently Asked Questions</h2>
                 <div className="w-20 h-1 bg-medical rounded-full mx-auto" />
@@ -549,7 +549,7 @@ export default function MBBSAbroadPage() {
                       <HelpCircle size={26} className="text-medical shrink-0 mt-0.5" />
                       <span>{faq.question}</span>
                     </h4>
-                    <p className="text-gray-600 leading-relaxed pl-10 text-lg">{faq.answer}</p>
+                    <p className="text-gray-600 text-[18px] leading-[1.8] pl-10">{faq.answer}</p>
                   </div>
                 ))}
               </div>
@@ -560,9 +560,9 @@ export default function MBBSAbroadPage() {
 
         {/* Bottom Call to Action Strip */}
         <section className="bg-navy py-16 md:py-24 text-white text-center relative overflow-hidden" id="counselling">
-          <div className="max-w-4xl mx-auto px-4 relative z-10 space-y-8">
+          <div className="w-full max-w-[1050px] mx-auto px-6 md:px-8 relative z-10 space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins leading-tight">Secure Your MBBS Seat Abroad Today</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p className="text-gray-300 max-w-2xl mx-auto text-[18px] leading-[1.8]">
               Admissions for the 2026-27 intake are strictly first-come, first-served. Speak to a professional counsellor at WCIEC Delhi and find the right low-cost medical university.
             </p>
             <div className="flex justify-center gap-4 flex-wrap pt-4">
